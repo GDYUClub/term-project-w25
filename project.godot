@@ -10,9 +10,15 @@ config_version=5
 
 [application]
 
-config/name="ink-corporated"
+config/name="ink-orporated"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
 
 [rendering]
 
