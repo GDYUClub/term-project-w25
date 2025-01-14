@@ -1,57 +1,46 @@
-# How to contribute to the Winter Term Project (2025)
+# How to contribute code to the Winter Term Project (2025)
 
-- This document assumes you applied and are a part of a department.
 - If you just randomly stumbled upon this repo reach out to someone in the gdyu discord server for further info.
 
-## Programming
+## 1. Install Relevant software
 
 Please make sure you have the following on your computer:
 
 - [Godot 4.3](https://godotengine.org/download/)
-- [Python 3.12.x](https://www.python.org/)
+- [Python 3.12](https://www.python.org/)
 - [Pip](https://pypi.org/project/pip/)
 - [godot-gdscript-toolkit](https://github.com/Scony/godot-gdscript-toolkit)
 - [Git](https://www.freecodecamp.org/news/guide-to-git-github-for-beginners-and-experienced-devs/)
 
-### On-boarding
+## 2. Join + Clone the Repository
 
-#### Learning Godot and Git
+- Give us your Github email.
+- We'll add you as a maintainer on the project.
+- From there, clone the project by copying and pasting the command in the `<> Code` button into whatever you use for github.
+- Open the project in godot.
+- You now have the game running on your computer!
 
-If you have NO experince with programming, this is a resources that teaches you godot with no prior experince
-[Learn GDScript from Zero](https://www.gdquest.com/learn-to-code-from-zero/)
+## 3. Get a task + make a branch
 
-If you have previous Unity Experince:
+- Get a task from a team lead.
+- Make a branch to work on it the branch should be named after your feature:
 
-- [Migrating from Unity to Godot (written for godot 3 but it's still helpful)](https://docs.godotengine.org/en/3.1/getting_started/editor/unity_to_godot.html)
-
-Some other Resources and tutorials
-- [Godot Documentation, Go from "Getting Started" "Your First 2D Game"](https://docs.godotengine.org/en/stable/getting_started/introduction/index.html)
-- [Brackey's Godot Tutorial](https://youtu.be/LOhfqjmasi0?si=J0HfInbB6QwBuCU0)
-- [Brackey's GDScript Tutorial](https://youtu.be/e1zJS31tr88?si=_ypKiUevu2Z7Qcq7)
-- [GDQUest's Vampire Surviors Clone](https://youtu.be/GwCiGixlqiU?si=sDY61vtGC5v02xua)
-
-#### Working on the project
-
-1. Get a Task
-
-- Let one of the programming leads know that you'd like to get a task to work on.
-
-2. Clone the Repo, make a branch:
-
-- Once you have your task, make a branch in the following format:
-``
+```
 git checkout -b <name>
-``
+```
 
-3. Make the contribution
+Work within this branch when making your contribution.
+
+## 4. Complete the task
 
 - After you make your branch, complete the task!
 - Make sure your code follows the [gdscript style guide](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_styleguide.html)
-- Make sure your you run the godot-gdscript-toolkit linter to ensure code style.
+- Make sure your files follow the [godot project orginization guidelines](https://docs.godotengine.org/en/stable/tutorials/best_practices/project_organization.html), and you place things in the correct folders.
+- Make sure you run the [godot-gdscript-toolkit](https://github.com/Scony/godot-gdscript-toolkit) linter to ensure consistency in code style.
 
-4. Make a PR
+## 5. Add and commit your code
 
-- Make a pull request, wait for a lead to approve it.
+- Add and commit your code to the repo, then push it so it's in github.
 
 ```
 git add <filename>
@@ -61,6 +50,29 @@ git push --set-upstream origin <branch>
 
 - If you're using VS Code, you can also use the Source Control tab to easily add and commit without typing the commands.
 
-#### For Any other questions
+## 6. Create a pull request
+
+- Go to the github repo and click on the [pull requests tab](https://github.com/GDYUClub/term-project-w25/pulls)
+- Create a new pull request with your branch merging into main:
+
+```
+base: main <- compare:your branch
+```
+
+- You can then create the pull request
+
+## 6b. "The pull request can't be merged!"
+
+- Congrats, your first merge conflict!
+- This issue comes from the file(s) in main being different than the files in your branch, and conflicting with each other.
+- You can manually open up the conflicting files to try to edit them, but if you aren't comfortable with dealing with merge conflicts, ask a team lead for help.
+
+## 7. Have your Pull request approved
+
+- Wait for a team lead to approve your pull request.
+- Merge it!
+- Yipee! You did it!
+
+### For Any Questions
 
 - Refer to the programming-chat channel in the winter 2025 project discord server (you should've been sent a invitation for it)
