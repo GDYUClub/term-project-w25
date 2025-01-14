@@ -53,6 +53,14 @@ git checkout -b <name>
 
 - Make a pull request, wait for a lead to approve it.
 
+```
+git add <filename>
+git commit -m <message>
+git push --set-upstream origin <branch>
+```
+
+- If you're using VS Code, you can also use the Source Control tab to easily add and commit without typing the commands.
+
 #### For Any other questions
 
 - Refer to the programming-chat channel in the winter 2025 project discord server (you should've been sent a invitation for it)
