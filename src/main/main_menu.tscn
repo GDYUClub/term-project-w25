@@ -1,0 +1,137 @@
+[gd_scene load_steps=5 format=3 uid="uid://b28kcyo0kbids"]
+
+[ext_resource type="Texture2D" uid="uid://m01chsswga2i" path="res://assets/menu/backgrounds/temp_menuscreen_background.png" id="1_7f66i"]
+[ext_resource type="Script" path="res://src/main/main_menu_script.gd" id="1_q12us"]
+[ext_resource type="PackedScene" uid="uid://dd1p2d01n60dy" path="res://src/main/setting_menu.tscn" id="3_qsj8i"]
+[ext_resource type="PackedScene" uid="uid://c3mfp0rvpfpdn" path="res://src/main/credits_menu.tscn" id="4_7gfv7"]
+
+[node name="MainMenuScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q12us")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7f66i")
+
+[node name="MainMenu" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+metadata/_edit_use_anchors_ = true
+
+[node name="GameTitleBox" type="VBoxContainer" parent="MainMenu"]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="seperator" type="Control" parent="MainMenu/GameTitleBox"]
+layout_mode = 2
+
+[node name="seperator2" type="Control" parent="MainMenu/GameTitleBox"]
+layout_mode = 2
+
+[node name="GameTitleText" type="Label" parent="MainMenu/GameTitleBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 71
+text = "Mystery Ink-orperated"
+horizontal_alignment = 1
+
+[node name="ButtonBox" type="HBoxContainer" parent="MainMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VerticalButtonBox" type="VBoxContainer" parent="MainMenu/ButtonBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="seperator5" type="Control" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+
+[node name="seperator6" type="Control" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+
+[node name="seperator7" type="Control" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+
+[node name="seperator" type="Control" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+
+[node name="GameStartButton" type="Button" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_bottom = NodePath("../LoadGameButton")
+theme_override_colors/font_focus_color = Color(0.202342, 0.550316, 0.73605, 1)
+theme_override_font_sizes/font_size = 41
+text = "Game Start
+"
+
+[node name="seperator2" type="Control" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+
+[node name="LoadGameButton" type="Button" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_focus_color = Color(0.202342, 0.550316, 0.73605, 1)
+theme_override_font_sizes/font_size = 41
+text = "Load Game
+"
+
+[node name="seperator3" type="Control" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+
+[node name="SettingButton" type="Button" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_focus_color = Color(0.202342, 0.550316, 0.73605, 1)
+theme_override_font_sizes/font_size = 41
+text = "Settings
+"
+
+[node name="seperator4" type="Control" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+
+[node name="CreditsButton" type="Button" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_focus_color = Color(0.202342, 0.550316, 0.73605, 1)
+theme_override_font_sizes/font_size = 41
+text = "Credits
+"
+
+[node name="seperator8" type="Control" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_focus_color = Color(0.202342, 0.550316, 0.73605, 1)
+theme_override_font_sizes/font_size = 41
+text = "Quit
+"
+
+[node name="SettingMenu" parent="." instance=ExtResource("3_qsj8i")]
+visible = false
+layout_mode = 1
+
+[node name="CreditsMenu" parent="." instance=ExtResource("4_7gfv7")]
+visible = false
+layout_mode = 1

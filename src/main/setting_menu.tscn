@@ -1,0 +1,311 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd1p2d01n60dy"]
+
+[ext_resource type="Script" path="res://src/main/setting_menu_script.gd" id="1_0beem"]
+[ext_resource type="Texture2D" uid="uid://m01chsswga2i" path="res://assets/menu/backgrounds/temp_menuscreen_background.png" id="1_kvdn8"]
+
+[node name="SettingMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0beem")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kvdn8")
+
+[node name="SettingMenuMargin" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="SettingTitleBox" type="VBoxContainer" parent="SettingMenuMargin"]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="SettingTitleText" type="Label" parent="SettingMenuMargin/SettingTitleBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 71
+text = "Settings
+"
+horizontal_alignment = 1
+
+[node name="SettingTable" type="TabContainer" parent="SettingMenuMargin/SettingTitleBox"]
+layout_mode = 2
+size_flags_vertical = 3
+tab_alignment = 1
+current_tab = 0
+
+[node name="Game" type="TabBar" parent="SettingMenuMargin/SettingTitleBox/SettingTable"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Game"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="TestBox" type="VBoxContainer" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Game/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Label" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Game/MarginContainer/TestBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label2" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Game/MarginContainer/TestBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label3" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Game/MarginContainer/TestBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label4" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Game/MarginContainer/TestBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label5" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Game/MarginContainer/TestBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="ButtonBox" type="HBoxContainer" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Game/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Game/MarginContainer/ButtonBox"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Sep" type="Control" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Game/MarginContainer/ButtonBox/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Game/MarginContainer/ButtonBox/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "CLICK ME"
+
+[node name="Control" type="TabBar" parent="SettingMenuMargin/SettingTitleBox/SettingTable"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Control/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Label" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label2" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label3" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label4" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label5" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Video" type="TabBar" parent="SettingMenuMargin/SettingTitleBox/SettingTable"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Video"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Video/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Label" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Video/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label2" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Video/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label3" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Video/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label4" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Video/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label5" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Video/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Audio" type="TabBar" parent="SettingMenuMargin/SettingTitleBox/SettingTable"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Audio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Audio/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Label" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label2" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label3" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label4" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label5" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Accessibility" type="TabBar" parent="SettingMenuMargin/SettingTitleBox/SettingTable"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Accessibility"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Accessibility/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Label" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Accessibility/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label2" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Accessibility/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label3" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Accessibility/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label4" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Accessibility/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="Label5" type="Label" parent="SettingMenuMargin/SettingTitleBox/SettingTable/Accessibility/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "12313801298310238"
+
+[node name="QuitButton" type="Button" parent="SettingMenuMargin/SettingTitleBox"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 40
+text = "Exit
+"
