@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://cof4cjimhg61g"]
+
+[ext_resource type="Script" path="res://src/control_rebinding/control_rebind_buttons.gd" id="1_i08y2"]
+
+[node name="Control_Rebind_Buttons" type="Control" groups=["rebind_button"]]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i08y2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_right = 1416.0
+offset_bottom = 15.5
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(400, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "ACTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 200
+
+[node name="Keyboard" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+toggle_mode = true
+text = "ACTION_KEY"
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 200
+
+[node name="Controller" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+toggle_mode = true
+text = "ACTION_KEY"
+
+[connection signal="toggled" from="HBoxContainer/Keyboard" to="." method="_on_keyboard_toggled"]
+[connection signal="toggled" from="HBoxContainer/Controller" to="." method="_on_controller_toggled"]
