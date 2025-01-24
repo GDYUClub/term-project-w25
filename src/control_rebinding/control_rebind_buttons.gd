@@ -5,8 +5,6 @@ extends Control
 @onready var keyboard_button: Button = $HBoxContainer/Keyboard as Button
 @onready var controller_button: Button = $HBoxContainer/Controller as Button
 
-#TODO: Prevent duplicate bindings
-
 # This has to be assigned in the editor
 # The name of the action has to match its name in InputMap
 @export var action_name : String = ""
@@ -52,15 +50,13 @@ func set_text_for_key() -> void:
 		# Controller Button
 		elif (action_event is InputEventJoypadButton):
 			var controller_button_index = action_event.button_index
-			var controller_action_keycode = get_controller_input_name(controller_button_index)
-			controller_button.text = controller_action_keycode
+			controller_button.text = get_controller_input_name(controller_button_index)
 		
 		# Controller Joystick
 		elif (action_event is InputEventJoypadMotion):
 			var controller_joystick_axis = action_event.axis
 			var controller_joystick_axis_value = action_event.axis_value
-			var controller_action_keycode = get_controller_joystick_input(controller_joystick_axis, controller_joystick_axis_value)
-			controller_button.text = controller_action_keycode
+			controller_button.text = get_controller_joystick_input(controller_joystick_axis, controller_joystick_axis_value)
 
 # We should use icons for controller input, I put text for now
 # PLACEHOLDER TEXT
@@ -201,6 +197,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	controller_button.button_pressed = false
 
 func rebind_action_key(event: InputEvent) -> void:
+	
+	# Make sure no duplicates
+	if !check_if_unique_binding(event):
+		return
+		
 	var action_events = InputMap.action_get_events(action_name)
 	var remove_binding = false
 	
@@ -243,3 +244,32 @@ func is_controller_input(name: String) -> bool:
 		return true
 	
 	return false
+
+func check_if_unique_binding(input_event: InputEvent) -> bool:
+	var input_name
+	
+	if (input_event is InputEventKey):
+		input_name = OS.get_keycode_string(input_event.physical_keycode)
+	elif (input_event is InputEventJoypadButton):
+		var controller_button_index = input_event.button_index
+		input_name = get_controller_input_name(controller_button_index)
+	elif (input_event is InputEventJoypadMotion):
+		var controller_joystick_axis = input_event.axis
+		var controller_joystick_axis_value = input_event.axis_value
+		input_name = get_controller_joystick_input(controller_joystick_axis, controller_joystick_axis_value)
+
+	for action in InputMap.get_actions():
+		
+		# Only check our custom actions
+		if action.begins_with("ui_"):
+			continue
+		
+		var events = InputMap.action_get_events(action)
+		
+		# If this binding is being used for another action, don't set it to this one
+		for event in events:
+	
+			if event.as_text().replace(" (Physical)", "") == input_name:
+				return false
+				
+	return true
