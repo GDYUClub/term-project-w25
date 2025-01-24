@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dittov5kkdb2"]
+
+[ext_resource type="Script" path="res://src/Dialogue/dialogue_manager.gd" id="1_uatff"]
+[ext_resource type="PackedScene" uid="uid://dj01meo52q8ey" path="res://src/Dialogue/text_box.tscn" id="2_lnfkq"]
+
+[node name="Dialogue Manager Here" type="Node2D" node_paths=PackedStringArray("test_text_boxes")]
+script = ExtResource("1_uatff")
+test_text_boxes = [NodePath("TextBox"), NodePath("TextBox2"), NodePath("TextBox"), NodePath("TextBox2"), NodePath("TextBox")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(17, 36)
+
+[node name="TextBox" parent="." instance=ExtResource("2_lnfkq")]
+anchor_right = 0.278979
+anchor_bottom = 0.423
+offset_left = -561.0
+offset_top = -111.0
+offset_right = -201.0
+offset_bottom = 112.0
+
+[node name="TextBox2" parent="." instance=ExtResource("2_lnfkq")]
+offset_left = 196.0
+offset_top = -105.0
+offset_right = 556.0
+offset_bottom = 118.0
