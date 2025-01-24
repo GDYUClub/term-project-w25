@@ -41,22 +41,15 @@ func set_text_for_key() -> void:
 	var action_events = InputMap.action_get_events(action_name)
 	
 	for action_event in action_events:
+		var input_name = get_input_name(action_event)
+		
+		print("Setting " + input_name)
 		# Keyboard
 		if (action_event is InputEventKey):
-			var keyboard_action_keycode = OS.get_keycode_string(action_event.physical_keycode)
-			keyboard_button.text = keyboard_action_keycode
-		
-		# Controllers have 2 types, button and motion (for joysticks)
-		# Controller Button
-		elif (action_event is InputEventJoypadButton):
-			var controller_button_index = action_event.button_index
-			controller_button.text = get_controller_input_name(controller_button_index)
-		
-		# Controller Joystick
-		elif (action_event is InputEventJoypadMotion):
-			var controller_joystick_axis = action_event.axis
-			var controller_joystick_axis_value = action_event.axis_value
-			controller_button.text = get_controller_joystick_input(controller_joystick_axis, controller_joystick_axis_value)
+			keyboard_button.text = input_name
+		# Controller
+		elif (is_controller_input(action_event.get_class())):
+			controller_button.text = input_name
 
 # We should use icons for controller input, I put text for now
 # PLACEHOLDER TEXT
@@ -246,18 +239,8 @@ func is_controller_input(name: String) -> bool:
 	return false
 
 func check_if_unique_binding(input_event: InputEvent) -> bool:
-	var input_name
+	var input_name = get_input_name(input_event)
 	
-	if (input_event is InputEventKey):
-		input_name = OS.get_keycode_string(input_event.physical_keycode)
-	elif (input_event is InputEventJoypadButton):
-		var controller_button_index = input_event.button_index
-		input_name = get_controller_input_name(controller_button_index)
-	elif (input_event is InputEventJoypadMotion):
-		var controller_joystick_axis = input_event.axis
-		var controller_joystick_axis_value = input_event.axis_value
-		input_name = get_controller_joystick_input(controller_joystick_axis, controller_joystick_axis_value)
-
 	for action in InputMap.get_actions():
 		
 		# Only check our custom actions
@@ -269,7 +252,21 @@ func check_if_unique_binding(input_event: InputEvent) -> bool:
 		# If this binding is being used for another action, don't set it to this one
 		for event in events:
 	
-			if event.as_text().replace(" (Physical)", "") == input_name:
+			if get_input_name(event).replace(" (Physical)", "") == input_name:
 				return false
 				
 	return true
+
+func get_input_name(input_event: InputEvent) -> String:
+	# Keyboard
+	if (input_event is InputEventKey):
+		return OS.get_keycode_string(input_event.physical_keycode)
+	# Controllers have 2 types, button and motion (for joysticks)
+	# Controller Button
+	elif (input_event is InputEventJoypadButton):
+		return get_controller_input_name(input_event.button_index)
+	# Controller Joystick
+	elif (input_event is InputEventJoypadMotion):
+		return get_controller_joystick_input(input_event.axis, input_event.axis_value)
+	
+	return ""
