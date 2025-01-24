@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvs1ngvopaou6"]
+
+[ext_resource type="Script" path="res://src/main/save_game_example/example_save_level_1.gd" id="1_p6qim"]
+[ext_resource type="PackedScene" uid="uid://di1065aj0lcwn" path="res://src/main/save_game_example/example_save_player.tscn" id="2_81oy5"]
+[ext_resource type="Script" path="res://src/resources/save_node.gd" id="3_ahj1c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrg5g"]
+size = Vector2(2127, 326)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ceka"]
+size = Vector2(139.47, 241)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsykh"]
+size = Vector2(204, 13)
+
+[node name="level_1" type="Node2D" node_paths=PackedStringArray("save")]
+script = ExtResource("1_p6qim")
+save = NodePath("save")
+
+[node name="Player" parent="." instance=ExtResource("2_81oy5")]
+position = Vector2(534, 320)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1010.5, 1012)
+shape = SubResource("RectangleShape2D_hrg5g")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/CollisionShape2D"]
+offset_left = -1070.0
+offset_top = -166.0
+offset_right = 1117.0
+offset_bottom = 232.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(955, 544)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 288.0
+offset_top = 126.0
+offset_right = 406.0
+offset_bottom = 408.0
+theme_override_font_sizes/font_size = 206
+text = "1"
+
+[node name="next area" type="Area2D" parent="."]
+position = Vector2(1632, 595)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="next area"]
+position = Vector2(60, 110.5)
+shape = SubResource("RectangleShape2D_7ceka")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="next area"]
+offset_right = 132.0
+offset_bottom = 242.0
+
+[node name="puzzle" type="Area2D" parent="."]
+position = Vector2(742, 595)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle"]
+position = Vector2(64, 224.5)
+shape = SubResource("RectangleShape2D_gsykh")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="puzzle"]
+visible = false
+offset_left = -699.0
+offset_top = -30.0
+offset_right = -478.0
+offset_bottom = 249.0
+
+[node name="ColorRect2" type="ColorRect" parent="puzzle"]
+offset_left = -47.0
+offset_top = 224.0
+offset_right = 174.0
+offset_bottom = 245.0
+color = Color(0.485703, 0.485704, 0.485703, 1)
+
+[node name="save" type="Node" parent="." node_paths=PackedStringArray("player", "game_level")]
+script = ExtResource("3_ahj1c")
+player = NodePath("../Player")
+game_level = NodePath("..")
+
+[connection signal="body_entered" from="next area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="puzzle" to="." method="_on_area_2d_2_body_entered"]

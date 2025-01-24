@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr1yvwlxo3hlh"]
+
+[ext_resource type="Script" path="res://src/main/save_game_example/example_save_level_2.gd" id="1_kjfi2"]
+[ext_resource type="PackedScene" uid="uid://di1065aj0lcwn" path="res://src/main/save_game_example/example_save_player.tscn" id="2_1ij1j"]
+[ext_resource type="Script" path="res://src/resources/save_node.gd" id="3_ght6u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrg5g"]
+size = Vector2(2127, 326)
+
+[node name="level_2" type="Node2D" node_paths=PackedStringArray("save")]
+script = ExtResource("1_kjfi2")
+save = NodePath("save")
+
+[node name="Player" parent="." instance=ExtResource("2_1ij1j")]
+position = Vector2(259, 776)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1010.5, 1012)
+shape = SubResource("RectangleShape2D_hrg5g")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/CollisionShape2D"]
+offset_left = -1070.0
+offset_top = -166.0
+offset_right = 1117.0
+offset_bottom = 232.0
+color = Color(0.184314, 1, 1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(955, 544)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 288.0
+offset_top = 126.0
+offset_right = 406.0
+offset_bottom = 408.0
+theme_override_font_sizes/font_size = 206
+text = "2"
+
+[node name="save" type="Node" parent="." node_paths=PackedStringArray("player", "game_level")]
+script = ExtResource("3_ght6u")
+player = NodePath("../Player")
+game_level = NodePath("..")
