@@ -1,15 +1,15 @@
 extends Node
-
 #const
 const PATH = "res://src/Dialogue/Dialogue Template.json"
 #vars
+@export var test_text_boxes : Array[TextBox]
 var index : int = 0
 var dialogue = {}
 
 var start_id : int = 0
 var end_id : int = 0
-var text_boxes : Array[dialogue_subject]
-@export var test_text_boxes : Array[dialogue_subject]
+var text_boxes : Array[TextBox]
+
 
 func _ready() -> void: #testing in ready can be removed
 	_import_dialogue_data()
@@ -27,12 +27,12 @@ func _import_dialogue_data() -> void: #import and convert JSON to string diction
 	dialogue = JSON.parse_string(file) #dictionary with data
 
 
-func _load_dialogue(new_start_id : int, new_end_id : int, new_text_boxes : Array[dialogue_subject]): #initial method to load a dialogue between textboxes
+func _load_dialogue(new_start_id : int, new_end_id : int, new_text_boxes : Array[TextBox]): #initial method to load a dialogue between textboxes
 			start_id = new_start_id
 			end_id = new_end_id
 			index = start_id
 			text_boxes = new_text_boxes
-			_adjust_dialogue() 
+			_adjust_dialogue()
 
 
 func _adjust_dialogue(): #switch to next line

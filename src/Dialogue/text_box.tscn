@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dj01meo52q8ey"]
 
-[ext_resource type="Script" path="res://src/Dialogue/dialogue_subject.gd" id="1_bni1x"]
+[ext_resource type="Script" path="res://src/Dialogue/text_box.gd" id="1_bni1x"]
 [ext_resource type="Texture2D" uid="uid://dqf5468vy12h3" path="res://src/Dialogue/placeholder.png" id="2_qdbo7"]
 
 [node name="TextBox" type="MarginContainer"]

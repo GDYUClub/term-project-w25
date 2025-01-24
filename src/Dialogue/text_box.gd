@@ -1,16 +1,15 @@
+class_name TextBox
 extends MarginContainer
-class_name dialogue_subject
-#onready
-@onready var label: Label = $MarginContainer/Label
-@onready var display_timer: Timer = $DisplayTimer
+
 #const
 const MAX_WIDTH = 256
 #var
 var current_text : String = ""
 var letter_index : int = 0
-
 var letter_time : float = 0.03
 
+@onready var label: Label = $MarginContainer/Label
+@onready var display_timer: Timer = $DisplayTimer
 
 func _display_text(text: String): # takes in text string and will turn on autowrap if its larger then our MAX_WIDTH const
 	letter_index = 0
@@ -27,7 +26,6 @@ func _display_text(text: String): # takes in text string and will turn on autowr
 	_display_letter()
 
 func _display_letter(): # scrolls each letter until the end is reached where it will signal
-	
 	if letter_index < current_text.length():
 		label.text += current_text[letter_index]
 		letter_index += 1
