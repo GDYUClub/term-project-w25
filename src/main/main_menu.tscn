@@ -135,3 +135,156 @@ layout_mode = 1
 [node name="CreditsMenu" parent="." instance=ExtResource("4_7gfv7")]
 visible = false
 layout_mode = 1
+
+[node name="SettingMenuv2" type="Popup" parent="."]
+size = Vector2i(1920, 1080)
+min_size = Vector2i(1920, 1080)
+max_size = Vector2i(1920, 1080)
+
+[node name="ColorRect" type="ColorRect" parent="SettingMenuv2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 900.0
+offset_bottom = 900.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.162066, 0.162066, 0.162066, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="SettingMenuv2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 825.0
+offset_top = 90.0
+offset_right = 825.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 80
+text = "Settings"
+
+[node name="SettingMenu" type="VBoxContainer" parent="SettingMenuv2"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -360.5
+offset_top = 250.0
+offset_right = 360.5
+offset_bottom = 313.0
+grow_horizontal = 2
+theme_override_constants/separation = 50
+
+[node name="ButtonBox" type="HBoxContainer" parent="SettingMenuv2/SettingMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 100
+
+[node name="Video" type="Button" parent="SettingMenuv2/SettingMenu/ButtonBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Video
+"
+
+[node name="Control" type="Button" parent="SettingMenuv2/SettingMenu/ButtonBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Control"
+
+[node name="Audio" type="Button" parent="SettingMenuv2/SettingMenu/ButtonBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Audio
+"
+
+[node name="Accessibility" type="Button" parent="SettingMenuv2/SettingMenu/ButtonBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Accessibility"
+
+[node name="SettingContainer" type="VBoxContainer" parent="SettingMenuv2/SettingMenu"]
+layout_mode = 2
+
+[node name="VideoSetting" type="GridContainer" parent="SettingMenuv2/SettingMenu/SettingContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 20
+
+[node name="Vsync" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/VideoSetting"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Vsync"
+
+[node name="Vsync2" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/VideoSetting"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Vsync"
+
+[node name="Vsync3" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/VideoSetting"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Vsync"
+
+[node name="ControlSetting" type="GridContainer" parent="SettingMenuv2/SettingMenu/SettingContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/v_separation = 20
+
+[node name="Vsync" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/ControlSetting"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "askdjalsd"
+
+[node name="Vsync2" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/ControlSetting"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Vsyncasdkmanslkdj"
+
+[node name="Vsync3" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/ControlSetting"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Vsyncaskdjalskdjalsjdas"
+
+[node name="AudioSetting" type="GridContainer" parent="SettingMenuv2/SettingMenu/SettingContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/v_separation = 20
+
+[node name="Vsync" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/AudioSetting"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Volume"
+
+[node name="Vsync2" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/AudioSetting"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Master Volume"
+
+[node name="Vsync3" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/AudioSetting"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Random Volume
+"
+
+[node name="AcessibilitySetting" type="GridContainer" parent="SettingMenuv2/SettingMenu/SettingContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/v_separation = 20
+
+[node name="Vsync" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/AcessibilitySetting"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Colour Blindness"
+
+[node name="Vsync2" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/AcessibilitySetting"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "aslkhdlkajdk"
+
+[node name="Vsync3" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/AcessibilitySetting"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "idk
+"
