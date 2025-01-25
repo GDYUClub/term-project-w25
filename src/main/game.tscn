@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://dugjot3k3j7p6"]
 
-[ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://scenes/player.tscn" id="1_utvwk"]
-[ext_resource type="Script" path="res://scenes/player.gd" id="2_j4l4x"]
-[ext_resource type="PackedScene" uid="uid://b62wwooblkw8k" path="res://scenes/ladder_placeholder.tscn" id="3_fp6t4"]
+[ext_resource type="PackedScene" uid="uid://b62wwooblkw8k" path="res://src/ladder/scene/ladder_placeholder.tscn" id="1_xdt13"]
+[ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="2_ltdrh"]
+[ext_resource type="Script" path="res://src/player/code/player.gd" id="3_nq38v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xe6wd"]
 size = Vector2(143, 4)
@@ -19,12 +19,13 @@ size = Vector2(143, 4)
 position = Vector2(241, 222)
 zoom = Vector2(4, 4)
 
-[node name="Area2D" parent="." instance=ExtResource("3_fp6t4")]
+[node name="Area2D" parent="." instance=ExtResource("1_xdt13")]
 position = Vector2(275, 262)
 
-[node name="Player" parent="." instance=ExtResource("1_utvwk")]
+[node name="Player" parent="." instance=ExtResource("2_ltdrh")]
 position = Vector2(241, 222)
-script = ExtResource("2_j4l4x")
+script = ExtResource("3_nq38v")
+move_type = 1
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(214, 259)
