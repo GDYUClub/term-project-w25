@@ -12,10 +12,22 @@ extends Control
 	#levels and menus
 @onready var start_level = preload("res://src/main/main.tscn") # preload the main scene and stor in memory
 @onready var main_menu_margin_container = $MainMenu as MarginContainer
-@onready var credits_menu = $CreditsMenu as CreditsMenuScreen
 
+	#credits menu
+@onready var credits_menu = $CreditsMenuv2
+@onready var programming_credits = $CreditsMenuv2/CreditsMenu/CreditsContainer/Programming
+@onready var art_ui_credits = $CreditsMenuv2/CreditsMenu/CreditsContainer/Art_UI
+@onready var writing_credits = $CreditsMenuv2/CreditsMenu/CreditsContainer/Writing
+@onready var sound_design_credits = $CreditsMenuv2/CreditsMenu/CreditsContainer/Sound_Design
+@onready var qa_credits = $CreditsMenuv2/CreditsMenu/CreditsContainer/QA
+@onready var programming_button = $CreditsMenuv2/CreditsMenu/ButtonBox/Programming
+@onready var art_ui_button = $CreditsMenuv2/CreditsMenu/ButtonBox/Art_UI
+@onready var writing_button = $CreditsMenuv2/CreditsMenu/ButtonBox/Writing
+@onready var sound_design_button = $CreditsMenuv2/CreditsMenu/ButtonBox/Sound_Design
+@onready var qa_button = $CreditsMenuv2/CreditsMenu/ButtonBox/QA
+@onready var credit_quit_button = $CreditsMenuv2/CreditsMenu/QuitButton
 
-	#setting Menu
+	#setting menu
 @onready var setting_menu = $SettingMenuv2
 @onready var video_setting = $SettingMenuv2/SettingMenu/SettingContainer/VideoSetting
 @onready var control_setting = $SettingMenuv2/SettingMenu/SettingContainer/ControlSetting
@@ -25,7 +37,7 @@ extends Control
 @onready var control_button = $SettingMenuv2/SettingMenu/ButtonBox/Control
 @onready var audio_button = $SettingMenuv2/SettingMenu/ButtonBox/Audio
 @onready var acessibility_button = $SettingMenuv2/SettingMenu/ButtonBox/Accessibility
-
+@onready var setting_quit_button = $SettingMenuv2/SettingMenu/QuitButton
 
 
 # HANDLE CONNECTION
@@ -38,12 +50,21 @@ func handle_connecting_signals() -> void:
 	setting_button.button_down.connect(on_setting_down)
 	credits_button.button_down.connect(on_credits_down)
 	quit_button.button_down.connect(on_quit_down)
-	credits_menu.quit_credits_menu	.connect(on_quit_credits_menu)
+	
+	#credits
+	programming_button.button_down.connect(_on_programming_credits_pressed)
+	art_ui_button.button_down.connect(_on_art_ui_credits_pressed)
+	writing_button.button_down.connect(_on_writing_credits_pressed)
+	sound_design_button.button_down.connect(_on_sound_design_credits_pressed)
+	qa_button.button_down.connect(_on_qa_credits_pressed)
+	credit_quit_button.button_down.connect(_on_credits_quit_pressed)
+	
 	#setting
 	video_button.button_down.connect(_on_video_setting_pressed)
 	control_button.button_down.connect(_on_control_setting_pressed)
 	audio_button.button_down.connect(_on_audio_setting_pressed)
 	acessibility_button.button_down.connect(_on_acessibility_setting_pressed)
+	setting_quit_button.button_down.connect(_on_setting_quit_pressed)
 
 
 
@@ -56,26 +77,54 @@ func on_quit_down() -> void:
 
 
 ## ALL CREDIT MENU FUCNTION
+## ALL CREDIT MENU FUCNTION
 func on_credits_down() -> void:
-	main_menu_margin_container.visible = false;
-	credits_menu.set_process(true)
-	credits_menu.visible = true;
-	$CreditsMenu/CreditsMenuMargin/CreditsTitleBox/QuitButton.grab_focus()
-func on_quit_credits_menu() -> void:
-	main_menu_margin_container.visible = true;
-	credits_menu.visible = false;
-	$MainMenu/ButtonBox/VerticalButtonBox/CreditsButton.grab_focus()
+	credits_menu.popup_centered()
+	hide_credits()
+	programming_credits.show()
+	$CreditsMenuv2/CreditsMenu/ButtonBox/Programming.grab_focus()
 	
+func hide_credits():
+	programming_credits.hide()
+	art_ui_credits.hide()
+	writing_credits.hide()
+	sound_design_credits.hide()
+	qa_credits.hide()
+	
+func _on_programming_credits_pressed():
+	hide_credits()
+	programming_credits.show()
+func _on_art_ui_credits_pressed():
+	hide_credits()
+	art_ui_credits.show()
+func _on_writing_credits_pressed():
+	hide_credits()
+	writing_credits.show()
+func _on_sound_design_credits_pressed():
+	hide_credits()
+	sound_design_credits.show()
+func _on_qa_credits_pressed():
+	hide_credits()
+	qa_credits.show()
+func _on_credits_quit_pressed():
+	hide_credits()
+	credits_menu.hide()
+	
+	
+
+	
+	
+## ALL SETTING MENU FUNCTION
 ## ALL SETTING MENU FUNCTION
 func on_quit_setting_menu() -> void:
 	main_menu_margin_container.visible = true;
 	setting_menu.visible = false;
-	$MainMenu/ButtonBox/VerticalButtonBox/SettingButton.grab_focus()
 	
 func on_setting_down() -> void:
 	setting_menu.popup_centered()
 	hide_settings()
 	video_setting.show()
+	$SettingMenuv2/SettingMenu/ButtonBox/Video.grab_focus()
 	
 func hide_settings():
 	video_setting.hide()
@@ -95,4 +144,8 @@ func _on_audio_setting_pressed():
 func _on_acessibility_setting_pressed():
 	hide_settings()
 	acessbility_setting.show()
+func _on_setting_quit_pressed():
+	hide_settings()
+	setting_menu.hide()
+	
 	
