@@ -4,15 +4,17 @@ extends Control
 @onready var label: Label = $HBoxContainer/Label as Label
 @onready var keyboard_button: Button = $HBoxContainer/Keyboard as Button
 @onready var controller_button: Button = $HBoxContainer/Controller as Button
+@onready var controller_sprite_2d: Sprite2D = $HBoxContainer/Controller/Sprite2D as Sprite2D
 
 # This has to be assigned in the editor
 # The name of the action has to match its name in InputMap
 @export var action_name : String = ""
+@export var xbox_icons_array: Array[Texture2D] = []
 
 func _ready():
 	# Initializes the action name and the buttons
 	set_action_name()
-	set_text_for_key()
+	set_display_for_key()
 
 func set_action_name() -> void:
 	label.text = "Unassigned"
@@ -35,86 +37,97 @@ func set_action_name() -> void:
 		"interact":
 			label.text = "Interact"
 
-func set_text_for_key() -> void:
+func set_display_for_key() -> void:
 	# Update both buttons by converting the keycodes, button index or axis
 	# into a string that the user can understand
 	var action_events = InputMap.action_get_events(action_name)
 	
 	for action_event in action_events:
-		var input_name = get_input_name(action_event)
+		var input_display = get_input_name(action_event)
 		
-		print("Setting " + input_name)
 		# Keyboard
 		if (action_event is InputEventKey):
-			keyboard_button.text = input_name
+			keyboard_button.text = input_display
 		# Controller
 		elif (is_controller_input(action_event.get_class())):
-			controller_button.text = input_name
+			controller_sprite_2d.texture = input_display
 
-# We should use icons for controller input, I put text for now
-# PLACEHOLDER TEXT
-func get_controller_input_name(button_index: int) -> String:
+# Variant return type lets you return a String (for keyboard) or a Texture2D (for controller)
+func get_input_name(input_event: InputEvent) -> Variant:
+	# Keyboard
+	if (input_event is InputEventKey):
+		return OS.get_keycode_string(input_event.physical_keycode)
+	# Controllers have 2 types, button and motion (for joysticks)
+	# Controller Button
+	elif (input_event is InputEventJoypadButton):
+		return get_controller_button_input(input_event.button_index)
+	# Controller Joystick
+	elif (input_event is InputEventJoypadMotion):
+		return get_controller_joystick_input(input_event.axis, input_event.axis_value)
+	
+	return ""
+
+func get_controller_button_input(button_index: int) -> Texture2D:
 	match button_index:
 		0:
-			return "A"
+			return xbox_icons_array[0]
 		1:
-			return "B"
+			return xbox_icons_array[1]
 		2:
-			return "X"
+			return xbox_icons_array[2]
 		3:
-			return "Y"
+			return xbox_icons_array[3]
 		4:
-			return "View"
+			return xbox_icons_array[4]
 		5:
-			return "Xbox"
+			return xbox_icons_array[5]
 		6:
-			return "Menu"
+			return xbox_icons_array[6]
 		7:
-			return "LSB"
+			return xbox_icons_array[7]
 		8:
-			return "RSB"
+			return xbox_icons_array[8]
 		9:
-			return "LB"
+			return xbox_icons_array[9]
 		10:
-			return "RB" 
+			return xbox_icons_array[10]
 		11:
-			return "D-PAD Up" 
+			return xbox_icons_array[11]
 		12:
-			return "D-PAD Down"
+			return xbox_icons_array[12]
 		13: 
-			return "D-PAD Left"
+			return xbox_icons_array[13]
 		14:
-			return "D-Pad Right"
+			return xbox_icons_array[14]
 		_:
-			return "Unassigned"
-	
-# PLACEHOLDER TEXT
-func get_controller_joystick_input(axis: int, axis_value: float) -> String:
+			return xbox_icons_array[25]
+
+func get_controller_joystick_input(axis: int, axis_value: float) -> Texture2D:
 	
 	if axis == 4:
-		return "LT"
+		return xbox_icons_array[15]
 	elif axis == 5:
-		return "RT"
+		return xbox_icons_array[16]
 	elif axis_value < 0:
 		if axis == 0:
-			return "LS LEFT"
+			return xbox_icons_array[17]
 		elif axis == 1:
-			return "LS UP"
+			return xbox_icons_array[18]
 		elif axis == 2:
-			return "RS LEFT"
+			return xbox_icons_array[19]
 		elif axis == 3:
-			return "RS UP"
+			return xbox_icons_array[20]
 	elif axis_value > 0:
 		if axis == 0:
-			return "LS RIGHT"
+			return xbox_icons_array[21]
 		elif axis == 1:
-			return "LS DOWN"
+			return xbox_icons_array[22]
 		elif axis == 2:
-			return "RS RIGHT"
+			return xbox_icons_array[23]
 		elif axis == 3:
-			return "RS DOWN"
+			return xbox_icons_array[24]
 	
-	return "Unassigned"
+	return xbox_icons_array[25]
 
 func _on_keyboard_toggled(toggled_on: bool) -> void:
 	
@@ -138,13 +151,14 @@ func _on_keyboard_toggled(toggled_on: bool) -> void:
 				i.keyboard_button.toggle_mode = true
 
 		# Update to the new binding
-		set_text_for_key()
+		set_display_for_key()
 
 func _on_controller_toggled(toggled_on: bool) -> void:
 	
 	# If the button is click then the player can rebind this action
 	if toggled_on:
 		controller_button.text = "Press any key..."
+		controller_sprite_2d.texture = null
 
 		# Make all other buttons unselectable while rebinding
 		for i in get_tree().get_nodes_in_group("rebind_button"):
@@ -161,8 +175,9 @@ func _on_controller_toggled(toggled_on: bool) -> void:
 			if i.action_name != self.action_name:
 				i.controller_button.toggle_mode = true
 
+		controller_button.text = ""
 		# Update to the new binding
-		set_text_for_key()
+		set_display_for_key()
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	
@@ -231,15 +246,11 @@ func rebind_action_key(event: InputEvent) -> void:
 	InputMap.action_add_event(action_name, event)
 
 func is_controller_input(name: String) -> bool:
-	
 	# Inputs from the controller are of these 2 types
-	if (name == "InputEventJoypadButton" or name == "InputEventJoypadMotion"):
-		return true
-	
-	return false
+	return (name == "InputEventJoypadButton" or name == "InputEventJoypadMotion")
 
 func check_if_unique_binding(input_event: InputEvent) -> bool:
-	var input_name = get_input_name(input_event)
+	var input_display = get_input_name(input_event)
 	
 	for action in InputMap.get_actions():
 		
@@ -251,22 +262,17 @@ func check_if_unique_binding(input_event: InputEvent) -> bool:
 		
 		# If this binding is being used for another action, don't set it to this one
 		for event in events:
-	
-			if get_input_name(event).replace(" (Physical)", "") == input_name:
+			
+			var this_event_name = get_input_name(event)
+			
+			if typeof(input_display) != typeof(this_event_name):
+				continue
+			
+			# If a string, then remove (Physical) in case it's part of the name
+			if this_event_name is String and this_event_name.replace(" (Physical)", "") == input_display:
+				return false
+			# If a Texture2D, compare them directly
+			elif input_display == this_event_name:
 				return false
 				
 	return true
-
-func get_input_name(input_event: InputEvent) -> String:
-	# Keyboard
-	if (input_event is InputEventKey):
-		return OS.get_keycode_string(input_event.physical_keycode)
-	# Controllers have 2 types, button and motion (for joysticks)
-	# Controller Button
-	elif (input_event is InputEventJoypadButton):
-		return get_controller_input_name(input_event.button_index)
-	# Controller Joystick
-	elif (input_event is InputEventJoypadMotion):
-		return get_controller_joystick_input(input_event.axis, input_event.axis_value)
-	
-	return ""
