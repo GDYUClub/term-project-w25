@@ -1,7 +1,10 @@
 class_name SaveGame
 extends Resource
 
-const SAVE_GAME_PATH = "res://src/resources/saveFile.tres" # CHANGE 'res' TO 'user' WHEN EXPORTING
+static var resFilePath = "res://src/resources/saveFile.tres"
+static var resUserPath = "user://src/resources/saveFile.tres"
+
+static var SAVE_GAME_PATH = resUserPath if Engine.is_editor_hint() else resFilePath
 
 # VARIABLES THAT NEED TO BE SAVED
 @export var position = Vector2.ZERO
