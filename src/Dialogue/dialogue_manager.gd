@@ -4,7 +4,7 @@ extends Node
 const PATH = "res://src/Dialogue/Dialogue Template.json"
 #vars
 var index : int = 0
-var dialogue = {}
+var dialogue : Dictionary = {}
 
 var start_id : int = 0
 var end_id : int = 0
@@ -39,7 +39,7 @@ func adjust_dialogue(): #switch to next line
 	text_boxes[index - 1].reset_box()
 	if(dialogue.size() > 0 && index < end_id):
 		text_boxes[index].visible = true
-		text_boxes[index].display_text(dialogue[str(index)]["FRENCH"])
+		text_boxes[index].display_text(dialogue[str(index)]["ENGLISH"])
 		index += 1
 		print("DEBUG: dialogue.size: " + str(dialogue.size()) + " index: " + str(index) + " end_id: " + str(4))
 		print("text loaded")
