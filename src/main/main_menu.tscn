@@ -135,12 +135,12 @@ theme_override_font_sizes/font_size = 41
 text = "Quit
 "
 
-[node name="SettingMenuv2" type="Popup" parent="."]
+[node name="SettingsMenuv2" type="Popup" parent="."]
 size = Vector2i(1920, 1080)
 min_size = Vector2i(1920, 1080)
 max_size = Vector2i(1920, 1080)
 
-[node name="Background" type="ColorRect" parent="SettingMenuv2"]
+[node name="Background" type="ColorRect" parent="SettingsMenuv2"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -151,7 +151,7 @@ grow_vertical = 2
 color = Color(0.162066, 0.162066, 0.162066, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="SettingsText" type="Label" parent="SettingMenuv2"]
+[node name="SettingsText" type="Label" parent="SettingsMenuv2"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -165,7 +165,7 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 80
 text = "Settings"
 
-[node name="SettingMenu" type="VBoxContainer" parent="SettingMenuv2"]
+[node name="SettingsMenu" type="VBoxContainer" parent="SettingsMenuv2"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -176,123 +176,123 @@ offset_bottom = 313.0
 grow_horizontal = 2
 theme_override_constants/separation = 50
 
-[node name="ButtonBox" type="HBoxContainer" parent="SettingMenuv2/SettingMenu"]
+[node name="ButtonBox" type="HBoxContainer" parent="SettingsMenuv2/SettingsMenu"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/separation = 100
 
-[node name="Video" type="Button" parent="SettingMenuv2/SettingMenu/ButtonBox"]
+[node name="Video" type="Button" parent="SettingsMenuv2/SettingsMenu/ButtonBox"]
 layout_mode = 2
 theme_override_colors/font_focus_color = Color(0.993319, 0.595872, 0.694083, 1)
 theme_override_font_sizes/font_size = 40
 text = "Video
 "
 
-[node name="Control" type="Button" parent="SettingMenuv2/SettingMenu/ButtonBox"]
+[node name="Control" type="Button" parent="SettingsMenuv2/SettingsMenu/ButtonBox"]
 layout_mode = 2
 theme_override_colors/font_focus_color = Color(0.993319, 0.595872, 0.694083, 1)
 theme_override_font_sizes/font_size = 40
 text = "Control"
 
-[node name="Audio" type="Button" parent="SettingMenuv2/SettingMenu/ButtonBox"]
+[node name="Audio" type="Button" parent="SettingsMenuv2/SettingsMenu/ButtonBox"]
 layout_mode = 2
 theme_override_colors/font_focus_color = Color(0.993319, 0.595872, 0.694083, 1)
 theme_override_font_sizes/font_size = 40
 text = "Audio
 "
 
-[node name="Accessibility" type="Button" parent="SettingMenuv2/SettingMenu/ButtonBox"]
+[node name="Accessibility" type="Button" parent="SettingsMenuv2/SettingsMenu/ButtonBox"]
 layout_mode = 2
 theme_override_colors/font_focus_color = Color(0.993319, 0.595872, 0.694083, 1)
 theme_override_font_sizes/font_size = 40
 text = "Accessibility"
 
-[node name="SettingContainer" type="VBoxContainer" parent="SettingMenuv2/SettingMenu"]
+[node name="SettingsContainer" type="VBoxContainer" parent="SettingsMenuv2/SettingsMenu"]
 layout_mode = 2
 
-[node name="VideoSetting" type="GridContainer" parent="SettingMenuv2/SettingMenu/SettingContainer"]
+[node name="VideoSettings" type="GridContainer" parent="SettingsMenuv2/SettingsMenu/SettingsContainer"]
 layout_mode = 2
 theme_override_constants/v_separation = 20
 
-[node name="Vsync" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/VideoSetting"]
+[node name="Vsync" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/VideoSettings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Vsync"
 
-[node name="Vsync2" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/VideoSetting"]
+[node name="Vsync2" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/VideoSettings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Vsync"
 
-[node name="Vsync3" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/VideoSetting"]
+[node name="Vsync3" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/VideoSettings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Vsync"
 
-[node name="ControlSetting" type="GridContainer" parent="SettingMenuv2/SettingMenu/SettingContainer"]
+[node name="ControlSettings" type="GridContainer" parent="SettingsMenuv2/SettingsMenu/SettingsContainer"]
 visible = false
 layout_mode = 2
 theme_override_constants/v_separation = 20
 
-[node name="Vsync" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/ControlSetting"]
+[node name="Vsync" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/ControlSettings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "askdjalsd"
 
-[node name="Vsync2" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/ControlSetting"]
+[node name="Vsync2" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/ControlSettings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Vsyncasdkmanslkdj"
 
-[node name="Vsync3" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/ControlSetting"]
+[node name="Vsync3" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/ControlSettings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Vsyncaskdjalskdjalsjdas"
 
-[node name="AudioSetting" type="GridContainer" parent="SettingMenuv2/SettingMenu/SettingContainer"]
+[node name="AudioSettings" type="GridContainer" parent="SettingsMenuv2/SettingsMenu/SettingsContainer"]
 visible = false
 layout_mode = 2
 theme_override_constants/v_separation = 20
 
-[node name="Vsync" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/AudioSetting"]
+[node name="Vsync" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/AudioSettings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Volume"
 
-[node name="Vsync2" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/AudioSetting"]
+[node name="Vsync2" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/AudioSettings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Master Volume"
 
-[node name="Vsync3" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/AudioSetting"]
+[node name="Vsync3" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/AudioSettings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Random Volume
 "
 
-[node name="AcessibilitySetting" type="GridContainer" parent="SettingMenuv2/SettingMenu/SettingContainer"]
+[node name="AcessibilitySettings" type="GridContainer" parent="SettingsMenuv2/SettingsMenu/SettingsContainer"]
 visible = false
 layout_mode = 2
 theme_override_constants/v_separation = 20
 
-[node name="Vsync" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/AcessibilitySetting"]
+[node name="Vsync" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/AcessibilitySettings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Colour Blindness"
 
-[node name="Vsync2" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/AcessibilitySetting"]
+[node name="Vsync2" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/AcessibilitySettings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "aslkhdlkajdk"
 
-[node name="Vsync3" type="Label" parent="SettingMenuv2/SettingMenu/SettingContainer/AcessibilitySetting"]
+[node name="Vsync3" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/AcessibilitySettings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "idk
 "
 
-[node name="QuitButton" type="Button" parent="SettingMenuv2/SettingMenu"]
+[node name="QuitButton" type="Button" parent="SettingsMenuv2/SettingsMenu"]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_colors/font_focus_color = Color(0.992157, 0.596078, 0.694118, 1)

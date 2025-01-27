@@ -5,7 +5,7 @@ extends Control
 	#buttons
 @onready var start_button = $MainMenu/ButtonBox/VerticalButtonBox/GameStartButton as Button
 @onready var load_button = $MainMenu/ButtonBox/VerticalButtonBox/LoadGameButton as Button
-@onready var setting_button = $MainMenu/ButtonBox/VerticalButtonBox/SettingButton as Button 
+@onready var settings_button = $MainMenu/ButtonBox/VerticalButtonBox/SettingButton as Button 
 @onready var credits_button = $MainMenu/ButtonBox/VerticalButtonBox/CreditsButton as Button
 @onready var quit_button = $MainMenu/ButtonBox/VerticalButtonBox/QuitButton as Button
 
@@ -25,19 +25,19 @@ extends Control
 @onready var writing_button = $CreditsMenuv2/CreditsMenu/ButtonBox/Writing
 @onready var sound_design_button = $CreditsMenuv2/CreditsMenu/ButtonBox/Sound_Design
 @onready var qa_button = $CreditsMenuv2/CreditsMenu/ButtonBox/QA
-@onready var credit_quit_button = $CreditsMenuv2/CreditsMenu/QuitButton
+@onready var credits_quit_button = $CreditsMenuv2/CreditsMenu/QuitButton
 
 	#setting menu
-@onready var setting_menu = $SettingMenuv2
-@onready var video_setting = $SettingMenuv2/SettingMenu/SettingContainer/VideoSetting
-@onready var control_setting = $SettingMenuv2/SettingMenu/SettingContainer/ControlSetting
-@onready var audio_setting = $SettingMenuv2/SettingMenu/SettingContainer/AudioSetting
-@onready var acessbility_setting = $SettingMenuv2/SettingMenu/SettingContainer/AcessibilitySetting
-@onready var video_button = $SettingMenuv2/SettingMenu/ButtonBox/Video
-@onready var control_button = $SettingMenuv2/SettingMenu/ButtonBox/Control
-@onready var audio_button = $SettingMenuv2/SettingMenu/ButtonBox/Audio
-@onready var acessibility_button = $SettingMenuv2/SettingMenu/ButtonBox/Accessibility
-@onready var setting_quit_button = $SettingMenuv2/SettingMenu/QuitButton
+@onready var settings_menu = $SettingsMenuv2
+@onready var video_settings = $SettingsMenuv2/SettingsMenu/SettingsContainer/VideoSettings
+@onready var control_settings = $SettingsMenuv2/SettingsMenu/SettingsContainer/ControlSettings
+@onready var audio_settings = $SettingsMenuv2/SettingsMenu/SettingsContainer/AudioSettings
+@onready var acessbility_settings = $SettingsMenuv2/SettingsMenu/SettingsContainer/AcessibilitySettings
+@onready var video_button = $SettingsMenuv2/SettingsMenu/ButtonBox/Video
+@onready var control_button = $SettingsMenuv2/SettingsMenu/ButtonBox/Control
+@onready var audio_button = $SettingsMenuv2/SettingsMenu/ButtonBox/Audio
+@onready var acessibility_button = $SettingsMenuv2/SettingsMenu/ButtonBox/Accessibility
+@onready var settings_quit_button = $SettingsMenuv2/SettingsMenu/QuitButton
 
 
 # HANDLE CONNECTION
@@ -47,7 +47,7 @@ func _ready():
 	
 func handle_connecting_signals() -> void:
 	start_button.button_down.connect(on_start_down)
-	setting_button.button_down.connect(on_setting_down)
+	settings_button.button_down.connect(on_settings_down)
 	credits_button.button_down.connect(on_credits_down)
 	quit_button.button_down.connect(on_quit_down)
 	
@@ -57,15 +57,14 @@ func handle_connecting_signals() -> void:
 	writing_button.button_down.connect(_on_writing_credits_pressed)
 	sound_design_button.button_down.connect(_on_sound_design_credits_pressed)
 	qa_button.button_down.connect(_on_qa_credits_pressed)
-	credit_quit_button.button_down.connect(_on_credits_quit_pressed)
+	credits_quit_button.button_down.connect(_on_credits_quit_pressed)
 	
-	#setting
-	video_button.button_down.connect(_on_video_setting_pressed)
-	control_button.button_down.connect(_on_control_setting_pressed)
-	audio_button.button_down.connect(_on_audio_setting_pressed)
-	acessibility_button.button_down.connect(_on_acessibility_setting_pressed)
-	setting_quit_button.button_down.connect(_on_setting_quit_pressed)
-
+	#settings
+	video_button.button_down.connect(_on_video_settings_pressed)
+	control_button.button_down.connect(_on_control_settings_pressed)
+	audio_button.button_down.connect(_on_audio_settings_pressed)
+	acessibility_button.button_down.connect(_on_acessibility_settings_pressed)
+	settings_quit_button.button_down.connect(_on_settings_quit_pressed)
 
 
 func on_start_down() -> void:
@@ -114,38 +113,38 @@ func _on_credits_quit_pressed():
 
 	
 	
-## ALL SETTING MENU FUNCTION
-## ALL SETTING MENU FUNCTION
-func on_quit_setting_menu() -> void:
+## ALL SETTINGS MENU FUNCTION
+## ALL SETTINGS MENU FUNCTION
+func on_quit_settings_menu() -> void:
 	main_menu_margin_container.visible = true;
-	setting_menu.visible = false;
+	settings_menu.visible = false;
 	
-func on_setting_down() -> void:
-	setting_menu.popup_centered()
+func on_settings_down() -> void:
+	settings_menu.popup_centered()
 	hide_settings()
-	video_setting.show()
-	$SettingMenuv2/SettingMenu/ButtonBox/Video.grab_focus()
+	video_settings.show()
+	$SettingsMenuv2/SettingsMenu/ButtonBox/Video.grab_focus()
 	
 func hide_settings():
-	video_setting.hide()
-	audio_setting.hide()
-	control_setting.hide()
-	acessbility_setting.hide()
+	video_settings.hide()
+	audio_settings.hide()
+	control_settings.hide()
+	acessbility_settings.hide()
 	
-func _on_video_setting_pressed():
+func _on_video_settings_pressed():
 	hide_settings()
-	video_setting.show()
-func _on_control_setting_pressed():
+	video_settings.show()
+func _on_control_settings_pressed():
 	hide_settings()
-	control_setting.show()
-func _on_audio_setting_pressed():
+	control_settings.show()
+func _on_audio_settings_pressed():
 	hide_settings()
-	audio_setting.show()
-func _on_acessibility_setting_pressed():
+	audio_settings.show()
+func _on_acessibility_settings_pressed():
 	hide_settings()
-	acessbility_setting.show()
-func _on_setting_quit_pressed():
+	acessbility_settings.show()
+func _on_settings_quit_pressed():
 	hide_settings()
-	setting_menu.hide()
+	settings_menu.hide()
 	
 	
