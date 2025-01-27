@@ -7,6 +7,8 @@ const CLIMB_SPEED = 50.0
 const SPRINT_SPEED = 120.0
 const CROUCH_SPEED = 65.0
 
+var current_speed: float = WALK_SPEED
+var current_sprint_speed: float = SPRINT_SPEED
 
 @export var move_type := MoveType.TOP_DOWN
 
@@ -31,12 +33,11 @@ func _top_down():
 	
 	var direction_vector := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
 	
-	velocity.y = direction_vector.y * WALK_SPEED if direction_vector.y else move_toward(velocity.y, 0, WALK_SPEED)
+	current_speed = CROUCH_SPEED if is_crouching else WALK_SPEED
+	current_sprint_speed = SPRINT_SPEED if not is_crouching else WALK_SPEED
 	
-	velocity.x = direction_vector.x * (CROUCH_SPEED if is_crouching else WALK_SPEED) if direction_vector.x else move_toward(velocity.x, 0, WALK_SPEED)
-	
-	velocity.x = direction_vector.x * (WALK_SPEED if is_crouching else SPRINT_SPEED) if Input.is_action_pressed("sprint") else velocity.x
-	velocity.y = direction_vector.y * (WALK_SPEED if is_crouching else SPRINT_SPEED) if Input.is_action_pressed("sprint") else velocity.y
+	velocity.x = direction_vector.x * (current_sprint_speed if Input.is_action_pressed("sprint") else current_speed) if direction_vector.x else move_toward(velocity.x, 0, current_speed)
+	velocity.y = direction_vector.y * current_speed if direction_vector.y else move_toward(velocity.y, 0, current_speed)
 
 
 # Side scroller movement function
@@ -45,11 +46,11 @@ func _side_scroller(delta: float):
 		velocity.y += gravity * delta
 	
 	var direction := Input.get_axis("ui_left", "ui_right")
-
-	velocity.x = direction * (CROUCH_SPEED if is_crouching else WALK_SPEED) if direction else move_toward(velocity.x, 0, WALK_SPEED)
-
-	velocity.x = direction * (WALK_SPEED if is_crouching else SPRINT_SPEED) if Input.is_action_pressed("sprint") else velocity.x
-
+	
+	current_speed = CROUCH_SPEED if is_crouching else WALK_SPEED
+	current_sprint_speed = SPRINT_SPEED if not is_crouching else WALK_SPEED
+	
+	velocity.x = direction * (current_sprint_speed if Input.is_action_pressed("sprint") else current_speed) if direction else move_toward(velocity.x, 0, current_speed)
 	if on_ladder: # Enables climbing behavior if player is on a ladder
 		_climb()
 
@@ -80,6 +81,6 @@ func _physics_process(delta: float) -> void:
 		_side_scroller(delta)
 		print("Side-scroller movement mode")
 
-	print(on_ladder)
+	print(is_crouching)
 	
 	move_and_slide()
