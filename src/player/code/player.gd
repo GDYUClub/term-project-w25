@@ -7,15 +7,18 @@ const CLIMB_SPEED = 50.0
 const SPRINT_SPEED = 120.0
 const CROUCH_SPEED = 65.0
 
+
+
 var current_speed: float = WALK_SPEED
 var current_sprint_speed: float = SPRINT_SPEED
 
-@export var move_type := MoveType.TOP_DOWN
+var move = Global.direction
 
 enum MoveType {
-	TOP_DOWN,
-	SIDE_SCROLLER
+	TOP_DOWN = 0,
+	SIDE_SCROLLER = 1
 }
+
 
 var on_ladder: bool = false
 
@@ -71,16 +74,14 @@ func _crouch():
 
 
 func _physics_process(delta: float) -> void:
-
+	move = Global.direction
 	if Input.is_action_just_pressed("crouch"):
 		_crouch()
-	if move_type == MoveType.TOP_DOWN:
+	if MoveType.find_key(move) == "TOP_DOWN":
 		_top_down()
-		print("Top down movement mode")
 	else:
 		_side_scroller(delta)
-		print("Side-scroller movement mode")
 
-	print(is_crouching)
+	print(MoveType.find_key(move))
 	
 	move_and_slide()
