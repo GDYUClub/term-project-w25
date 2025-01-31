@@ -1,0 +1,86 @@
+[gd_scene load_steps=27 format=3 uid="uid://cof4cjimhg61g"]
+
+[ext_resource type="Script" path="res://src/control_rebinding/control_rebind_buttons.gd" id="1_i08y2"]
+[ext_resource type="Texture2D" uid="uid://drmayqb1bi4jl" path="res://assets/sprites/xbox_icons/a-filled-green.png" id="2_suh72"]
+[ext_resource type="Texture2D" uid="uid://bjl2n6ejkfjbs" path="res://assets/sprites/xbox_icons/b-filled red.png" id="3_di8e6"]
+[ext_resource type="Texture2D" uid="uid://bovgq72cq64ya" path="res://assets/sprites/xbox_icons/x-filled-blue.png" id="4_l8fub"]
+[ext_resource type="Texture2D" uid="uid://dkki4iusq34k" path="res://assets/sprites/xbox_icons/y-filled-yellow.png" id="5_sha1f"]
+[ext_resource type="Texture2D" uid="uid://cxhkueth4dgkf" path="res://assets/sprites/xbox_icons/view.png" id="6_3x6jd"]
+[ext_resource type="Texture2D" uid="uid://b5vn43idi2atf" path="res://assets/sprites/xbox_icons/xbox_icon.png" id="7_62dko"]
+[ext_resource type="Texture2D" uid="uid://f0248sue8kto" path="res://assets/sprites/xbox_icons/menu.png" id="8_eihya"]
+[ext_resource type="Texture2D" uid="uid://77xgy2kgklf2" path="res://assets/sprites/xbox_icons/left-joystick-press.png" id="9_cauuh"]
+[ext_resource type="Texture2D" uid="uid://dygcn0yt0opay" path="res://assets/sprites/xbox_icons/right-joystick-press.png" id="10_k1f71"]
+[ext_resource type="Texture2D" uid="uid://b7vxfoh2j5y53" path="res://assets/sprites/xbox_icons/left-bumper.png" id="11_xabvi"]
+[ext_resource type="Texture2D" uid="uid://bgpurm7whjl35" path="res://assets/sprites/xbox_icons/right-bumper.png" id="12_3kmau"]
+[ext_resource type="Texture2D" uid="uid://cfwsquvbu2ljp" path="res://assets/sprites/xbox_icons/dpad-up.png" id="13_a5ey8"]
+[ext_resource type="Texture2D" uid="uid://budtkw0kmjyk3" path="res://assets/sprites/xbox_icons/dpad-right.png" id="14_ktlth"]
+[ext_resource type="Texture2D" uid="uid://iav8ygc35vi5" path="res://assets/sprites/xbox_icons/dpad-left.png" id="15_onshm"]
+[ext_resource type="Texture2D" uid="uid://cbecl4y1qe8ts" path="res://assets/sprites/xbox_icons/dpad-down.png" id="16_3lanu"]
+[ext_resource type="Texture2D" uid="uid://bjlhy0ihtwcew" path="res://assets/sprites/xbox_icons/left-trigger.png" id="17_hovam"]
+[ext_resource type="Texture2D" uid="uid://dbufk0cyii8db" path="res://assets/sprites/xbox_icons/right-trigger.png" id="18_n257c"]
+[ext_resource type="Texture2D" uid="uid://c46p6rr5depl5" path="res://assets/sprites/xbox_icons/left-joystick-left.png" id="19_7583f"]
+[ext_resource type="Texture2D" uid="uid://dpafouai655yo" path="res://assets/sprites/xbox_icons/left-joystick-up.png" id="20_y545g"]
+[ext_resource type="Texture2D" uid="uid://dx42ruyu2j2ay" path="res://assets/sprites/xbox_icons/right-joystick-left.png" id="21_jnvx3"]
+[ext_resource type="Texture2D" uid="uid://bg6yhet1hm1yu" path="res://assets/sprites/xbox_icons/right-joystick-up.png" id="22_i5t5u"]
+[ext_resource type="Texture2D" uid="uid://vpgfi6qo3qto" path="res://assets/sprites/xbox_icons/left-joystick-right.png" id="23_lmeim"]
+[ext_resource type="Texture2D" uid="uid://seplvunb7i1p" path="res://assets/sprites/xbox_icons/left-joystick-down.png" id="24_spr5s"]
+[ext_resource type="Texture2D" uid="uid://dxa8vh44eapgl" path="res://assets/sprites/xbox_icons/right-joystick-right.png" id="25_w1o20"]
+[ext_resource type="Texture2D" uid="uid://bhg8gjtf6737m" path="res://assets/sprites/xbox_icons/right-joystick-down.png" id="26_jgpr1"]
+
+[node name="Control_Rebind_Buttons" type="Control" groups=["rebind_button"]]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i08y2")
+xbox_icons_array = Array[Texture2D]([ExtResource("2_suh72"), ExtResource("3_di8e6"), ExtResource("4_l8fub"), ExtResource("5_sha1f"), ExtResource("6_3x6jd"), ExtResource("7_62dko"), ExtResource("8_eihya"), ExtResource("9_cauuh"), ExtResource("10_k1f71"), ExtResource("11_xabvi"), ExtResource("12_3kmau"), ExtResource("13_a5ey8"), ExtResource("16_3lanu"), ExtResource("15_onshm"), ExtResource("14_ktlth"), ExtResource("17_hovam"), ExtResource("18_n257c"), ExtResource("19_7583f"), ExtResource("20_y545g"), ExtResource("21_jnvx3"), ExtResource("22_i5t5u"), ExtResource("23_lmeim"), ExtResource("24_spr5s"), ExtResource("25_w1o20"), ExtResource("26_jgpr1"), null])
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_right = 1416.0
+offset_bottom = 15.5
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(400, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "ACTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 200
+
+[node name="Keyboard" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+toggle_mode = true
+text = "ACTION_KEY"
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 200
+
+[node name="Controller" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+toggle_mode = true
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/Controller"]
+position = Vector2(149, 15.5)
+scale = Vector2(0.8, 0.8)
+
+[connection signal="toggled" from="HBoxContainer/Keyboard" to="." method="_on_keyboard_toggled"]
+[connection signal="toggled" from="HBoxContainer/Controller" to="." method="_on_controller_toggled"]
