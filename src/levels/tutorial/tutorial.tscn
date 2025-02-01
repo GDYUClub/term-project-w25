@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=3 uid="uid://chwpqxi2ikcnr"]
+
+[ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
+[ext_resource type="Resource" uid="uid://dojkosxruk8xs" path="res://src/clues/clue_cigs.tres" id="2_5f4ee"]
+[ext_resource type="Texture2D" uid="uid://clv10wnhi7uaa" path="res://assets/sprites/panel-ref.png" id="3_4ytyg"]
+[ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="4_altkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fuvah"]
+size = Vector2(1964, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e645k"]
+size = Vector2(1391, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wihkw"]
+size = Vector2(756.5, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7bmo"]
+size = Vector2(373.25, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rae1"]
+size = Vector2(421.388, 22.3685)
+
+[node name="Main" type="Node"]
+
+[node name="PanelRef" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.133333)
+z_index = -128
+position = Vector2(964.5, 540.75)
+scale = Vector2(1.65259, 1.30411)
+texture = ExtResource("3_4ytyg")
+metadata/_edit_lock_ = true
+
+[node name="Borders" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders"]
+position = Vector2(972, 0)
+shape = SubResource("RectangleShape2D_fuvah")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Borders"]
+position = Vector2(968, 332)
+shape = SubResource("RectangleShape2D_fuvah")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Borders"]
+position = Vector2(694.5, 706)
+shape = SubResource("RectangleShape2D_e645k")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1409, 703)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_wihkw")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Borders"]
+position = Vector2(981, 887.375)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_x7bmo")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1122, 152)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_x7bmo")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders"]
+position = Vector2(959, 1066)
+shape = SubResource("RectangleShape2D_fuvah")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders"]
+position = Vector2(7, 556)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_fuvah")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1924, 655)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_fuvah")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Borders"]
+position = Vector2(671, 160)
+rotation = -0.877041
+shape = SubResource("RectangleShape2D_6rae1")
+
+[node name="Clues" type="Node" parent="."]
+
+[node name="ClueArea" parent="Clues" instance=ExtResource("1_ra0nd")]
+position = Vector2(378, 916)
+clue = ExtResource("2_5f4ee")
+
+[node name="Player" parent="." instance=ExtResource("4_altkg")]
+position = Vector2(672, 898)

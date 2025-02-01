@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://wd4uvocsv0hr"]
+
+[ext_resource type="Script" path="res://src/clues/clue_area.gd" id="1_i13jk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n6ngs"]
+radius = 20.0
+
+[node name="ClueArea" type="Area2D"]
+script = ExtResource("1_i13jk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_n6ngs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
