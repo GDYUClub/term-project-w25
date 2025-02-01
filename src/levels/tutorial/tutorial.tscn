@@ -81,7 +81,7 @@ shape = SubResource("RectangleShape2D_6rae1")
 
 [node name="Clues" type="Node" parent="."]
 
-[node name="ClueArea" parent="Clues" instance=ExtResource("1_ra0nd")]
+[node name="Cigs" parent="Clues" instance=ExtResource("1_ra0nd")]
 position = Vector2(378, 916)
 clue = ExtResource("2_5f4ee")
 
