@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dolv7vkq01qht"]
+
+[ext_resource type="PackedScene" uid="uid://ddqm5bd3m1ldq" path="res://src/clues/clue_panel.tscn" id="1_xs3kj"]
+
+[node name="ClueGridTesting" type="Node"]
+
+[node name="Panel" parent="." instance=ExtResource("1_xs3kj")]
