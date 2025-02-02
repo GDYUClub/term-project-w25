@@ -86,4 +86,4 @@ position = Vector2(378, 916)
 clue = ExtResource("2_5f4ee")
 
 [node name="Player" parent="." instance=ExtResource("4_altkg")]
-position = Vector2(672, 898)
+position = Vector2(800, 922)
