@@ -1,10 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfk7r7fywt2gf"]
+[gd_scene load_steps=4 format=3 uid="uid://ck6e1aoa5gray"]
 
 [ext_resource type="Script" path="res://src/clues/grid_position.gd" id="1_n458v"]
+[ext_resource type="Texture2D" uid="uid://eu0kdjsoh565" path="res://assets/sprites/gridcell border.png" id="2_rfjra"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6020j"]
+size = Vector2(183.5, 183)
 
 [node name="GridCell" type="Area2D"]
 script = ExtResource("1_n458v")
+desired_panel_name = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rfjra")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.25, 0.5)
+shape = SubResource("RectangleShape2D_6020j")

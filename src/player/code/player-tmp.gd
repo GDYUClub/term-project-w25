@@ -29,7 +29,7 @@ func _ready() -> void:
 	add_to_group("player")
 	area.area_entered.connect(_on_area_entered)
 	area.area_exited.connect(_on_area_exited)
-	_change_move_type(MOVETYPES.TOP_DOWN)
+	_change_move_type(MOVETYPES.SIDE_SCROLLER)
 	
 
 func _change_move_type(new_movetype:MOVETYPES):

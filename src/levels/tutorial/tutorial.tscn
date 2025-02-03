@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://chwpqxi2ikcnr"]
+[gd_scene load_steps=11 format=3 uid="uid://chwpqxi2ikcnr"]
 
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
-[ext_resource type="Resource" uid="uid://dojkosxruk8xs" path="res://src/clues/clue_cigs.tres" id="2_5f4ee"]
+[ext_resource type="Resource" uid="uid://dojkosxruk8xs" path="res://src/clues/clue-resources/tutorial/clue_cigs.tres" id="2_5f4ee"]
 [ext_resource type="Texture2D" uid="uid://clv10wnhi7uaa" path="res://assets/sprites/panel-ref.png" id="3_4ytyg"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="4_altkg"]
+[ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/clue_lighter.tres" id="4_n1e4y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fuvah"]
 size = Vector2(1964, 20)
@@ -84,6 +85,10 @@ shape = SubResource("RectangleShape2D_6rae1")
 [node name="Cigs" parent="Clues" instance=ExtResource("1_ra0nd")]
 position = Vector2(378, 916)
 clue = ExtResource("2_5f4ee")
+
+[node name="ClueArea" parent="Clues" instance=ExtResource("1_ra0nd")]
+position = Vector2(816, 769)
+clue = ExtResource("4_n1e4y")
 
 [node name="Player" parent="." instance=ExtResource("4_altkg")]
 position = Vector2(800, 922)
