@@ -31,6 +31,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if panels_correct():
+		$CorrectLabel.text = "correct"
+	else:
+		$CorrectLabel.text = "wrong"
 	pass
 
 func populate_clue_panels():
@@ -38,27 +42,34 @@ func populate_clue_panels():
 		var panelInst = panel_scene.instantiate()
 		panelInst.clue = clue
 		$Panels.add_child(panelInst)
+		panels.append(panelInst)
+		panelInst.numberLabel.text = str(clue.correct_panel)
 
 func populate_grid_cells():
 	var rows: = int(ceil(player_clues.size()))
 	# it's always two for now
 	var cols = 2
 	var i = 0
-	for c in cols:
-		for r in rows:
+	for r in rows:
+		for c in cols:
 			var	gridCellInst:GridBox = grid_cell_scene.instantiate()
 			gridCellInst.id = i
 			gridCellInst.position.x = INITIAL_POSITION.x + (OFFSET.x * c)
 			gridCellInst.position.y = INITIAL_POSITION.y + (OFFSET.y * r)
 			$GridCells.add_child(gridCellInst)
+			grid_cells.append(gridCellInst)
+			gridCellInst.numberLabel.text = str(i)
 			i += 1
+			if i == player_clues.size():
+				break
+		if i == player_clues.size():
+			break
 
-
-func _make_grid() -> void:
-	pass
-	# var i = 0
-	# for c in range(player_clues):
-	# 	pass
+func panels_correct() -> bool:
+	for grid_cell in grid_cells:
+		if not grid_cell.correct_panel:
+			return false
+	return true
 
 
 

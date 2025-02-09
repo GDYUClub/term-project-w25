@@ -5,6 +5,7 @@ extends Area2D
 @export var clue:Clue
 
 @onready var sprite :Sprite2D= $Sprite2D
+@onready var numberLabel:Label = $NumberLabel
 
 var _is_mouse_in: bool = false
 var _is_selected: bool = false

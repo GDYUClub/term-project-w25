@@ -7,6 +7,8 @@ const WALK_SPEED = 300.0
 @onready var alertSprite:Sprite2D = $AlertSprite
 @onready var area:Area2D = $Area2D
 
+var can_move:bool = true
+
 var interactable = null
 
 var clues:Array = []
@@ -51,6 +53,8 @@ func _side_scroller(delta: float):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if not can_move:
+		return
 	if current_move_type == MOVETYPES.TOP_DOWN:
 		_top_down(delta)
 	if current_move_type == MOVETYPES.SIDE_SCROLLER:
