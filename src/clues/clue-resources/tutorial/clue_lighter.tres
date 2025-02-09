@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://suskgru87rvo"]
+
+[ext_resource type="Texture2D" uid="uid://id1yfwexnkm1" path="res://assets/sprites/lighter-temp.png" id="1_d0xcy"]
+[ext_resource type="Script" path="res://src/clues/clue.gd" id="1_rky5b"]
+
+[resource]
+script = ExtResource("1_rky5b")
+id = 0
+name = "Lighter"
+desc = "for cooking cigarettes before you eat them."
+icon = ExtResource("1_d0xcy")
+panel = ExtResource("1_d0xcy")
+environment_sprite = ExtResource("1_d0xcy")
+picks_up = true
+correct_panel = 1

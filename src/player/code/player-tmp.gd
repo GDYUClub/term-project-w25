@@ -7,6 +7,8 @@ const WALK_SPEED = 300.0
 @onready var alertSprite:Sprite2D = $AlertSprite
 @onready var area:Area2D = $Area2D
 
+var can_move:bool = true
+
 var interactable = null
 
 var clues:Array = []
@@ -22,14 +24,14 @@ var move_sprites = {
 	MOVETYPES.SIDE_SCROLLER:"res://assets/sprites/side-temp.png",
 	}
 
-var current_move_type:MOVETYPES
+@export var current_move_type:MOVETYPES
 # Called when the node enters the scene tree for the first time.
 #3
 func _ready() -> void:
 	add_to_group("player")
 	area.area_entered.connect(_on_area_entered)
 	area.area_exited.connect(_on_area_exited)
-	_change_move_type(MOVETYPES.TOP_DOWN)
+	_change_move_type(current_move_type)
 	
 
 func _change_move_type(new_movetype:MOVETYPES):
@@ -51,6 +53,8 @@ func _side_scroller(delta: float):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if not can_move:
+		return
 	if current_move_type == MOVETYPES.TOP_DOWN:
 		_top_down(delta)
 	if current_move_type == MOVETYPES.SIDE_SCROLLER:
@@ -69,6 +73,7 @@ func interact():
 
 		#get clue
 		clues.append(interactable.clue)
+		Inventory.add_item(interactable.clue)
 		interactable.monitorable = false
 		alertSprite.visible = false
 		if interactable.clue.picks_up:
