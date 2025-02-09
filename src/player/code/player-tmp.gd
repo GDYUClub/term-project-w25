@@ -22,14 +22,14 @@ var move_sprites = {
 	MOVETYPES.SIDE_SCROLLER:"res://assets/sprites/side-temp.png",
 	}
 
-var current_move_type:MOVETYPES
+@export var current_move_type:MOVETYPES
 # Called when the node enters the scene tree for the first time.
 #3
 func _ready() -> void:
 	add_to_group("player")
 	area.area_entered.connect(_on_area_entered)
 	area.area_exited.connect(_on_area_exited)
-	_change_move_type(MOVETYPES.SIDE_SCROLLER)
+	_change_move_type(current_move_type)
 	
 
 func _change_move_type(new_movetype:MOVETYPES):
@@ -69,6 +69,7 @@ func interact():
 
 		#get clue
 		clues.append(interactable.clue)
+		Inventory.add_item(interactable.clue)
 		interactable.monitorable = false
 		alertSprite.visible = false
 		if interactable.clue.picks_up:

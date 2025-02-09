@@ -1,41 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvdfsxynnb6vg"]
+[gd_scene load_steps=2 format=3 uid="uid://dvdfsxynnb6vg"]
 
 [ext_resource type="Script" path="res://src/clues/clue_grid_menu.gd" id="1_hww8b"]
-[ext_resource type="PackedScene" uid="uid://bulygnnjxoiy3" path="res://src/clues/clue_panel.tscn" id="1_xs3kj"]
-[ext_resource type="PackedScene" uid="uid://ck6e1aoa5gray" path="res://src/clues/grid_cell.tscn" id="2_fhb8b"]
-[ext_resource type="Resource" uid="uid://dojkosxruk8xs" path="res://src/clues/clue-resources/tutorial/clue_cigs.tres" id="2_tmsdv"]
-[ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/clue_lighter.tres" id="5_ylwgh"]
 
-[node name="ClueGridTesting" type="Node"]
+[node name="ClueGridTesting" type="Node2D"]
+z_index = 128
 script = ExtResource("1_hww8b")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 914.0
-offset_top = 178.0
-offset_right = 970.0
-offset_bottom = 201.0
+[node name="BGPanel" type="Panel" parent="."]
+offset_right = 1921.0
+offset_bottom = 1081.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="CorrectLabel" type="Label" parent="."]
+offset_left = 503.0
+offset_top = 182.0
+offset_right = 559.0
+offset_bottom = 205.0
 text = "Wrong!"
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="GridCell" parent="Node2D" instance=ExtResource("2_fhb8b")]
-position = Vector2(384, 338)
-
-[node name="GridCell2" parent="Node2D" instance=ExtResource("2_fhb8b")]
-position = Vector2(663, 338)
-
-[node name="GridCell3" parent="Node2D" instance=ExtResource("2_fhb8b")]
-position = Vector2(380, 593)
-
-[node name="GridCell4" parent="Node2D" instance=ExtResource("2_fhb8b")]
-position = Vector2(665, 593)
+[node name="GridCells" type="Node2D" parent="."]
 
 [node name="Panels" type="Node2D" parent="."]
-
-[node name="Panel" parent="Panels" instance=ExtResource("1_xs3kj")]
-_panel_name = "panel1"
-clue = ExtResource("2_tmsdv")
-
-[node name="Panel2" parent="Panels" instance=ExtResource("1_xs3kj")]
-_panel_name = "panel1"
-clue = ExtResource("5_ylwgh")

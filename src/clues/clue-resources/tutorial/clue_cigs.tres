@@ -6,10 +6,11 @@
 
 [resource]
 script = ExtResource("3_vyvjn")
-id = "01"
+id = 0
 name = "Cigarettes"
 desc = "Highly addictive and hazardous to your health. Snake's favorite brand. "
 icon = ExtResource("1_rf2fr")
 panel = ExtResource("2_saa6s")
 environment_sprite = ExtResource("1_rf2fr")
 picks_up = true
+correct_panel = 0

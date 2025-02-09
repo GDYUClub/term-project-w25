@@ -18,11 +18,9 @@ func get_panel_name() -> String:
 
 func _ready() -> void:
 	sprite.texture = clue.panel
-	
-
-
 	area_entered.connect(_on_area_entered)
 	area_exited.connect(_on_area_exited)
+
 	mouse_entered.connect(func(): _is_mouse_in = true)
 	mouse_exited.connect(func(): _is_mouse_in = false)
 
@@ -47,7 +45,7 @@ func move_panel(pos: Vector2) -> void:
 	position = pos
 
 func snap_to_grid(pos: Vector2) -> void:
-	print('snaip to grid')
+	print('snap to grid')
 	var closest_box: GridBox = find_closest_box(_grids_inside, pos)
 	if closest_box != null:
 		position.x = closest_box.position.x
@@ -66,7 +64,7 @@ func _on_area_exited(area: Area2D) -> void:
 		#Check if the area is inside the array
 		if _grids_inside.has(area):
 			_grids_inside.remove_at(_grids_inside.find(area,0))
-		if area.current_panel == self:
+		if area.current_clue == self:
 			area.clear_active_panel()
 
 func find_closest_box(boxes: Array[GridBox], pos: Vector2) -> GridBox:	
@@ -80,4 +78,3 @@ func find_closest_box(boxes: Array[GridBox], pos: Vector2) -> GridBox:
 			closest_box = box
 			closest_position = closest_box.position.distance_to(pos)
 	return closest_box
-

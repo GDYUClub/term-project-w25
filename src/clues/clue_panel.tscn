@@ -14,3 +14,4 @@ _panel_name = "r"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.625, -0.875)
 shape = SubResource("RectangleShape2D_l6tir")
+debug_color = Color(0, 0.6, 0.7, 0.42)

@@ -8,7 +8,6 @@ size = Vector2(183.5, 183)
 
 [node name="GridCell" type="Area2D"]
 script = ExtResource("1_n458v")
-desired_panel_name = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_rfjra")
@@ -16,3 +15,4 @@ texture = ExtResource("2_rfjra")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.25, 0.5)
 shape = SubResource("RectangleShape2D_6020j")
+debug_color = Color(0, 0.6, 0.7, 0.42)
