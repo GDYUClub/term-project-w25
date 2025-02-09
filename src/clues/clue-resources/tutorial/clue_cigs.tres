@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://dojkosxruk8xs"]
+
+[ext_resource type="Texture2D" uid="uid://cy54haikib277" path="res://assets/sprites/clue-temp.png" id="1_rf2fr"]
+[ext_resource type="Texture2D" uid="uid://boy1fn4com520" path="res://assets/sprites/clue-panel-temp.png" id="2_saa6s"]
+[ext_resource type="Script" path="res://src/clues/clue.gd" id="3_vyvjn"]
+
+[resource]
+script = ExtResource("3_vyvjn")
+id = 0
+name = "Cigarettes"
+desc = "Highly addictive and hazardous to your health. Snake's favorite brand. "
+icon = ExtResource("1_rf2fr")
+panel = ExtResource("2_saa6s")
+environment_sprite = ExtResource("1_rf2fr")
+picks_up = true
+correct_panel = 0
