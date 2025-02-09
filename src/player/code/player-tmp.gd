@@ -74,6 +74,9 @@ func interact():
 		if interactable.clue.picks_up:
 			interactable.visible = false
 
+	if interactable.is_in_group("npc"):
+		interactable.talk_to_npc()
+
 func _animate():
 	if velocity != Vector2.ZERO:
 		animPlayer.play("walk")
@@ -84,8 +87,11 @@ func _on_area_entered(area:Area2D):
 	if area.is_in_group("clue"):
 		alertSprite.visible = true
 		interactable = area
-	
+	if area.is_in_group("npc"):
+		if area.is_interacted_with == false or area.repeatable_conversation == true:
+			alertSprite.visible = true
+			interactable = area
 func _on_area_exited(area:Area2D):
-	if area.is_in_group("clue"):
+	if area.is_in_group("clue") or area.is_in_group("npc"):
 		alertSprite.visible = false
 		interactable = null
