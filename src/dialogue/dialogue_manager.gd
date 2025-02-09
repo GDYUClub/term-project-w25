@@ -27,7 +27,7 @@ var dialogue_ongoing : bool = false
 @onready var character_2_name: Label = %DialogueUI/Background/dialogueCharacter2/Textbox/Name
 
 #player handling
-@onready var alert_sprite: Sprite2D = $"../../Player/AlertSprite"
+@onready var alert_sprite: Sprite2D = $"../Player/AlertSprite"
 
 
 
@@ -59,17 +59,18 @@ func load_interactable_dialogue(new_start_id : int, new_end_id : int, new_text_b
 			adjust_interactable_dialogue()
 
 
-func load_npc_dialogue(new_start_id : int, new_end_id : int, speaker_1_sprite: Texture, speaker_2_sprite): #initial method to load visual novel dialogue
-			dialogue_ongoing = true
-			start_id = new_start_id
-			end_id = new_end_id
-			index = start_id
-			type = DialogueType.NPC
-			character_1.texture = speaker_1_sprite
-			character_2.texture = speaker_2_sprite
-			dialogue_ui.visible = true
-			print("pre-requisites loaded, type: npc")
-			adjust_npc_dialogue()
+func load_npc_dialogue(new_start_id : int, new_end_id : int, speaker_1_sprite: Texture, speaker_2_sprite:Texture): #initial method to load visual novel dialogue
+	prints(new_start_id,new_end_id,speaker_1_sprite,speaker_2_sprite)
+	dialogue_ongoing = true
+	start_id = new_start_id
+	end_id = new_end_id
+	index = start_id
+	type = DialogueType.NPC
+	character_1.texture = speaker_1_sprite
+	character_2.texture = speaker_2_sprite
+	dialogue_ui.visible = true
+	print("pre-requisites loaded, type: npc")
+	adjust_npc_dialogue()
 
 func adjust_npc_dialogue(): #switch to next line
 	if(dialogue.size() > 0 && index < end_id):

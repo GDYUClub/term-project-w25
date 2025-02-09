@@ -1,0 +1,32 @@
+{
+  "0": {
+	"SPEAKER_NAME": "Sabastion",
+	"SPEAKER_ID": 0,
+	"ENGLISH": "Hello Kenny.",
+	"FRENCH": "Bonjour Kenny."
+  },
+  "1": {
+	"SPEAKER_NAME": "Kenny",
+	"SPEAKER_ID": 1,
+	"ENGLISH": "Nice weather today",
+	"FRENCH": "Beau temps aujourd'hui"
+  },
+  "2": {
+	"SPEAKER_NAME": "Sabastion",
+	"SPEAKER_ID": 0,
+	"ENGLISH": "It is...",
+	"FRENCH": "C'est..."
+  },
+  "3": {
+	"SPEAKER_NAME": "Kenny",
+	"SPEAKER_ID": 1,
+	"ENGLISH": "How can I help you today?",
+	"FRENCH": "Comment puis-je vous aider aujourd'hui ?"
+  },
+  "4": {
+	"SPEAKER_NAME": "Sabastion",
+	"SPEAKER_ID": 0,
+	"ENGLISH": "You see... someone broke into my apartment today... that was you wasn't it.",
+	"FRENCH": "Vous voyez... quelqu'un est entré par effraction dans mon appartement aujourd'hui... c'était vous, n'est-ce pas."
+  }
+}

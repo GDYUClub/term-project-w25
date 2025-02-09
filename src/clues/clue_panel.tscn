@@ -7,7 +7,6 @@ size = Vector2(199.25, 201.75)
 
 [node name="Panel" type="Area2D"]
 script = ExtResource("1_12oeh")
-_panel_name = "r"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_rky5b")
 id = 0
+lvl_id = 0
 name = "Lighter"
 desc = "for cooking cigarettes before you eat them."
 icon = ExtResource("1_d0xcy")

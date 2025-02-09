@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5h0imkaet8vo"]
 
-[ext_resource type="Texture2D" uid="uid://dqf5468vy12h3" path="res://src/dialogue/placeholder.png" id="1_h0xyi"]
+[ext_resource type="Texture2D" uid="uid://dqf5468vy12h3" path="res://src/dialogue/placeholder.png" id="1_m3duq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_evl05"]
 font_size = 40
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.537255, 0.509804, 0.521569, 0.384314)
+color = Color(0.241993, 0.225259, 0.232459, 0.384314)
 metadata/_edit_use_anchors_ = true
 
 [node name="dialogueCharacter1" type="TextureRect" parent="Background"]
@@ -37,7 +37,7 @@ offset_top = 0.439972
 offset_right = -0.919983
 offset_bottom = 0.039978
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("1_h0xyi")
+texture = ExtResource("1_m3duq")
 metadata/_edit_use_anchors_ = true
 
 [node name="Textbox" type="ColorRect" parent="Background/dialogueCharacter1"]
@@ -96,7 +96,7 @@ offset_top = 0.439972
 offset_right = -0.919983
 offset_bottom = 0.039978
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("1_h0xyi")
+texture = ExtResource("1_m3duq")
 metadata/_edit_use_anchors_ = true
 
 [node name="Textbox" type="ColorRect" parent="Background/dialogueCharacter2"]
