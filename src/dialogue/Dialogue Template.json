@@ -1,26 +1,26 @@
 {
   "0": {
-	"SPEAKER_NAME": "Sabastion",
-	"SPEAKER_ID": 0,
-	"ENGLISH": "Hello Kenny.",
+	"SPEAKER_NAME": "Otacon",
+	"SPEAKER_ID": 1,
+	"ENGLISH": "Time to save?",
 	"FRENCH": "Bonjour Kenny."
   },
   "1": {
-	"SPEAKER_NAME": "Kenny",
+	"SPEAKER_NAME": "Otacon",
 	"SPEAKER_ID": 1,
-	"ENGLISH": "Nice weather today",
+	"ENGLISH": "Snake, you of course know the saying \"One for all, all for one.\"",
 	"FRENCH": "Beau temps aujourd'hui"
   },
   "2": {
-	"SPEAKER_NAME": "Sabastion",
+	"SPEAKER_NAME": "Snake",
 	"SPEAKER_ID": 0,
-	"ENGLISH": "It is...",
+	"ENGLISH": "What is this, all of a sudden?",
 	"FRENCH": "C'est..."
   },
   "3": {
-	"SPEAKER_NAME": "Kenny",
+	"SPEAKER_NAME": "Otacon",
 	"SPEAKER_ID": 1,
-	"ENGLISH": "How can I help you today?",
+	"ENGLISH": "Oh, I figured you'd need a lot of motivation, so I came prepared.",
 	"FRENCH": "Comment puis-je vous aider aujourd'hui ?"
   },
   "4": {
