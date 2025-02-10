@@ -1,16 +1,16 @@
 [gd_scene load_steps=17 format=3 uid="uid://chwpqxi2ikcnr"]
 
+[ext_resource type="Script" path="res://src/levels/tutorial/tutorial.gd" id="1_hspkm"]
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
-[ext_resource type="Script" path="res://src/levels/tutorial/tutorial.gd" id="1_rukk4"]
 [ext_resource type="Resource" uid="uid://dojkosxruk8xs" path="res://src/clues/clue-resources/tutorial/clue_cigs.tres" id="2_5f4ee"]
 [ext_resource type="Texture2D" uid="uid://clv10wnhi7uaa" path="res://assets/sprites/panel-ref.png" id="3_4ytyg"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="4_altkg"]
 [ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/clue_lighter.tres" id="4_n1e4y"]
-[ext_resource type="Resource" uid="uid://d3k8rcoc56don" path="res://src/clues/clue-resources/tutorial/clue_third.tres" id="5_q1kph"]
-[ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="8_h603a"]
-[ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="9_4fgrm"]
-[ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="9_v1ywd"]
-[ext_resource type="Script" path="res://src/dialogue/dialogue_manager.gd" id="10_ryowd"]
+[ext_resource type="Script" path="res://src/dialogue/dialogue_manager.gd" id="6_gkphd"]
+[ext_resource type="Resource" path="res://src/clues/clue-resources/tutorial/clue_third.tres" id="6_q7kgm"]
+[ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="7_0e0cn"]
+[ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="8_bb1rp"]
+[ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="9_jcs8d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fuvah"]
 size = Vector2(1964, 20)
@@ -28,7 +28,7 @@ size = Vector2(373.25, 33)
 size = Vector2(421.388, 22.3685)
 
 [node name="Main" type="Node"]
-script = ExtResource("1_rukk4")
+script = ExtResource("1_hspkm")
 
 [node name="PanelRef" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.133333)
@@ -100,29 +100,31 @@ debug_color = Color(0, 0.6, 0.7, 0.42)
 [node name="Clues" type="Node" parent="."]
 
 [node name="Cigs" parent="Clues" instance=ExtResource("1_ra0nd")]
-position = Vector2(167, 909)
+position = Vector2(378, 916)
 clue = ExtResource("2_5f4ee")
 
-[node name="Rei" parent="Clues" instance=ExtResource("1_ra0nd")]
-position = Vector2(461, 853)
-clue = ExtResource("5_q1kph")
-
 [node name="ClueArea" parent="Clues" instance=ExtResource("1_ra0nd")]
-position = Vector2(780, 780)
+position = Vector2(816, 769)
 clue = ExtResource("4_n1e4y")
+
+[node name="ClueArea2" parent="Clues" instance=ExtResource("1_ra0nd")]
+position = Vector2(580, 811)
+clue = ExtResource("6_q7kgm")
 
 [node name="Player" parent="." instance=ExtResource("4_altkg")]
 position = Vector2(800, 922)
 
-[node name="NPC" parent="." instance=ExtResource("8_h603a")]
-position = Vector2(671, 927)
-end_index = 4
-character1_sprite = ExtResource("9_v1ywd")
-
-[node name="DialogueUI" parent="." instance=ExtResource("9_4fgrm")]
+[node name="DialogueUI" parent="." instance=ExtResource("7_0e0cn")]
 unique_name_in_owner = true
 visible = false
+offset_left = 0.0
+offset_right = 0.0
 
 [node name="DialogueManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("10_ryowd")
+script = ExtResource("6_gkphd")
+
+[node name="NPC" parent="." instance=ExtResource("8_bb1rp")]
+position = Vector2(625, 919)
+end_index = 3
+character1_sprite = ExtResource("9_jcs8d")

@@ -77,12 +77,12 @@ func adjust_npc_dialogue(): #switch to next line
 		var character_index : int = dialogue[str(index)]["SPEAKER_ID"]
 		if character_index == 0: #if speaker is the first character
 			character_1_name.text = dialogue[str(index)]["SPEAKER_NAME"]
-			character_1_text.text = dialogue[str(index)]["ENGLISH"]
+			character_1_text.text = dialogue[str(index)]["FRENCH"]
 			character_1_textbox.visible = true
 			character_2_textbox.visible = false
 		else:
 			character_2_name.text = dialogue[str(index)]["SPEAKER_NAME"]
-			character_2_text.text = dialogue[str(index)]["ENGLISH"]
+			character_2_text.text = dialogue[str(index)]["FRENCH"]
 			character_1_textbox.visible = false
 			character_2_textbox.visible = true
 		character_1.modulate = Color(1, 1, 1, 1.0 if character_index == 0 else 0.4)

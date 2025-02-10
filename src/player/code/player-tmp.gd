@@ -9,7 +9,7 @@ const WALK_SPEED = 300.0
 
 var can_move:bool = true
 
-var interactable = null
+var interactable:Area2D = null
 
 var clues:Array = []
 
