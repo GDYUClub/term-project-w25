@@ -1,15 +1,18 @@
-[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://suskgru87rvo"]
+[gd_resource type="Resource" script_class="Clue" load_steps=5 format=3 uid="uid://suskgru87rvo"]
 
 [ext_resource type="Texture2D" uid="uid://id1yfwexnkm1" path="res://assets/sprites/lighter-temp.png" id="1_d0xcy"]
 [ext_resource type="Script" path="res://src/clues/clue.gd" id="1_rky5b"]
+[ext_resource type="Texture2D" uid="uid://3fikk2jplmiv" path="res://assets/sprites/not-sans.png" id="1_ty4c1"]
+[ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="3_vp37i"]
 
 [resource]
 script = ExtResource("1_rky5b")
 id = 0
+lvl_id = 0
 name = "Lighter"
 desc = "for cooking cigarettes before you eat them."
 icon = ExtResource("1_d0xcy")
-panel = ExtResource("1_d0xcy")
-environment_sprite = ExtResource("1_d0xcy")
+panel = ExtResource("3_vp37i")
+environment_sprite = ExtResource("1_ty4c1")
 picks_up = true
 correct_panel = 1

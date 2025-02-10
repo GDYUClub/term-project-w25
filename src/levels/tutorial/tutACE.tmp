@@ -1,16 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://chwpqxi2ikcnr"]
+[gd_scene load_steps=13 format=3 uid="uid://chwpqxi2ikcnr"]
 
-[ext_resource type="Script" path="res://src/levels/tutorial/tutorial.gd" id="1_hspkm"]
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
-[ext_resource type="Resource" uid="uid://dojkosxruk8xs" path="res://src/clues/clue-resources/tutorial/clue_cigs.tres" id="2_5f4ee"]
+[ext_resource type="Resource" uid="uid://dojkosxruk8xs" path="res://src/clues/clue_cigs.tres" id="2_5f4ee"]
 [ext_resource type="Texture2D" uid="uid://clv10wnhi7uaa" path="res://assets/sprites/panel-ref.png" id="3_4ytyg"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="4_altkg"]
-[ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/clue_lighter.tres" id="4_n1e4y"]
-[ext_resource type="Script" path="res://src/dialogue/dialogue_manager.gd" id="6_gkphd"]
-[ext_resource type="Resource" path="res://src/clues/clue-resources/tutorial/clue_third.tres" id="6_q7kgm"]
-[ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="7_0e0cn"]
-[ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="8_bb1rp"]
-[ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="9_jcs8d"]
+[ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/Dialogue/npc.tscn" id="5_1ei8r"]
+[ext_resource type="Script" path="res://src/Dialogue/dialogue_manager.gd" id="5_3myoo"]
+[ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/Dialogue/dialogue_ui.tscn" id="6_4pu3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fuvah"]
 size = Vector2(1964, 20)
@@ -28,7 +24,6 @@ size = Vector2(373.25, 33)
 size = Vector2(421.388, 22.3685)
 
 [node name="Main" type="Node"]
-script = ExtResource("1_hspkm")
 
 [node name="PanelRef" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.133333)
@@ -44,58 +39,48 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders"]
 position = Vector2(972, 0)
 shape = SubResource("RectangleShape2D_fuvah")
-debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Borders"]
 position = Vector2(968, 332)
 shape = SubResource("RectangleShape2D_fuvah")
-debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Borders"]
 position = Vector2(694.5, 706)
 shape = SubResource("RectangleShape2D_e645k")
-debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Borders"]
 position = Vector2(1409, 703)
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_wihkw")
-debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Borders"]
 position = Vector2(981, 887.375)
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_x7bmo")
-debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Borders"]
 position = Vector2(1122, 152)
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_x7bmo")
-debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders"]
 position = Vector2(959, 1066)
 shape = SubResource("RectangleShape2D_fuvah")
-debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders"]
 position = Vector2(7, 556)
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_fuvah")
-debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders"]
 position = Vector2(1924, 655)
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_fuvah")
-debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Borders"]
 position = Vector2(671, 160)
 rotation = -0.877041
 shape = SubResource("RectangleShape2D_6rae1")
-debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="Clues" type="Node" parent="."]
 
@@ -103,28 +88,24 @@ debug_color = Color(0, 0.6, 0.7, 0.42)
 position = Vector2(378, 916)
 clue = ExtResource("2_5f4ee")
 
-[node name="ClueArea" parent="Clues" instance=ExtResource("1_ra0nd")]
-position = Vector2(816, 769)
-clue = ExtResource("4_n1e4y")
-
-[node name="ClueArea2" parent="Clues" instance=ExtResource("1_ra0nd")]
-position = Vector2(580, 811)
-clue = ExtResource("6_q7kgm")
-
 [node name="Player" parent="." instance=ExtResource("4_altkg")]
-position = Vector2(800, 922)
+position = Vector2(672, 898)
 
-[node name="DialogueUI" parent="." instance=ExtResource("7_0e0cn")]
+[node name="NPC" type="Node" parent="."]
+
+[node name="NPC" parent="NPC" instance=ExtResource("5_1ei8r")]
+position = Vector2(871, 897)
+scale = Vector2(-7.10062, 7.73411)
+end_index = 5
+
+[node name="Managers" type="Node" parent="."]
+
+[node name="DialogueManager" type="Node" parent="Managers"]
+unique_name_in_owner = true
+script = ExtResource("5_3myoo")
+
+[node name="UI" type="Node" parent="Managers"]
+
+[node name="DialogueUI" parent="Managers/UI" instance=ExtResource("6_4pu3d")]
 unique_name_in_owner = true
 visible = false
-offset_left = 0.0
-offset_right = 0.0
-
-[node name="DialogueManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("6_gkphd")
-
-[node name="NPC" parent="." instance=ExtResource("8_bb1rp")]
-position = Vector2(625, 919)
-end_index = 3
-character1_sprite = ExtResource("9_jcs8d")

@@ -1,0 +1,145 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5h0imkaet8vo"]
+
+[ext_resource type="Texture2D" uid="uid://dqf5468vy12h3" path="res://src/dialogue/placeholder.png" id="1_m3duq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_evl05"]
+font_size = 40
+font_color = Color(0.865079, 0.746064, 0.920767, 1)
+
+[node name="DialogueUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.241993, 0.225259, 0.232459, 0.384314)
+metadata/_edit_use_anchors_ = true
+
+[node name="dialogueCharacter1" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.104167
+anchor_top = 0.348667
+anchor_right = 0.365063
+anchor_bottom = 1.06107
+offset_top = 0.439972
+offset_right = -0.919983
+offset_bottom = 0.039978
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_m3duq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Textbox" type="ColorRect" parent="Background/dialogueCharacter1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.743286
+anchor_top = -0.497404
+anchor_right = 1.95039
+anchor_bottom = -0.0320117
+offset_left = -0.214325
+offset_top = -0.354034
+offset_right = 0.233582
+offset_bottom = -0.240128
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.196197, 0.187122, 0.200583, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="Label" parent="Background/dialogueCharacter1/Textbox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0138445
+anchor_top = 0.214286
+anchor_right = 0.982961
+anchor_bottom = 0.937888
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "sss"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="Background/dialogueCharacter1/Textbox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0316987
+anchor_top = 0.0481644
+anchor_right = 0.853699
+anchor_bottom = 0.218164
+offset_left = 0.853999
+offset_top = -0.1
+offset_right = 0.853882
+offset_bottom = 0.159996
+text = "Name"
+label_settings = SubResource("LabelSettings_evl05")
+metadata/_edit_use_anchors_ = true
+
+[node name="dialogueCharacter2" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.669792
+anchor_top = 0.348667
+anchor_right = 0.930687
+anchor_bottom = 1.06107
+offset_top = 0.439972
+offset_right = -0.919983
+offset_bottom = 0.039978
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_m3duq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Textbox" type="ColorRect" parent="Background/dialogueCharacter2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.956714
+anchor_top = -0.497404
+anchor_right = 0.25039
+anchor_bottom = -0.0320117
+offset_left = -0.214325
+offset_top = -0.354034
+offset_right = 0.233582
+offset_bottom = -0.240128
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.196197, 0.187122, 0.200583, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="Label" parent="Background/dialogueCharacter2/Textbox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0141909
+anchor_top = 0.203512
+anchor_right = 0.983307
+anchor_bottom = 0.927114
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "ssss"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="Background/dialogueCharacter2/Textbox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.036429
+anchor_top = 0.0401836
+anchor_right = 0.858429
+anchor_bottom = 0.210184
+offset_left = 0.853999
+offset_top = -0.1
+offset_right = 0.853882
+offset_bottom = 0.159996
+text = "Name"
+label_settings = SubResource("LabelSettings_evl05")
+metadata/_edit_use_anchors_ = true
