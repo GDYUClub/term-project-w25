@@ -7,18 +7,21 @@ extends Node2D
 # the correct layout can be baked into the panel, have them include a correct_panel value
 
 # this should be based on the number of clues from the player
-@export var clue_count:int
-@onready var grid_cell_scene:PackedScene = preload("res://src/clues/grid_cell.tscn")
-@onready var panel_scene:PackedScene = preload("res://src/clues/clue_panel.tscn")
+@export var clue_count: int
+@onready var grid_cell_scene: PackedScene = preload("res://src/clues/grid_cell.tscn")
+@onready var panel_scene: PackedScene = preload("res://src/clues/clue_panel.tscn")
 
-var player_clues:Array[Clue] = []
+var player_clues: Array[Clue] = []
 
-var grid_cells:Array[GridBox] = []
-var panels:Array[CluePanel] = []
+var grid_cells: Array[GridBox] = []
+var panels: Array[CluePanel] = []
 
-const PANEL_SIZE:int = 184
-const INITIAL_POSITION:Vector2 = Vector2(200,200)
-const OFFSET:Vector2 = Vector2(200,200)
+const PANEL_SIZE: int = 184
+const INITIAL_POSITION: Vector2 = Vector2(200, 200)
+const OFFSET: Vector2 = Vector2(200, 200)
+
+signal puzzle_solved
+var solved: bool = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,13 +32,16 @@ func _ready() -> void:
 	populate_clue_panels()
 	populate_grid_cells()
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if panels_correct():
+		solved = true
+		puzzle_solved.emit()
 		$CorrectLabel.text = "correct"
 	else:
 		$CorrectLabel.text = "wrong"
-	pass
+
 
 func populate_clue_panels():
 	for clue in player_clues:
@@ -45,14 +51,15 @@ func populate_clue_panels():
 		panels.append(panelInst)
 		panelInst.numberLabel.text = str(clue.correct_panel)
 
+
 func populate_grid_cells():
-	var rows: = int(ceil(player_clues.size()))
+	var rows := int(ceil(player_clues.size()))
 	# it's always two for now
 	var cols = 2
 	var i = 0
 	for r in rows:
 		for c in cols:
-			var	gridCellInst:GridBox = grid_cell_scene.instantiate()
+			var gridCellInst: GridBox = grid_cell_scene.instantiate()
 			gridCellInst.id = i
 			gridCellInst.position.x = INITIAL_POSITION.x + (OFFSET.x * c)
 			gridCellInst.position.y = INITIAL_POSITION.y + (OFFSET.y * r)
@@ -65,13 +72,9 @@ func populate_grid_cells():
 		if i == player_clues.size():
 			break
 
+
 func panels_correct() -> bool:
 	for grid_cell in grid_cells:
 		if not grid_cell.correct_panel:
 			return false
 	return true
-
-
-
-
-		

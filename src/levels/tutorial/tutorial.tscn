@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://chwpqxi2ikcnr"]
+[gd_scene load_steps=18 format=3 uid="uid://chwpqxi2ikcnr"]
 
 [ext_resource type="Script" path="res://src/levels/tutorial/tutorial.gd" id="1_hspkm"]
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="4_altkg"]
 [ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/clue_lighter.tres" id="4_n1e4y"]
 [ext_resource type="Script" path="res://src/dialogue/dialogue_manager.gd" id="6_gkphd"]
-[ext_resource type="Resource" path="res://src/clues/clue-resources/tutorial/clue_third.tres" id="6_q7kgm"]
+[ext_resource type="Resource" uid="uid://d3k8rcoc56don" path="res://src/clues/clue-resources/tutorial/clue_third.tres" id="6_q7kgm"]
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="7_0e0cn"]
+[ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="7_oggfx"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="8_bb1rp"]
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="9_jcs8d"]
 
@@ -29,6 +30,13 @@ size = Vector2(421.388, 22.3685)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hspkm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 1425.0
+offset_top = 337.0
+offset_right = 1922.0
+offset_bottom = 1058.0
+color = Color(0.154876, 0.154876, 0.154876, 0.909804)
 
 [node name="PanelRef" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.133333)
@@ -97,6 +105,13 @@ rotation = -0.877041
 shape = SubResource("RectangleShape2D_6rae1")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
+[node name="BlockingShape" type="CollisionShape2D" parent="Borders"]
+unique_name_in_owner = true
+position = Vector2(1342, 885)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_x7bmo")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
 [node name="Clues" type="Node" parent="."]
 
 [node name="Cigs" parent="Clues" instance=ExtResource("1_ra0nd")]
@@ -111,8 +126,55 @@ clue = ExtResource("4_n1e4y")
 position = Vector2(580, 811)
 clue = ExtResource("6_q7kgm")
 
+[node name="Transitions" type="Node" parent="."]
+
+[node name="PanelTransition" parent="Transitions" instance=ExtResource("7_oggfx")]
+position = Vector2(1895, 148)
+move_type = 1
+
+[node name="CollisionShape2D" parent="Transitions/PanelTransition" index="0"]
+position = Vector2(5, 56)
+
+[node name="NewFrame" parent="Transitions/PanelTransition" index="1"]
+position = Vector2(-1849, 414)
+
+[node name="PanelTransition2" parent="Transitions" instance=ExtResource("7_oggfx")]
+position = Vector2(1379, 537)
+rotation = -1.57079
+
+[node name="CollisionShape2D" parent="Transitions/PanelTransition2" index="0"]
+rotation = -1.57079
+
+[node name="NewFrame" parent="Transitions/PanelTransition2" index="1"]
+position = Vector2(-212.001, -623)
+
+[node name="PanelTransition3" parent="Transitions" instance=ExtResource("7_oggfx")]
+position = Vector2(949, 884)
+rotation = -1.57079
+move_type = 1
+
+[node name="CollisionShape2D" parent="Transitions/PanelTransition3" index="0"]
+position = Vector2(0.999996, -1.00001)
+rotation = -1.57079
+
+[node name="NewFrame" parent="Transitions/PanelTransition3" index="1"]
+position = Vector2(-85.9998, 90.0002)
+
+[node name="PanelTransition4" parent="Transitions" instance=ExtResource("7_oggfx")]
+position = Vector2(949, 884)
+rotation = -1.57079
+move_type = 1
+
+[node name="CollisionShape2D" parent="Transitions/PanelTransition4" index="0"]
+position = Vector2(-27.9991, 428)
+rotation = -1.57079
+
+[node name="NewFrame" parent="Transitions/PanelTransition4" index="1"]
+position = Vector2(-56.9989, 512)
+
 [node name="Player" parent="." instance=ExtResource("4_altkg")]
-position = Vector2(800, 922)
+position = Vector2(1206, 252)
+current_move_type = 1
 
 [node name="DialogueUI" parent="." instance=ExtResource("7_0e0cn")]
 unique_name_in_owner = true
@@ -128,3 +190,8 @@ script = ExtResource("6_gkphd")
 position = Vector2(625, 919)
 end_index = 3
 character1_sprite = ExtResource("9_jcs8d")
+
+[editable path="Transitions/PanelTransition"]
+[editable path="Transitions/PanelTransition2"]
+[editable path="Transitions/PanelTransition3"]
+[editable path="Transitions/PanelTransition4"]

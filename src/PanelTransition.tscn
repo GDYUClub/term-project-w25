@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5psffmv1afdo"]
+
+[ext_resource type="Script" path="res://src/frame.gd" id="1_lu2ol"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhujw"]
+size = Vector2(30, 268.5)
+
+[node name="PanelTransition" type="Area2D"]
+script = ExtResource("1_lu2ol")
+metadata/Direction = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_mhujw")
+debug_color = Color(1.19124e-06, 0.413376, 0.167811, 0.42)
+
+[node name="NewFrame" type="Marker2D" parent="."]

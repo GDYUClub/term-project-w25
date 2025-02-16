@@ -1,95 +1,108 @@
 extends CharacterBody2D
 
-@onready var cshape = $CollisionShape2D
+const WALK_SPEED = 300.0
 
-const WALK_SPEED = 80.0
-const CLIMB_SPEED = 50.0
-const SPRINT_SPEED = 120.0
-const CROUCH_SPEED = 65.0
+@onready var animPlayer: AnimationPlayer = $AnimationPlayer
+@onready var sprite: Sprite2D = $Sprite2D
+@onready var alertSprite: Sprite2D = $AlertSprite
+@onready var area: Area2D = $Area2D
 
+var can_move: bool = true
 
+var interactable: Area2D = null
 
-var current_speed: float = WALK_SPEED
-var current_sprint_speed: float = SPRINT_SPEED
-
-var move = Global.direction
+var clues: Array = []
 
 enum MOVETYPES {
 	TOP_DOWN,
 	SIDE_SCROLLER,
 }
-var current_move_type:MOVETYPES
 
-var on_ladder: bool = false
+var move_sprites = {
+	MOVETYPES.TOP_DOWN: "res://assets/sprites/topdown-temp.png",
+	MOVETYPES.SIDE_SCROLLER: "res://assets/sprites/side-temp.png",
+}
 
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+@export var current_move_type: MOVETYPES
 
-var is_crouching: bool = false
-var hold_to_crouch: bool = false # Handles press or hold-to-crouch behavior. Currently unimplemented
 
-var stand_cshape = preload("res://assets/resources/standing_cshape.tres")
-var crouch_cshape = preload("res://assets/resources/crouch_cshape.tres")
+# Called when the node enters the scene tree for the first time.
+#3
+func _ready() -> void:
+	add_to_group("player")
+	area.area_entered.connect(_on_area_entered)
+	area.area_exited.connect(_on_area_exited)
+	_change_move_type(current_move_type)
 
-# Top down movement function
-func _top_down():
-	
+
+func _change_move_type(new_movetype: MOVETYPES):
+	current_move_type = new_movetype
+	velocity = Vector2.ZERO
+	sprite.texture = load(move_sprites[current_move_type])
+
+
+func _top_down(delta: float):
 	var direction_vector := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
-	
-	current_speed = CROUCH_SPEED if is_crouching else WALK_SPEED
-	current_sprint_speed = SPRINT_SPEED if not is_crouching else WALK_SPEED
-	
-	# velocity.x = direction_vector.x * (current_sprint_speed if Input.is_action_pressed("sprint") else current_speed) if direction_vector.x else move_toward(velocity.x, 0, current_speed)
-	# velocity.y = direction_vector.y * current_speed if direction_vector.y else move_toward(velocity.y, 0, current_speed)
-	velocity = current_speed * direction_vector
+	velocity = WALK_SPEED * direction_vector
 
 
 # Side scroller movement function
 func _side_scroller(delta: float):
-	if not is_on_floor() and !on_ladder:
-		velocity.y += gravity * delta
-	
 	var direction := Input.get_axis("ui_left", "ui_right")
-	
-	current_speed = CROUCH_SPEED if is_crouching else WALK_SPEED
-	current_sprint_speed = SPRINT_SPEED if not is_crouching else WALK_SPEED
-	
-	velocity.x = direction * (current_sprint_speed if Input.is_action_pressed("sprint") else current_speed) if direction else move_toward(velocity.x, 0, current_speed)
-	if on_ladder: # Enables climbing behavior if player is on a ladder
-		_climb()
-
-# Climb ladder function
-func _climb():
-	var directionY := Input.get_axis("ui_up", "ui_down")
-	
-	velocity.y = directionY * CLIMB_SPEED if directionY else 0
-	velocity.x = 0 if directionY else velocity.x
-	
-	velocity.y = directionY * (SPRINT_SPEED if directionY > 0 else SPRINT_SPEED / 2) if Input.is_action_pressed("sprint") and directionY != 0 else velocity.y
+	velocity.x = WALK_SPEED * direction
 
 
-# Crouch function
-func _toggle_crouch():
-	is_crouching = !is_crouching
-	#is_crouching = true if !is_crouching else false
-	cshape.shape = crouch_cshape if is_crouching else stand_cshape
-
-
-func _physics_process(delta: float) -> void:
-	
-	
-
-	move = Global.direction
-	
-	if Input.is_action_just_pressed("crouch"):
-		_toggle_crouch()
-	
-	if is_crouching:
-		current_speed = CROUCH_SPEED
-		current_speed = CROUCH_SPEED
-
-	if current_move_type == MOVETYPES.TOP_DOWN: 
-		_top_down()
-	else:
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if not can_move:
+		return
+	if current_move_type == MOVETYPES.TOP_DOWN:
+		_top_down(delta)
+	if current_move_type == MOVETYPES.SIDE_SCROLLER:
 		_side_scroller(delta)
-	#print(MoveType.find_key(move))
+	if Input.is_action_just_pressed("interact"):
+		interact()
+	_animate()
 	move_and_slide()
+
+
+func interact():
+	if not interactable:
+		return
+
+	if interactable.is_in_group("clue"):
+		#clue popup
+
+		#get clue
+		clues.append(interactable.clue)
+		Inventory.add_item(interactable.clue)
+		interactable.monitorable = false
+		alertSprite.visible = false
+		if interactable.clue.picks_up:
+			interactable.visible = false
+
+	if interactable.is_in_group("npc"):
+		interactable.talk_to_npc()
+
+
+func _animate():
+	if velocity != Vector2.ZERO:
+		animPlayer.play("walk")
+	else:
+		animPlayer.pause()
+
+
+func _on_area_entered(area: Area2D):
+	if area.is_in_group("clue"):
+		alertSprite.visible = true
+		interactable = area
+	if area.is_in_group("npc"):
+		if area.is_interacted_with == false or area.repeatable_conversation == true:
+			alertSprite.visible = true
+			interactable = area
+
+
+func _on_area_exited(area: Area2D):
+	if area.is_in_group("clue") or area.is_in_group("npc"):
+		alertSprite.visible = false
+		interactable = null

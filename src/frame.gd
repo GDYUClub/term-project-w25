@@ -1,16 +1,22 @@
 extends Area2D
 
 # This function is used to set the global direction variable
-@export var direction = 0
 	
+enum MOVETYPES {
+	TOP_DOWN,
+	SIDE_SCROLLER,
+}
+
+@export var move_type:MOVETYPES
+
+func _ready() -> void:
+	body_entered.connect(_on_body_entered)
 
 # This functions puts the player in the next frame
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
+	if body.is_in_group("player"):
 		body.set_position($NewFrame.global_position)
-		Global.direction = direction
-		#print(direction)
-		#print(Global.direction)
+		body._change_move_type(move_type)
 
 ## To use the function: 
 # drag the Frame scene into the main scene
