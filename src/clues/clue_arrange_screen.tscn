@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://dvdfsxynnb6vg"]
 
-[ext_resource type="Script" path="res://src/clues/clue_grid_menu.gd" id="1_hww8b"]
+[ext_resource type="Script" path="res://src/clues/clue_grid_menu.gd" id="1_nbl5j"]
 
 [node name="ClueGridTesting" type="Node2D"]
 z_index = 128
-script = ExtResource("1_hww8b")
+script = ExtResource("1_nbl5j")
 
 [node name="BGPanel" type="Panel" parent="."]
 offset_right = 1921.0

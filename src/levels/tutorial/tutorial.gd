@@ -1,6 +1,6 @@
 extends Node
 
-@onready var panelArrangementScene = preload("res://src/clues/clue_grid_testing.tscn")
+@onready var panelArrangementScene = preload("res://src/clues/clue_arrange_screen.tscn")
 @onready var player = $Player
 
 enum GAMEPLAY_STATE{
