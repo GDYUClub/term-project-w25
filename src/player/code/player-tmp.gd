@@ -36,6 +36,7 @@ func _ready() -> void:
 
 func _change_move_type(new_movetype:MOVETYPES):
 	current_move_type = new_movetype
+	velocity = Vector2.ZERO
 	sprite.texture = load(move_sprites[current_move_type])
 
 

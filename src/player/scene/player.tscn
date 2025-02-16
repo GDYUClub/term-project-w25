@@ -94,6 +94,7 @@ script = ExtResource("1_j2py3")
 position = Vector2(0, -12)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(-0.5, 18.5)
 shape = ExtResource("2_kwucs")
 debug_color = Color(0, 0.6, 0.7, 0.42)

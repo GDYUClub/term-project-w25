@@ -20,6 +20,8 @@ const PANEL_SIZE:int = 184
 const INITIAL_POSITION:Vector2 = Vector2(200,200)
 const OFFSET:Vector2 = Vector2(200,200)
 
+signal puzzle_solved
+var solved:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,10 +34,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if panels_correct():
+		solved = true
+		puzzle_solved.emit()
 		$CorrectLabel.text = "correct"
 	else:
 		$CorrectLabel.text = "wrong"
-	pass
 
 func populate_clue_panels():
 	for clue in player_clues:

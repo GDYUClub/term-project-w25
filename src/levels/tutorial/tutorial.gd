@@ -12,6 +12,12 @@ enum GAMEPLAY_STATE{
 var current_state:GAMEPLAY_STATE = GAMEPLAY_STATE.EXPLORE
 var panelArrangeInst
 
+func _puzzle_solved():
+	$ColorRect.visible = false
+	%BlockingShape.visible = false
+	%BlockingShape.disabled = true
+	pass
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	match current_state:
@@ -21,6 +27,7 @@ func _process(delta: float) -> void:
 			if Input.is_action_just_pressed("analyze"):
 				current_state = GAMEPLAY_STATE.PANEL_ARRANGE
 				panelArrangeInst = panelArrangementScene.instantiate()	
+				panelArrangeInst.puzzle_solved.connect(_puzzle_solved)
 				add_child(panelArrangeInst)
 
 		GAMEPLAY_STATE.DIALOG:
