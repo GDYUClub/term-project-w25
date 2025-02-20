@@ -17,14 +17,14 @@ var dialogue_ongoing : bool = false
 #npc ui
 @onready var dialogue_ui: Control = %DialogueUI
 @onready var character_1: TextureRect = %DialogueUI/Background/dialogueCharacter1
-@onready var character_1_textbox: ColorRect = %DialogueUI/Background/dialogueCharacter1/Textbox
-@onready var character_1_text: Label = %DialogueUI/Background/dialogueCharacter1/Textbox/Text
-@onready var character_1_name: Label = %DialogueUI/Background/dialogueCharacter1/Textbox/Name
+@onready var bottom_dialogue_textbox: ColorRect = %DialogueUI/Background/bottomTextBox
+@onready var bottom_dialogue_text: Label = %DialogueUI/Background/bottomTextBox/Text
+@onready var bottom_dialogue_name: Label = %DialogueUI/Background/bottomTextBox/Name
 
 @onready var character_2: TextureRect = %DialogueUI/Background/dialogueCharacter2
-@onready var character_2_textbox: ColorRect = %DialogueUI/Background/dialogueCharacter2/Textbox
-@onready var character_2_text: Label = %DialogueUI/Background/dialogueCharacter2/Textbox/Text
-@onready var character_2_name: Label = %DialogueUI/Background/dialogueCharacter2/Textbox/Name
+@onready var top_dialogue_textbox: ColorRect = %DialogueUI/Background/topTextBox
+@onready var top_dialogue_text: Label = %DialogueUI/Background/topTextBox/Text
+@onready var top_dialogue_name: Label = %DialogueUI/Background/topTextBox/Name
 
 #player handling
 @onready var alert_sprite: Sprite2D = $"../Player/AlertSprite"
@@ -40,7 +40,6 @@ func _process(delta: float) -> void: #for checking player skip input
 			adjust_npc_dialogue()
 		elif(type == DialogueType.INTERACTABLE):
 			adjust_interactable_dialogue()
-		print("clicked")
 
 
 func import_dialogue_data() -> void: #import and convert JSON to string dictionaries
@@ -60,8 +59,8 @@ func load_interactable_dialogue(new_start_id : int, new_end_id : int, new_text_b
 
 
 func load_npc_dialogue(new_start_id : int, new_end_id : int, speaker_1_sprite: Texture, speaker_2_sprite:Texture): #initial method to load visual novel dialogue
+	dialogue_ongoing = false
 	prints(new_start_id,new_end_id,speaker_1_sprite,speaker_2_sprite)
-	dialogue_ongoing = true
 	start_id = new_start_id
 	end_id = new_end_id
 	index = start_id
@@ -71,27 +70,28 @@ func load_npc_dialogue(new_start_id : int, new_end_id : int, speaker_1_sprite: T
 	dialogue_ui.visible = true
 	print("pre-requisites loaded, type: npc")
 	adjust_npc_dialogue()
+	dialogue_ongoing = true
 
 func adjust_npc_dialogue(): #switch to next line
 	if(dialogue.size() > 0 && index < end_id):
 		var character_index : int = dialogue[str(index)]["SPEAKER_ID"]
-		if character_index == 0: #if speaker is the first character
-			character_1_name.text = dialogue[str(index)]["SPEAKER_NAME"]
-			character_1_text.text = dialogue[str(index)]["FRENCH"]
-			character_1_textbox.visible = true
-			character_2_textbox.visible = false
+		if !dialogue_ongoing: # if first dialogue
+			bottom_dialogue_name.text = dialogue[str(index)]["SPEAKER_NAME"]
+			bottom_dialogue_text.text = dialogue[str(index)]["FRENCH"]
+			bottom_dialogue_textbox.visible = true
+			top_dialogue_textbox.visible = false
 		else:
-			character_2_name.text = dialogue[str(index)]["SPEAKER_NAME"]
-			character_2_text.text = dialogue[str(index)]["FRENCH"]
-			character_1_textbox.visible = false
-			character_2_textbox.visible = true
+			top_dialogue_name.text = bottom_dialogue_name.text
+			top_dialogue_text.text = bottom_dialogue_text.text
+			bottom_dialogue_name.text = dialogue[str(index)]["SPEAKER_NAME"]
+			bottom_dialogue_text.text = dialogue[str(index)]["FRENCH"]
+			top_dialogue_textbox.visible = true
+			
 		character_1.modulate = Color(1, 1, 1, 1.0 if character_index == 0 else 0.4)
 		character_2.modulate = Color(1, 1, 1, 1.0 if character_index == 1 else 0.4)
 		index += 1
 		print("DEBUG: dialogue.size: " + str(dialogue.size()) + " index: " + str(index) + " end_id: " + str(4))
-		print("text loaded")
 	else:
-		print("Debug")
 		dialogue_ui.visible = false;
 		dialogue_ongoing = false
 		alert_sprite.visible = false
