@@ -14,6 +14,8 @@ var _is_selected: bool = false
 var _grids_inside: Array[GridBox] = []
 
 var panel_exists: bool = false
+var delay: float = 0.5
+var time_elapsed: float = 0.0
 var desc_panel
 const OFFSET: Vector2 = Vector2(80, 30)
 
@@ -35,11 +37,13 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if _is_mouse_in:
-		await get_tree().create_timer(0.5).timeout
-		if(!panel_exists):
+	if _is_mouse_in and !_is_selected:
+		time_elapsed += delta
+		if(!panel_exists and time_elapsed > delay):
 			desc_panel = show_description()
-	if !_is_mouse_in:
+			time_elapsed = 0
+	if !_is_mouse_in or _is_selected:
+		time_elapsed = 0
 		if(panel_exists):
 			hide_description(desc_panel)
 	#Check if the grab button is being used
