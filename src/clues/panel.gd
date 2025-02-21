@@ -7,9 +7,15 @@ extends Area2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var numberLabel: Label = $NumberLabel
 
+@onready var panel_desc_scene: PackedScene = preload("res://src/clues/clue_description.tscn")
+
 var _is_mouse_in: bool = false
 var _is_selected: bool = false
 var _grids_inside: Array[GridBox] = []
+
+var panel_exists: bool = false
+var desc_panel
+const OFFSET: Vector2 = Vector2(80, 30)
 
 static var _can_select: bool = true
 
@@ -29,7 +35,12 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if _is_mouse_in:
-		
+		if(!panel_exists):
+			desc_panel = show_description()
+		print(desc_panel)
+	if !_is_mouse_in:
+		if(panel_exists):
+			hide_description(desc_panel)
 	#Check if the grab button is being used
 	if Input.is_action_pressed("grab"):
 		#Set the panel to selected if the mouse is in the area 2D
@@ -90,4 +101,14 @@ func find_closest_box(boxes: Array[GridBox], pos: Vector2) -> GridBox:
 
 
 func show_description():
-	print("HOVERING")
+	var panel_desc = panel_desc_scene.instantiate()
+	add_child(panel_desc)
+	panel_exists = true
+	panel_desc.position.x = OFFSET.x
+	panel_desc.position.y = OFFSET.y
+	return panel_desc
+	
+
+func hide_description(description: Area2D) -> void:
+	description.free()
+	panel_exists = false

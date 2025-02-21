@@ -1,19 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://q7ux5fjcblwo"]
+[gd_scene load_steps=3 format=3 uid="uid://dnbdtetmksjia"]
 
-[ext_resource type="Texture2D" uid="uid://eu0kdjsoh565" path="res://assets/sprites/gridcell border.png" id="1_hmd85"]
+[ext_resource type="Texture2D" uid="uid://eu0kdjsoh565" path="res://assets/sprites/gridcell border.png" id="1_m40gr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugmg3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2e5o7"]
 size = Vector2(177.813, 177.438)
 
-[node name="ClueDescription" type="Node2D"]
-position = Vector2(1, -2)
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(94.0938, -90.7188)
-shape = SubResource("RectangleShape2D_ugmg3")
-debug_color = Color(0, 0.6, 0.7, 0.42)
+[node name="Description" type="Area2D" groups=["item_description"]]
+position = Vector2(-96, 90)
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 6.14281
@@ -24,7 +17,7 @@ scale = Vector2(4.40702, 4.51794)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(94, -92)
-texture = ExtResource("1_hmd85")
+texture = ExtResource("1_m40gr")
 
 [node name="NameLabel" type="Label" parent="."]
 offset_left = 71.8571
@@ -53,3 +46,8 @@ scale = Vector2(0.885714, 0.885714)
 text = "IMAGE IMAGE
 IMAGE IMAGE"
 horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(94.0938, -90.7188)
+shape = SubResource("RectangleShape2D_2e5o7")
+debug_color = Color(0, 0.6, 0.7, 0.42)

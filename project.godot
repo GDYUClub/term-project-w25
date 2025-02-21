@@ -38,6 +38,7 @@ project/assembly_name="ink-orporated"
 
 Player=""
 rebind_button=""
+item_description=""
 
 [input]
 
