@@ -12,6 +12,7 @@ font_size = 19
 font_size = 14
 
 [node name="Description" type="Area2D" groups=["item_description"]]
+z_index = 3
 position = Vector2(-121, 119)
 scale = Vector2(1.28, 1.28)
 
