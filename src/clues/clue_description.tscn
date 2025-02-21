@@ -1,53 +1,54 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnbdtetmksjia"]
+[gd_scene load_steps=5 format=3 uid="uid://dnbdtetmksjia"]
 
 [ext_resource type="Texture2D" uid="uid://eu0kdjsoh565" path="res://assets/sprites/gridcell border.png" id="1_m40gr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2e5o7"]
-size = Vector2(177.813, 177.438)
+size = Vector2(177.813, 219.445)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3xtir"]
+font_size = 19
+
+[sub_resource type="LabelSettings" id="LabelSettings_1imky"]
+font_size = 14
 
 [node name="Description" type="Area2D" groups=["item_description"]]
-position = Vector2(-96, 90)
+position = Vector2(-121, 119)
+scale = Vector2(1.28, 1.28)
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 6.14281
-offset_top = -182.296
-offset_right = 46.1428
-offset_bottom = -142.296
+offset_left = 6.0
+offset_top = -203.0
+offset_right = 46.0
+offset_bottom = -154.0
 scale = Vector2(4.40702, 4.51794)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(94, -92)
+scale = Vector2(1, 1.25)
 texture = ExtResource("1_m40gr")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(94.0938, -93.0556)
+shape = SubResource("RectangleShape2D_2e5o7")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
 [node name="NameLabel" type="Label" parent="."]
-offset_left = 71.8571
-offset_top = -177.086
-offset_right = 122.857
-offset_bottom = -154.086
+offset_left = 69.0
+offset_top = -178.0
+offset_right = 130.0
+offset_bottom = -151.0
 scale = Vector2(0.885714, 0.885714)
 text = "Name:"
+label_settings = SubResource("LabelSettings_3xtir")
 horizontal_alignment = 1
 
 [node name="DescriptionLabel" type="Label" parent="."]
-offset_left = 59.7143
-offset_top = -152.197
-offset_right = 148.714
-offset_bottom = -129.197
+offset_left = 6.0
+offset_top = -148.0
+offset_right = 208.0
+offset_bottom = -8.00002
 scale = Vector2(0.885714, 0.885714)
-text = "Description"
+text = "WRITING RANDOM FILLER DESCRIPTION WRITING RANDOM FILLER DESCRIPTION WRITING RANDOM FILLER DESCRIPTION "
+label_settings = SubResource("LabelSettings_1imky")
 horizontal_alignment = 1
-
-[node name="Icon" type="Label" parent="."]
-offset_left = 51.1428
-offset_top = -114.574
-offset_right = 157.143
-offset_bottom = -65.5739
-scale = Vector2(0.885714, 0.885714)
-text = "IMAGE IMAGE
-IMAGE IMAGE"
-horizontal_alignment = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(94.0938, -90.7188)
-shape = SubResource("RectangleShape2D_2e5o7")
-debug_color = Color(0, 0.6, 0.7, 0.42)
+autowrap_mode = 3

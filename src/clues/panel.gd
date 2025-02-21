@@ -26,6 +26,7 @@ func get_panel_name() -> String:
 
 func _ready() -> void:
 	sprite.texture = clue.panel
+	
 	area_entered.connect(_on_area_entered)
 	area_exited.connect(_on_area_exited)
 
@@ -37,7 +38,6 @@ func _process(delta: float) -> void:
 	if _is_mouse_in:
 		if(!panel_exists):
 			desc_panel = show_description()
-		print(desc_panel)
 	if !_is_mouse_in:
 		if(panel_exists):
 			hide_description(desc_panel)
@@ -103,6 +103,12 @@ func find_closest_box(boxes: Array[GridBox], pos: Vector2) -> GridBox:
 func show_description():
 	var panel_desc = panel_desc_scene.instantiate()
 	add_child(panel_desc)
+	
+	var nameLabel = panel_desc.find_child("NameLabel")
+	nameLabel.text = clue.name
+	var descriptionLabel = panel_desc.find_child("DescriptionLabel")
+	descriptionLabel.text = clue.desc
+	
 	panel_exists = true
 	panel_desc.position.x = OFFSET.x
 	panel_desc.position.y = OFFSET.y
