@@ -36,6 +36,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if _is_mouse_in:
+		await get_tree().create_timer(0.5).timeout
 		if(!panel_exists):
 			desc_panel = show_description()
 	if !_is_mouse_in:
