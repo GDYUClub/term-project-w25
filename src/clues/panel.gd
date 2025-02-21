@@ -28,6 +28,8 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if _is_mouse_in:
+		
 	#Check if the grab button is being used
 	if Input.is_action_pressed("grab"):
 		#Set the panel to selected if the mouse is in the area 2D
@@ -85,3 +87,7 @@ func find_closest_box(boxes: Array[GridBox], pos: Vector2) -> GridBox:
 			closest_box = box
 			closest_position = closest_box.position.distance_to(pos)
 	return closest_box
+
+
+func show_description():
+	print("HOVERING")
