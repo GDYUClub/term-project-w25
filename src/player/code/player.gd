@@ -7,6 +7,8 @@ const WALK_SPEED = 300.0
 @onready var alertSprite: Sprite2D = $AlertSprite
 @onready var area: Area2D = $Area2D
 
+signal start_inquire
+
 var can_move: bool = true
 
 var interactable: Area2D = null
@@ -24,7 +26,6 @@ var move_sprites = {
 }
 
 @export var current_move_type: MOVETYPES
-
 
 # Called when the node enters the scene tree for the first time.
 #3
@@ -84,7 +85,12 @@ func interact():
 	if interactable.is_in_group("npc"):
 		interactable.talk_to_npc()
 
-
+func inquire():
+	if not interactable:
+		return
+	if interactable.is_in_group("npc"):
+		start_inquire.emit(interactable)
+		
 func _animate():
 	if velocity != Vector2.ZERO:
 		animPlayer.play("walk")
