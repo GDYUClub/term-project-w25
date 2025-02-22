@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bt7hps1ykd8nk"]
+[gd_scene load_steps=15 format=3 uid="uid://bt7hps1ykd8nk"]
 
 [ext_resource type="Texture2D" uid="uid://dx6370i2ofkdi" path="res://assets/sprites/knight.png" id="1_1qr8e"]
 [ext_resource type="Script" path="res://src/player/code/player.gd" id="1_j2py3"]
 [ext_resource type="Shape2D" uid="uid://coaafk8ng1xrm" path="res://assets/resources/standing_cshape.tres" id="2_kwucs"]
+[ext_resource type="Texture2D" uid="uid://bknspeucr7r2o" path="res://assets/sprites/Inquire.png" id="4_42hxm"]
 [ext_resource type="Texture2D" uid="uid://badcq2r82pcs6" path="res://assets/sprites/alert-temp.png" id="4_88ynk"]
 [ext_resource type="Texture2D" uid="uid://bfif1hwuq68ag" path="res://assets/sprites/side-temp.png" id="4_x0k5r"]
 
@@ -109,6 +110,12 @@ visible = false
 position = Vector2(0, -86)
 scale = Vector2(3, 3)
 texture = ExtResource("4_88ynk")
+
+[node name="InquireSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(55, -33)
+scale = Vector2(0.1975, 0.1975)
+texture = ExtResource("4_42hxm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)

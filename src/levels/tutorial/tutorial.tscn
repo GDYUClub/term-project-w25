@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://chwpqxi2ikcnr"]
+[gd_scene load_steps=19 format=3 uid="uid://chwpqxi2ikcnr"]
 
 [ext_resource type="Script" path="res://src/levels/tutorial/tutorial.gd" id="1_hspkm"]
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" path="res://src/PanelTransition.tscn" id="7_oggfx"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="8_bb1rp"]
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="9_jcs8d"]
+[ext_resource type="PackedScene" uid="uid://cooabq8usm2i1" path="res://src/dialogue/inquire_ui.tscn" id="13_o2q8g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fuvah"]
 size = Vector2(1964, 20)
@@ -190,6 +191,11 @@ script = ExtResource("6_gkphd")
 position = Vector2(625, 919)
 end_index = 3
 character1_sprite = ExtResource("9_jcs8d")
+
+[node name="InquireUI" parent="." instance=ExtResource("13_o2q8g")]
+visible = false
+
+[connection signal="start_inquire" from="Player" to="InquireUI" method="start_inquire"]
 
 [editable path="Transitions/PanelTransition"]
 [editable path="Transitions/PanelTransition2"]

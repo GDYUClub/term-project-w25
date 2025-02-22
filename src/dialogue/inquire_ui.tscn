@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cooabq8usm2i1"]
+
+[ext_resource type="Script" path="res://src/dialogue/inquire_ui.gd" id="1_gyl38"]
+[ext_resource type="PackedScene" uid="uid://b2pjusjhpjco6" path="res://src/dialogue/clue_button.tscn" id="2_pktm2"]
+
+[node name="InquireUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gyl38")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.407813
+anchor_top = 0.147222
+anchor_right = 0.623604
+anchor_bottom = 0.927741
+offset_right = -0.320004
+offset_bottom = 0.0400009
+grow_horizontal = 2
+columns = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="ClueButton" parent="GridContainer" instance=ExtResource("2_pktm2")]
+layout_mode = 2
+script = null
