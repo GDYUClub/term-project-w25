@@ -12,3 +12,7 @@ func open(event: InputEvent) -> void:
 
 func _on_popup_close_requested() -> void:
 	game.hide()
+
+
+func _on_body_entered(body: Node2D, event: InputEvent) -> void:
+	open(event)
