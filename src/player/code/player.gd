@@ -19,8 +19,8 @@ enum MOVETYPES {
 }
 
 var move_sprites = {
-	MOVETYPES.TOP_DOWN: "res://assets/sprites/topdown-temp.png",
-	MOVETYPES.SIDE_SCROLLER: "res://assets/sprites/side-temp.png",
+	MOVETYPES.TOP_DOWN: "res://assets/sprites/player/player_topdown.png",
+	MOVETYPES.SIDE_SCROLLER: "res://assets/sprites/player/player_sidescroll.png",
 }
 
 @export var current_move_type: MOVETYPES

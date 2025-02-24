@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bt7hps1ykd8nk"]
+[gd_scene load_steps=8 format=3 uid="uid://bt7hps1ykd8nk"]
 
-[ext_resource type="Texture2D" uid="uid://dx6370i2ofkdi" path="res://assets/sprites/knight.png" id="1_1qr8e"]
 [ext_resource type="Script" path="res://src/player/code/player.gd" id="1_j2py3"]
 [ext_resource type="Shape2D" uid="uid://coaafk8ng1xrm" path="res://assets/resources/standing_cshape.tres" id="2_kwucs"]
 [ext_resource type="Texture2D" uid="uid://badcq2r82pcs6" path="res://assets/sprites/alert-temp.png" id="4_88ynk"]
-[ext_resource type="Texture2D" uid="uid://bfif1hwuq68ag" path="res://assets/sprites/side-temp.png" id="4_x0k5r"]
+[ext_resource type="Texture2D" uid="uid://c0ipc3pys7l7q" path="res://assets/sprites/player/player_sidescroll.png" id="4_xu6yd"]
 
 [sub_resource type="Animation" id="Animation_1wbr4"]
 length = 0.001
@@ -46,47 +45,6 @@ _data = {
 "walk": SubResource("Animation_mrbcp")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ltbca"]
-atlas = ExtResource("1_1qr8e")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h0nux"]
-atlas = ExtResource("1_1qr8e")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7kvj8"]
-atlas = ExtResource("1_1qr8e")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nkrw8"]
-atlas = ExtResource("1_1qr8e")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_k6gat"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ltbca")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h0nux")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7kvj8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nkrw8")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 10.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
-}]
-
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_j2py3")
 
@@ -111,19 +69,10 @@ scale = Vector2(3, 3)
 texture = ExtResource("4_88ynk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(3, 3)
-texture = ExtResource("4_x0k5r")
-hframes = 2
+texture = ExtResource("4_xu6yd")
+hframes = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_a1owq")
 }
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(0, -12)
-sprite_frames = SubResource("SpriteFrames_k6gat")
-animation = &"Idle"
-autoplay = "Idle"
-frame_progress = 0.520677
