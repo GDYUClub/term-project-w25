@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cooabq8usm2i1"]
+[gd_scene load_steps=2 format=3 uid="uid://cooabq8usm2i1"]
 
 [ext_resource type="Script" path="res://src/dialogue/inquire_ui.gd" id="1_gyl38"]
-[ext_resource type="PackedScene" uid="uid://b2pjusjhpjco6" path="res://src/dialogue/clue_button.tscn" id="2_pktm2"]
 
 [node name="InquireUI" type="Control"]
 layout_mode = 3
@@ -24,7 +23,3 @@ offset_bottom = 0.0400009
 grow_horizontal = 2
 columns = 4
 metadata/_edit_use_anchors_ = true
-
-[node name="ClueButton" parent="GridContainer" instance=ExtResource("2_pktm2")]
-layout_mode = 2
-script = null

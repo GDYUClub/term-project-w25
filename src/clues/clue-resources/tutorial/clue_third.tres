@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_bwrmf")
-id = 0
+id = 2
 lvl_id = 0
 name = "Rei"
 desc = "The only thing keeping you sane in this cold, dark world."

@@ -63,6 +63,8 @@ func _process(delta: float) -> void:
 		_side_scroller(delta)
 	if Input.is_action_just_pressed("interact"):
 		interact()
+	if Input.is_action_just_pressed("inquire"):
+		inquire()
 	_animate()
 	move_and_slide()
 

@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("1_rky5b")
-id = 0
+id = 1
 lvl_id = 0
 name = "Lighter"
 desc = "for cooking cigarettes before you eat them."

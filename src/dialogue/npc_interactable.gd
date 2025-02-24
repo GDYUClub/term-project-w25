@@ -6,7 +6,7 @@ extends Node
 @export var character2_sprite : Texture
 @export var repeatable_conversation : bool
 @export var inquiry_clue = -1
-@export var inquity_dialogue : JSON
+@export var inquiry_dialogue : JSON
 @onready var dialogue_manager: DialogueManager = %DialogueManager
 var is_interacted_with : bool = false
 
