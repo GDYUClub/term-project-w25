@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0luuifmtd02n"]
+
+[ext_resource type="Script" path="res://src/computer/folders/folder.gd" id="1_tbygb"]
+[ext_resource type="Texture2D" uid="uid://c5qecaufpbcfp" path="res://src/computer/folder.png" id="2_lxqo5"]
+[ext_resource type="Texture2D" uid="uid://djo68rks6oy3f" path="res://src/computer/file_explorer.png" id="4_2na0o"]
+[ext_resource type="Shader" path="res://src/computer/outline.gdshader" id="10_s7p6n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cy5sp"]
+resource_local_to_scene = true
+shader = ExtResource("10_s7p6n")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 5.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+shader_parameter/effect_enabled = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8uxg8"]
+shader = ExtResource("10_s7p6n")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 5.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+shader_parameter/effect_enabled = false
+
+[node name="Folder" type="Node2D" node_paths=PackedStringArray("sprite", "app_container", "window")]
+script = ExtResource("1_tbygb")
+sprite = NodePath("Sprite2D")
+app_container = NodePath("window/AppContainer")
+window = NodePath("window")
+padding = Vector2(100, 100)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_cy5sp")
+texture = ExtResource("2_lxqo5")
+
+[node name="window" type="Node2D" parent="."]
+visible = false
+
+[node name="FileExplorer" type="Sprite2D" parent="window"]
+material = SubResource("ShaderMaterial_8uxg8")
+texture = ExtResource("4_2na0o")
+
+[node name="AppContainer" type="Node2D" parent="window"]
+position = Vector2(-428, -304)
+scale = Vector2(0.75, 0.75)
