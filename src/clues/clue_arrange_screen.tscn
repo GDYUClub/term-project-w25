@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bljhkk2frq1bc"]
+[gd_scene load_steps=2 format=3 uid="uid://dvp7253oe1cbe"]
 
 [ext_resource type="Script" path="res://src/clues/clue_grid_menu.gd" id="1_nbl5j"]
 

@@ -5,6 +5,7 @@ const WALK_SPEED = 300.0
 @onready var animPlayer: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var alertSprite: Sprite2D = $AlertSprite
+@onready var inquire_sprite: Sprite2D = $InquireSprite
 @onready var area: Area2D = $Area2D
 
 signal start_inquire
@@ -108,9 +109,12 @@ func _on_area_entered(area: Area2D):
 		if area.is_interacted_with == false or area.repeatable_conversation == true:
 			alertSprite.visible = true
 			interactable = area
+			if area.inquiry_clue >= 0:
+				inquire_sprite.visible = true
 
 
 func _on_area_exited(area: Area2D):
 	if area.is_in_group("clue") or area.is_in_group("npc"):
 		alertSprite.visible = false
+		inquire_sprite.visible = false
 		interactable = null
