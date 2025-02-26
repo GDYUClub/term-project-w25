@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="4_altkg"]
 [ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/clue_lighter.tres" id="4_n1e4y"]
 [ext_resource type="Script" path="res://src/dialogue/dialogue_manager.gd" id="6_gkphd"]
-[ext_resource type="Resource" path="res://src/clues/clue-resources/tutorial/clue_third.tres" id="6_q7kgm"]
+[ext_resource type="Resource" uid="uid://d3k8rcoc56don" path="res://src/clues/clue-resources/tutorial/clue_third.tres" id="6_q7kgm"]
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="7_0e0cn"]
 [ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="7_oggfx"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="8_bb1rp"]
@@ -38,8 +38,13 @@ offset_right = 1922.0
 offset_bottom = 1058.0
 color = Color(0.154876, 0.154876, 0.154876, 0.909804)
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(622, 920)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_jcs8d")
+
 [node name="PanelRef" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.133333)
+modulate = Color(1, 1, 1, 0.372549)
 z_index = -128
 position = Vector2(964.5, 540.75)
 scale = Vector2(1.65259, 1.30411)

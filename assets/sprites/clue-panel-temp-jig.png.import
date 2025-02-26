@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckkcwwrbr1yqu"
-path="res://.godot/imported/player_topdown.png-00a068e3d732508af5c82d51f9d6fa92.ctex"
+uid="uid://brm5qojojxq71"
+path="res://.godot/imported/clue-panel-temp-jig.png-af9bd76cae49e537d3d7b07840eb1711.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player/player_topdown.png"
-dest_files=["res://.godot/imported/player_topdown.png-00a068e3d732508af5c82d51f9d6fa92.ctex"]
+source_file="res://assets/sprites/clue-panel-temp-jig.png"
+dest_files=["res://.godot/imported/clue-panel-temp-jig.png-af9bd76cae49e537d3d7b07840eb1711.ctex"]
 
 [params]
 

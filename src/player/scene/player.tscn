@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/player/code/player.gd" id="1_j2py3"]
 [ext_resource type="Shape2D" uid="uid://coaafk8ng1xrm" path="res://assets/resources/standing_cshape.tres" id="2_kwucs"]
 [ext_resource type="Texture2D" uid="uid://badcq2r82pcs6" path="res://assets/sprites/alert-temp.png" id="4_88ynk"]
-[ext_resource type="Texture2D" uid="uid://cmaioigqw7wva" path="res://assets/sprites/player/player_topdown.png" id="4_etn70"]
+[ext_resource type="Texture2D" uid="uid://cmaioigqw7wva" path="res://assets/sprites/player/player_topdown_big.png" id="4_etn70"]
 
 [sub_resource type="Animation" id="Animation_1wbr4"]
 length = 0.001

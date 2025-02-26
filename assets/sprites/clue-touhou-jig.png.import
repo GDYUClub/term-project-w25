@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckkcwwrbr1yqu"
-path="res://.godot/imported/player_topdown_small.png-7e8ce8932c1ffbe2cc95ec2fc64f63b6.ctex"
+uid="uid://dxn0j4opm0ak2"
+path="res://.godot/imported/clue-touhou-jig.png-e6aa770afa82e7ba2bace47267577c23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player/player_topdown_small.png"
-dest_files=["res://.godot/imported/player_topdown_small.png-7e8ce8932c1ffbe2cc95ec2fc64f63b6.ctex"]
+source_file="res://assets/sprites/clue-touhou-jig.png"
+dest_files=["res://.godot/imported/clue-touhou-jig.png-e6aa770afa82e7ba2bace47267577c23.ctex"]
 
 [params]
 
