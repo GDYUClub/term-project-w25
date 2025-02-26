@@ -23,6 +23,16 @@ var move_sprites = {
 	MOVETYPES.SIDE_SCROLLER: "res://assets/sprites/player/player_sidescroll.png",
 }
 
+var move_animations = {
+	MOVETYPES.TOP_DOWN: "walk_topdown",
+	MOVETYPES.SIDE_SCROLLER:"walk_sidescroll",
+	}
+
+var move_frames = {
+	MOVETYPES.TOP_DOWN:3,
+	MOVETYPES.SIDE_SCROLLER:6,
+	}
+
 @export var current_move_type: MOVETYPES
 
 
@@ -39,6 +49,7 @@ func _change_move_type(new_movetype: MOVETYPES):
 	current_move_type = new_movetype
 	velocity = Vector2.ZERO
 	sprite.texture = load(move_sprites[current_move_type])
+	sprite.hframes = move_frames[current_move_type]
 
 
 func _top_down(delta: float):
@@ -87,7 +98,7 @@ func interact():
 
 func _animate():
 	if velocity != Vector2.ZERO:
-		animPlayer.play("walk")
+		animPlayer.play(move_animations[current_move_type])
 	else:
 		animPlayer.pause()
 

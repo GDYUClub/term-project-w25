@@ -105,4 +105,5 @@ func adjust_interactable_dialogue(): #switch to next line
 		print("DEBUG: dialogue.size: " + str(dialogue.size()) + " index: " + str(index) + " end_id: " + str(4))
 		print("text loaded")
 	else:
+		print("dialogue over")
 		dialogue_ongoing = false

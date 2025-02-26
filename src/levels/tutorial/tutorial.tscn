@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="4_altkg"]
 [ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/clue_lighter.tres" id="4_n1e4y"]
 [ext_resource type="Script" path="res://src/dialogue/dialogue_manager.gd" id="6_gkphd"]
-[ext_resource type="Resource" uid="uid://d3k8rcoc56don" path="res://src/clues/clue-resources/tutorial/clue_third.tres" id="6_q7kgm"]
+[ext_resource type="Resource" path="res://src/clues/clue-resources/tutorial/clue_third.tres" id="6_q7kgm"]
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="7_0e0cn"]
 [ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="7_oggfx"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="8_bb1rp"]
@@ -173,7 +173,7 @@ rotation = -1.57079
 position = Vector2(-56.9989, 512)
 
 [node name="Player" parent="." instance=ExtResource("4_altkg")]
-position = Vector2(1206, 252)
+position = Vector2(1265, 197)
 current_move_type = 1
 
 [node name="DialogueUI" parent="." instance=ExtResource("7_0e0cn")]
