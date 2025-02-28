@@ -11,13 +11,16 @@ extends Node2D
 @onready var grid_cell_scene: PackedScene = preload("res://src/clues/grid_cell.tscn")
 @onready var panel_scene: PackedScene = preload("res://src/clues/clue_panel.tscn")
 
+var inventory_size: int = 3 # Number of rows inventory will have
 var player_clues: Array[Clue] = []
 
-var grid_cells: Array[GridBox] = []
+var clue_grid_cells: Array[GridBox] = []
+var item_grid_cells: Array[GridBox] = []
 var panels: Array[CluePanel] = []
 
 const PANEL_SIZE: int = 184
-const INITIAL_POSITION: Vector2 = Vector2(200, 200)
+const INITIAL_POSITION: Vector2 = Vector2(1500, 200)
+const INITIAL_ITEM_POSITION: Vector2 = Vector2(150,200)
 const OFFSET: Vector2 = Vector2(200, 200)
 
 signal puzzle_solved
@@ -44,12 +47,33 @@ func _process(delta: float) -> void:
 
 
 func populate_clue_panels():
+	
 	for clue in player_clues:
 		var panelInst = panel_scene.instantiate()
 		panelInst.clue = clue
 		$Panels.add_child(panelInst)
 		panels.append(panelInst)
 		panelInst.numberLabel.text = str(clue.correct_panel)
+		
+	var rows := inventory_size
+	# it's always two for now
+	var cols = 2
+	var i = 0
+	for r in rows:
+		for c in cols:
+			var gridCellInst: GridBox = grid_cell_scene.instantiate()
+			gridCellInst.id = i
+			gridCellInst.position.x = INITIAL_ITEM_POSITION.x + (OFFSET.x * c)
+			gridCellInst.position.y = INITIAL_ITEM_POSITION.y + (OFFSET.y * r)
+			$GridCells.add_child(gridCellInst)
+			item_grid_cells.append(gridCellInst)
+			i += 1
+	i = 0
+	for cell in item_grid_cells:
+		if !panels.is_empty() && i < panels.size():
+			panels[i].position.x = cell.position.x
+			panels[i].position.y = cell.position.y
+			i += 1
 
 
 func populate_grid_cells():
@@ -64,7 +88,7 @@ func populate_grid_cells():
 			gridCellInst.position.x = INITIAL_POSITION.x + (OFFSET.x * c)
 			gridCellInst.position.y = INITIAL_POSITION.y + (OFFSET.y * r)
 			$GridCells.add_child(gridCellInst)
-			grid_cells.append(gridCellInst)
+			clue_grid_cells.append(gridCellInst)
 			gridCellInst.numberLabel.text = str(i)
 			i += 1
 			if i == player_clues.size():
@@ -73,8 +97,9 @@ func populate_grid_cells():
 			break
 
 
+
 func panels_correct() -> bool:
-	for grid_cell in grid_cells:
+	for grid_cell in clue_grid_cells:
 		if not grid_cell.correct_panel:
 			return false
 	return true
