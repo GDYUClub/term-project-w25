@@ -1,9 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://chwpqxi2ikcnr"]
+[gd_scene load_steps=19 format=3 uid="uid://chwpqxi2ikcnr"]
 
 [ext_resource type="Script" path="res://src/levels/tutorial/tutorial.gd" id="1_hspkm"]
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
 [ext_resource type="Resource" uid="uid://dojkosxruk8xs" path="res://src/clues/clue-resources/tutorial/clue_cigs.tres" id="2_5f4ee"]
-[ext_resource type="Texture2D" uid="uid://clv10wnhi7uaa" path="res://assets/sprites/panel-ref.png" id="3_4ytyg"]
+[ext_resource type="Texture2D" uid="uid://celamhdr1uvg0" path="res://assets/sprites/Jane.PNG" id="3_iankp"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="4_altkg"]
 [ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/clue_lighter.tres" id="4_n1e4y"]
 [ext_resource type="Script" path="res://src/dialogue/dialogue_manager.gd" id="6_gkphd"]
@@ -12,31 +12,21 @@
 [ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="7_oggfx"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="8_bb1rp"]
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="9_jcs8d"]
+[ext_resource type="Texture2D" uid="uid://c1ulbl0ba5d0y" path="res://assets/sprites/Tutorial/Panel 3 Flat.jpg" id="13_aydep"]
+[ext_resource type="Texture2D" uid="uid://cgqbldw5j7uq4" path="res://assets/sprites/Tutorial/reference_holdinghotdog.png" id="14_sr6dc"]
+[ext_resource type="Texture2D" uid="uid://26w4hwpercq6" path="res://assets/sprites/Tutorial/Ashley_Artboard_8.png" id="15_4p03m"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fuvah"]
-size = Vector2(1964, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bfdp"]
+size = Vector2(1924, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e645k"]
-size = Vector2(1391, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frfct"]
+size = Vector2(1136.25, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wihkw"]
-size = Vector2(756.5, 33)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7bmo"]
-size = Vector2(373.25, 33)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rae1"]
-size = Vector2(421.388, 22.3685)
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1lsrs"]
+size = Vector2(5000, 1300)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hspkm")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 1425.0
-offset_top = 337.0
-offset_right = 1922.0
-offset_bottom = 1058.0
-color = Color(0.154876, 0.154876, 0.154876, 0.909804)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(622, 920)
@@ -46,139 +36,83 @@ texture = ExtResource("9_jcs8d")
 [node name="PanelRef" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.372549)
 z_index = -128
-position = Vector2(964.5, 540.75)
-scale = Vector2(1.65259, 1.30411)
-texture = ExtResource("3_4ytyg")
-metadata/_edit_lock_ = true
+position = Vector2(970, 520)
+scale = Vector2(1.75319, 1.43236)
+texture = ExtResource("3_iankp")
 
 [node name="Borders" type="StaticBody2D" parent="."]
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders"]
-position = Vector2(972, 0)
-shape = SubResource("RectangleShape2D_fuvah")
-debug_color = Color(0, 0.6, 0.7, 0.42)
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Borders"]
-position = Vector2(968, 332)
-shape = SubResource("RectangleShape2D_fuvah")
-debug_color = Color(0, 0.6, 0.7, 0.42)
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Borders"]
-position = Vector2(694.5, 706)
-shape = SubResource("RectangleShape2D_e645k")
-debug_color = Color(0, 0.6, 0.7, 0.42)
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Borders"]
-position = Vector2(1409, 703)
-rotation = -1.5708
-shape = SubResource("RectangleShape2D_wihkw")
-debug_color = Color(0, 0.6, 0.7, 0.42)
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Borders"]
-position = Vector2(981, 887.375)
-rotation = -1.5708
-shape = SubResource("RectangleShape2D_x7bmo")
-debug_color = Color(0, 0.6, 0.7, 0.42)
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Borders"]
-position = Vector2(1122, 152)
-rotation = -1.5708
-shape = SubResource("RectangleShape2D_x7bmo")
-debug_color = Color(0, 0.6, 0.7, 0.42)
-
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders"]
-position = Vector2(959, 1066)
-shape = SubResource("RectangleShape2D_fuvah")
+position = Vector2(962, 1068)
+shape = SubResource("RectangleShape2D_5bfdp")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders"]
-position = Vector2(7, 556)
+position = Vector2(6.99994, 540.125)
 rotation = -1.5708
-shape = SubResource("RectangleShape2D_fuvah")
+shape = SubResource("RectangleShape2D_frfct")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders"]
-position = Vector2(1924, 655)
+position = Vector2(1919, 531.25)
 rotation = -1.5708
-shape = SubResource("RectangleShape2D_fuvah")
-debug_color = Color(0, 0.6, 0.7, 0.42)
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Borders"]
-position = Vector2(671, 160)
-rotation = -0.877041
-shape = SubResource("RectangleShape2D_6rae1")
-debug_color = Color(0, 0.6, 0.7, 0.42)
-
-[node name="BlockingShape" type="CollisionShape2D" parent="Borders"]
-unique_name_in_owner = true
-position = Vector2(1342, 885)
-rotation = -1.5708
-shape = SubResource("RectangleShape2D_x7bmo")
+shape = SubResource("RectangleShape2D_frfct")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="Clues" type="Node" parent="."]
 
 [node name="Cigs" parent="Clues" instance=ExtResource("1_ra0nd")]
-position = Vector2(378, 916)
+position = Vector2(105, 957)
 clue = ExtResource("2_5f4ee")
 
 [node name="ClueArea" parent="Clues" instance=ExtResource("1_ra0nd")]
-position = Vector2(816, 769)
+visible = false
+position = Vector2(389, 937)
 clue = ExtResource("4_n1e4y")
 
 [node name="ClueArea2" parent="Clues" instance=ExtResource("1_ra0nd")]
-position = Vector2(580, 811)
+visible = false
+position = Vector2(264, 960)
 clue = ExtResource("6_q7kgm")
 
 [node name="Transitions" type="Node" parent="."]
 
+[node name="PanelTransition2" parent="Transitions" instance=ExtResource("7_oggfx")]
+z_index = 25
+position = Vector2(911, 343)
+move_type = 1
+
+[node name="CollisionShape2D" parent="Transitions/PanelTransition2" index="0"]
+position = Vector2(5, 56)
+
+[node name="NewFrame" parent="Transitions/PanelTransition2" index="1"]
+position = Vector2(189, 48)
+
 [node name="PanelTransition" parent="Transitions" instance=ExtResource("7_oggfx")]
-position = Vector2(1895, 148)
+z_index = 25
+position = Vector2(469, 332)
 move_type = 1
 
 [node name="CollisionShape2D" parent="Transitions/PanelTransition" index="0"]
 position = Vector2(5, 56)
 
 [node name="NewFrame" parent="Transitions/PanelTransition" index="1"]
-position = Vector2(-1849, 414)
-
-[node name="PanelTransition2" parent="Transitions" instance=ExtResource("7_oggfx")]
-position = Vector2(1379, 537)
-rotation = -1.57079
-
-[node name="CollisionShape2D" parent="Transitions/PanelTransition2" index="0"]
-rotation = -1.57079
-
-[node name="NewFrame" parent="Transitions/PanelTransition2" index="1"]
-position = Vector2(-212.001, -623)
+position = Vector2(162, 80)
 
 [node name="PanelTransition3" parent="Transitions" instance=ExtResource("7_oggfx")]
-position = Vector2(949, 884)
-rotation = -1.57079
-move_type = 1
+z_index = 25
+position = Vector2(1879, 349)
 
 [node name="CollisionShape2D" parent="Transitions/PanelTransition3" index="0"]
-position = Vector2(0.999996, -1.00001)
-rotation = -1.57079
+position = Vector2(5, 56)
 
 [node name="NewFrame" parent="Transitions/PanelTransition3" index="1"]
-position = Vector2(-85.9998, 90.0002)
-
-[node name="PanelTransition4" parent="Transitions" instance=ExtResource("7_oggfx")]
-position = Vector2(949, 884)
-rotation = -1.57079
-move_type = 1
-
-[node name="CollisionShape2D" parent="Transitions/PanelTransition4" index="0"]
-position = Vector2(-27.9991, 428)
-rotation = -1.57079
-
-[node name="NewFrame" parent="Transitions/PanelTransition4" index="1"]
-position = Vector2(-56.9989, 512)
+position = Vector2(-1758, 329)
 
 [node name="Player" parent="." instance=ExtResource("4_altkg")]
-position = Vector2(1265, 197)
+z_index = 1
+position = Vector2(271, 334)
 current_move_type = 1
 
 [node name="DialogueUI" parent="." instance=ExtResource("7_0e0cn")]
@@ -193,11 +127,34 @@ script = ExtResource("6_gkphd")
 language = 1
 
 [node name="NPC" parent="." instance=ExtResource("8_bb1rp")]
-position = Vector2(625, 919)
+z_index = 6
+position = Vector2(-541, 896)
+scale = Vector2(16.4338, -24.885)
 end_index = 4
 character1_sprite = ExtResource("9_jcs8d")
 
-[editable path="Transitions/PanelTransition"]
+[node name="Panel3Flat" type="Sprite2D" parent="."]
+position = Vector2(1492, 265)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("13_aydep")
+
+[node name="ReferenceHoldinghotdog" type="Sprite2D" parent="."]
+position = Vector2(765, 326)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("14_sr6dc")
+
+[node name="Mask" type="Sprite2D" parent="."]
+clip_children = 1
+position = Vector2(972, 811)
+rotation = -6.28319
+scale = Vector2(0.37, 0.37)
+texture = SubResource("PlaceholderTexture2D_1lsrs")
+
+[node name="AshleyArtboard8" type="Sprite2D" parent="Mask"]
+position = Vector2(86.4862, 62.162)
+scale = Vector2(1.26592, 1)
+texture = ExtResource("15_4p03m")
+
 [editable path="Transitions/PanelTransition2"]
+[editable path="Transitions/PanelTransition"]
 [editable path="Transitions/PanelTransition3"]
-[editable path="Transitions/PanelTransition4"]

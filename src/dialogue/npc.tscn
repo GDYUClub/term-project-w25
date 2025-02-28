@@ -14,5 +14,6 @@ repeatable_conversation = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_wc21y")
+debug_color = Color(0.160784, 1, 1, 0.419608)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
