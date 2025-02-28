@@ -190,6 +190,7 @@ offset_right = 0.0
 [node name="DialogueManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("6_gkphd")
+language = 1
 
 [node name="NPC" parent="." instance=ExtResource("8_bb1rp")]
 position = Vector2(625, 919)

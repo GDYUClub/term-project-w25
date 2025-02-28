@@ -91,7 +91,6 @@ func adjust_npc_dialogue(): #switch to next line
 			bottom_dialogue_name.text = dialogue[str(index)]["SPEAKER_NAME"]
 			bottom_dialogue_text.text = dialogue[str(index)][LANGUAGE.keys()[language]]
 			top_dialogue_textbox.visible = true
-			
 		character_1.modulate = Color(1, 1, 1, 1.0 if character_index == 0 else 0.4)
 		character_2.modulate = Color(1, 1, 1, 1.0 if character_index == 1 else 0.4)
 		#handling the branching logic
@@ -99,21 +98,24 @@ func adjust_npc_dialogue(): #switch to next line
 			button_1.text = dialogue[str(index)][LANGUAGE.keys()[language] +"_DIALOGUE_CHOICE_1"]
 			var start : int = int(dialogue[str(index)]["LINK_1_ID"].split(":")[0])
 			var end : int = int(dialogue[str(index)]["LINK_1_ID"].split(":")[1])
-			button_1.pressed.connect(func(): branch(start,end))
+			var branch_dialogue : String = dialogue[str(index)][LANGUAGE.keys()[language] +"_DIALOGUE_CHOICE_1"]
+			button_1.pressed.connect(func(): branch(start,end, branch_dialogue))
 			button_1.visible = true
 			can_branch = true
 		if(dialogue[str(index)][LANGUAGE.keys()[language] +"_DIALOGUE_CHOICE_2"] != null):
 			button_2.text = dialogue[str(index)][LANGUAGE.keys()[language] +"_DIALOGUE_CHOICE_2"]
 			var start : int = int(dialogue[str(index)]["LINK_2_ID"].split(":")[0])
 			var end : int = int(dialogue[str(index)]["LINK_2_ID"].split(":")[1])
-			button_2.pressed.connect(func(): branch(start,end))
+			var branch_dialogue : String = dialogue[str(index)][LANGUAGE.keys()[language] +"_DIALOGUE_CHOICE_2"]
+			button_2.pressed.connect(func(): branch(start,end, branch_dialogue))
 			button_2.visible = true
 			can_branch = true
 		if(dialogue[str(index)][LANGUAGE.keys()[language] +"_DIALOGUE_CHOICE_3"] != null):
 			button_3.text = dialogue[str(index)][LANGUAGE.keys()[language] +"_DIALOGUE_CHOICE_3"]
 			var start : int = int(dialogue[str(index)]["LINK_3_ID"].split(":")[0])
 			var end : int = int(dialogue[str(index)]["LINK_3_ID"].split(":")[1])
-			button_3.pressed.connect(func(): branch(start,end))
+			var branch_dialogue : String = dialogue[str(index)][LANGUAGE.keys()[language] +"_DIALOGUE_CHOICE_3"]
+			button_3.pressed.connect(func(): branch(start,end, branch_dialogue))
 			button_3.visible = true
 			can_branch = true
 		if can_branch == true:
@@ -126,13 +128,15 @@ func adjust_npc_dialogue(): #switch to next line
 		dialogue_ui.visible = false;
 		dialogue_ongoing = false
 		alert_sprite.visible = false
-func branch(new_start_index, new_end_index): #branch to another dialogue
+func branch(new_start_index, new_end_index, dialogue): #branch to another dialogue
 	button_1.visible = false
 	button_2.visible = false
 	button_3.visible = false
 	button_leave.visible = false
 	can_branch = false
 	load_npc_dialogue(new_start_index, new_end_index, character_1_texture, character_2_texture)
+	top_dialogue_text.text = dialogue
+	top_dialogue_name.text = "Jane"
 
 func leave_dialogue():
 	dialogue_ui.visible = false
