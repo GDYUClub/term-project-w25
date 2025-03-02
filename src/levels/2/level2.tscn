@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://brmfrwosgd2by"]
+[gd_scene load_steps=23 format=3 uid="uid://brmfrwosgd2by"]
 
 [ext_resource type="Texture2D" uid="uid://cgm2btxfbh5ji" path="res://assets/backgrounds/level2/bg-ref.png" id="1_3bve5"]
 [ext_resource type="Script" path="res://src/levels/2/level_2.gd" id="1_agwrb"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="2_i5oa3"]
 [ext_resource type="Texture2D" uid="uid://k7skeroqfqon" path="res://assets/sprites/temp/wii_cursor.png" id="4_2bi1o"]
 [ext_resource type="Script" path="res://src/levels/2/cursor.gd" id="4_hngqr"]
+[ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="4_sut8d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1ufb"]
 size = Vector2(577, 71)
@@ -59,7 +60,7 @@ script = ExtResource("1_agwrb")
 metadata/_edit_vertical_guides_ = [1586.0]
 metadata/_edit_horizontal_guides_ = [878.0]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="levelbg" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.309804)
 position = Vector2(-3, 1)
 scale = Vector2(1.92024, 1.61435)
@@ -237,6 +238,15 @@ position = Vector2(245, 978.75)
 shape = SubResource("RectangleShape2D_ogp7b")
 debug_color = Color(0.421082, 1, 0.896388, 0.419608)
 
+[node name="PanelItems" type="Node" parent="."]
+
+[node name="0" type="Node" parent="PanelItems"]
+
+[node name="Footprint" parent="PanelItems/0" instance=ExtResource("4_sut8d")]
+
+[node name="CollisionShape2D" parent="PanelItems/0/Footprint" index="0"]
+position = Vector2(635, 318)
+
 [node name="Cursor" type="CharacterBody2D" parent="."]
 visible = false
 position = Vector2(186, 588)
@@ -250,3 +260,5 @@ texture = ExtResource("4_2bi1o")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor"]
 position = Vector2(-3.5, -1)
 shape = SubResource("RectangleShape2D_becjy")
+
+[editable path="PanelItems/0/Footprint"]
