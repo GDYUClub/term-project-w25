@@ -23,8 +23,99 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.241993, 0.225259, 0.232459, 0.384314)
+color = Color(0.243137, 0.223529, 0.231373, 0.603922)
 metadata/_edit_use_anchors_ = true
+
+[node name="topTextBox" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.731306
+anchor_top = -0.53722
+anchor_right = 1.03055
+anchor_bottom = -0.247511
+offset_left = -774.108
+offset_top = 646.198
+offset_right = -773.66
+offset_bottom = 646.312
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.196197, 0.187122, 0.200583, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="Label" parent="Background/topTextBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0138445
+anchor_top = 0.214286
+anchor_right = 0.982961
+anchor_bottom = 0.937888
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "sss"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="Background/topTextBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0316987
+anchor_top = 0.0481644
+anchor_right = 0.853699
+anchor_bottom = 0.218164
+offset_left = 0.853999
+offset_top = -0.1
+offset_right = 0.853882
+offset_bottom = 0.159996
+text = "Name"
+label_settings = SubResource("LabelSettings_evl05")
+metadata/_edit_use_anchors_ = true
+
+[node name="bottomTextBox" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.916518
+anchor_top = -0.648376
+anchor_right = 1.21576
+anchor_bottom = -0.358667
+offset_left = -1129.72
+offset_top = 1124.25
+offset_right = -1129.27
+offset_bottom = 1124.36
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.196197, 0.187122, 0.200583, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="Label" parent="Background/bottomTextBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0138445
+anchor_top = 0.214286
+anchor_right = 0.982961
+anchor_bottom = 0.937888
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "sss"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="Background/bottomTextBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0316987
+anchor_top = 0.0481644
+anchor_right = 0.853699
+anchor_bottom = 0.218164
+offset_left = 0.853999
+offset_top = -0.1
+offset_right = 0.853882
+offset_bottom = 0.159996
+text = "Name"
+label_settings = SubResource("LabelSettings_evl05")
+metadata/_edit_use_anchors_ = true
+
 
 [node name="dialogueCharacter1" type="TextureRect" parent="Background"]
 layout_mode = 1
@@ -40,51 +131,6 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_m3duq")
 metadata/_edit_use_anchors_ = true
 
-[node name="Textbox" type="ColorRect" parent="Background/dialogueCharacter1"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.743286
-anchor_top = -0.497404
-anchor_right = 1.95039
-anchor_bottom = -0.0320117
-offset_left = -0.214325
-offset_top = -0.354034
-offset_right = 0.233582
-offset_bottom = -0.240128
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.196197, 0.187122, 0.200583, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Text" type="Label" parent="Background/dialogueCharacter1/Textbox"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0138445
-anchor_top = 0.214286
-anchor_right = 0.982961
-anchor_bottom = 0.937888
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 25
-text = "sss"
-autowrap_mode = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="Name" type="Label" parent="Background/dialogueCharacter1/Textbox"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0316987
-anchor_top = 0.0481644
-anchor_right = 0.853699
-anchor_bottom = 0.218164
-offset_left = 0.853999
-offset_top = -0.1
-offset_right = 0.853882
-offset_bottom = 0.159996
-text = "Name"
-label_settings = SubResource("LabelSettings_evl05")
-metadata/_edit_use_anchors_ = true
-
 [node name="dialogueCharacter2" type="TextureRect" parent="Background"]
 layout_mode = 1
 anchors_preset = -1
@@ -97,52 +143,6 @@ offset_right = -0.919983
 offset_bottom = 0.039978
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_m3duq")
-metadata/_edit_use_anchors_ = true
-
-[node name="Textbox" type="ColorRect" parent="Background/dialogueCharacter2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.956714
-anchor_top = -0.497404
-anchor_right = 0.25039
-anchor_bottom = -0.0320117
-offset_left = -0.214325
-offset_top = -0.354034
-offset_right = 0.233582
-offset_bottom = -0.240128
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.196197, 0.187122, 0.200583, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Text" type="Label" parent="Background/dialogueCharacter2/Textbox"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0141909
-anchor_top = 0.203512
-anchor_right = 0.983307
-anchor_bottom = 0.927114
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 25
-text = "ssss"
-autowrap_mode = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="Name" type="Label" parent="Background/dialogueCharacter2/Textbox"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.036429
-anchor_top = 0.0401836
-anchor_right = 0.858429
-anchor_bottom = 0.210184
-offset_left = 0.853999
-offset_top = -0.1
-offset_right = 0.853882
-offset_bottom = 0.159996
-text = "Name"
-label_settings = SubResource("LabelSettings_evl05")
-metadata/_edit_use_anchors_ = true
 
 [node name="ButtonHolder" type="HBoxContainer" parent="Background"]
 layout_mode = 1
@@ -200,4 +200,5 @@ theme_override_colors/font_outline_color = Color(9.14685e-05, 9.24022e-05, 0.000
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 20
 text = "Leave Conversation"
+
 metadata/_edit_use_anchors_ = true
