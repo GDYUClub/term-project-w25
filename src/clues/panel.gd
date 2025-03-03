@@ -7,9 +7,17 @@ extends Area2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var numberLabel: Label = $NumberLabel
 
+@onready var panel_desc_scene: PackedScene = preload("res://src/clues/clue_description.tscn")
+
 var _is_mouse_in: bool = false
 var _is_selected: bool = false
 var _grids_inside: Array[GridBox] = []
+
+var panel_exists: bool = false
+var delay: float = 0.5
+var time_elapsed: float = 0.0
+var desc_panel
+const OFFSET: Vector2 = Vector2(80, 30)
 
 static var _can_select: bool = true
 
@@ -20,6 +28,7 @@ func get_panel_name() -> String:
 
 func _ready() -> void:
 	sprite.texture = clue.panel
+	
 	area_entered.connect(_on_area_entered)
 	area_exited.connect(_on_area_exited)
 
@@ -28,6 +37,15 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if _is_mouse_in and !_is_selected:
+		time_elapsed += delta
+		if(!panel_exists and time_elapsed > delay):
+			desc_panel = show_description()
+			time_elapsed = 0
+	if !_is_mouse_in or _is_selected:
+		time_elapsed = 0
+		if(panel_exists):
+			hide_description(desc_panel)
 	#Check if the grab button is being used
 	if Input.is_action_pressed("grab"):
 		#Set the panel to selected if the mouse is in the area 2D
@@ -85,3 +103,23 @@ func find_closest_box(boxes: Array[GridBox], pos: Vector2) -> GridBox:
 			closest_box = box
 			closest_position = closest_box.position.distance_to(pos)
 	return closest_box
+
+
+func show_description():
+	var panel_desc = panel_desc_scene.instantiate()
+	add_child(panel_desc)
+	
+	var nameLabel = panel_desc.find_child("NameLabel")
+	nameLabel.text = clue.name
+	var descriptionLabel = panel_desc.find_child("DescriptionLabel")
+	descriptionLabel.text = clue.desc
+	
+	panel_exists = true
+	panel_desc.position.x = OFFSET.x
+	panel_desc.position.y = OFFSET.y
+	return panel_desc
+	
+
+func hide_description(description: Area2D) -> void:
+	description.free()
+	panel_exists = false
