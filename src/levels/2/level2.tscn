@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://brmfrwosgd2by"]
+[gd_scene load_steps=25 format=3 uid="uid://brmfrwosgd2by"]
 
 [ext_resource type="Texture2D" uid="uid://cgm2btxfbh5ji" path="res://assets/backgrounds/level2/bg-ref.png" id="1_3bve5"]
 [ext_resource type="Script" path="res://src/levels/2/level_2.gd" id="1_agwrb"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://k7skeroqfqon" path="res://assets/sprites/temp/wii_cursor.png" id="4_2bi1o"]
 [ext_resource type="Script" path="res://src/levels/2/cursor.gd" id="4_hngqr"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="4_sut8d"]
+[ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="7_xa62b"]
+[ext_resource type="PackedScene" uid="uid://h0y6d03d2ixd" path="res://src/dialogue/dialogue_manager.tscn" id="8_py656"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1ufb"]
 size = Vector2(577, 71)
@@ -55,10 +57,9 @@ size = Vector2(454, 77.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_becjy"]
 size = Vector2(41, 46)
 
-[node name="Level2" type="Node2D"]
+[node name="Level2-1" type="Node2D"]
 script = ExtResource("1_agwrb")
-metadata/_edit_vertical_guides_ = [1586.0]
-metadata/_edit_horizontal_guides_ = [878.0]
+metadata/_edit_horizontal_guides_ = [1278.0]
 
 [node name="levelbg" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.309804)
@@ -160,7 +161,7 @@ shape = SubResource("RectangleShape2D_lme2o")
 [node name="Player" parent="." instance=ExtResource("2_i5oa3")]
 position = Vector2(246, 867)
 
-[node name="PanelCovers" type="Node" parent="."]
+[node name="PanelCovers" type="Node2D" parent="."]
 
 [node name="0" type="Polygon2D" parent="PanelCovers"]
 color = Color(0, 0, 0, 0.501961)
@@ -194,7 +195,7 @@ scale = Vector2(1.07621, 1.18076)
 color = Color(0, 0, 0, 0.501961)
 polygon = PackedVector2Array(578, 15, 1194, 14, 1196, 182.767, 1198, 352, 574, 352)
 
-[node name="PanelTriggers" type="Node" parent="."]
+[node name="PanelTriggers" type="Node2D" parent="."]
 
 [node name="0" type="Area2D" parent="PanelTriggers"]
 
@@ -242,14 +243,14 @@ debug_color = Color(0.421082, 1, 0.896388, 0.419608)
 
 [node name="0" type="Node" parent="PanelItems"]
 
-[node name="Footprint" parent="PanelItems/0" instance=ExtResource("4_sut8d")]
-
-[node name="CollisionShape2D" parent="PanelItems/0/Footprint" index="0"]
-position = Vector2(635, 318)
+[node name="ShoeDialogue" parent="PanelItems/0" instance=ExtResource("4_sut8d")]
+position = Vector2(629, 312)
+character1_sprite = null
+character2_sprite = null
+dialogue_json_path = "res://src/dialogue/level2/cursor_items.json"
 
 [node name="Cursor" type="CharacterBody2D" parent="."]
 visible = false
-position = Vector2(186, 588)
 script = ExtResource("4_hngqr")
 metadata/_edit_group_ = true
 
@@ -261,4 +262,17 @@ texture = ExtResource("4_2bi1o")
 position = Vector2(-3.5, -1)
 shape = SubResource("RectangleShape2D_becjy")
 
-[editable path="PanelItems/0/Footprint"]
+[node name="Area2D" type="Area2D" parent="Cursor"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cursor/Area2D"]
+position = Vector2(-3.5, -1)
+shape = SubResource("RectangleShape2D_becjy")
+
+[node name="DialogueManager" parent="." instance=ExtResource("8_py656")]
+unique_name_in_owner = true
+
+[node name="DialogueUI" parent="." instance=ExtResource("7_xa62b")]
+unique_name_in_owner = true
+visible = false
+offset_right = 1922.0
+offset_bottom = 1080.0

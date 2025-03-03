@@ -18,4 +18,4 @@ func talk_to_npc() -> void:
 			if is_interacted_with != true:
 				if !repeatable_conversation:
 					is_interacted_with = true
-				dialogue_manager.load_npc_dialogue(start_index, end_index,character1_sprite,character2_sprite,dialogue)
+				dialogue_manager.load_npc_dialogue(start_index, end_index,character1_sprite,character2_sprite,dialogue_json_path)
