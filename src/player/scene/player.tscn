@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bt7hps1ykd8nk"]
+[gd_scene load_steps=15 format=3 uid="uid://bt7hps1ykd8nk"]
 
 [ext_resource type="Script" path="res://src/player/code/player.gd" id="1_j2py3"]
 [ext_resource type="Shape2D" uid="uid://coaafk8ng1xrm" path="res://assets/resources/standing_cshape.tres" id="2_kwucs"]
