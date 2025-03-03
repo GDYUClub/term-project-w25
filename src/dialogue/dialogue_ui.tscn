@@ -7,6 +7,7 @@ font_size = 40
 font_color = Color(0.865079, 0.746064, 0.920767, 1)
 
 [node name="DialogueUI" type="Control"]
+z_index = 14
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -128,6 +129,8 @@ offset_right = 150.881
 offset_bottom = 231.235
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_m3duq")
+expand_mode = 1
+stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="dialogueCharacter2" type="TextureRect" parent="Background"]
@@ -142,6 +145,8 @@ offset_right = 150.159
 offset_bottom = 231.235
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_m3duq")
+expand_mode = 1
+stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="ButtonHolder" type="HBoxContainer" parent="Background"]
