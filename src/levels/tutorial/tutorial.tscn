@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://chwpqxi2ikcnr"]
+[gd_scene load_steps=25 format=3 uid="uid://chwpqxi2ikcnr"]
 
 [ext_resource type="Script" path="res://src/levels/tutorial/tutorial.gd" id="1_hspkm"]
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
@@ -11,10 +11,16 @@
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="7_0e0cn"]
 [ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="7_oggfx"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="8_bb1rp"]
-[ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="9_jcs8d"]
+[ext_resource type="Texture2D" uid="uid://cu4lc5kh05dmd" path="res://assets/sprites/player/Vanessa_jane_threequarterview.png" id="11_2jst7"]
+[ext_resource type="Texture2D" uid="uid://dwvuklga3b8yk" path="res://assets/sprites/Tutorial/Cat.png" id="11_j1j2d"]
 [ext_resource type="Texture2D" uid="uid://c1ulbl0ba5d0y" path="res://assets/sprites/Tutorial/Panel 3 Flat.jpg" id="13_aydep"]
-[ext_resource type="Texture2D" uid="uid://cgqbldw5j7uq4" path="res://assets/sprites/Tutorial/reference_holdinghotdog.png" id="14_sr6dc"]
 [ext_resource type="Texture2D" uid="uid://26w4hwpercq6" path="res://assets/sprites/Tutorial/Ashley_Artboard_8.png" id="15_4p03m"]
+[ext_resource type="Texture2D" uid="uid://cl4wq7yrba3y0" path="res://assets/sprites/Tutorial/car.png" id="15_rdvmv"]
+[ext_resource type="Texture2D" uid="uid://n6cjhi584sdb" path="res://assets/sprites/Tutorial/man_handdown.png" id="16_v2eaf"]
+[ext_resource type="Texture2D" uid="uid://bmtmjm50arpad" path="res://assets/sprites/Tutorial/hotdogcart.png" id="17_0fpo4"]
+[ext_resource type="Texture2D" uid="uid://cmf6tgblcgplx" path="res://assets/sprites/Tutorial/background.png" id="18_ue63j"]
+[ext_resource type="Texture2D" uid="uid://bhu3b2383t7p4" path="res://assets/sprites/Tutorial/road.png" id="19_5b25k"]
+[ext_resource type="Texture2D" uid="uid://d0l70lh6okyiy" path="res://assets/sprites/Tutorial/sidewalk2.png" id="20_maf1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bfdp"]
 size = Vector2(1924, 24)
@@ -22,18 +28,14 @@ size = Vector2(1924, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frfct"]
 size = Vector2(1136.25, 20)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1lsrs"]
-size = Vector2(5000, 1300)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6q12"]
+size = Vector2(30, 571.25)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hspkm")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(622, 920)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("9_jcs8d")
-
 [node name="PanelRef" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.372549)
 z_index = -128
 position = Vector2(970, 520)
@@ -63,7 +65,7 @@ debug_color = Color(0, 0.6, 0.7, 0.42)
 [node name="Clues" type="Node" parent="."]
 
 [node name="Cigs" parent="Clues" instance=ExtResource("1_ra0nd")]
-position = Vector2(105, 957)
+position = Vector2(117, 1034)
 clue = ExtResource("2_5f4ee")
 
 [node name="ClueArea" parent="Clues" instance=ExtResource("1_ra0nd")]
@@ -78,42 +80,41 @@ clue = ExtResource("6_q7kgm")
 
 [node name="Transitions" type="Node" parent="."]
 
-[node name="PanelTransition2" parent="Transitions" instance=ExtResource("7_oggfx")]
-z_index = 25
-position = Vector2(911, 343)
-move_type = 1
-
-[node name="CollisionShape2D" parent="Transitions/PanelTransition2" index="0"]
-position = Vector2(5, 56)
-
-[node name="NewFrame" parent="Transitions/PanelTransition2" index="1"]
-position = Vector2(189, 48)
-
 [node name="PanelTransition" parent="Transitions" instance=ExtResource("7_oggfx")]
+visible = false
 z_index = 25
 position = Vector2(469, 332)
 move_type = 1
 
 [node name="CollisionShape2D" parent="Transitions/PanelTransition" index="0"]
-position = Vector2(5, 56)
+position = Vector2(5, -47)
 
 [node name="NewFrame" parent="Transitions/PanelTransition" index="1"]
-position = Vector2(162, 80)
+position = Vector2(162, 20)
+
+[node name="PanelTransition2" parent="Transitions" instance=ExtResource("7_oggfx")]
+visible = false
+z_index = 25
+position = Vector2(1015, 380)
+move_type = 1
+
+[node name="CollisionShape2D" parent="Transitions/PanelTransition2" index="0"]
+position = Vector2(5, -95.375)
+shape = SubResource("RectangleShape2D_d6q12")
+
+[node name="NewFrame" parent="Transitions/PanelTransition2" index="1"]
+position = Vector2(102, -51)
 
 [node name="PanelTransition3" parent="Transitions" instance=ExtResource("7_oggfx")]
+visible = false
 z_index = 25
-position = Vector2(1879, 349)
+position = Vector2(1875, 229)
 
 [node name="CollisionShape2D" parent="Transitions/PanelTransition3" index="0"]
-position = Vector2(5, 56)
+position = Vector2(5, 61.4375)
 
 [node name="NewFrame" parent="Transitions/PanelTransition3" index="1"]
-position = Vector2(-1758, 329)
-
-[node name="Player" parent="." instance=ExtResource("4_altkg")]
-z_index = 1
-position = Vector2(271, 334)
-current_move_type = 1
+position = Vector2(-1758, 472)
 
 [node name="DialogueUI" parent="." instance=ExtResource("7_0e0cn")]
 unique_name_in_owner = true
@@ -128,33 +129,76 @@ language = 1
 
 [node name="NPC" parent="." instance=ExtResource("8_bb1rp")]
 z_index = 6
-position = Vector2(-541, 896)
-scale = Vector2(16.4338, -24.885)
+position = Vector2(1488, 445)
+scale = Vector2(5.3938, -5.805)
 end_index = 4
-character1_sprite = ExtResource("9_jcs8d")
+character1_sprite = ExtResource("11_j1j2d")
+character2_sprite = ExtResource("11_2jst7")
 
-[node name="Panel3Flat" type="Sprite2D" parent="."]
-position = Vector2(1492, 265)
+[node name="Player" parent="." instance=ExtResource("4_altkg")]
+z_index = 1
+position = Vector2(271, 334)
+scale = Vector2(1.49517, 1.47534)
+current_move_type = 1
+
+[node name="F2" type="Polygon2D" parent="."]
+clip_children = 1
+position = Vector2(629, 0)
+polygon = PackedVector2Array(1, 19, 445, 19, 450, 544, -3, 583)
+
+[node name="Background" type="Sprite2D" parent="F2"]
+position = Vector2(222, 300)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("18_ue63j")
+
+[node name="Road" type="Sprite2D" parent="F2"]
+visibility_layer = 2
+position = Vector2(224, 300)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("19_5b25k")
+
+[node name="Car" type="Sprite2D" parent="F2"]
+position = Vector2(223, 297)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("15_rdvmv")
+
+[node name="ManHanddown" type="Sprite2D" parent="F2"]
+position = Vector2(255, 338)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("16_v2eaf")
+
+[node name="Sidewalk2" type="Sprite2D" parent="F2"]
+position = Vector2(223, 286)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("20_maf1u")
+
+[node name="Hotdogcart" type="Sprite2D" parent="F2"]
+position = Vector2(223, 289)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("17_0fpo4")
+
+[node name="F3" type="Polygon2D" parent="."]
+clip_children = 1
+z_index = -1
+position = Vector2(1492, 306)
 scale = Vector2(0.2, 0.2)
+polygon = PackedVector2Array(-2005, -1445, 1995, -1445, 2000, 885, -1990, 1190)
+
+[node name="Panel3Flat" type="Sprite2D" parent="F3"]
+position = Vector2(0, -215)
 texture = ExtResource("13_aydep")
 
-[node name="ReferenceHoldinghotdog" type="Sprite2D" parent="."]
-position = Vector2(765, 326)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("14_sr6dc")
-
-[node name="Mask" type="Sprite2D" parent="."]
+[node name="F4" type="Polygon2D" parent="."]
 clip_children = 1
-position = Vector2(972, 811)
-rotation = -6.28319
-scale = Vector2(0.37, 0.37)
-texture = SubResource("PlaceholderTexture2D_1lsrs")
+z_index = -2
+position = Vector2(43, 588)
+polygon = PackedVector2Array(-3, 49, 1850, -91, 1847, 469, 1, 461)
 
-[node name="AshleyArtboard8" type="Sprite2D" parent="Mask"]
-position = Vector2(86.4862, 62.162)
-scale = Vector2(1.26592, 1)
+[node name="AshleyArtboard8" type="Sprite2D" parent="F4"]
+position = Vector2(925, 233)
+scale = Vector2(0.46, 0.379368)
 texture = ExtResource("15_4p03m")
 
-[editable path="Transitions/PanelTransition2"]
 [editable path="Transitions/PanelTransition"]
+[editable path="Transitions/PanelTransition2"]
 [editable path="Transitions/PanelTransition3"]

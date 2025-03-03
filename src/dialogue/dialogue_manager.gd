@@ -55,6 +55,7 @@ func import_dialogue_data() -> void: #import and convert JSON to string dictiona
 	dialogue = JSON.parse_string(file) #dictionary with data
 
 func load_npc_dialogue(new_start_id : int, new_end_id : int, speaker_1_sprite: Texture, speaker_2_sprite:Texture): #initial method to load visual novel dialogue
+	top_dialogue_textbox.visible = false
 	dialogue_ongoing = false
 	prints(new_start_id,new_end_id,speaker_1_sprite,speaker_2_sprite)
 	can_branch = false
@@ -80,7 +81,7 @@ func adjust_npc_dialogue(): #switch to next line
 	if(dialogue.size() > 0 && index <= end_id):
 		#handling the name dialogue logic
 		var character_index : int = dialogue[str(index)]["SPEAKER_ID"]
-		if !dialogue_ongoing: # if first dialogue
+		if index == start_id:
 			bottom_dialogue_name.text = dialogue[str(index)]["SPEAKER_NAME"]
 			bottom_dialogue_text.text = dialogue[str(index)][LANGUAGE.keys()[language]]
 			bottom_dialogue_textbox.visible = true
@@ -91,6 +92,7 @@ func adjust_npc_dialogue(): #switch to next line
 			bottom_dialogue_name.text = dialogue[str(index)]["SPEAKER_NAME"]
 			bottom_dialogue_text.text = dialogue[str(index)][LANGUAGE.keys()[language]]
 			top_dialogue_textbox.visible = true
+			print("top!")
 		character_1.modulate = Color(1, 1, 1, 1.0 if character_index == 0 else 0.4)
 		character_2.modulate = Color(1, 1, 1, 1.0 if character_index == 1 else 0.4)
 		#handling the branching logic
