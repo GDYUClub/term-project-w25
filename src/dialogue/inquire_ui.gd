@@ -2,15 +2,20 @@ extends Control
 
 @onready var grid_container: GridContainer = $GridContainer
 @onready var dialogue_manager: DialogueManager = %DialogueManager
+@onready var player: CharacterBody2D = %Player
 
 @export var clue_button_scene : PackedScene = preload("res://src/dialogue/clue_button.tscn")
 var current_npc : Area2D
 
+func _ready() -> void:
+	player.start_inquire.connect(start_inquire)
+	player.end_inquire.connect(close)
 
 func start_inquire(npc): #This method recieves a signal from the player when they inquire to an npc
+	clear()
 	visible = true
 	current_npc = npc
-	
+	print_debug("Inquired");
 	for clue in Inventory.get_items():
 		create_button(clue)
 
@@ -21,22 +26,18 @@ func create_button(clue: Clue):
 	grid_container.add_child(button)
 	
 func button_selected(id : int):
-	if id != current_npc.inquiry_clue:
-		close()
-	else:
-		succeed()
+		succeed(id)
 
 func close():
+	clear()
+	visible = false
+	
+func clear():
 	for node in grid_container.get_children():
 		grid_container.remove_child(node)
 		node.queue_free()
-	visible = false
-	
-func succeed():
+func succeed(id : int):
 	close()
-	print("sending inquire dialogue to the manager...")
-	#THE DIALOGUE DOES NOT CURRENTLY WORK WITH DIRRERENT DIALOGUES
-	#THIS FUNCTION SHOULD SEND npc.inquiry_dialogue TO THE MANAGER
+	dialogue_manager.start_inquiry_dialogue(current_npc, id)
 	
-	#-SUDOCODE %DialogueManager.open_dialogue(npc.inquiry_dialogue)
 	

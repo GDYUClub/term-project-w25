@@ -9,6 +9,7 @@ const WALK_SPEED = 300.0
 @onready var area: Area2D = $Area2D
 
 signal start_inquire
+signal end_inquire
 
 var can_move: bool = true
 
@@ -100,11 +101,12 @@ func interact():
 		interactable.talk_to_npc()
 
 func inquire():
-	if not interactable:
+	
+	if not interactable or interactable.can_inquiry == false:
 		return
 	if interactable.is_in_group("npc"):
 		start_inquire.emit(interactable)
-		
+
 func _animate():
 	if velocity != Vector2.ZERO:
 		animPlayer.play(move_animations[current_move_type])
@@ -117,15 +119,18 @@ func _on_area_entered(area: Area2D):
 		alertSprite.visible = true
 		interactable = area
 	if area.is_in_group("npc"):
-		if area.is_interacted_with == false or area.repeatable_conversation == true:
+		if (area.is_interacted_with == false or area.repeatable_conversation == true) and area.can_talk == true:
 			alertSprite.visible = true
 			interactable = area
-			if area.inquiry_clue >= 0:
-				inquire_sprite.visible = true
+		if area.can_inquiry == true:
+			inquire_sprite.visible = true
+			interactable = area
 
 
 func _on_area_exited(area: Area2D):
 	if area.is_in_group("clue") or area.is_in_group("npc"):
+		if area.is_in_group("npc"):
+				end_inquire.emit()
 		alertSprite.visible = false
 		inquire_sprite.visible = false
 		interactable = null

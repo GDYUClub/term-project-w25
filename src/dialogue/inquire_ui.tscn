@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cooabq8usm2i1"]
+[gd_scene load_steps=2 format=3 uid="uid://dhpbtj7rkkjks"]
 
 [ext_resource type="Script" path="res://src/dialogue/inquire_ui.gd" id="1_gyl38"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://chwpqxi2ikcnr"]
+[gd_scene load_steps=20 format=3 uid="uid://chwpqxi2ikcnr"]
 
 [ext_resource type="Script" path="res://src/levels/tutorial/tutorial.gd" id="1_hspkm"]
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
@@ -13,10 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="8_bb1rp"]
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="9_jcs8d"]
 [ext_resource type="PackedScene" uid="uid://dhpbtj7rkkjks" path="res://src/dialogue/inquire_ui.tscn" id="11_ipng3"]
-[ext_resource type="Script" path="res://src/levels/tutorial/clue_database.gd" id="12_legqn"]
-[ext_resource type="JSON" path="res://src/dialogue/_Dialogue.json" id="13_pado1"]
-[ext_resource type="Script" path="res://src/clues/clue.gd" id="13_thv2m"]
-[ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="14_h25l4"]
+[ext_resource type="JSON" path="res://src/dialogue/Dialogue Template.json" id="13_0q566"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fuvah"]
 size = Vector2(1964, 20)
@@ -188,6 +185,7 @@ position = Vector2(1265, 197)
 current_move_type = 1
 
 [node name="InquireUI" parent="." instance=ExtResource("11_ipng3")]
+clue_button_scene = null
 
 [node name="DialogueUI" parent="." instance=ExtResource("7_0e0cn")]
 unique_name_in_owner = true
@@ -195,22 +193,17 @@ visible = false
 offset_left = 0.0
 offset_right = 0.0
 
-[node name="ClueDatabase" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("12_legqn")
-items = Array[ExtResource("13_thv2m")]([ExtResource("2_5f4ee"), ExtResource("4_n1e4y"), ExtResource("6_q7kgm")])
-
 [node name="DialogueManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("6_gkphd")
-DIALOGUE_JSON = ExtResource("13_pado1")
-INQUIRY_DIALOGUE_JSON = ExtResource("14_h25l4")
+language = 1
+DIALOGUE_JSON = ExtResource("13_0q566")
+INQUIRY_DIALOGUE_JSON = ExtResource("13_0q566")
 
-[node name="Cat" parent="." instance=ExtResource("8_bb1rp")]
+[node name="NPC" parent="." instance=ExtResource("8_bb1rp")]
 position = Vector2(625, 919)
-npc_name = "Cat"
-start_index = 1
-end_index = 2
+npc_name = "cat"
+end_index = 4
 character1_sprite = ExtResource("9_jcs8d")
 
 [editable path="Transitions/PanelTransition"]
