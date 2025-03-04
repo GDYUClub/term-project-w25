@@ -1,0 +1,112 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxx5nthehk0ox"]
+
+[ext_resource type="PackedScene" uid="uid://cof4cjimhg61g" path="res://src/control_rebinding/control_rebind_buttons.tscn" id="1_yyeab"]
+
+[node name="ControlRebinding" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1921.0
+offset_bottom = 1080.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "ACTION"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "KEYBOARD"
+horizontal_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "CONTROLLER"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control_Rebind_Buttons" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_yyeab")]
+layout_mode = 2
+action_name = "up"
+
+[node name="HSeparator2" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control_Rebind_Buttons2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_yyeab")]
+layout_mode = 2
+action_name = "left"
+
+[node name="HSeparator3" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control_Rebind_Buttons3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_yyeab")]
+layout_mode = 2
+action_name = "down"
+
+[node name="HSeparator4" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control_Rebind_Buttons4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_yyeab")]
+layout_mode = 2
+action_name = "right"
+
+[node name="HSeparator5" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control_Rebind_Buttons5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_yyeab")]
+layout_mode = 2
+action_name = "run"
+
+[node name="HSeparator6" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control_Rebind_Buttons6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_yyeab")]
+layout_mode = 2
+action_name = "jump"
+
+[node name="HSeparator7" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control_Rebind_Buttons7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_yyeab")]
+layout_mode = 2
+action_name = "crouch"
+
+[node name="HSeparator8" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control_Rebind_Buttons8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_yyeab")]
+layout_mode = 2
+action_name = "interact"
+
+[node name="HSeparator9" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2

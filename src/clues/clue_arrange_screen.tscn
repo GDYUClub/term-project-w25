@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvdfsxynnb6vg"]
+
+[ext_resource type="Script" path="res://src/clues/clue_grid_menu.gd" id="1_nbl5j"]
+
+[node name="ClueGridTesting" type="Node2D"]
+z_index = 128
+script = ExtResource("1_nbl5j")
+
+[node name="BGPanel" type="Panel" parent="."]
+offset_right = 1921.0
+offset_bottom = 1081.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="CorrectLabel" type="Label" parent="."]
+offset_left = 503.0
+offset_top = 182.0
+offset_right = 559.0
+offset_bottom = 205.0
+text = "Wrong!"
+
+[node name="GridCells" type="Node2D" parent="."]
+
+[node name="Panels" type="Node2D" parent="."]
