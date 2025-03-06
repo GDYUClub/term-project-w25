@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://chwpqxi2ikcnr"]
+[gd_scene load_steps=21 format=3 uid="uid://chwpqxi2ikcnr"]
 
 [ext_resource type="Script" path="res://src/levels/tutorial/tutorial.gd" id="1_hspkm"]
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
@@ -9,12 +9,13 @@
 [ext_resource type="Script" path="res://src/dialogue/dialogue_manager.gd" id="6_gkphd"]
 [ext_resource type="Resource" uid="uid://d3k8rcoc56don" path="res://src/clues/clue-resources/tutorial/clue_third.tres" id="6_q7kgm"]
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="7_0e0cn"]
-[ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="7_oggfx"]
+[ext_resource type="PackedScene" path="res://src/PanelTransition.tscn" id="7_oggfx"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="8_bb1rp"]
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="9_jcs8d"]
 [ext_resource type="Texture2D" uid="uid://c1ulbl0ba5d0y" path="res://assets/sprites/Tutorial/Panel 3 Flat.jpg" id="13_aydep"]
 [ext_resource type="Texture2D" uid="uid://cgqbldw5j7uq4" path="res://assets/sprites/Tutorial/reference_holdinghotdog.png" id="14_sr6dc"]
 [ext_resource type="Texture2D" uid="uid://26w4hwpercq6" path="res://assets/sprites/Tutorial/Ashley_Artboard_8.png" id="15_4p03m"]
+[ext_resource type="Script" path="res://src/levels/tutorial/sfx_test_cat.gd" id="16_fmvuy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bfdp"]
 size = Vector2(1924, 24)
@@ -24,6 +25,8 @@ size = Vector2(1136.25, 20)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1lsrs"]
 size = Vector2(5000, 1300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqarh"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hspkm")
@@ -126,10 +129,12 @@ unique_name_in_owner = true
 script = ExtResource("6_gkphd")
 language = 1
 
-[node name="NPC" parent="." instance=ExtResource("8_bb1rp")]
+[node name="NPCs" type="Node" parent="."]
+
+[node name="NPC" parent="NPCs" instance=ExtResource("8_bb1rp")]
 z_index = 6
-position = Vector2(-541, 896)
-scale = Vector2(16.4338, -24.885)
+position = Vector2(1530, -226)
+scale = Vector2(3.80777, -5.82096)
 end_index = 4
 character1_sprite = ExtResource("9_jcs8d")
 
@@ -154,6 +159,15 @@ texture = SubResource("PlaceholderTexture2D_1lsrs")
 position = Vector2(86.4862, 62.162)
 scale = Vector2(1.26592, 1)
 texture = ExtResource("15_4p03m")
+
+[node name="SfxTestCat" type="Area2D" parent="."]
+position = Vector2(1530, -226)
+scale = Vector2(3.80777, -5.82096)
+script = ExtResource("16_fmvuy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SfxTestCat"]
+position = Vector2(-8.40387, -114.07)
+shape = SubResource("RectangleShape2D_rqarh")
 
 [editable path="Transitions/PanelTransition2"]
 [editable path="Transitions/PanelTransition"]
