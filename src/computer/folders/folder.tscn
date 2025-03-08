@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://d0luuifmtd02n"]
 
-[ext_resource type="Script" path="res://src/computer/folders/folder.gd" id="1_tbygb"]
+[ext_resource type="Script" uid="uid://bd8sulkycjank" path="res://src/computer/folders/folder.gd" id="1_tbygb"]
 [ext_resource type="Texture2D" uid="uid://c5qecaufpbcfp" path="res://src/computer/folder.png" id="2_lxqo5"]
 [ext_resource type="Texture2D" uid="uid://djo68rks6oy3f" path="res://src/computer/file_explorer.png" id="4_2na0o"]
-[ext_resource type="Shader" path="res://src/computer/outline.gdshader" id="10_s7p6n"]
+[ext_resource type="Shader" uid="uid://c3p27s4wyo7vm" path="res://src/computer/outline.gdshader" id="10_s7p6n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cy5sp"]
 resource_local_to_scene = true

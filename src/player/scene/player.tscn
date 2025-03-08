@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bt7hps1ykd8nk"]
 
-[ext_resource type="Script" path="res://src/player/code/player.gd" id="1_j2py3"]
+[ext_resource type="Script" uid="uid://cwpg474pv15uj" path="res://src/player/code/player.gd" id="1_j2py3"]
 [ext_resource type="Shape2D" uid="uid://coaafk8ng1xrm" path="res://assets/resources/standing_cshape.tres" id="2_kwucs"]
 [ext_resource type="Texture2D" uid="uid://bknspeucr7r2o" path="res://assets/sprites/Inquire.png" id="4_42hxm"]
 [ext_resource type="Texture2D" uid="uid://badcq2r82pcs6" path="res://assets/sprites/alert-temp.png" id="4_88ynk"]
@@ -78,10 +78,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a1owq"]
 _data = {
-"RESET": SubResource("Animation_1wbr4"),
-"walk": SubResource("Animation_mrbcp"),
-"walk_sidescroll": SubResource("Animation_mt13g"),
-"walk_topdown": SubResource("Animation_ml25n")
+&"RESET": SubResource("Animation_1wbr4"),
+&"walk": SubResource("Animation_mrbcp"),
+&"walk_sidescroll": SubResource("Animation_mt13g"),
+&"walk_topdown": SubResource("Animation_ml25n")
 }
 
 [node name="Player" type="CharacterBody2D"]

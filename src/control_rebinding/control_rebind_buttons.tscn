@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://cof4cjimhg61g"]
 
-[ext_resource type="Script" path="res://src/control_rebinding/control_rebind_buttons.gd" id="1_i08y2"]
+[ext_resource type="Script" uid="uid://bw6moxtqkbsp2" path="res://src/control_rebinding/control_rebind_buttons.gd" id="1_i08y2"]
 [ext_resource type="Texture2D" uid="uid://drmayqb1bi4jl" path="res://assets/sprites/xbox_icons/a-filled-green.png" id="2_suh72"]
 [ext_resource type="Texture2D" uid="uid://bjl2n6ejkfjbs" path="res://assets/sprites/xbox_icons/b-filled red.png" id="3_di8e6"]
 [ext_resource type="Texture2D" uid="uid://bovgq72cq64ya" path="res://assets/sprites/xbox_icons/x-filled-blue.png" id="4_l8fub"]

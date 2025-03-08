@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://l38t5j3jdicd"]
 
-[ext_resource type="Script" path="res://src/computer/apps/apps.gd" id="1_85mpb"]
+[ext_resource type="Script" uid="uid://bsyul0wl3tl2b" path="res://src/computer/apps/apps.gd" id="1_85mpb"]
 [ext_resource type="Texture2D" uid="uid://cc5s0jf55uhx1" path="res://assets/sprites/icon.svg" id="1_smgxq"]
-[ext_resource type="Shader" path="res://src/computer/outline.gdshader" id="1_up7kb"]
+[ext_resource type="Shader" uid="uid://c3p27s4wyo7vm" path="res://src/computer/outline.gdshader" id="1_up7kb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ttlv"]
 resource_local_to_scene = true
