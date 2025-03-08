@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d36fjoj3oysq"
-path="res://.godot/imported/Sidewalk.png-f34addf1769b92855a343013f72aa283.ctex"
+uid="uid://cu4lc5kh05dmd"
+path="res://.godot/imported/Vanessa_jane_threequarterview.png-5fa568edf0b9e12277ae1c1786dcd452.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Tutorial/Sidewalk.png"
-dest_files=["res://.godot/imported/Sidewalk.png-f34addf1769b92855a343013f72aa283.ctex"]
+source_file="res://assets/sprites/player/Vanessa_jane_threequarterview.png"
+dest_files=["res://.godot/imported/Vanessa_jane_threequarterview.png-5fa568edf0b9e12277ae1c1786dcd452.ctex"]
 
 [params]
 

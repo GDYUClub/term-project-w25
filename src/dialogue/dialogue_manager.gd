@@ -1,11 +1,10 @@
 class_name DialogueManager
 extends Node
-#const
-const PATH = "res://src/dialogue/Dialogue Template.json"
-var current_dialogue_path:String
+
 #vars
 var index : int = 0
 var dialogue : Dictionary = {}
+var inquiry_dialogue : Dictionary = {}
 enum DialogueType {NPC, INTERACTABLE}
 var type : DialogueType
 
@@ -17,7 +16,8 @@ var dialogue_ongoing : bool = false
 var can_branch = false
 enum LANGUAGE {ENGLISH, FRENCH}
 @export var language : LANGUAGE = LANGUAGE.ENGLISH
-
+@export var DIALOGUE_JSON : JSON
+@export var INQUIRY_DIALOGUE_JSON : JSON
 #npc ui
 @onready var dialogue_ui: Control = %DialogueUI
 @onready var character_1: TextureRect = %DialogueUI/Background/dialogueCharacter1
@@ -39,7 +39,7 @@ enum LANGUAGE {ENGLISH, FRENCH}
 #player handling
 @onready var alert_sprite: Sprite2D = $"../Player/AlertSprite"
 
-
+signal dialogue_event
 
 func _ready() -> void:
 	#import_dialogue_data(PATH)
@@ -51,12 +51,13 @@ func _process(delta: float) -> void: #for checking player skip input
 			adjust_npc_dialogue()
 
 
-func import_dialogue_data(path:String) -> void: #import and convert JSON to string dictionaries
-	var file = FileAccess.get_file_as_string(path)
-	dialogue = JSON.parse_string(file) #dictionary with data
+func import_dialogue_data() -> void: #import and convert JSON to string dictionaries
+	dialogue = DIALOGUE_JSON.get_data()
+	inquiry_dialogue = INQUIRY_DIALOGUE_JSON.get_data()
 
-func load_npc_dialogue(new_start_id : int, new_end_id : int, speaker_1_sprite: Texture, speaker_2_sprite:Texture,dialoge_json_path:String): #initial method to load visual novel dialogue
-	import_dialogue_data(dialoge_json_path)
+func load_npc_dialogue(new_start_id : int, new_end_id : int, speaker_1_sprite: Texture, speaker_2_sprite:Texture): #initial method to load visual novel dialogue
+	top_dialogue_textbox.visible = false
+
 	dialogue_ongoing = false
 	prints(new_start_id,new_end_id,speaker_1_sprite,speaker_2_sprite,dialoge_json_path)
 	can_branch = false
@@ -82,7 +83,7 @@ func adjust_npc_dialogue(): #switch to next line
 	if(dialogue.size() > 0 && index <= end_id):
 		#handling the name dialogue logic
 		var character_index : int = dialogue[str(index)]["SPEAKER_ID"]
-		if !dialogue_ongoing: # if first dialogue
+		if index == start_id:
 			bottom_dialogue_name.text = dialogue[str(index)]["SPEAKER_NAME"]
 			bottom_dialogue_text.text = dialogue[str(index)][LANGUAGE.keys()[language]]
 			bottom_dialogue_textbox.visible = true
@@ -93,6 +94,7 @@ func adjust_npc_dialogue(): #switch to next line
 			bottom_dialogue_name.text = dialogue[str(index)]["SPEAKER_NAME"]
 			bottom_dialogue_text.text = dialogue[str(index)][LANGUAGE.keys()[language]]
 			top_dialogue_textbox.visible = true
+			print("top!")
 		character_1.modulate = Color(1, 1, 1, 1.0 if character_index == 0 else 0.4)
 		character_2.modulate = Color(1, 1, 1, 1.0 if character_index == 1 else 0.4)
 		#handling the branching logic
@@ -122,6 +124,14 @@ func adjust_npc_dialogue(): #switch to next line
 			can_branch = true
 		if can_branch == true:
 			button_leave.visible = true
+			##
+		if dialogue[str(index)]["COMMANDS"] != null:
+				print("commands exist")
+				var commands : Array = dialogue[str(index)]["COMMANDS"].split(":")
+				for command in commands:
+					execute_command(command)
+		else:
+			print("commands dont exist")
 		index += 1
 	elif can_branch:
 		print("waiting on player choice")
@@ -143,3 +153,35 @@ func branch(new_start_index, new_end_index, dialogue): #branch to another dialog
 
 func leave_dialogue():
 	dialogue_ui.visible = false
+
+func start_inquiry_dialogue(npc : Area2D , item_id : int):
+	var npc_name : String = npc.npc_name
+	var c1Texture : Texture = npc.character1_sprite
+	var c2Texture : Texture = npc.character2_sprite
+	if (inquiry_dialogue.has(str(item_id)) and inquiry_dialogue[str(item_id)].has(npc_name[0].to_upper() + npc_name.substr(1, -1)) and inquiry_dialogue[str(item_id)][npc_name[0].to_upper() + npc_name.substr(1,-1)] != null):
+		var inquiry : String = inquiry_dialogue[str(item_id)][npc_name[0].to_upper() + npc_name.substr(1,-1)]
+		var start : int = int(inquiry.split(":")[0])
+		var end: int = int(inquiry.split(":")[1])
+		load_npc_dialogue(start, end, c1Texture, c2Texture)
+	else:
+		var start : int = 0
+		var end: int = 0
+		load_npc_dialogue(start, end, c1Texture, c2Texture)
+
+func execute_command(command_string : String):
+	print("command called")
+	if(command_string[0] != "/"):
+		dialogue_event.emit(command_string)
+		print("event!")
+	else:
+		print("command!")
+		var selected_command = command_string.substr(1,-1)
+		var command = selected_command.split("_")[0]
+		var value = selected_command.split("_")[1]
+		match command.to_lower():
+			"add":
+				Inventory.add_item(%ClueDatabase.itemDict[int(value)])
+			"remove":
+				Inventory.remove_item(%ClueDatabase.itemDict[int(value)])
+			_:
+				print("incorrect command")

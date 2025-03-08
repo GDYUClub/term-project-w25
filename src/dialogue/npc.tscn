@@ -12,6 +12,7 @@ script = ExtResource("1_aadlh")
 character1_sprite = ExtResource("2_5xg7o")
 character2_sprite = ExtResource("3_o3ld1")
 repeatable_conversation = true
+inquiry_clue = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_wc21y")

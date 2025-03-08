@@ -9,8 +9,12 @@ enum GAMEPLAY_STATE{
 	PANEL_ARRANGE,
 }
 
+
 var current_state:GAMEPLAY_STATE = GAMEPLAY_STATE.EXPLORE
 var panelArrangeInst
+
+func _ready() -> void:
+	AudioManager.play_music(preload("res://assets/sound/bgm/Crime Scene theme.ogg"))
 
 func _puzzle_solved():
 	$ColorRect.visible = false
