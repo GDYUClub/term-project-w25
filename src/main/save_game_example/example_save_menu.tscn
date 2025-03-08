@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b61ljtk26v334"]
 
-[ext_resource type="Script" path="res://src/main/save_game_example/example_save_menu.gd" id="1_mcumc"]
+[ext_resource type="Script" uid="uid://dejlb4vrsqpcg" path="res://src/main/save_game_example/example_save_menu.gd" id="1_mcumc"]
 [ext_resource type="PackedScene" uid="uid://di1065aj0lcwn" path="res://src/main/save_game_example/example_save_player.tscn" id="2_wuxhp"]
-[ext_resource type="Script" path="res://src/resources/save_node.gd" id="3_yk8q5"]
+[ext_resource type="Script" uid="uid://bqphyscimqimx" path="res://src/resources/save_node.gd" id="3_yk8q5"]
 
 [node name="menu" type="Node2D" node_paths=PackedStringArray("save")]
 script = ExtResource("1_mcumc")

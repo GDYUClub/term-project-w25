@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dhpbtj7rkkjks"]
 
-[ext_resource type="Script" path="res://src/dialogue/inquire_ui.gd" id="1_gyl38"]
+[ext_resource type="Script" uid="uid://gmo40gipbunl" path="res://src/dialogue/inquire_ui.gd" id="1_gyl38"]
 
 [node name="InquireUI" type="Control"]
 layout_mode = 3
