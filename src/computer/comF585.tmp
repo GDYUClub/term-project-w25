@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4t2vbdoei1i"]
+
+[ext_resource type="Script" path="res://src/computer/computer.gd" id="1_xrywi"]
+[ext_resource type="PackedScene" uid="uid://l38t5j3jdicd" path="res://src/computer/apps.tscn" id="2_g35ug"]
+
+[node name="Computer" type="Node2D" node_paths=PackedStringArray("app_container")]
+script = ExtResource("1_xrywi")
+padding = Vector2(100, 100)
+app_container = NodePath("AppContainer")
+
+[node name="AppContainer" type="Node2D" parent="."]
+
+[node name="Apps" parent="AppContainer" instance=ExtResource("2_g35ug")]
+
+[node name="Apps2" parent="AppContainer" instance=ExtResource("2_g35ug")]
+
+[node name="Apps3" parent="AppContainer" instance=ExtResource("2_g35ug")]
+
+[node name="Apps4" parent="AppContainer" instance=ExtResource("2_g35ug")]
+
+[node name="Apps5" parent="AppContainer" instance=ExtResource("2_g35ug")]
+
+[node name="Apps6" parent="AppContainer" instance=ExtResource("2_g35ug")]
