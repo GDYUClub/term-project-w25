@@ -1,0 +1,31 @@
+extends CharacterBody2D
+
+const SPEED: = 400.0
+var can_move:= false
+@onready var hitbox = $Area2D
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+
+var interactable: Area2D = null
+
+func _ready() -> void:
+	hitbox.area_entered.connect(func(area): interactable = area)	
+	hitbox.area_exited.connect(func(_area): interactable = null)	
+	pass
+
+func _process(delta: float) -> void:
+	if !can_move:
+		return
+	if Input.is_action_pressed("interact"):
+		_inspect()
+
+	var dir:= Input.get_vector("ui_left","ui_right","ui_up","ui_down")
+	velocity = dir * SPEED 
+	move_and_slide()
+
+
+func _inspect() -> void:
+	if interactable == null:
+		return
+
+	if interactable.is_in_group("npc"):
+		interactable.talk_to_npc()

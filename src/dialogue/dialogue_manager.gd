@@ -1,5 +1,6 @@
 class_name DialogueManager
 extends Node
+
 #vars
 var index : int = 0
 var dialogue : Dictionary = {}
@@ -41,7 +42,7 @@ enum LANGUAGE {ENGLISH, FRENCH}
 signal dialogue_event
 
 func _ready() -> void:
-	import_dialogue_data()
+	#import_dialogue_data(PATH)
 	button_leave.pressed.connect(leave_dialogue)
 
 func _process(delta: float) -> void: #for checking player skip input
@@ -56,8 +57,9 @@ func import_dialogue_data() -> void: #import and convert JSON to string dictiona
 
 func load_npc_dialogue(new_start_id : int, new_end_id : int, speaker_1_sprite: Texture, speaker_2_sprite:Texture): #initial method to load visual novel dialogue
 	top_dialogue_textbox.visible = false
+
 	dialogue_ongoing = false
-	prints(new_start_id,new_end_id,speaker_1_sprite,speaker_2_sprite)
+	prints(new_start_id,new_end_id,speaker_1_sprite,speaker_2_sprite,dialoge_json_path)
 	can_branch = false
 	button_1.visible = false
 	button_2.visible = false
@@ -138,13 +140,14 @@ func adjust_npc_dialogue(): #switch to next line
 		dialogue_ui.visible = false;
 		dialogue_ongoing = false
 		alert_sprite.visible = false
+
 func branch(new_start_index, new_end_index, dialogue): #branch to another dialogue
 	button_1.visible = false
 	button_2.visible = false
 	button_3.visible = false
 	button_leave.visible = false
 	can_branch = false
-	load_npc_dialogue(new_start_index, new_end_index, character_1_texture, character_2_texture)
+	load_npc_dialogue(new_start_index, new_end_index, character_1_texture, character_2_texture,current_dialogue_path)
 	top_dialogue_text.text = dialogue
 	top_dialogue_name.text = "Jane"
 
