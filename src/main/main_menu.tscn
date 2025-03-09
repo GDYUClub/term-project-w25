@@ -1,0 +1,492 @@
+[gd_scene load_steps=3 format=3 uid="uid://b28kcyo0kbids"]
+
+[ext_resource type="Texture2D" uid="uid://m01chsswga2i" path="res://assets/menu/backgrounds/temp_menuscreen_background.png" id="1_7f66i"]
+[ext_resource type="Script" uid="uid://cka7pr7qhw0tx" path="res://src/main/main_menu_script.gd" id="1_q12us"]
+
+[node name="MainMenuScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q12us")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7f66i")
+
+[node name="MainMenu" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+metadata/_edit_use_anchors_ = true
+
+[node name="GameTitleBox" type="VBoxContainer" parent="MainMenu"]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="seperator" type="Control" parent="MainMenu/GameTitleBox"]
+layout_mode = 2
+
+[node name="seperator2" type="Control" parent="MainMenu/GameTitleBox"]
+layout_mode = 2
+
+[node name="GameTitleText" type="Label" parent="MainMenu/GameTitleBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 71
+text = "Mystery Ink-orperated"
+horizontal_alignment = 1
+
+[node name="ButtonBox" type="HBoxContainer" parent="MainMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VerticalButtonBox" type="VBoxContainer" parent="MainMenu/ButtonBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="seperator5" type="Control" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+
+[node name="seperator6" type="Control" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+
+[node name="seperator7" type="Control" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+
+[node name="seperator" type="Control" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+
+[node name="GameStartButton" type="Button" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../LoadGameButton")
+theme_override_colors/font_focus_color = Color(0.202342, 0.550316, 0.73605, 1)
+theme_override_font_sizes/font_size = 41
+text = "Game Start
+"
+
+[node name="seperator2" type="Control" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+
+[node name="LoadGameButton" type="Button" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../GameStartButton")
+focus_neighbor_bottom = NodePath("../SettingButton")
+theme_override_colors/font_focus_color = Color(0.202342, 0.550316, 0.73605, 1)
+theme_override_font_sizes/font_size = 41
+text = "Load Game
+"
+
+[node name="seperator3" type="Control" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+
+[node name="SettingButton" type="Button" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../LoadGameButton")
+focus_neighbor_bottom = NodePath("../CreditsButton")
+theme_override_colors/font_focus_color = Color(0.202342, 0.550316, 0.73605, 1)
+theme_override_font_sizes/font_size = 41
+text = "Settings
+"
+
+[node name="seperator4" type="Control" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+
+[node name="CreditsButton" type="Button" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../SettingButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+theme_override_colors/font_focus_color = Color(0.202342, 0.550316, 0.73605, 1)
+theme_override_font_sizes/font_size = 41
+text = "Credits
+"
+
+[node name="seperator8" type="Control" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="MainMenu/ButtonBox/VerticalButtonBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../CreditsButton")
+focus_neighbor_bottom = NodePath("../GameStartButton")
+theme_override_colors/font_focus_color = Color(0.202342, 0.550316, 0.73605, 1)
+theme_override_font_sizes/font_size = 41
+text = "Quit
+"
+
+[node name="SettingsMenuv2" type="Popup" parent="."]
+size = Vector2i(1920, 1080)
+min_size = Vector2i(1920, 1080)
+max_size = Vector2i(1920, 1080)
+
+[node name="Background" type="ColorRect" parent="SettingsMenuv2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 900.0
+offset_bottom = 900.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.162066, 0.162066, 0.162066, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="SettingsText" type="Label" parent="SettingsMenuv2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 825.0
+offset_top = 90.0
+offset_right = 825.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 80
+text = "Settings"
+
+[node name="SettingsMenu" type="VBoxContainer" parent="SettingsMenuv2"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -360.5
+offset_top = 250.0
+offset_right = 360.5
+offset_bottom = 313.0
+grow_horizontal = 2
+theme_override_constants/separation = 50
+
+[node name="ButtonBox" type="HBoxContainer" parent="SettingsMenuv2/SettingsMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 100
+
+[node name="Video" type="Button" parent="SettingsMenuv2/SettingsMenu/ButtonBox"]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.993319, 0.595872, 0.694083, 1)
+theme_override_font_sizes/font_size = 40
+text = "Video
+"
+
+[node name="Control" type="Button" parent="SettingsMenuv2/SettingsMenu/ButtonBox"]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.993319, 0.595872, 0.694083, 1)
+theme_override_font_sizes/font_size = 40
+text = "Control"
+
+[node name="Audio" type="Button" parent="SettingsMenuv2/SettingsMenu/ButtonBox"]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.993319, 0.595872, 0.694083, 1)
+theme_override_font_sizes/font_size = 40
+text = "Audio
+"
+
+[node name="Accessibility" type="Button" parent="SettingsMenuv2/SettingsMenu/ButtonBox"]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.993319, 0.595872, 0.694083, 1)
+theme_override_font_sizes/font_size = 40
+text = "Accessibility"
+
+[node name="SettingsContainer" type="VBoxContainer" parent="SettingsMenuv2/SettingsMenu"]
+layout_mode = 2
+
+[node name="VideoSettings" type="GridContainer" parent="SettingsMenuv2/SettingsMenu/SettingsContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 20
+
+[node name="Vsync" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/VideoSettings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Vsync"
+
+[node name="Vsync2" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/VideoSettings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Vsync"
+
+[node name="Vsync3" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/VideoSettings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Vsync"
+
+[node name="ControlSettings" type="GridContainer" parent="SettingsMenuv2/SettingsMenu/SettingsContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/v_separation = 20
+
+[node name="Vsync" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/ControlSettings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "askdjalsd"
+
+[node name="Vsync2" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/ControlSettings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Vsyncasdkmanslkdj"
+
+[node name="Vsync3" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/ControlSettings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Vsyncaskdjalskdjalsjdas"
+
+[node name="AudioSettings" type="GridContainer" parent="SettingsMenuv2/SettingsMenu/SettingsContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/v_separation = 20
+
+[node name="Vsync" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/AudioSettings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Volume"
+
+[node name="Vsync2" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/AudioSettings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Master Volume"
+
+[node name="Vsync3" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/AudioSettings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Random Volume
+"
+
+[node name="AcessibilitySettings" type="GridContainer" parent="SettingsMenuv2/SettingsMenu/SettingsContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/v_separation = 20
+
+[node name="Vsync" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/AcessibilitySettings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Colour Blindness"
+
+[node name="Vsync2" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/AcessibilitySettings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "aslkhdlkajdk"
+
+[node name="Vsync3" type="Label" parent="SettingsMenuv2/SettingsMenu/SettingsContainer/AcessibilitySettings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "idk
+"
+
+[node name="QuitButton" type="Button" parent="SettingsMenuv2/SettingsMenu"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_focus_color = Color(0.992157, 0.596078, 0.694118, 1)
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[node name="CreditsMenuv2" type="Popup" parent="."]
+auto_translate_mode = 1
+size = Vector2i(1920, 1080)
+min_size = Vector2i(1920, 1080)
+max_size = Vector2i(1920, 1080)
+
+[node name="Background" type="ColorRect" parent="CreditsMenuv2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 900.0
+offset_bottom = 900.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.162066, 0.162066, 0.162066, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Credits_Text" type="Label" parent="CreditsMenuv2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 825.0
+offset_top = 90.0
+offset_right = 825.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 80
+text = "Credits"
+
+[node name="CreditsMenu" type="VBoxContainer" parent="CreditsMenuv2"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -360.5
+offset_top = 250.0
+offset_right = 360.5
+offset_bottom = 313.0
+grow_horizontal = 2
+theme_override_constants/separation = 50
+
+[node name="ButtonBox" type="HBoxContainer" parent="CreditsMenuv2/CreditsMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 100
+
+[node name="Programming" type="Button" parent="CreditsMenuv2/CreditsMenu/ButtonBox"]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.993319, 0.595872, 0.694083, 1)
+theme_override_font_sizes/font_size = 40
+text = "Programming"
+
+[node name="Art_UI" type="Button" parent="CreditsMenuv2/CreditsMenu/ButtonBox"]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.993319, 0.595872, 0.694083, 1)
+theme_override_font_sizes/font_size = 40
+text = "Art/UI"
+
+[node name="Writing" type="Button" parent="CreditsMenuv2/CreditsMenu/ButtonBox"]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.993319, 0.595872, 0.694083, 1)
+theme_override_font_sizes/font_size = 40
+text = "Writing
+"
+
+[node name="Sound_Design" type="Button" parent="CreditsMenuv2/CreditsMenu/ButtonBox"]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.993319, 0.595872, 0.694083, 1)
+theme_override_font_sizes/font_size = 40
+text = "Sound Design"
+
+[node name="QA" type="Button" parent="CreditsMenuv2/CreditsMenu/ButtonBox"]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.993319, 0.595872, 0.694083, 1)
+theme_override_font_sizes/font_size = 40
+text = "QA/Accessibility
+"
+
+[node name="CreditsContainer" type="VBoxContainer" parent="CreditsMenuv2/CreditsMenu"]
+layout_mode = 2
+
+[node name="Programming" type="GridContainer" parent="CreditsMenuv2/CreditsMenu/CreditsContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 20
+
+[node name="Vsync" type="Label" parent="CreditsMenuv2/CreditsMenu/CreditsContainer/Programming"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Vsync"
+
+[node name="Vsync2" type="Label" parent="CreditsMenuv2/CreditsMenu/CreditsContainer/Programming"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Vsync"
+
+[node name="Vsync3" type="Label" parent="CreditsMenuv2/CreditsMenu/CreditsContainer/Programming"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Vsync"
+
+[node name="Art_UI" type="GridContainer" parent="CreditsMenuv2/CreditsMenu/CreditsContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/v_separation = 20
+
+[node name="Vsync" type="Label" parent="CreditsMenuv2/CreditsMenu/CreditsContainer/Art_UI"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "askdjalsd"
+
+[node name="Vsync2" type="Label" parent="CreditsMenuv2/CreditsMenu/CreditsContainer/Art_UI"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Vsyncasdkmanslkdj"
+
+[node name="Vsync3" type="Label" parent="CreditsMenuv2/CreditsMenu/CreditsContainer/Art_UI"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Vsyncaskdjalskdjalsjdas"
+
+[node name="Writing" type="GridContainer" parent="CreditsMenuv2/CreditsMenu/CreditsContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/v_separation = 20
+
+[node name="Vsync" type="Label" parent="CreditsMenuv2/CreditsMenu/CreditsContainer/Writing"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Volume"
+
+[node name="Vsync2" type="Label" parent="CreditsMenuv2/CreditsMenu/CreditsContainer/Writing"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Master Volume"
+
+[node name="Vsync3" type="Label" parent="CreditsMenuv2/CreditsMenu/CreditsContainer/Writing"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Random Volume
+"
+
+[node name="Sound_Design" type="GridContainer" parent="CreditsMenuv2/CreditsMenu/CreditsContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/v_separation = 20
+
+[node name="Vsync" type="Label" parent="CreditsMenuv2/CreditsMenu/CreditsContainer/Sound_Design"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Colour Blindness"
+
+[node name="Vsync2" type="Label" parent="CreditsMenuv2/CreditsMenu/CreditsContainer/Sound_Design"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "aslkhdlkajdk"
+
+[node name="Vsync3" type="Label" parent="CreditsMenuv2/CreditsMenu/CreditsContainer/Sound_Design"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "idk
+"
+
+[node name="QA" type="GridContainer" parent="CreditsMenuv2/CreditsMenu/CreditsContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/v_separation = 20
+
+[node name="Vsync" type="Label" parent="CreditsMenuv2/CreditsMenu/CreditsContainer/QA"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Colour Blindness"
+
+[node name="Vsync2" type="Label" parent="CreditsMenuv2/CreditsMenu/CreditsContainer/QA"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "aslkhdlkajdk"
+
+[node name="Vsync3" type="Label" parent="CreditsMenuv2/CreditsMenu/CreditsContainer/QA"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "idk
+"
+
+[node name="QuitButton" type="Button" parent="CreditsMenuv2/CreditsMenu"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_focus_color = Color(0.992157, 0.596078, 0.694118, 1)
+theme_override_font_sizes/font_size = 40
+text = "Quit"

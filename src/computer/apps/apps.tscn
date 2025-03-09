@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://l38t5j3jdicd"]
+
+[ext_resource type="Script" uid="uid://bsyul0wl3tl2b" path="res://src/computer/apps/apps.gd" id="1_85mpb"]
+[ext_resource type="Texture2D" uid="uid://cc5s0jf55uhx1" path="res://assets/sprites/icon.svg" id="1_smgxq"]
+[ext_resource type="Shader" uid="uid://c3p27s4wyo7vm" path="res://src/computer/outline.gdshader" id="1_up7kb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ttlv"]
+resource_local_to_scene = true
+shader = ExtResource("1_up7kb")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 5.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+shader_parameter/effect_enabled = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_utsuh"]
+shader = ExtResource("1_up7kb")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 5.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+shader_parameter/effect_enabled = false
+
+[node name="Apps" type="Node2D" node_paths=PackedStringArray("sprite", "window", "name_tag")]
+script = ExtResource("1_85mpb")
+sprite = NodePath("icon")
+window = NodePath("window")
+name_tag = NodePath("Label")
+
+[node name="icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_3ttlv")
+texture = ExtResource("1_smgxq")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -59.0
+offset_top = 57.0
+offset_right = 59.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 33
+text = "[NAME]"
+
+[node name="window" type="Sprite2D" parent="."]
+z_index = 1
+material = SubResource("ShaderMaterial_utsuh")

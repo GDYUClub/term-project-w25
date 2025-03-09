@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://vlwrofr3cpyc"]
+
+[ext_resource type="Texture2D" uid="uid://bknspeucr7r2o" path="res://assets/sprites/Inquire.png" id="1_7y3gl"]
+
+[node name="ClueButton" type="Button"]
+icon = ExtResource("1_7y3gl")

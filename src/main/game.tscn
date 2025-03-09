@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://dugjot3k3j7p6"]
+
+[ext_resource type="PackedScene" uid="uid://b62wwooblkw8k" path="res://src/ladder/scene/ladder_placeholder.tscn" id="1_xdt13"]
+[ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="2_ltdrh"]
+[ext_resource type="Script" uid="uid://dtucr2q8mwx1w" path="res://src/player/code/player-old.gd" id="3_nq38v"]
+[ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="4_e534f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xe6wd"]
+size = Vector2(143, 4)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_jn563"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gvnf"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_3ncc3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(241, 222)
+zoom = Vector2(4, 4)
+
+[node name="Area2D" parent="." instance=ExtResource("1_xdt13")]
+position = Vector2(275, 262)
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("2_ltdrh")]
+position = Vector2(241, 222)
+script = ExtResource("3_nq38v")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(214, 259)
+scale = Vector2(2.6, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(4.5, 1)
+shape = SubResource("RectangleShape2D_xe6wd")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(3, 1)
+scale = Vector2(142.835, 3.14219)
+texture = SubResource("AnimatedTexture_jn563")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(203, 166)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4.5, 1)
+shape = SubResource("RectangleShape2D_xe6wd")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(3, 1)
+scale = Vector2(142.835, 3.14219)
+texture = SubResource("AnimatedTexture_jn563")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(173, 219)
+scale = Vector2(2.56, 2.72)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("RectangleShape2D_6gvnf")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+scale = Vector2(19.7656, 19.7942)
+texture = SubResource("AnimatedTexture_3ncc3")
+
+[node name="Door" parent="." instance=ExtResource("4_e534f")]
+position = Vector2(249, 216)
+
+[node name="CollisionShape2D" parent="Door" index="0"]
+position = Vector2(98, 4)
+
+[node name="NewFrame" parent="Door" index="1"]
+position = Vector2(139, -3)
+
+[editable path="Door"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bulygnnjxoiy3"]
+
+[ext_resource type="Script" uid="uid://dvvd0c1qygrd2" path="res://src/clues/panel.gd" id="1_12oeh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6tir"]
+size = Vector2(199.25, 201.75)
+
+[node name="Panel" type="Area2D"]
+script = ExtResource("1_12oeh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.625, -0.875)
+shape = SubResource("RectangleShape2D_l6tir")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[node name="NumberLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 32

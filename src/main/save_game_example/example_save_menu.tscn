@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://b61ljtk26v334"]
+
+[ext_resource type="Script" uid="uid://co6lqrvppk7d8" path="res://src/main/save_game_example/example_save_menu.gd" id="1_mcumc"]
+[ext_resource type="PackedScene" uid="uid://di1065aj0lcwn" path="res://src/main/save_game_example/example_save_player.tscn" id="2_wuxhp"]
+[ext_resource type="Script" uid="uid://2481f7q2j3nj" path="res://src/resources/save_node.gd" id="3_yk8q5"]
+
+[node name="menu" type="Node2D" node_paths=PackedStringArray("save")]
+script = ExtResource("1_mcumc")
+save = NodePath("save")
+
+[node name="Player" parent="." instance=ExtResource("2_wuxhp")]
+position = Vector2(409, 161)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 467.0
+offset_top = 142.0
+offset_right = 1079.0
+offset_bottom = 444.0
+theme_override_font_sizes/font_size = 221
+text = "DUDE"
+
+[node name="load" type="Button" parent="."]
+offset_left = 153.0
+offset_top = 742.0
+offset_right = 430.0
+offset_bottom = 818.0
+text = "LOAD"
+
+[node name="new" type="Button" parent="."]
+offset_left = 1090.0
+offset_top = 748.0
+offset_right = 1367.0
+offset_bottom = 824.0
+text = "NEW"
+
+[node name="save" type="Node" parent="." node_paths=PackedStringArray("player", "game_level")]
+script = ExtResource("3_yk8q5")
+player = NodePath("../Player")
+game_level = NodePath("..")
+
+[connection signal="pressed" from="load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="new" to="." method="_on_new_pressed"]

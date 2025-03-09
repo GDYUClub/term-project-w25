@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://d4t2vbdoei1i"]
+
+[ext_resource type="Script" path="res://src/computer/computer.gd" id="1_xrywi"]
+[ext_resource type="PackedScene" uid="uid://l38t5j3jdicd" path="res://src/computer/apps/apps.tscn" id="2_g35ug"]
+[ext_resource type="Texture2D" uid="uid://cc5s0jf55uhx1" path="res://assets/sprites/icon.svg" id="3_bwjsk"]
+[ext_resource type="PackedScene" uid="uid://d0luuifmtd02n" path="res://src/computer/folders/folder.tscn" id="3_u7jkj"]
+[ext_resource type="Texture2D" uid="uid://byjyf6cpkwlhq" path="res://assets/sprites/rei-env-temp.png" id="4_hgy1u"]
+[ext_resource type="Script" path="res://src/computer/apps/app_manager.gd" id="5_hev04"]
+
+[sub_resource type="Resource" id="Resource_250vt"]
+script = ExtResource("5_hev04")
+name = "app"
+icon = ExtResource("3_bwjsk")
+
+[node name="Computer" type="Node2D" node_paths=PackedStringArray("app_container")]
+script = ExtResource("1_xrywi")
+padding = Vector2(100, 100)
+app_container = NodePath("AppContainer")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -17.0
+offset_top = -36.0
+offset_right = 2000.0
+offset_bottom = 1070.0
+color = Color(0.426688, 0.766155, 0.97815, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -13.0
+offset_top = 1019.0
+offset_right = 2004.0
+offset_bottom = 1082.0
+color = Color(0.262932, 0.262932, 0.262932, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = -5.0
+offset_top = 1018.0
+offset_right = 90.0
+offset_bottom = 1081.0
+color = Color(0.217514, 0.404956, 0.930576, 1)
+
+[node name="AppContainer" type="Node2D" parent="."]
+
+[node name="Apps" parent="AppContainer" instance=ExtResource("2_g35ug")]
+app_data = SubResource("Resource_250vt")
+
+[node name="Folder" parent="AppContainer" instance=ExtResource("3_u7jkj")]
+app_max_cols = 5
+app_max_rows = 5
+
+[node name="window" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1022, 468)
+texture = ExtResource("4_hgy1u")

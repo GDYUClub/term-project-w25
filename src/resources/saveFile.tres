@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SaveGame" load_steps=2 format=3 uid="uid://ipdnn38ne5ux"]
+
+[ext_resource type="Script" uid="uid://b36icmv10cv4m" path="res://src/resources/save_game.gd" id="1_j3gav"]
+
+[resource]
+script = ExtResource("1_j3gav")
+position = Vector2(860.667, 769.983)
+level = "res://src/main/save_game_example/example_save_level_2.tscn"
+puzzle_step = 0

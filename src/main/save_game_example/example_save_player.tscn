@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://di1065aj0lcwn"]
+
+[ext_resource type="Script" uid="uid://bg7ugakhb6og0" path="res://src/main/save_game_example/example_save_player.gd" id="1_cuopv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xu7n"]
+size = Vector2(127, 128)
+
+[sub_resource type="Resource" id="Resource_0llta"]
+metadata/__load_path__ = "res://icon.svg"
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_cuopv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_7xu7n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("Resource_0llta")
