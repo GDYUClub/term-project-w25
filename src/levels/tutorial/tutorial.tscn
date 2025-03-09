@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://chwpqxi2ikcnr"]
+[gd_scene load_steps=24 format=3 uid="uid://chwpqxi2ikcnr"]
 
 [ext_resource type="Script" uid="uid://bfvdqic6i2yn1" path="res://src/levels/tutorial/tutorial.gd" id="1_hspkm"]
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
@@ -13,7 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="8_bb1rp"]
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="9_jcs8d"]
 [ext_resource type="PackedScene" uid="uid://dhpbtj7rkkjks" path="res://src/dialogue/inquire_ui.tscn" id="11_ipng3"]
-[ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/levels/tutorial/clue_database.gd" id="12_legqn"]
+[ext_resource type="PackedScene" uid="uid://fovs04hfqvvo" path="res://src/gameplay_ui/game_ui.tscn" id="12_d2hcf"]
+[ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/clues/clue_database.gd" id="12_legqn"]
 [ext_resource type="JSON" path="res://src/dialogue/_Dialogue.json" id="13_pado1"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="13_thv2m"]
 [ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="14_h25l4"]
@@ -188,6 +189,10 @@ position = Vector2(1265, 197)
 current_move_type = 1
 
 [node name="InquireUI" parent="." instance=ExtResource("11_ipng3")]
+visible = false
+
+[node name="GameplayUI" parent="." instance=ExtResource("12_d2hcf")]
+visible = false
 
 [node name="DialogueUI" parent="." instance=ExtResource("7_0e0cn")]
 unique_name_in_owner = true

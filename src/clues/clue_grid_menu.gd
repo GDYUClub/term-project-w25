@@ -19,9 +19,9 @@ var item_grid_cells: Array[GridBox] = []
 var panels: Array[CluePanel] = []
 
 const PANEL_SIZE: int = 184
-const INITIAL_POSITION: Vector2 = Vector2(1500, 200)
+const INITIAL_POSITION: Vector2 = Vector2(1000, 667)
 const INITIAL_ITEM_POSITION: Vector2 = Vector2(150,200)
-const OFFSET: Vector2 = Vector2(200, 200)
+const OFFSET: Vector2 = Vector2(180, 180)
 
 signal puzzle_solved
 var solved: bool = false
@@ -79,7 +79,7 @@ func populate_clue_panels():
 func populate_grid_cells():
 	var rows := int(ceil(player_clues.size()))
 	# it's always two for now
-	var cols = 2
+	var cols = 4
 	var i = 0
 	for r in rows:
 		for c in cols:

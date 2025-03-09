@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bt7hps1ykd8nk"]
+[gd_scene load_steps=10 format=3 uid="uid://bt7hps1ykd8nk"]
 
 [ext_resource type="Script" uid="uid://cwpg474pv15uj" path="res://src/player/code/player.gd" id="1_j2py3"]
 [ext_resource type="Shape2D" uid="uid://coaafk8ng1xrm" path="res://assets/resources/standing_cshape.tres" id="2_kwucs"]
-[ext_resource type="Texture2D" uid="uid://bknspeucr7r2o" path="res://assets/sprites/Inquire.png" id="4_42hxm"]
-[ext_resource type="Texture2D" uid="uid://badcq2r82pcs6" path="res://assets/sprites/alert-temp.png" id="4_88ynk"]
 [ext_resource type="Texture2D" uid="uid://cmaioigqw7wva" path="res://assets/sprites/player/player_topdown_big.png" id="4_etn70"]
+[ext_resource type="Texture2D" uid="uid://bmt3ce830hvw2" path="res://assets/sprites/ui/Main_Gameplay_UI/interactable_notif.png" id="4_od3mr"]
 
 [sub_resource type="Animation" id="Animation_1wbr4"]
 length = 0.001
@@ -108,16 +107,10 @@ hframes = 3
 [node name="AlertSprite" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, -86)
-scale = Vector2(3, 3)
-texture = ExtResource("4_88ynk")
-
-[node name="InquireSprite" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(71, -76)
-scale = Vector2(0.1975, 0.1975)
-texture = ExtResource("4_42hxm")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_od3mr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_a1owq")
+&"": SubResource("AnimationLibrary_a1owq")
 }

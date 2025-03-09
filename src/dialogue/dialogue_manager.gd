@@ -20,12 +20,12 @@ enum LANGUAGE {ENGLISH, FRENCH}
 #npc ui
 @onready var dialogue_ui: Control = %DialogueUI
 @onready var character_1: TextureRect = %DialogueUI/Background/dialogueCharacter1
-@onready var bottom_dialogue_textbox: ColorRect = %DialogueUI/Background/bottomTextBox
+@onready var bottom_dialogue_textbox: TextureRect = %DialogueUI/Background/bottomTextBox
 @onready var bottom_dialogue_text: Label = %DialogueUI/Background/bottomTextBox/Text
 @onready var bottom_dialogue_name: Label = %DialogueUI/Background/bottomTextBox/Name
 
 @onready var character_2: TextureRect = %DialogueUI/Background/dialogueCharacter2
-@onready var top_dialogue_textbox: ColorRect = %DialogueUI/Background/topTextBox
+@onready var top_dialogue_textbox: TextureRect = %DialogueUI/Background/topTextBox
 @onready var top_dialogue_text: Label = %DialogueUI/Background/topTextBox/Text
 @onready var top_dialogue_name: Label = %DialogueUI/Background/topTextBox/Name
 
@@ -92,9 +92,12 @@ func adjust_npc_dialogue(): #switch to next line
 			bottom_dialogue_name.text = dialogue[str(index)]["SPEAKER_NAME"]
 			bottom_dialogue_text.text = dialogue[str(index)][LANGUAGE.keys()[language]]
 			top_dialogue_textbox.visible = true
+			top_dialogue_textbox.flip_h = bottom_dialogue_textbox.flip_h
 			print("top!")
 		character_1.modulate = Color(1, 1, 1, 1.0 if character_index == 0 else 0.4)
 		character_2.modulate = Color(1, 1, 1, 1.0 if character_index == 1 else 0.4)
+		
+		bottom_dialogue_textbox.flip_h = false if character_index == 0 else true
 		#handling the branching logic
 		if(dialogue[str(index)][LANGUAGE.keys()[language] +"_DIALOGUE_CHOICE_1"] != null):
 			button_1.text = dialogue[str(index)][LANGUAGE.keys()[language] +"_DIALOGUE_CHOICE_1"]
