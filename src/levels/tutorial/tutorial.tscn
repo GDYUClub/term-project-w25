@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://chwpqxi2ikcnr"]
+[gd_scene load_steps=27 format=3 uid="uid://chwpqxi2ikcnr"]
 
 [ext_resource type="Script" uid="uid://bfvdqic6i2yn1" path="res://src/levels/tutorial/tutorial.gd" id="1_hspkm"]
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
@@ -11,12 +11,16 @@
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="7_0e0cn"]
 [ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="7_oggfx"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="8_bb1rp"]
+[ext_resource type="Texture2D" uid="uid://he4s4k4svpvn" path="res://assets/sprites/pages/1-2/Panel1.png-1080x.png" id="9_d2hcf"]
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="9_jcs8d"]
+[ext_resource type="Texture2D" uid="uid://vbfvmvm6kri7" path="res://assets/sprites/pages/1-2/Panel2.png-1080x.png" id="10_0fxmp"]
 [ext_resource type="PackedScene" uid="uid://dhpbtj7rkkjks" path="res://src/dialogue/inquire_ui.tscn" id="11_ipng3"]
 [ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/levels/tutorial/clue_database.gd" id="12_legqn"]
 [ext_resource type="JSON" path="res://src/dialogue/_Dialogue.json" id="13_pado1"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="13_thv2m"]
 [ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="14_h25l4"]
+[ext_resource type="Texture2D" uid="uid://dkp81kv7rnhpe" path="res://assets/sprites/pages/1-2/Panel3.png-1080x.png" id="20_vqgbc"]
+[ext_resource type="Texture2D" uid="uid://3himcx6ydt6" path="res://assets/sprites/pages/1-2/Panel4.PNG-1080x.png" id="21_mcod2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fuvah"]
 size = Vector2(1964, 20)
@@ -35,6 +39,12 @@ size = Vector2(421.388, 22.3685)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hspkm")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -15.0
+offset_top = -3.0
+offset_right = 1953.0
+offset_bottom = 1076.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 1425.0
@@ -146,7 +156,18 @@ move_type = 1
 position = Vector2(5, 56)
 
 [node name="NewFrame" parent="Transitions/PanelTransition" index="1"]
-position = Vector2(-1849, 414)
+position = Vector2(-1755, 408)
+
+[node name="PanelTransition5" parent="Transitions" instance=ExtResource("7_oggfx")]
+position = Vector2(-7, 464)
+move_type = 1
+
+[node name="CollisionShape2D" parent="Transitions/PanelTransition5" index="0"]
+position = Vector2(5, 56)
+
+[node name="NewFrame" parent="Transitions/PanelTransition5" index="1"]
+position = Vector2(1765, -246)
+scale = Vector2(-3.71923, 1)
 
 [node name="PanelTransition2" parent="Transitions" instance=ExtResource("7_oggfx")]
 position = Vector2(1379, 537)
@@ -182,6 +203,34 @@ rotation = -1.57079
 [node name="NewFrame" parent="Transitions/PanelTransition4" index="1"]
 position = Vector2(-56.9989, 512)
 
+[node name="PanelImages" type="Node" parent="."]
+
+[node name="Panel1" type="Sprite2D" parent="PanelImages"]
+position = Vector2(16, -54)
+scale = Vector2(0.696296, 0.582716)
+texture = ExtResource("9_d2hcf")
+centered = false
+
+[node name="Panel2" type="Sprite2D" parent="PanelImages"]
+position = Vector2(542, -17)
+scale = Vector2(0.536111, 0.438272)
+texture = ExtResource("10_0fxmp")
+centered = false
+
+[node name="Panel3_png-1080x" type="Sprite2D" parent="PanelImages"]
+position = Vector2(1519.25, 183)
+scale = Vector2(0.73287, 0.612346)
+texture = ExtResource("20_vqgbc")
+
+[node name="Panel4_png-1080x" type="Sprite2D" parent="PanelImages"]
+position = Vector2(940, 539)
+scale = Vector2(0.438194, 0.438194)
+texture = ExtResource("21_mcod2")
+
+[node name="Panel5" type="Node" parent="PanelImages"]
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelImages/Panel5"]
+
 [node name="Player" parent="." instance=ExtResource("4_altkg")]
 unique_name_in_owner = true
 position = Vector2(1265, 197)
@@ -214,6 +263,7 @@ end_index = 2
 character1_sprite = ExtResource("9_jcs8d")
 
 [editable path="Transitions/PanelTransition"]
+[editable path="Transitions/PanelTransition5"]
 [editable path="Transitions/PanelTransition2"]
 [editable path="Transitions/PanelTransition3"]
 [editable path="Transitions/PanelTransition4"]
