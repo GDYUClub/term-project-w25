@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://ntdsvs5p03ns"]
+
+[ext_resource type="Shader" path="res://src/computer/outline.gdshader" id="1_4v1fn"]
+[ext_resource type="Script" path="res://src/computer/desktop/exit_desktop.gd" id="1_6bksy"]
+[ext_resource type="Texture2D" uid="uid://cc5s0jf55uhx1" path="res://assets/sprites/icon.svg" id="2_tsrb3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bqy66"]
+resource_local_to_scene = true
+shader = ExtResource("1_4v1fn")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 5.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+shader_parameter/effect_enabled = false
+
+[node name="exitDesktop" type="Node2D" node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_6bksy")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_bqy66")
+texture = ExtResource("2_tsrb3")

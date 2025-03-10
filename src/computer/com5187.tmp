@@ -1,15 +1,16 @@
-[gd_scene load_steps=28 format=3 uid="uid://d4t2vbdoei1i"]
+[gd_scene load_steps=29 format=3 uid="uid://d4t2vbdoei1i"]
 
 [ext_resource type="Script" path="res://src/computer/computer.gd" id="1_xrywi"]
 [ext_resource type="PackedScene" uid="uid://l38t5j3jdicd" path="res://src/computer/apps/apps.tscn" id="2_g35ug"]
 [ext_resource type="PackedScene" uid="uid://d0luuifmtd02n" path="res://src/computer/folders/folder.tscn" id="3_u7jkj"]
-[ext_resource type="Texture2D" uid="uid://ct7ljobu6jdl" path="res://src/computer/app.png" id="4_7d0mi"]
-[ext_resource type="Texture2D" uid="uid://mia2n36523js" path="res://src/computer/image_1.png" id="5_ffcur"]
+[ext_resource type="Texture2D" uid="uid://ct7ljobu6jdl" path="res://src/computer/images/app.png" id="4_7d0mi"]
+[ext_resource type="Texture2D" uid="uid://mia2n36523js" path="res://src/computer/images/image_1.png" id="5_ffcur"]
 [ext_resource type="Script" path="res://src/computer/apps/app_manager.gd" id="5_hev04"]
-[ext_resource type="Texture2D" uid="uid://b51kcb23e7tvk" path="res://src/computer/image_2.png" id="9_vfje6"]
-[ext_resource type="Texture2D" uid="uid://dbp7qy0py0iv3" path="res://src/computer/image_3.png" id="10_anggc"]
-[ext_resource type="Texture2D" uid="uid://x2jv0yvh2f8m" path="res://src/computer/image_4.png" id="11_u7dup"]
-[ext_resource type="Texture2D" uid="uid://c5crofbpf06oi" path="res://src/computer/desktop.png" id="14_iodkj"]
+[ext_resource type="Texture2D" uid="uid://b51kcb23e7tvk" path="res://src/computer/images/image_2.png" id="9_vfje6"]
+[ext_resource type="Texture2D" uid="uid://dbp7qy0py0iv3" path="res://src/computer/images/image_3.png" id="10_anggc"]
+[ext_resource type="Script" path="res://src/computer/generate_desktop.gd" id="11_7yqea"]
+[ext_resource type="Texture2D" uid="uid://x2jv0yvh2f8m" path="res://src/computer/images/image_4.png" id="11_u7dup"]
+[ext_resource type="Texture2D" uid="uid://c5crofbpf06oi" path="res://src/computer/images/desktop.png" id="14_iodkj"]
 
 [sub_resource type="Resource" id="Resource_250vt"]
 script = ExtResource("5_hev04")
@@ -144,3 +145,9 @@ app_array = Array[ExtResource("5_hev04")]([SubResource("Resource_p6xni"), SubRes
 
 [node name="Apps11" parent="AppContainer" instance=ExtResource("2_g35ug")]
 app_data = SubResource("Resource_rm01m")
+
+[node name="generate_grid" type="Node" parent="." node_paths=PackedStringArray("app_container")]
+script = ExtResource("11_7yqea")
+app_per_col = 5
+padding_edge = Vector2(100, 100)
+app_container = NodePath("../AppContainer")

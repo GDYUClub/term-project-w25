@@ -36,13 +36,23 @@ material = SubResource("ShaderMaterial_3ttlv")
 texture = ExtResource("1_smgxq")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -59.0
-offset_top = 57.0
-offset_right = 59.0
-offset_bottom = 103.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -318.5
+offset_top = 36.0
+offset_right = 318.5
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 33
 text = "[NAME]"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="window" type="Sprite2D" parent="."]
+visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_utsuh")
