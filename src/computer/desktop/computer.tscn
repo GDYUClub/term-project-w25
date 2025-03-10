@@ -1,0 +1,158 @@
+[gd_scene load_steps=26 format=3 uid="uid://d4t2vbdoei1i"]
+
+[ext_resource type="Script" path="res://src/computer/desktop/computer.gd" id="1_xrywi"]
+[ext_resource type="PackedScene" uid="uid://l38t5j3jdicd" path="res://src/computer/apps/apps.tscn" id="2_g35ug"]
+[ext_resource type="PackedScene" uid="uid://d0luuifmtd02n" path="res://src/computer/folders/folder.tscn" id="3_u7jkj"]
+[ext_resource type="Texture2D" uid="uid://ct7ljobu6jdl" path="res://src/computer/images/app.png" id="4_7d0mi"]
+[ext_resource type="Texture2D" uid="uid://mia2n36523js" path="res://src/computer/images/image_1.png" id="5_ffcur"]
+[ext_resource type="Script" path="res://src/computer/apps/app_manager.gd" id="5_hev04"]
+[ext_resource type="Texture2D" uid="uid://b51kcb23e7tvk" path="res://src/computer/images/image_2.png" id="9_vfje6"]
+[ext_resource type="Texture2D" uid="uid://dbp7qy0py0iv3" path="res://src/computer/images/image_3.png" id="10_anggc"]
+[ext_resource type="Script" path="res://src/computer/desktop/desktop_grid.gd" id="11_7yqea"]
+[ext_resource type="Texture2D" uid="uid://x2jv0yvh2f8m" path="res://src/computer/images/image_4.png" id="11_u7dup"]
+[ext_resource type="Script" path="res://src/computer/desktop/desktop_navigation.gd" id="12_1c2qb"]
+[ext_resource type="PackedScene" uid="uid://ntdsvs5p03ns" path="res://src/computer/desktop/exit_desktop.tscn" id="13_6wkaw"]
+[ext_resource type="Shader" path="res://src/computer/outline.gdshader" id="14_gf7ai"]
+[ext_resource type="Texture2D" uid="uid://c5crofbpf06oi" path="res://src/computer/images/desktop.png" id="14_iodkj"]
+
+[sub_resource type="Resource" id="Resource_kurw2"]
+script = ExtResource("5_hev04")
+name = "dude"
+icon = ExtResource("4_7d0mi")
+image = ExtResource("9_vfje6")
+
+[sub_resource type="Resource" id="Resource_gkvrv"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("10_anggc")
+
+[sub_resource type="Resource" id="Resource_qofvj"]
+script = ExtResource("5_hev04")
+name = "uas"
+icon = ExtResource("4_7d0mi")
+image = ExtResource("11_u7dup")
+
+[sub_resource type="Resource" id="Resource_kpy0d"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("5_ffcur")
+
+[sub_resource type="Resource" id="Resource_e2tqi"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("10_anggc")
+
+[sub_resource type="Resource" id="Resource_vwc0c"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("9_vfje6")
+
+[sub_resource type="Resource" id="Resource_hsmul"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("10_anggc")
+
+[sub_resource type="Resource" id="Resource_5sflh"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("10_anggc")
+
+[sub_resource type="Resource" id="Resource_d0l2c"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("5_ffcur")
+
+[sub_resource type="Resource" id="Resource_lbray"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("9_vfje6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sdiiw"]
+resource_local_to_scene = true
+shader = ExtResource("14_gf7ai")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 3.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
+shader_parameter/effect_enabled = true
+
+[node name="Computer" type="Node2D" node_paths=PackedStringArray("grid", "app_container")]
+script = ExtResource("1_xrywi")
+grid = NodePath("generateGrid")
+app_container = NodePath("AppContainer")
+
+[node name="Desktop" type="Sprite2D" parent="."]
+position = Vector2(963.556, 537.25)
+texture = ExtResource("14_iodkj")
+
+[node name="AppContainer" type="Node2D" parent="."]
+
+[node name="Apps7" parent="AppContainer" instance=ExtResource("2_g35ug")]
+data = SubResource("Resource_kurw2")
+
+[node name="Apps8" parent="AppContainer" instance=ExtResource("2_g35ug")]
+data = SubResource("Resource_gkvrv")
+
+[node name="Apps9" parent="AppContainer" instance=ExtResource("2_g35ug")]
+data = SubResource("Resource_qofvj")
+
+[node name="Apps10" parent="AppContainer" instance=ExtResource("2_g35ug")]
+data = SubResource("Resource_kpy0d")
+
+[node name="Apps11" parent="AppContainer" instance=ExtResource("2_g35ug")]
+data = SubResource("Resource_e2tqi")
+
+[node name="Apps12" parent="AppContainer" instance=ExtResource("2_g35ug")]
+data = SubResource("Resource_vwc0c")
+
+[node name="Folder" parent="AppContainer" instance=ExtResource("3_u7jkj")]
+app_array = Array[ExtResource("5_hev04")]([SubResource("Resource_hsmul"), SubResource("Resource_5sflh"), SubResource("Resource_d0l2c"), SubResource("Resource_lbray")])
+
+[node name="Apps13" parent="AppContainer" instance=ExtResource("2_g35ug")]
+data = SubResource("Resource_vwc0c")
+
+[node name="Apps14" parent="AppContainer" instance=ExtResource("2_g35ug")]
+data = SubResource("Resource_vwc0c")
+
+[node name="Apps16" parent="AppContainer" instance=ExtResource("2_g35ug")]
+data = SubResource("Resource_vwc0c")
+
+[node name="Apps15" parent="AppContainer" instance=ExtResource("2_g35ug")]
+data = SubResource("Resource_vwc0c")
+
+[node name="Folder2" parent="AppContainer" instance=ExtResource("3_u7jkj")]
+app_array = Array[ExtResource("5_hev04")]([SubResource("Resource_hsmul"), SubResource("Resource_5sflh"), SubResource("Resource_d0l2c"), SubResource("Resource_lbray")])
+
+[node name="Folder3" parent="AppContainer" instance=ExtResource("3_u7jkj")]
+app_array = Array[ExtResource("5_hev04")]([SubResource("Resource_hsmul"), SubResource("Resource_5sflh"), SubResource("Resource_d0l2c"), SubResource("Resource_lbray")])
+
+[node name="Folder4" parent="AppContainer" instance=ExtResource("3_u7jkj")]
+app_array = Array[ExtResource("5_hev04")]([SubResource("Resource_hsmul"), SubResource("Resource_5sflh"), SubResource("Resource_d0l2c"), SubResource("Resource_lbray")])
+
+[node name="Apps17" parent="AppContainer" instance=ExtResource("2_g35ug")]
+data = SubResource("Resource_vwc0c")
+
+[node name="generateGrid" type="Node" parent="." node_paths=PackedStringArray("app_container")]
+script = ExtResource("11_7yqea")
+row = 5
+margin = Vector4(200, 100, 100, 50)
+app_container = NodePath("../AppContainer")
+
+[node name="navigateGrid" type="Node" parent="." node_paths=PackedStringArray("grid", "exit")]
+script = ExtResource("12_1c2qb")
+grid = NodePath("../generateGrid")
+exit = NodePath("../exitDesktop")
+
+[node name="exitDesktop" parent="." instance=ExtResource("13_6wkaw")]
+material = SubResource("ShaderMaterial_sdiiw")
+position = Vector2(93, 1027)
