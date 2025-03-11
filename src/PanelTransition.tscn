@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bt3pkvlpkcrsn" path="res://src/frame.gd" id="1_lu2ol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u1ojx"]
-size = Vector2(64.0023, 376.999)
+size = Vector2(16.0013, 283.502)
 
 [node name="PanelTransition" type="Area2D"]
 script = ExtResource("1_lu2ol")

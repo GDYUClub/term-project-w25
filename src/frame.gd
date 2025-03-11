@@ -8,6 +8,7 @@ enum MOVETYPES {
 }
 
 @export var move_type:MOVETYPES
+@export var jane_scale:int
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
