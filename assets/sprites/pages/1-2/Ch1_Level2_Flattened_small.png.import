@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm4s1bvqwehhy"
-path="res://.godot/imported/Ch1_Level2_Flattened.png-790fed5d721e58e7a422e0b2ce09c5f3.ctex"
+uid="uid://vo8v47rq0638"
+path="res://.godot/imported/Ch1_Level2_Flattened_small.png-f484f06e48883e9fa138d9626ee88180.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/pages/1-2/Ch1_Level2_Flattened.png"
-dest_files=["res://.godot/imported/Ch1_Level2_Flattened.png-790fed5d721e58e7a422e0b2ce09c5f3.ctex"]
+source_file="res://assets/sprites/pages/1-2/Ch1_Level2_Flattened_small.png"
+dest_files=["res://.godot/imported/Ch1_Level2_Flattened_small.png-f484f06e48883e9fa138d9626ee88180.ctex"]
 
 [params]
 

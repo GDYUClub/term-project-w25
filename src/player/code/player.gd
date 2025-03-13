@@ -46,6 +46,8 @@ func _ready() -> void:
 	area.area_entered.connect(_on_area_entered)
 	area.area_exited.connect(_on_area_exited)
 	_change_move_type(current_move_type)
+	if %PlayerStart:
+		position = %PlayerStart.position
 
 
 func _change_move_type(new_movetype: MOVETYPES):

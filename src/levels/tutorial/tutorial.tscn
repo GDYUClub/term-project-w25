@@ -1,11 +1,11 @@
-[gd_scene load_steps=35 format=3 uid="uid://chwpqxi2ikcnr"]
+[gd_scene load_steps=37 format=3 uid="uid://chwpqxi2ikcnr"]
 
 [ext_resource type="Script" uid="uid://bfvdqic6i2yn1" path="res://src/levels/tutorial/tutorial.gd" id="1_hspkm"]
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
 [ext_resource type="Resource" uid="uid://dojkosxruk8xs" path="res://src/clues/clue-resources/tutorial/clue_cigs.tres" id="2_5f4ee"]
 [ext_resource type="Texture2D" uid="uid://clv10wnhi7uaa" path="res://assets/sprites/panel-ref.png" id="3_4ytyg"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="4_altkg"]
-[ext_resource type="Texture2D" uid="uid://cm4s1bvqwehhy" path="res://assets/sprites/pages/1-2/Ch1_Level2_Flattened.png" id="4_f2mbc"]
+[ext_resource type="Texture2D" uid="uid://vo8v47rq0638" path="res://assets/sprites/pages/1-2/Ch1_Level2_Flattened_small.png" id="4_f2mbc"]
 [ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/clue_lighter.tres" id="4_n1e4y"]
 [ext_resource type="Script" uid="uid://d313ibk1sryhe" path="res://src/dialogue/dialogue_manager.gd" id="6_gkphd"]
 [ext_resource type="Resource" uid="uid://d3k8rcoc56don" path="res://src/clues/clue-resources/tutorial/clue_third.tres" id="6_q7kgm"]
@@ -20,12 +20,13 @@
 [ext_resource type="Texture2D" uid="uid://cgprfj3eul8yc" path="res://assets/sprites/pages/1-2/Panel6_PNG.png-1080x.png" id="10_w3jir"]
 [ext_resource type="PackedScene" uid="uid://dhpbtj7rkkjks" path="res://src/dialogue/inquire_ui.tscn" id="11_ipng3"]
 [ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/levels/tutorial/clue_database.gd" id="12_legqn"]
-[ext_resource type="JSON" path="res://src/dialogue/_Dialogue.json" id="13_pado1"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="13_thv2m"]
 [ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="14_h25l4"]
 [ext_resource type="Texture2D" uid="uid://djr3ou43jxunq" path="res://assets/sprites/pages/1-2/1-2-7/Panel7_PNG.png-1080x.png" id="16_8y812"]
 [ext_resource type="Texture2D" uid="uid://dkp81kv7rnhpe" path="res://assets/sprites/pages/1-2/Panel3.png-1080x.png" id="20_vqgbc"]
 [ext_resource type="Texture2D" uid="uid://3himcx6ydt6" path="res://assets/sprites/pages/1-2/Panel4.PNG-1080x.png" id="21_mcod2"]
+[ext_resource type="JSON" path="res://src/dialogue/_Dialogue_new.json" id="24_f2mbc"]
+[ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="27_t7oso"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fuvah"]
 size = Vector2(1964, 20)
@@ -42,17 +43,21 @@ size = Vector2(373.25, 96.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6rae1"]
 size = Vector2(421.388, 59.1842)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7oso"]
-size = Vector2(748.694, 91)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36xko"]
+size = Vector2(356.337, 28.0002)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f2mbc"]
 size = Vector2(373.25, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7oso"]
+size = Vector2(20, 71)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3jir"]
 size = Vector2(12.5006, 283.502)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hspkm")
+metadata/_edit_horizontal_guides_ = [193.0]
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
@@ -83,7 +88,6 @@ texture = ExtResource("3_4ytyg")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-scale = Vector2(0.600556, 0.600556)
 texture = ExtResource("4_f2mbc")
 centered = false
 
@@ -140,9 +144,10 @@ rotation = -1.01546
 shape = SubResource("RectangleShape2D_6rae1")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Borders"]
-position = Vector2(553, 1002)
-shape = SubResource("RectangleShape2D_t7oso")
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Borders"]
+position = Vector2(945, 878.168)
+rotation = -1.57079
+shape = SubResource("RectangleShape2D_36xko")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="BlockingShape" type="CollisionShape2D" parent="Borders"]
@@ -207,6 +212,14 @@ texture = ExtResource("10_w3jir")
 position = Vector2(378, 916)
 clue = ExtResource("2_5f4ee")
 
+[node name="Cigs2" parent="Clues" instance=ExtResource("1_ra0nd")]
+position = Vector2(821, 674)
+clue = ExtResource("2_5f4ee")
+
+[node name="CollisionShape2D" parent="Clues/Cigs2" index="1"]
+position = Vector2(0, -25.5)
+shape = SubResource("RectangleShape2D_t7oso")
+
 [node name="ClueArea" parent="Clues" instance=ExtResource("1_ra0nd")]
 position = Vector2(816, 769)
 clue = ExtResource("4_n1e4y")
@@ -223,18 +236,14 @@ move_type = 1
 metadata/_edit_group_ = true
 
 [node name="NewFrame" parent="Transitions/3-4" index="1"]
-position = Vector2(-1390, 431)
+position = Vector2(-1390, 373)
 
 [node name="4-3" parent="Transitions" instance=ExtResource("7_oggfx")]
-position = Vector2(19, 480)
+position = Vector2(196, 523)
 move_type = 1
 
-[node name="CollisionShape2D" parent="Transitions/4-3" index="0"]
-position = Vector2(172, 52)
-
 [node name="NewFrame" parent="Transitions/4-3" index="1"]
-position = Vector2(1601, -251)
-scale = Vector2(-3.71923, 1)
+position = Vector2(1378, -330)
 
 [node name="4-5" parent="Transitions" instance=ExtResource("7_oggfx")]
 position = Vector2(1275, 550)
@@ -247,51 +256,55 @@ rotation = -1.57079
 [node name="NewFrame" parent="Transitions/4-5" index="1"]
 position = Vector2(-250.003, -502.998)
 
-[node name="PanelTransition3" parent="Transitions" instance=ExtResource("7_oggfx")]
-position = Vector2(942, 907)
+[node name="5-6" parent="Transitions" instance=ExtResource("7_oggfx")]
+position = Vector2(188, 893)
 rotation = -1.57079
 move_type = 1
 
-[node name="CollisionShape2D" parent="Transitions/PanelTransition3" index="0"]
+[node name="CollisionShape2D" parent="Transitions/5-6" index="0"]
 rotation = -1.57079
 
-[node name="NewFrame" parent="Transitions/PanelTransition3" index="1"]
-position = Vector2(-35.9996, 56.0003)
+[node name="NewFrame" parent="Transitions/5-6" index="1"]
+position = Vector2(-54.9947, 840)
 
-[node name="PanelTransition4" parent="Transitions" instance=ExtResource("7_oggfx")]
-position = Vector2(1278, 908)
-rotation = -1.57079
-move_type = 1
-
-[node name="CollisionShape2D" parent="Transitions/PanelTransition4" index="0"]
-rotation = -1.57079
-
-[node name="NewFrame" parent="Transitions/PanelTransition4" index="1"]
-position = Vector2(-26.9993, 110)
-
-[node name="PanelTransition7" parent="Transitions" instance=ExtResource("7_oggfx")]
-position = Vector2(681, 903)
-rotation = -1.57079
-
-[node name="CollisionShape2D" parent="Transitions/PanelTransition7" index="0"]
-position = Vector2(-4.99825, 280)
-rotation = -1.57079
-
-[node name="NewFrame" parent="Transitions/PanelTransition7" index="1"]
-position = Vector2(-15.9988, 199)
-
-[node name="PanelTransition6" parent="Transitions" instance=ExtResource("7_oggfx")]
+[node name="5-4" parent="Transitions" instance=ExtResource("7_oggfx")]
 position = Vector2(319, 1318)
 rotation = -1.57079
 move_type = 1
 
-[node name="CollisionShape2D" parent="Transitions/PanelTransition6" index="0"]
+[node name="CollisionShape2D" parent="Transitions/5-4" index="0"]
 position = Vector2(608.003, 465.996)
 rotation = -3.14159
 shape = SubResource("RectangleShape2D_w3jir")
 
-[node name="NewFrame" parent="Transitions/PanelTransition6" index="1"]
+[node name="NewFrame" parent="Transitions/5-4" index="1"]
 position = Vector2(757.006, 913.995)
+
+[node name="6-5" parent="Transitions" instance=ExtResource("7_oggfx")]
+position = Vector2(681, 903)
+rotation = -1.57079
+
+[node name="CollisionShape2D" parent="Transitions/6-5" index="0"]
+position = Vector2(-3.99817, 292)
+rotation = -1.57079
+
+[node name="NewFrame" parent="Transitions/6-5" index="1"]
+position = Vector2(-15.9988, 199)
+
+[node name="6-7" parent="Transitions" instance=ExtResource("7_oggfx")]
+position = Vector2(1278, 908)
+rotation = -1.57079
+move_type = 1
+
+[node name="CollisionShape2D" parent="Transitions/6-7" index="0"]
+rotation = -1.57079
+
+[node name="NewFrame" parent="Transitions/6-7" index="1"]
+position = Vector2(-26.9993, 110)
+
+[node name="PlayerStart" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1133, 192)
 
 [node name="Player" parent="." instance=ExtResource("4_altkg")]
 unique_name_in_owner = true
@@ -315,20 +328,27 @@ items = Array[ExtResource("13_thv2m")]([ExtResource("2_5f4ee"), ExtResource("4_n
 [node name="DialogueManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("6_gkphd")
-DIALOGUE_JSON = ExtResource("13_pado1")
+DIALOGUE_JSON = ExtResource("24_f2mbc")
 INQUIRY_DIALOGUE_JSON = ExtResource("14_h25l4")
 
 [node name="Cat" parent="." instance=ExtResource("8_bb1rp")]
-visible = false
+position = Vector2(698, 847)
 npc_name = "Cat"
 start_index = 1
 end_index = 2
 character1_sprite = ExtResource("9_jcs8d")
 
+[node name="Cop1" parent="." instance=ExtResource("8_bb1rp")]
+position = Vector2(1516, 183)
+npc_name = "Sergeant Biggs"
+end_index = 9
+character1_sprite = ExtResource("27_t7oso")
+
+[editable path="Clues/Cigs2"]
 [editable path="Transitions/3-4"]
 [editable path="Transitions/4-3"]
 [editable path="Transitions/4-5"]
-[editable path="Transitions/PanelTransition3"]
-[editable path="Transitions/PanelTransition4"]
-[editable path="Transitions/PanelTransition7"]
-[editable path="Transitions/PanelTransition6"]
+[editable path="Transitions/5-6"]
+[editable path="Transitions/5-4"]
+[editable path="Transitions/6-5"]
+[editable path="Transitions/6-7"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5h0imkaet8vo"]
+[gd_scene load_steps=4 format=3 uid="uid://b5h0imkaet8vo"]
 
-[ext_resource type="Texture2D" uid="uid://eu0kdjsoh565" path="res://assets/sprites/gridcell border.png" id="1_m3duq"]
+[ext_resource type="Texture2D" uid="uid://do3mqftkxr3dn" path="res://assets/sprites/ui/talk_bubble.png" id="1_ha5f6"]
+[ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="2_l6txd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_evl05"]
 font_size = 40
@@ -24,32 +25,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.243137, 0.223529, 0.231373, 0.603922)
+color = Color(0.243137, 0.223529, 0.231373, 0.788235)
 metadata/_edit_use_anchors_ = true
 
-[node name="topTextBox" type="ColorRect" parent="Background"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.731306
-anchor_top = -0.53722
-anchor_right = 1.03055
-anchor_bottom = -0.247511
-offset_left = -774.108
-offset_top = 646.198
-offset_right = -773.66
-offset_bottom = 646.312
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.196197, 0.187122, 0.200583, 1)
-metadata/_edit_use_anchors_ = true
+[node name="topTextBox" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_left = 599.0
+offset_top = -21.0
+offset_right = 1274.0
+offset_bottom = 325.0
+texture = ExtResource("1_ha5f6")
 
 [node name="Text" type="Label" parent="Background/topTextBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0138445
-anchor_top = 0.214286
-anchor_right = 0.982961
-anchor_bottom = 0.937888
+anchor_left = -0.858992
+anchor_top = 0.0741114
+anchor_right = -0.0324611
+anchor_bottom = 0.529808
+offset_left = 629.82
+offset_top = 65.3575
+offset_right = 629.819
+offset_bottom = 65.3575
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
@@ -60,41 +57,37 @@ metadata/_edit_use_anchors_ = true
 [node name="Name" type="Label" parent="Background/topTextBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0316987
-anchor_top = 0.0481644
-anchor_right = 0.853699
-anchor_bottom = 0.218164
-offset_left = 0.853999
-offset_top = -0.1
-offset_right = 0.853882
-offset_bottom = 0.159996
+anchor_left = -0.898432
+anchor_top = -0.09178
+anchor_right = -0.0764313
+anchor_bottom = 0.0782196
+offset_left = 630.441
+offset_top = 65.7559
+offset_right = 630.441
+offset_bottom = 67.036
 text = "Name"
 label_settings = SubResource("LabelSettings_evl05")
 metadata/_edit_use_anchors_ = true
 
-[node name="bottomTextBox" type="ColorRect" parent="Background"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.916518
-anchor_top = -0.648376
-anchor_right = 1.21576
-anchor_bottom = -0.358667
-offset_left = -1129.72
-offset_top = 1124.25
-offset_right = -1129.27
-offset_bottom = 1124.36
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.196197, 0.187122, 0.200583, 1)
-metadata/_edit_use_anchors_ = true
+[node name="bottomTextBox" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_left = 591.0
+offset_top = 252.0
+offset_right = 1266.0
+offset_bottom = 598.0
+texture = ExtResource("1_ha5f6")
 
 [node name="Text" type="Label" parent="Background/bottomTextBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0138445
-anchor_top = 0.214286
-anchor_right = 0.982961
-anchor_bottom = 0.937888
+anchor_left = -0.873807
+anchor_top = 0.0654409
+anchor_right = -0.0472759
+anchor_bottom = 0.521137
+offset_left = 629.82
+offset_top = 65.3575
+offset_right = 629.819
+offset_bottom = 65.3575
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
@@ -105,14 +98,14 @@ metadata/_edit_use_anchors_ = true
 [node name="Name" type="Label" parent="Background/bottomTextBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0316987
-anchor_top = 0.0481644
-anchor_right = 0.853699
-anchor_bottom = 0.218164
-offset_left = 0.853999
-offset_top = -0.1
-offset_right = 0.853882
-offset_bottom = 0.159996
+anchor_left = -0.893987
+anchor_top = -0.10045
+anchor_right = -0.0719869
+anchor_bottom = 0.0695491
+offset_left = 630.441
+offset_top = 65.7559
+offset_right = 630.441
+offset_bottom = 67.036
 text = "Name"
 label_settings = SubResource("LabelSettings_evl05")
 metadata/_edit_use_anchors_ = true
@@ -120,32 +113,31 @@ metadata/_edit_use_anchors_ = true
 [node name="dialogueCharacter1" type="TextureRect" parent="Background"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.104167
-anchor_top = 0.348667
-anchor_right = 0.286
-anchor_bottom = 0.847
+anchor_left = -0.0213542
+anchor_top = 0.145889
+anchor_right = 0.477666
+anchor_bottom = 1.15256
 offset_top = 0.439972
 offset_right = 150.881
 offset_bottom = 231.235
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("1_m3duq")
-expand_mode = 1
+texture = ExtResource("2_l6txd")
 stretch_mode = 4
+flip_h = true
 metadata/_edit_use_anchors_ = true
 
 [node name="dialogueCharacter2" type="TextureRect" parent="Background"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.669792
-anchor_top = 0.348667
-anchor_right = 0.852
-anchor_bottom = 0.847
+anchor_left = 0.661458
+anchor_top = 0.141259
+anchor_right = 1.16048
+anchor_bottom = 1.14793
 offset_top = 0.439972
-offset_right = 150.159
+offset_right = 150.881
 offset_bottom = 231.235
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("1_m3duq")
-expand_mode = 1
+texture = ExtResource("2_l6txd")
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
@@ -167,8 +159,8 @@ alignment = 1
 visible = false
 custom_minimum_size = Vector2(250, 150)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.969706, 0.765231, 0.691799, 1)
 theme_override_colors/font_outline_color = Color(9.14685e-05, 9.24022e-05, 0.000323784, 1)
+theme_override_colors/font_color = Color(0.969706, 0.765231, 0.691799, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 20
 text = "Whats happening!?"
@@ -178,8 +170,8 @@ metadata/_edit_use_anchors_ = true
 visible = false
 custom_minimum_size = Vector2(250, 150)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.969706, 0.765231, 0.691799, 1)
 theme_override_colors/font_outline_color = Color(9.14685e-05, 9.24022e-05, 0.000323784, 1)
+theme_override_colors/font_color = Color(0.969706, 0.765231, 0.691799, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 20
 text = "Whats happening!?"
@@ -189,8 +181,8 @@ metadata/_edit_use_anchors_ = true
 visible = false
 custom_minimum_size = Vector2(250, 150)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.969706, 0.765231, 0.691799, 1)
 theme_override_colors/font_outline_color = Color(9.14685e-05, 9.24022e-05, 0.000323784, 1)
+theme_override_colors/font_color = Color(0.969706, 0.765231, 0.691799, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 20
 text = "Whats happening!?"
@@ -200,8 +192,8 @@ metadata/_edit_use_anchors_ = true
 visible = false
 custom_minimum_size = Vector2(250, 150)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.969706, 0.765231, 0.691799, 1)
 theme_override_colors/font_outline_color = Color(9.14685e-05, 9.24022e-05, 0.000323784, 1)
+theme_override_colors/font_color = Color(0.969706, 0.765231, 0.691799, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 20
 text = "Leave Conversation"
