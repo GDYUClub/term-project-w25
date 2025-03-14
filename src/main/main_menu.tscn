@@ -48,7 +48,7 @@ layout_mode = 2
 [node name="GameTitleText" type="Label" parent="MainMenu/GameTitleBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 71
-text = "Mystery Ink-orperated"
+text = "\"That's why she's... Citizen Jane.\""
 horizontal_alignment = 1
 
 [node name="ButtonBox" type="HBoxContainer" parent="MainMenu"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://chwpqxi2ikcnr"]
+[gd_scene load_steps=29 format=3 uid="uid://chwpqxi2ikcnr"]
 
 [ext_resource type="Script" uid="uid://bfvdqic6i2yn1" path="res://src/levels/tutorial/tutorial.gd" id="1_hspkm"]
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
@@ -12,19 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="7_0e0cn"]
 [ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="7_oggfx"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="8_bb1rp"]
-[ext_resource type="Texture2D" uid="uid://cehb3ektrxmbs" path="res://assets/sprites/pages/1-2/road.png-1080x.png" id="8_wbdfn"]
-[ext_resource type="Texture2D" uid="uid://he4s4k4svpvn" path="res://assets/sprites/pages/1-2/Panel1.png-1080x.png" id="9_d2hcf"]
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="9_jcs8d"]
-[ext_resource type="Texture2D" uid="uid://crq0dhm4yl4vq" path="res://assets/sprites/pages/1-2/PotHole.png-1080x.png" id="9_lvywd"]
-[ext_resource type="Texture2D" uid="uid://vbfvmvm6kri7" path="res://assets/sprites/pages/1-2/Panel2.png-1080x.png" id="10_0fxmp"]
-[ext_resource type="Texture2D" uid="uid://cgprfj3eul8yc" path="res://assets/sprites/pages/1-2/Panel6_PNG.png-1080x.png" id="10_w3jir"]
 [ext_resource type="PackedScene" uid="uid://dhpbtj7rkkjks" path="res://src/dialogue/inquire_ui.tscn" id="11_ipng3"]
 [ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/levels/tutorial/clue_database.gd" id="12_legqn"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="13_thv2m"]
 [ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="14_h25l4"]
-[ext_resource type="Texture2D" uid="uid://djr3ou43jxunq" path="res://assets/sprites/pages/1-2/1-2-7/Panel7_PNG.png-1080x.png" id="16_8y812"]
-[ext_resource type="Texture2D" uid="uid://dkp81kv7rnhpe" path="res://assets/sprites/pages/1-2/Panel3.png-1080x.png" id="20_vqgbc"]
-[ext_resource type="Texture2D" uid="uid://3himcx6ydt6" path="res://assets/sprites/pages/1-2/Panel4.PNG-1080x.png" id="21_mcod2"]
 [ext_resource type="JSON" path="res://src/dialogue/_Dialogue_new.json" id="24_f2mbc"]
 [ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="27_t7oso"]
 
@@ -156,55 +148,6 @@ position = Vector2(1196, 887)
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_f2mbc")
 debug_color = Color(0, 0.6, 0.7, 0.42)
-
-[node name="PanelImages" type="Node2D" parent="."]
-visible = false
-
-[node name="Panel6" type="Node2D" parent="PanelImages"]
-
-[node name="Panel7Png_png-1080x" type="Sprite2D" parent="PanelImages/Panel6"]
-position = Vector2(1668.06, 597.75)
-scale = Vector2(0.640857, 0.640857)
-texture = ExtResource("16_8y812")
-
-[node name="Panel1" type="Sprite2D" parent="PanelImages"]
-position = Vector2(27, -54)
-scale = Vector2(0.686111, 0.582716)
-texture = ExtResource("9_d2hcf")
-centered = false
-
-[node name="Panel2" type="Sprite2D" parent="PanelImages"]
-position = Vector2(542, -17)
-scale = Vector2(0.536111, 0.438272)
-texture = ExtResource("10_0fxmp")
-centered = false
-
-[node name="Panel3" type="Sprite2D" parent="PanelImages"]
-position = Vector2(1519.25, 183)
-scale = Vector2(0.73287, 0.612346)
-texture = ExtResource("20_vqgbc")
-
-[node name="Panel4" type="Sprite2D" parent="PanelImages"]
-position = Vector2(715, 522.375)
-scale = Vector2(1.26852, 0.484375)
-texture = ExtResource("21_mcod2")
-
-[node name="Panel5" type="Node2D" parent="PanelImages"]
-
-[node name="Road_png-1080x" type="Sprite2D" parent="PanelImages/Panel5"]
-position = Vector2(494.25, 879.75)
-scale = Vector2(0.903241, 0.718254)
-texture = ExtResource("8_wbdfn")
-
-[node name="PotHole_png-1080x" type="Sprite2D" parent="PanelImages/Panel5"]
-position = Vector2(350, 858)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_lvywd")
-
-[node name="Panel6Png_png-1080x" type="Sprite2D" parent="PanelImages"]
-position = Vector2(1204, 929)
-scale = Vector2(0.585185, 0.583951)
-texture = ExtResource("10_w3jir")
 
 [node name="Clues" type="Node" parent="."]
 

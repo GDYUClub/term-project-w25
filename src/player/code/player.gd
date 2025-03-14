@@ -55,11 +55,16 @@ func _change_move_type(new_movetype: MOVETYPES):
 	velocity = Vector2.ZERO
 	sprite.texture = load(move_sprites[current_move_type])
 	sprite.hframes = move_frames[current_move_type]
+	sprite.rotation = 0
 
 
 func _top_down(delta: float):
-	var direction_vector := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
-	velocity = WALK_SPEED * direction_vector
+	#var direction_vector := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
+	var rot_dir:= Input.get_axis("ui_left", "ui_right")
+	sprite.rotation += rot_dir * 5 * delta
+	var move_dir:= Input.get_axis("ui_up", "ui_down")
+	var dir = Vector2(0,move_dir).rotated(sprite.rotation)
+	velocity = WALK_SPEED * dir
 
 
 # Side scroller movement function
@@ -113,7 +118,8 @@ func _animate():
 	if velocity != Vector2.ZERO:
 		animPlayer.play(move_animations[current_move_type])
 	else:
-		animPlayer.pause()
+		animPlayer.stop()
+		sprite.frame = 0
 
 
 func _on_area_entered(area: Area2D):
