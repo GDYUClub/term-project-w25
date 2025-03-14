@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://chwpqxi2ikcnr"]
+[gd_scene load_steps=33 format=3 uid="uid://chwpqxi2ikcnr"]
 
 [ext_resource type="Script" uid="uid://bfvdqic6i2yn1" path="res://src/levels/tutorial/tutorial.gd" id="1_hspkm"]
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
@@ -46,6 +46,18 @@ size = Vector2(20, 71)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3jir"]
 size = Vector2(12.5006, 283.502)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcod2"]
+size = Vector2(154, 283)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbdfn"]
+size = Vector2(296, 253.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fxmp"]
+size = Vector2(296, 118)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqgbc"]
+size = Vector2(296, 52)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hspkm")
@@ -173,12 +185,16 @@ clue = ExtResource("6_q7kgm")
 [node name="Transitions" type="Node2D" parent="."]
 
 [node name="3-4" parent="Transitions" instance=ExtResource("7_oggfx")]
-position = Vector2(1669, 171)
+position = Vector2(1669, 173)
 move_type = 1
+arrow_dir = 3
 metadata/_edit_group_ = true
 
 [node name="NewFrame" parent="Transitions/3-4" index="1"]
 position = Vector2(-1390, 373)
+
+[node name="Sprite2D" parent="Transitions/3-4" index="2"]
+position = Vector2(-58, -102)
 
 [node name="4-3" parent="Transitions" instance=ExtResource("7_oggfx")]
 position = Vector2(196, 523)
@@ -198,6 +214,25 @@ rotation = -1.57079
 [node name="NewFrame" parent="Transitions/4-5" index="1"]
 position = Vector2(-250.003, -502.998)
 
+[node name="5-4" parent="Transitions" instance=ExtResource("7_oggfx")]
+position = Vector2(789, 717)
+rotation = -1.57079
+move_type = 1
+
+[node name="CollisionShape2D" parent="Transitions/5-4" index="0"]
+rotation = -3.14159
+shape = SubResource("RectangleShape2D_w3jir")
+
+[node name="NewFrame" parent="Transitions/5-4" index="1"]
+position = Vector2(757.006, 913.995)
+
+[node name="Sprite2D" parent="Transitions/5-4" index="2"]
+position = Vector2(-26, 7.00016)
+
+[node name="CollisionShape2D" parent="Transitions/5-4/ArrowNotif" index="0"]
+position = Vector2(-71, -2.49963)
+shape = SubResource("RectangleShape2D_mcod2")
+
 [node name="5-6" parent="Transitions" instance=ExtResource("7_oggfx")]
 position = Vector2(188, 893)
 rotation = -1.57079
@@ -209,29 +244,26 @@ rotation = -1.57079
 [node name="NewFrame" parent="Transitions/5-6" index="1"]
 position = Vector2(-54.9947, 840)
 
-[node name="5-4" parent="Transitions" instance=ExtResource("7_oggfx")]
-position = Vector2(319, 1318)
-rotation = -1.57079
-move_type = 1
+[node name="Sprite2D" parent="Transitions/5-6" index="2"]
+position = Vector2(-3.99951, 78)
 
-[node name="CollisionShape2D" parent="Transitions/5-4" index="0"]
-position = Vector2(608.003, 465.996)
-rotation = -3.14159
-shape = SubResource("RectangleShape2D_w3jir")
-
-[node name="NewFrame" parent="Transitions/5-4" index="1"]
-position = Vector2(757.006, 913.995)
+[node name="CollisionShape2D" parent="Transitions/5-6/ArrowNotif" index="0"]
+position = Vector2(0.00012207, 43.375)
+shape = SubResource("RectangleShape2D_wbdfn")
 
 [node name="6-5" parent="Transitions" instance=ExtResource("7_oggfx")]
-position = Vector2(681, 903)
+position = Vector2(969, 911)
 rotation = -1.57079
 
 [node name="CollisionShape2D" parent="Transitions/6-5" index="0"]
-position = Vector2(-3.99817, 292)
 rotation = -1.57079
 
 [node name="NewFrame" parent="Transitions/6-5" index="1"]
 position = Vector2(-15.9988, 199)
+
+[node name="CollisionShape2D" parent="Transitions/6-5/ArrowNotif" index="0"]
+position = Vector2(-0.000244141, 48)
+shape = SubResource("RectangleShape2D_0fxmp")
 
 [node name="6-7" parent="Transitions" instance=ExtResource("7_oggfx")]
 position = Vector2(1278, 908)
@@ -243,6 +275,13 @@ rotation = -1.57079
 
 [node name="NewFrame" parent="Transitions/6-7" index="1"]
 position = Vector2(-26.9993, 110)
+
+[node name="Sprite2D" parent="Transitions/6-7" index="2"]
+position = Vector2(160, -32.001)
+
+[node name="CollisionShape2D" parent="Transitions/6-7/ArrowNotif" index="0"]
+position = Vector2(0.000244141, -32)
+shape = SubResource("RectangleShape2D_vqgbc")
 
 [node name="PlayerStart" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -290,7 +329,7 @@ character1_sprite = ExtResource("27_t7oso")
 [editable path="Transitions/3-4"]
 [editable path="Transitions/4-3"]
 [editable path="Transitions/4-5"]
-[editable path="Transitions/5-6"]
 [editable path="Transitions/5-4"]
+[editable path="Transitions/5-6"]
 [editable path="Transitions/6-5"]
 [editable path="Transitions/6-7"]

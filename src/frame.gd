@@ -6,10 +6,16 @@ enum MOVETYPES {
 	TOP_DOWN,
 	SIDE_SCROLLER,
 }
+enum ARROW_DIRECTIONS{
+	UP,
+	DOWN,
+	LEFT,
+	RIGHT,
+}
 
 @export var move_type:MOVETYPES
 @export var jane_scale:int
-
+@export var arrow_dir:ARROW_DIRECTIONS
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 

@@ -203,6 +203,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PolaroidFrame" type="TextureRect" parent="Background"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 752.0
 offset_top = 550.0
