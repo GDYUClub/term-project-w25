@@ -1,23 +1,27 @@
-[gd_scene load_steps=30 format=3 uid="uid://chwpqxi2ikcnr"]
+[gd_scene load_steps=37 format=3 uid="uid://chwpqxi2ikcnr"]
 
 [ext_resource type="Script" uid="uid://bfvdqic6i2yn1" path="res://src/levels/tutorial/tutorial.gd" id="1_hspkm"]
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
-[ext_resource type="Resource" uid="uid://dojkosxruk8xs" path="res://src/clues/clue-resources/tutorial/clue_cigs.tres" id="2_5f4ee"]
 [ext_resource type="Texture2D" uid="uid://clv10wnhi7uaa" path="res://assets/sprites/panel-ref.png" id="3_4ytyg"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="4_altkg"]
 [ext_resource type="Texture2D" uid="uid://vo8v47rq0638" path="res://assets/sprites/pages/1-2/Ch1_Level2_Flattened_small.png" id="4_f2mbc"]
-[ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/clue_lighter.tres" id="4_n1e4y"]
 [ext_resource type="Script" uid="uid://d313ibk1sryhe" path="res://src/dialogue/dialogue_manager.gd" id="6_gkphd"]
-[ext_resource type="Resource" uid="uid://d3k8rcoc56don" path="res://src/clues/clue-resources/tutorial/clue_third.tres" id="6_q7kgm"]
-[ext_resource type="Script" uid="uid://dh8bm7wlijbj7" path="res://src/clues/clue_area.gd" id="6_vqgbc"]
+[ext_resource type="Texture2D" uid="uid://cy54haikib277" path="res://assets/sprites/clue-temp.png" id="6_w3jir"]
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="7_0e0cn"]
+[ext_resource type="Texture2D" uid="uid://brm5qojojxq71" path="res://assets/sprites/clue-panel-temp-jig.png" id="7_8y812"]
 [ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="7_oggfx"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="8_bb1rp"]
+[ext_resource type="Texture2D" uid="uid://3fikk2jplmiv" path="res://assets/sprites/not-sans.png" id="9_f2mbc"]
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="9_jcs8d"]
+[ext_resource type="Texture2D" uid="uid://id1yfwexnkm1" path="res://assets/sprites/lighter-temp.png" id="10_t7oso"]
+[ext_resource type="Texture2D" uid="uid://dxn0j4opm0ak2" path="res://assets/sprites/clue-touhou-jig.png" id="11_36xko"]
 [ext_resource type="PackedScene" uid="uid://dhpbtj7rkkjks" path="res://src/dialogue/inquire_ui.tscn" id="11_ipng3"]
+[ext_resource type="Texture2D" uid="uid://byjyf6cpkwlhq" path="res://assets/sprites/rei-env-temp.png" id="12_18b77"]
 [ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/levels/tutorial/clue_database.gd" id="12_legqn"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="13_thv2m"]
+[ext_resource type="Texture2D" uid="uid://bwljxu7ae7mei" path="res://assets/sprites/rei-temp.png" id="13_wloa0"]
 [ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="14_h25l4"]
+[ext_resource type="Texture2D" uid="uid://c5sc253kcelmd" path="res://assets/sprites/rei-temp-jig.png" id="14_ry1f1"]
 [ext_resource type="JSON" path="res://src/dialogue/_Dialogue_new.json" id="24_f2mbc"]
 [ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="27_t7oso"]
 
@@ -42,8 +46,44 @@ size = Vector2(356.337, 28.0002)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f2mbc"]
 size = Vector2(373.25, 42)
 
+[sub_resource type="Resource" id="Resource_i4q4f"]
+script = ExtResource("13_thv2m")
+id = 0
+lvl_id = 0
+name = "Cigarettes"
+desc = "Highly addictive and hazardous to your health. Snake's favorite brand. "
+icon = ExtResource("6_w3jir")
+panel = ExtResource("7_8y812")
+environment_sprite = ExtResource("6_w3jir")
+picks_up = true
+correct_panel = 0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7oso"]
 size = Vector2(20, 71)
+
+[sub_resource type="Resource" id="Resource_nk2ke"]
+script = ExtResource("13_thv2m")
+id = 1
+lvl_id = 0
+name = "Lighter"
+desc = "for cooking cigarettes before you eat them."
+icon = ExtResource("10_t7oso")
+panel = ExtResource("11_36xko")
+environment_sprite = ExtResource("9_f2mbc")
+picks_up = true
+correct_panel = 1
+
+[sub_resource type="Resource" id="Resource_uxj6v"]
+script = ExtResource("13_thv2m")
+id = 2
+lvl_id = 0
+name = "Rei"
+desc = "The only thing keeping you sane in this cold, dark world."
+icon = ExtResource("13_wloa0")
+panel = ExtResource("14_ry1f1")
+environment_sprite = ExtResource("12_18b77")
+picks_up = true
+correct_panel = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3jir"]
 size = Vector2(12.5006, 283.502)
@@ -153,13 +193,11 @@ debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="Cigs" parent="Clues" instance=ExtResource("1_ra0nd")]
 position = Vector2(378, 916)
-script = ExtResource("6_vqgbc")
-clue = ExtResource("2_5f4ee")
+clue = SubResource("Resource_i4q4f")
 
 [node name="Cigs2" parent="Clues" instance=ExtResource("1_ra0nd")]
 position = Vector2(821, 674)
-script = ExtResource("6_vqgbc")
-clue = ExtResource("2_5f4ee")
+clue = SubResource("Resource_i4q4f")
 
 [node name="CollisionShape2D" parent="Clues/Cigs2" index="1"]
 position = Vector2(0, -25.5)
@@ -167,13 +205,11 @@ shape = SubResource("RectangleShape2D_t7oso")
 
 [node name="ClueArea" parent="Clues" instance=ExtResource("1_ra0nd")]
 position = Vector2(816, 769)
-script = ExtResource("6_vqgbc")
-clue = ExtResource("4_n1e4y")
+clue = SubResource("Resource_nk2ke")
 
 [node name="ClueArea2" parent="Clues" instance=ExtResource("1_ra0nd")]
 position = Vector2(580, 811)
-script = ExtResource("6_vqgbc")
-clue = ExtResource("6_q7kgm")
+clue = SubResource("Resource_uxj6v")
 
 [node name="Transitions" type="Node2D" parent="."]
 
@@ -270,7 +306,6 @@ offset_right = 0.0
 [node name="ClueDatabase" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("12_legqn")
-items = Array[ExtResource("13_thv2m")]([ExtResource("2_5f4ee"), ExtResource("4_n1e4y"), ExtResource("6_q7kgm")])
 
 [node name="DialogueManager" type="Node" parent="."]
 unique_name_in_owner = true

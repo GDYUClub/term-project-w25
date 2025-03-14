@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ck6e1aoa5gray"]
 
-[ext_resource type="Script" uid="uid://cllgjmgol7lq4" path="res://src/clues/clues/clues/grid_position.gd" id="1_n458v"]
+[ext_resource type="Script" uid="uid://cllgjmgol7lq4" path="res://src/clues/grid_position.gd" id="1_n458v"]
 [ext_resource type="Texture2D" uid="uid://eu0kdjsoh565" path="res://assets/sprites/gridcell border.png" id="2_rfjra"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6020j"]

@@ -4,7 +4,7 @@ extends Area2D
 @export var _panel_name: String
 @export var clue: Clue
 
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite: TextureRect = $Clue
 @onready var numberLabel: Label = $NumberLabel
 
 @onready var panel_desc_scene: PackedScene = preload("res://src/clues/clue_description.tscn")

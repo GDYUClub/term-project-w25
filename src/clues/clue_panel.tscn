@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bulygnnjxoiy3"]
 
-[ext_resource type="Script" uid="uid://dvvd0c1qygrd2" path="res://src/clues/clues/clues/panel.gd" id="1_12oeh"]
+[ext_resource type="Script" uid="uid://dvvd0c1qygrd2" path="res://src/clues/panel.gd" id="1_12oeh"]
 [ext_resource type="Texture2D" uid="uid://dj6kumpdfhlrm" path="res://assets/sprites/ui/Inventory_Menu_UI/polaroid_hint_container.png" id="2_5hm0s"]
 [ext_resource type="Texture2D" uid="uid://dxn0j4opm0ak2" path="res://assets/sprites/clue-touhou-jig.png" id="3_fspl1"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dvp7253oe1cbe"]
 
-[ext_resource type="Script" uid="uid://bc676rlyfmf6n" path="res://src/clues/clues/clues/clue_grid_menu.gd" id="1_nbl5j"]
+[ext_resource type="Script" uid="uid://bc676rlyfmf6n" path="res://src/clues/clue_grid_menu.gd" id="1_nbl5j"]
 [ext_resource type="Texture2D" uid="uid://s4ciyh88wqnu" path="res://assets/sprites/ui/Inventory_Menu_UI/briefcase_bg.png" id="2_5kccu"]
 [ext_resource type="Texture2D" uid="uid://b3ih8vxwbqoki" path="res://assets/sprites/ui/Inventory_Menu_UI/folder_clues_and_hints_container.png" id="3_f3tot"]
 [ext_resource type="Texture2D" uid="uid://blc6fojnhxx7v" path="res://assets/sprites/ui/Inventory_Menu_UI/chapter_sum_container.png" id="4_crim7"]
