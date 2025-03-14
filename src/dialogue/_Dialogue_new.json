@@ -56,6 +56,7 @@
 		"BUBBLE_TYPE": "TALK",
 		"ENGLISH": "Did you blow him a kiss or something?",
 		"FRENCH": null,
+		"IMAGE": "res://assets/sprites/clue-touhou.png",
 		"ENGLISH_DIALOGUE_CHOICE_1": null,
 		"ENGLISH_DIALOGUE_CHOICE_2": null,
 		"ENGLISH_DIALOGUE_CHOICE_3": null,

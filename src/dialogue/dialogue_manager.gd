@@ -41,12 +41,17 @@ enum LANGUAGE {ENGLISH, FRENCH}
 @onready var button_3: Button = %DialogueUI/Background/ButtonHolder/Button3
 @onready var button_leave: Button = %DialogueUI/Background/ButtonHolder/LeaveButton
 
+#image 
+@onready var polaroidFrame := %DialogueUI/Background/PolaroidFrame
+@onready var polaroidImage := %DialogueUI/Background/PolaroidFrame/PolaroidImage
+
 #player handling
 @onready var alert_sprite: Sprite2D = $"../Player/AlertSprite"
 
 signal dialogue_event
 
 func _ready() -> void:
+	print(polaroidFrame)
 	import_dialogue_data()
 	button_leave.pressed.connect(leave_dialogue)
 
@@ -90,6 +95,7 @@ func adjust_npc_dialogue(): #switch to next line
 		var character_index : int = dialogue[str(index)]["SPEAKER_ID"]
 
 		render_speach_bubble()
+		render_image()
 		
 
 		if index == start_id:
@@ -233,3 +239,12 @@ func render_speach_bubble() -> void:
 		top_dialogue_textbox.flip_h = false
 	if prev_character_index == 1:
 		top_dialogue_textbox.flip_h = true
+
+func render_image() -> void:
+	var current_dialogue = dialogue[str(index)]
+	if "IMAGE" in current_dialogue and current_dialogue["IMAGE"] != null:
+	#if "IMAGE" in current_dialogue:
+		polaroidFrame.visible = true
+		polaroidImage.texture = load(dialogue[str(index)]["IMAGE"])
+	else:
+		polaroidFrame.visible = false

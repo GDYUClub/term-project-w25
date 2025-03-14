@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5h0imkaet8vo"]
+[gd_scene load_steps=6 format=3 uid="uid://b5h0imkaet8vo"]
 
 [ext_resource type="Texture2D" uid="uid://do3mqftkxr3dn" path="res://assets/sprites/ui/talk_bubble.png" id="1_ha5f6"]
 [ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="2_l6txd"]
+[ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="3_l6txd"]
+[ext_resource type="Texture2D" uid="uid://cfgnmb8sa6iyc" path="res://assets/sprites/ui/polaroid_hint_container.png" id="3_y045p"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_evl05"]
 font_size = 40
@@ -198,3 +200,24 @@ theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 20
 text = "Leave Conversation"
 metadata/_edit_use_anchors_ = true
+
+[node name="PolaroidFrame" type="TextureRect" parent="Background"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 752.0
+offset_top = 550.0
+offset_right = 1371.0
+offset_bottom = 1028.0
+texture = ExtResource("3_y045p")
+stretch_mode = 4
+
+[node name="PolaroidImage" type="TextureRect" parent="Background/PolaroidFrame"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 27.0
+offset_top = 29.0
+offset_right = 444.0
+offset_bottom = 442.0
+scale = Vector2(0.92001, 0.88)
+texture = ExtResource("3_l6txd")
+stretch_mode = 4
