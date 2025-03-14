@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=5 format=3 uid="uid://d3k8rcoc56don"]
+
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="1_bwrmf"]
+[ext_resource type="Texture2D" uid="uid://bwljxu7ae7mei" path="res://assets/sprites/rei-temp.png" id="1_e8bks"]
+[ext_resource type="Texture2D" uid="uid://byjyf6cpkwlhq" path="res://assets/sprites/rei-env-temp.png" id="1_wh7rt"]
+[ext_resource type="Texture2D" uid="uid://c5sc253kcelmd" path="res://assets/sprites/rei-temp-jig.png" id="3_bd10j"]
+
+[resource]
+script = ExtResource("1_bwrmf")
+id = 2
+lvl_id = 0
+name = "Rei"
+desc = "The only thing keeping you sane in this cold, dark world."
+icon = ExtResource("1_e8bks")
+panel = ExtResource("3_bd10j")
+environment_sprite = ExtResource("1_wh7rt")
+picks_up = true
+correct_panel = 2

@@ -7,11 +7,9 @@ size = Vector2(276.563, 143.75)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3xtir"]
 font_size = 19
-font_color = Color(0.190762, 0.190762, 0.190762, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1imky"]
 font_size = 14
-font_color = Color(0.29219, 0.29219, 0.29219, 1)
 
 [node name="Description" type="Area2D" groups=["item_description"]]
 z_index = 3

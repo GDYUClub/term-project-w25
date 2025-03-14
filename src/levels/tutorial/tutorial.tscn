@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://chwpqxi2ikcnr"]
+[gd_scene load_steps=30 format=3 uid="uid://chwpqxi2ikcnr"]
 
 [ext_resource type="Script" uid="uid://bfvdqic6i2yn1" path="res://src/levels/tutorial/tutorial.gd" id="1_hspkm"]
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/clue_lighter.tres" id="4_n1e4y"]
 [ext_resource type="Script" uid="uid://d313ibk1sryhe" path="res://src/dialogue/dialogue_manager.gd" id="6_gkphd"]
 [ext_resource type="Resource" uid="uid://d3k8rcoc56don" path="res://src/clues/clue-resources/tutorial/clue_third.tres" id="6_q7kgm"]
+[ext_resource type="Script" uid="uid://dh8bm7wlijbj7" path="res://src/clues/clue_area.gd" id="6_vqgbc"]
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="7_0e0cn"]
 [ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="7_oggfx"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="8_bb1rp"]
@@ -152,10 +153,12 @@ debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="Cigs" parent="Clues" instance=ExtResource("1_ra0nd")]
 position = Vector2(378, 916)
+script = ExtResource("6_vqgbc")
 clue = ExtResource("2_5f4ee")
 
 [node name="Cigs2" parent="Clues" instance=ExtResource("1_ra0nd")]
 position = Vector2(821, 674)
+script = ExtResource("6_vqgbc")
 clue = ExtResource("2_5f4ee")
 
 [node name="CollisionShape2D" parent="Clues/Cigs2" index="1"]
@@ -164,10 +167,12 @@ shape = SubResource("RectangleShape2D_t7oso")
 
 [node name="ClueArea" parent="Clues" instance=ExtResource("1_ra0nd")]
 position = Vector2(816, 769)
+script = ExtResource("6_vqgbc")
 clue = ExtResource("4_n1e4y")
 
 [node name="ClueArea2" parent="Clues" instance=ExtResource("1_ra0nd")]
 position = Vector2(580, 811)
+script = ExtResource("6_vqgbc")
 clue = ExtResource("6_q7kgm")
 
 [node name="Transitions" type="Node2D" parent="."]

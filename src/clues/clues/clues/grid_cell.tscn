@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ck6e1aoa5gray"]
 
-[ext_resource type="Script" uid="uid://cllgjmgol7lq4" path="res://src/clues/clues/clues/grid_position.gd" id="1_n458v"]
+[ext_resource type="Script" uid="uid://cllgjmgol7lq4" path="res://src/clues/grid_position.gd" id="1_n458v"]
 [ext_resource type="Texture2D" uid="uid://eu0kdjsoh565" path="res://assets/sprites/gridcell border.png" id="2_rfjra"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6020j"]
@@ -8,14 +8,6 @@ size = Vector2(183.5, 183)
 
 [node name="GridCell" type="Area2D"]
 script = ExtResource("1_n458v")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_left = -92.0
-offset_top = -92.0
-offset_right = 91.0
-offset_bottom = 91.0
-color = Color(0.201527, 0.201527, 0.201527, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_rfjra")

@@ -109,7 +109,7 @@ func interact():
 
 func inquire():
 	
-	if not interactable or interactable.can_inquiry == false:
+	if not interactable or !interactable.is_in_group("npc") or interactable.can_inquiry == false:
 		return
 	if interactable.is_in_group("npc"):
 		start_inquire.emit(interactable)
