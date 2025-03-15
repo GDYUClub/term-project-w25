@@ -8,6 +8,7 @@
 size = Vector2(199.25, 201.75)
 
 [node name="Panel" type="Area2D"]
+z_index = 1
 scale = Vector2(0.91, 0.91)
 script = ExtResource("1_12oeh")
 
@@ -39,6 +40,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
 position = Vector2(-1.625, -0.875)
 shape = SubResource("RectangleShape2D_l6tir")
 debug_color = Color(0, 0.6, 0.7, 0.42)

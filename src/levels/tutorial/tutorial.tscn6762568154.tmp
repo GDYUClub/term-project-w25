@@ -296,7 +296,7 @@ position = Vector2(1265, 197)
 current_move_type = 1
 
 [node name="InventoryPanel" parent="." instance=ExtResource("23_8y812")]
-visible = false
+clue_count = null
 
 [node name="InquireUI" parent="." instance=ExtResource("11_ipng3")]
 metadata/_edit_lock_ = true

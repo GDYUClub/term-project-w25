@@ -1,6 +1,6 @@
 extends Node
 
-@onready var panelArrangementScene = preload("res://src/clues/clue_arrange_screen.tscn")
+@onready var panelArrangementScene = $InventoryPanel
 @onready var player = $Player
 
 enum GAMEPLAY_STATE{
@@ -26,9 +26,10 @@ func _process(delta: float) -> void:
 			player.can_move = true
 			if Input.is_action_just_pressed("analyze"):
 				current_state = GAMEPLAY_STATE.PANEL_ARRANGE
-				panelArrangeInst = panelArrangementScene.instantiate()	
-				panelArrangeInst.puzzle_solved.connect(_puzzle_solved)
-				add_child(panelArrangeInst)
+				#panelArrangeInst = panelArrangementScene.instantiate()	
+				panelArrangementScene.puzzle_solved.connect(_puzzle_solved)
+				panelArrangementScene.visible = true
+				panelArrangementScene.do_ready()
 
 		GAMEPLAY_STATE.DIALOG:
 			player.can_move = false
@@ -38,5 +39,5 @@ func _process(delta: float) -> void:
 			player.can_move = false
 			if Input.is_action_just_pressed("analyze"):
 				current_state = GAMEPLAY_STATE.EXPLORE
-				remove_child(panelArrangeInst)
+				panelArrangementScene.visible = false
 			pass

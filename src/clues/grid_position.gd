@@ -2,9 +2,11 @@ class_name GridBox
 extends Area2D
 
 var id: int
+var scroll_id: int
 var current_clue: CluePanel
 var correct_panel: bool = false
 @onready var numberLabel = $NumberLabel
+@onready var hover : Sprite2D = $Hover
 static var all_grid_positions: Array[GridBox]
 
 
@@ -23,7 +25,8 @@ func clear_active_panel() -> void:
 
 
 func _ready() -> void:
-	pass
+	connect("mouse_entered", on_hover)
+	connect("mouse_exited", off_hover)
 
 
 func check_placement(p: CluePanel, gb: GridBox) -> void:
@@ -31,3 +34,8 @@ func check_placement(p: CluePanel, gb: GridBox) -> void:
 		set_active_panel(p)
 	elif p == current_clue:
 		clear_active_panel()
+
+func on_hover():
+	hover.visible = true
+func off_hover():
+	hover.visible = false
