@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dj5uqta4q8aks" path="res://assets/sprites/ui/arrow.png" id="2_70s1w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u1ojx"]
-size = Vector2(16.0013, 283.502)
+size = Vector2(30.5003, 197.751)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70s1w"]
-size = Vector2(296, 166.5)
+size = Vector2(261, 166.5)
 
 [node name="PanelTransition" type="Area2D"]
 script = ExtResource("1_lu2ol")
@@ -21,6 +21,7 @@ debug_color = Color(1.19124e-06, 0.413376, 0.167811, 0.42)
 [node name="NewFrame" type="Marker2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 16
 texture = ExtResource("2_70s1w")
 
 [node name="ArrowNotif" type="Area2D" parent="."]
