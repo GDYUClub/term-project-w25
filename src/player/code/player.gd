@@ -37,7 +37,7 @@ var move_animations = {
 
 var move_frames = {
 	MOVETYPES.TOP_DOWN:3,
-	MOVETYPES.SIDE_SCROLLER:7,
+	MOVETYPES.SIDE_SCROLLER:6,
 	}
 
 @export var current_move_type: MOVETYPES
@@ -65,6 +65,7 @@ func _change_move_type(new_movetype: MOVETYPES):
 	sprite.texture = load(move_sprites[current_move_type])
 	sprite.hframes = move_frames[current_move_type]
 	sprite.rotation = 0
+	print(sprite.hframes)
 
 
 func _top_down(delta: float):
