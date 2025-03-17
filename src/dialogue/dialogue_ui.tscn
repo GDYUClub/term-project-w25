@@ -31,6 +31,7 @@ color = Color(0.243137, 0.223529, 0.231373, 0.788235)
 metadata/_edit_use_anchors_ = true
 
 [node name="topTextBox" type="TextureRect" parent="Background"]
+layout_mode = 0
 offset_left = 589.0
 offset_top = 1.0
 offset_right = 1264.0
