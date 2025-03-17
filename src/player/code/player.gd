@@ -37,7 +37,7 @@ var move_animations = {
 
 var move_frames = {
 	MOVETYPES.TOP_DOWN:3,
-	MOVETYPES.SIDE_SCROLLER:6,
+	MOVETYPES.SIDE_SCROLLER:7,
 	}
 
 @export var current_move_type: MOVETYPES
@@ -48,7 +48,6 @@ var move_frames = {
 func change_scale(new_scale:float):
 	sprite.scale = Vector2(new_scale,new_scale)
 	pass
-	
 
 func _ready() -> void:
 	add_to_group("player")
@@ -81,6 +80,10 @@ func _top_down(delta: float):
 func _side_scroller(delta: float):
 	var direction := Input.get_axis("ui_left", "ui_right")
 	velocity.x = WALK_SPEED * direction
+	if direction == 1:
+		sprite.flip_h = false
+	if direction == -1:
+		sprite.flip_h = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
