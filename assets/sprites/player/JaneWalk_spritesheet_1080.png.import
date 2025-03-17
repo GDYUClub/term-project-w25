@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmf6tgblcgplx"
-path="res://.godot/imported/background.png-077799d62cdac0a0bf2c05a37882f71e.ctex"
+uid="uid://cbrth142pdc2o"
+path="res://.godot/imported/JaneWalk_spritesheet_1080.png-24dc04a4847df5bd58d78cfc2e3b2d41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/pages/1-1/background.png"
-dest_files=["res://.godot/imported/background.png-077799d62cdac0a0bf2c05a37882f71e.ctex"]
+source_file="res://assets/sprites/player/JaneWalk_spritesheet_1080.png"
+dest_files=["res://.godot/imported/JaneWalk_spritesheet_1080.png-24dc04a4847df5bd58d78cfc2e3b2d41.ctex"]
 
 [params]
 
