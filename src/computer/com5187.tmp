@@ -1,0 +1,153 @@
+[gd_scene load_steps=29 format=3 uid="uid://d4t2vbdoei1i"]
+
+[ext_resource type="Script" path="res://src/computer/computer.gd" id="1_xrywi"]
+[ext_resource type="PackedScene" uid="uid://l38t5j3jdicd" path="res://src/computer/apps/apps.tscn" id="2_g35ug"]
+[ext_resource type="PackedScene" uid="uid://d0luuifmtd02n" path="res://src/computer/folders/folder.tscn" id="3_u7jkj"]
+[ext_resource type="Texture2D" uid="uid://ct7ljobu6jdl" path="res://src/computer/images/app.png" id="4_7d0mi"]
+[ext_resource type="Texture2D" uid="uid://mia2n36523js" path="res://src/computer/images/image_1.png" id="5_ffcur"]
+[ext_resource type="Script" path="res://src/computer/apps/app_manager.gd" id="5_hev04"]
+[ext_resource type="Texture2D" uid="uid://b51kcb23e7tvk" path="res://src/computer/images/image_2.png" id="9_vfje6"]
+[ext_resource type="Texture2D" uid="uid://dbp7qy0py0iv3" path="res://src/computer/images/image_3.png" id="10_anggc"]
+[ext_resource type="Script" path="res://src/computer/generate_desktop.gd" id="11_7yqea"]
+[ext_resource type="Texture2D" uid="uid://x2jv0yvh2f8m" path="res://src/computer/images/image_4.png" id="11_u7dup"]
+[ext_resource type="Texture2D" uid="uid://c5crofbpf06oi" path="res://src/computer/images/desktop.png" id="14_iodkj"]
+
+[sub_resource type="Resource" id="Resource_250vt"]
+script = ExtResource("5_hev04")
+name = "app"
+icon = ExtResource("4_7d0mi")
+image = ExtResource("5_ffcur")
+
+[sub_resource type="Resource" id="Resource_w854g"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("10_anggc")
+
+[sub_resource type="Resource" id="Resource_8b6kw"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("5_ffcur")
+
+[sub_resource type="Resource" id="Resource_q5po6"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("11_u7dup")
+
+[sub_resource type="Resource" id="Resource_3srb1"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("5_ffcur")
+
+[sub_resource type="Resource" id="Resource_k3xu1"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("10_anggc")
+
+[sub_resource type="Resource" id="Resource_qjui2"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("11_u7dup")
+
+[sub_resource type="Resource" id="Resource_g0q0q"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("9_vfje6")
+
+[sub_resource type="Resource" id="Resource_cxwue"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("10_anggc")
+
+[sub_resource type="Resource" id="Resource_ckmme"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("10_anggc")
+
+[sub_resource type="Resource" id="Resource_n5lr4"]
+script = ExtResource("5_hev04")
+name = "app"
+icon = ExtResource("4_7d0mi")
+image = ExtResource("10_anggc")
+
+[sub_resource type="Resource" id="Resource_bcu11"]
+script = ExtResource("5_hev04")
+name = "app"
+icon = ExtResource("4_7d0mi")
+image = ExtResource("9_vfje6")
+
+[sub_resource type="Resource" id="Resource_p6xni"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("5_ffcur")
+
+[sub_resource type="Resource" id="Resource_qguqi"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("5_ffcur")
+
+[sub_resource type="Resource" id="Resource_g7n6s"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("10_anggc")
+
+[sub_resource type="Resource" id="Resource_7qor4"]
+script = ExtResource("5_hev04")
+name = ""
+icon = ExtResource("4_7d0mi")
+image = ExtResource("11_u7dup")
+
+[sub_resource type="Resource" id="Resource_rm01m"]
+script = ExtResource("5_hev04")
+name = "app"
+icon = ExtResource("4_7d0mi")
+image = ExtResource("5_ffcur")
+
+[node name="Computer" type="Node2D" node_paths=PackedStringArray("app_container")]
+script = ExtResource("1_xrywi")
+padding = Vector2(100, 100)
+app_container = NodePath("AppContainer")
+
+[node name="Desktop" type="Sprite2D" parent="."]
+position = Vector2(963.556, 537.25)
+texture = ExtResource("14_iodkj")
+
+[node name="AppContainer" type="Node2D" parent="."]
+
+[node name="Apps7" parent="AppContainer" instance=ExtResource("2_g35ug")]
+app_data = SubResource("Resource_250vt")
+
+[node name="Apps8" parent="AppContainer" instance=ExtResource("2_g35ug")]
+app_data = SubResource("Resource_250vt")
+
+[node name="Folder2" parent="AppContainer" instance=ExtResource("3_u7jkj")]
+app_array = Array[ExtResource("5_hev04")]([SubResource("Resource_w854g"), SubResource("Resource_8b6kw"), SubResource("Resource_q5po6"), SubResource("Resource_3srb1"), SubResource("Resource_k3xu1"), SubResource("Resource_qjui2"), SubResource("Resource_g0q0q"), SubResource("Resource_cxwue"), SubResource("Resource_ckmme")])
+
+[node name="Apps9" parent="AppContainer" instance=ExtResource("2_g35ug")]
+app_data = SubResource("Resource_n5lr4")
+
+[node name="Apps10" parent="AppContainer" instance=ExtResource("2_g35ug")]
+app_data = SubResource("Resource_bcu11")
+
+[node name="Folder" parent="AppContainer" instance=ExtResource("3_u7jkj")]
+app_array = Array[ExtResource("5_hev04")]([SubResource("Resource_p6xni"), SubResource("Resource_qguqi"), SubResource("Resource_g7n6s"), SubResource("Resource_7qor4")])
+
+[node name="Apps11" parent="AppContainer" instance=ExtResource("2_g35ug")]
+app_data = SubResource("Resource_rm01m")
+
+[node name="generate_grid" type="Node" parent="." node_paths=PackedStringArray("app_container")]
+script = ExtResource("11_7yqea")
+app_per_col = 5
+padding_edge = Vector2(100, 100)
+app_container = NodePath("../AppContainer")

@@ -66,10 +66,10 @@ texture = SubResource("AnimatedTexture_3ncc3")
 [node name="Door" parent="." instance=ExtResource("4_e534f")]
 position = Vector2(249, 216)
 
-[node name="CollisionShape2D" parent="Door" index="1"]
+[node name="CollisionShape2D" parent="Door" index="0"]
 position = Vector2(98, 4)
 
-[node name="NewFrame" parent="Door" index="2"]
+[node name="NewFrame" parent="Door" index="1"]
 position = Vector2(139, -3)
 
 [editable path="Door"]
