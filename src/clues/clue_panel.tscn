@@ -1,16 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://bulygnnjxoiy3"]
+[gd_scene load_steps=5 format=3 uid="uid://bulygnnjxoiy3"]
 
 [ext_resource type="Script" uid="uid://dvvd0c1qygrd2" path="res://src/clues/panel.gd" id="1_12oeh"]
+[ext_resource type="Texture2D" uid="uid://dj6kumpdfhlrm" path="res://assets/sprites/ui/Inventory_Menu_UI/polaroid_hint_container.png" id="2_5hm0s"]
+[ext_resource type="Texture2D" uid="uid://dxn0j4opm0ak2" path="res://assets/sprites/clue-touhou-jig.png" id="3_fspl1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6tir"]
 size = Vector2(199.25, 201.75)
 
 [node name="Panel" type="Area2D"]
+z_index = 1
+scale = Vector2(0.91, 0.91)
 script = ExtResource("1_12oeh")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -101.0
+offset_top = -102.0
+offset_right = 98.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5hm0s")
+expand_mode = 1
+
+[node name="Clue" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -90.0
+offset_right = 87.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_fspl1")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
 position = Vector2(-1.625, -0.875)
 shape = SubResource("RectangleShape2D_l6tir")
 debug_color = Color(0, 0.6, 0.7, 0.42)

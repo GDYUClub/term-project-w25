@@ -86,18 +86,8 @@ environment_sprite = ExtResource("12_18b77")
 picks_up = true
 correct_panel = 2
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3jir"]
-size = Vector2(318.125, 57.7505)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wloa0"]
-size = Vector2(340, 38.8755)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ry1f1"]
-size = Vector2(333, 8.99999)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4q4f"]
-size = Vector2(274.25, 41.9377)
+size = Vector2(12.5006, 283.502)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hspkm")
@@ -110,7 +100,6 @@ offset_right = 1953.0
 offset_bottom = 1076.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 offset_left = 1425.0
 offset_top = 337.0
 offset_right = 1922.0
@@ -131,11 +120,9 @@ scale = Vector2(1.65259, 1.30411)
 texture = ExtResource("3_4ytyg")
 metadata/_edit_lock_ = true
 
-[node name="Background" type="Sprite2D" parent="."]
-z_index = -2
+[node name="Sprite2D2" type="Sprite2D" parent="."]
 texture = ExtResource("4_f2mbc")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Borders" type="StaticBody2D" parent="."]
 metadata/_edit_lock_ = true
@@ -228,10 +215,8 @@ clue = SubResource("Resource_uxj6v")
 [node name="Transitions" type="Node2D" parent="."]
 
 [node name="3-4" parent="Transitions" instance=ExtResource("7_oggfx")]
-position = Vector2(1669, 173)
+position = Vector2(1669, 171)
 move_type = 1
-jane_scale = 0.25
-arrow_dir = 3
 metadata/_edit_group_ = true
 
 [node name="NewFrame" parent="Transitions/3-4" index="1"]
@@ -240,80 +225,66 @@ position = Vector2(-1390, 373)
 [node name="4-3" parent="Transitions" instance=ExtResource("7_oggfx")]
 position = Vector2(196, 523)
 move_type = 1
-jane_scale = 0.25
-arrow_dir = 2
-
-[node name="CollisionShape2D" parent="Transitions/4-3" index="0"]
-position = Vector2(-3, 3)
-shape = SubResource("RectangleShape2D_18b77")
 
 [node name="NewFrame" parent="Transitions/4-3" index="1"]
 position = Vector2(1378, -330)
 
 [node name="4-5" parent="Transitions" instance=ExtResource("7_oggfx")]
 position = Vector2(1275, 550)
-jane_scale = 1.0
-arrow_dir = 3
+rotation = -1.57079
 
 [node name="CollisionShape2D" parent="Transitions/4-5" index="0"]
-position = Vector2(3.5, -14.5)
-shape = SubResource("RectangleShape2D_lvywd")
+position = Vector2(11, 3.99992)
+rotation = -1.57079
 
 [node name="NewFrame" parent="Transitions/4-5" index="1"]
-position = Vector2(-528, 251)
+position = Vector2(-250.003, -502.998)
+
+[node name="5-6" parent="Transitions" instance=ExtResource("7_oggfx")]
+position = Vector2(188, 893)
+rotation = -1.57079
+move_type = 1
+
+[node name="CollisionShape2D" parent="Transitions/5-6" index="0"]
+rotation = -1.57079
+
+[node name="NewFrame" parent="Transitions/5-6" index="1"]
+position = Vector2(-54.9947, 840)
 
 [node name="5-4" parent="Transitions" instance=ExtResource("7_oggfx")]
-position = Vector2(789, 717)
+position = Vector2(319, 1318)
+rotation = -1.57079
 move_type = 1
-jane_scale = 0.25
 
 [node name="CollisionShape2D" parent="Transitions/5-4" index="0"]
+position = Vector2(608.003, 465.996)
 rotation = -3.14159
 shape = SubResource("RectangleShape2D_w3jir")
 
 [node name="NewFrame" parent="Transitions/5-4" index="1"]
-position = Vector2(345, -166)
-
-[node name="5-6" parent="Transitions" instance=ExtResource("7_oggfx")]
-position = Vector2(188, 893)
-move_type = 1
-jane_scale = 0.3
-arrow_dir = 2
-
-[node name="CollisionShape2D" parent="Transitions/5-6" index="0"]
-position = Vector2(-15.4377, -8.00012)
-rotation = -1.57079
-shape = SubResource("RectangleShape2D_wloa0")
-
-[node name="NewFrame" parent="Transitions/5-6" index="1"]
-position = Vector2(853, -12)
+position = Vector2(757.006, 913.995)
 
 [node name="6-5" parent="Transitions" instance=ExtResource("7_oggfx")]
-position = Vector2(969, 911)
-jane_scale = 1.0
-arrow_dir = 2
+position = Vector2(681, 903)
+rotation = -1.57079
 
 [node name="CollisionShape2D" parent="Transitions/6-5" index="0"]
-position = Vector2(-8.5, -26.5001)
+position = Vector2(-3.99817, 292)
 rotation = -1.57079
-shape = SubResource("RectangleShape2D_ry1f1")
 
 [node name="NewFrame" parent="Transitions/6-5" index="1"]
-position = Vector2(-714, -28)
+position = Vector2(-15.9988, 199)
 
 [node name="6-7" parent="Transitions" instance=ExtResource("7_oggfx")]
 position = Vector2(1278, 908)
+rotation = -1.57079
 move_type = 1
-jane_scale = 0.3
-arrow_dir = 3
 
 [node name="CollisionShape2D" parent="Transitions/6-7" index="0"]
-position = Vector2(2.99927, 7.875)
 rotation = -1.57079
-shape = SubResource("RectangleShape2D_i4q4f")
 
 [node name="NewFrame" parent="Transitions/6-7" index="1"]
-position = Vector2(65, -7)
+position = Vector2(-26.9993, 110)
 
 [node name="PlayerStart" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -322,11 +293,10 @@ position = Vector2(1133, 192)
 [node name="Player" parent="." instance=ExtResource("4_altkg")]
 unique_name_in_owner = true
 position = Vector2(1265, 197)
-starting_scale = 0.25
 current_move_type = 1
 
 [node name="InventoryPanel" parent="." instance=ExtResource("23_8y812")]
-visible = false
+clue_count = null
 
 [node name="InquireUI" parent="." instance=ExtResource("11_ipng3")]
 metadata/_edit_lock_ = true
@@ -364,7 +334,7 @@ character1_sprite = ExtResource("27_t7oso")
 [editable path="Transitions/3-4"]
 [editable path="Transitions/4-3"]
 [editable path="Transitions/4-5"]
-[editable path="Transitions/5-4"]
 [editable path="Transitions/5-6"]
+[editable path="Transitions/5-4"]
 [editable path="Transitions/6-5"]
 [editable path="Transitions/6-7"]

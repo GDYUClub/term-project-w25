@@ -12,7 +12,14 @@ script = ExtResource("1_n458v")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_rfjra")
 
+[node name="Hover" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1.66893e-06, 0.499999)
+scale = Vector2(1.05435, 1.04891)
+texture = ExtResource("2_rfjra")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = -1
 position = Vector2(0.25, 0.5)
 shape = SubResource("RectangleShape2D_6020j")
 debug_color = Color(0, 0.6, 0.7, 0.42)

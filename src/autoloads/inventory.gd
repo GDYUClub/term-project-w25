@@ -4,6 +4,7 @@ var _player_items: Array[Clue] = []
 
 func add_item(c:Clue) -> void:
 	_player_items.append(c)
+	print(_player_items)
 	pass
 
 func remove_item(c:Clue) -> void:
