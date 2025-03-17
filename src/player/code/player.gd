@@ -8,6 +8,9 @@ const WALK_SPEED = 300.0
 @onready var inquire_sprite: Sprite2D = $InquireSprite
 @onready var area: Area2D = $Area2D
 
+
+@export_range(0,1) var starting_scale:float
+
 signal start_inquire
 signal end_inquire
 
@@ -24,7 +27,7 @@ enum MOVETYPES {
 
 var move_sprites = {
 	MOVETYPES.TOP_DOWN: "res://assets/sprites/player/player_topdown.png",
-	MOVETYPES.SIDE_SCROLLER: "res://assets/sprites/player/player_sidescroll.png",
+	MOVETYPES.SIDE_SCROLLER: "res://assets/sprites/player/side_1080.png",
 }
 
 var move_animations = {
@@ -41,11 +44,19 @@ var move_frames = {
 
 # Called when the node enters the scene tree for the first time.
 #3
+
+func change_scale(new_scale:float):
+	sprite.scale = Vector2(new_scale,new_scale)
+	pass
+
 func _ready() -> void:
 	add_to_group("player")
 	area.area_entered.connect(_on_area_entered)
 	area.area_exited.connect(_on_area_exited)
 	_change_move_type(current_move_type)
+	change_scale(starting_scale)
+	if %PlayerStart:
+		position = %PlayerStart.position
 
 
 func _change_move_type(new_movetype: MOVETYPES):
@@ -53,17 +64,27 @@ func _change_move_type(new_movetype: MOVETYPES):
 	velocity = Vector2.ZERO
 	sprite.texture = load(move_sprites[current_move_type])
 	sprite.hframes = move_frames[current_move_type]
+	sprite.rotation = 0
+	print(sprite.hframes)
 
 
 func _top_down(delta: float):
-	var direction_vector := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
-	velocity = WALK_SPEED * direction_vector
+	#var direction_vector := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
+	var rot_dir:= Input.get_axis("ui_left", "ui_right")
+	sprite.rotation += rot_dir * 5 * delta
+	var move_dir:= Input.get_axis("ui_up", "ui_down")
+	var dir = Vector2(0,move_dir).rotated(sprite.rotation)
+	velocity = WALK_SPEED * dir
 
 
 # Side scroller movement function
 func _side_scroller(delta: float):
 	var direction := Input.get_axis("ui_left", "ui_right")
 	velocity.x = WALK_SPEED * direction
+	if direction == 1:
+		sprite.flip_h = false
+	if direction == -1:
+		sprite.flip_h = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -111,7 +132,8 @@ func _animate():
 	if velocity != Vector2.ZERO:
 		animPlayer.play(move_animations[current_move_type])
 	else:
-		animPlayer.pause()
+		animPlayer.stop()
+		sprite.frame = 0
 
 
 func _on_area_entered(area: Area2D):

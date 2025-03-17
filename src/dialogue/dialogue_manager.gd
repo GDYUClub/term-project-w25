@@ -13,6 +13,12 @@ var character_1_texture : Texture
 var character_2_texture : Texture
 var dialogue_ongoing : bool = false
 var can_branch = false
+
+var think_bubble = preload("res://assets/sprites/ui/thought_bubble.png")
+var talk_bubble = preload("res://assets/sprites/ui/talk_bubble.png")
+var shout_bubble = preload("res://assets/sprites/ui/shout_bubble.png")
+var wisper_bubble = preload("res://assets/sprites/ui/whipser_bubble.png")
+
 enum LANGUAGE {ENGLISH, FRENCH}
 @export var language : LANGUAGE = LANGUAGE.ENGLISH
 @export var DIALOGUE_JSON : JSON
@@ -20,12 +26,12 @@ enum LANGUAGE {ENGLISH, FRENCH}
 #npc ui
 @onready var dialogue_ui: Control = %DialogueUI
 @onready var character_1: TextureRect = %DialogueUI/Background/dialogueCharacter1
-@onready var bottom_dialogue_textbox: ColorRect = %DialogueUI/Background/bottomTextBox
+@onready var bottom_dialogue_textbox: TextureRect = %DialogueUI/Background/bottomTextBox
 @onready var bottom_dialogue_text: Label = %DialogueUI/Background/bottomTextBox/Text
 @onready var bottom_dialogue_name: Label = %DialogueUI/Background/bottomTextBox/Name
 
 @onready var character_2: TextureRect = %DialogueUI/Background/dialogueCharacter2
-@onready var top_dialogue_textbox: ColorRect = %DialogueUI/Background/topTextBox
+@onready var top_dialogue_textbox: TextureRect = %DialogueUI/Background/topTextBox
 @onready var top_dialogue_text: Label = %DialogueUI/Background/topTextBox/Text
 @onready var top_dialogue_name: Label = %DialogueUI/Background/topTextBox/Name
 
@@ -35,12 +41,17 @@ enum LANGUAGE {ENGLISH, FRENCH}
 @onready var button_3: Button = %DialogueUI/Background/ButtonHolder/Button3
 @onready var button_leave: Button = %DialogueUI/Background/ButtonHolder/LeaveButton
 
+#image 
+@onready var polaroidFrame := %DialogueUI/Background/PolaroidFrame
+@onready var polaroidImage := %DialogueUI/Background/PolaroidFrame/PolaroidImage
+
 #player handling
 @onready var alert_sprite: Sprite2D = $"../Player/AlertSprite"
 
 signal dialogue_event
 
 func _ready() -> void:
+	print(polaroidFrame)
 	import_dialogue_data()
 	button_leave.pressed.connect(leave_dialogue)
 
@@ -80,7 +91,13 @@ func load_npc_dialogue(new_start_id : int, new_end_id : int, speaker_1_sprite: T
 func adjust_npc_dialogue(): #switch to next line
 	if(dialogue.size() > 0 && index <= end_id):
 		#handling the name dialogue logic
+
 		var character_index : int = dialogue[str(index)]["SPEAKER_ID"]
+
+		render_speach_bubble()
+		render_image()
+		
+
 		if index == start_id:
 			bottom_dialogue_name.text = dialogue[str(index)]["SPEAKER_NAME"]
 			bottom_dialogue_text.text = dialogue[str(index)][LANGUAGE.keys()[language]]
@@ -93,8 +110,8 @@ func adjust_npc_dialogue(): #switch to next line
 			bottom_dialogue_text.text = dialogue[str(index)][LANGUAGE.keys()[language]]
 			top_dialogue_textbox.visible = true
 			print("top!")
-		character_1.modulate = Color(1, 1, 1, 1.0 if character_index == 0 else 0.4)
-		character_2.modulate = Color(1, 1, 1, 1.0 if character_index == 1 else 0.4)
+		character_1.modulate = Color(1, 1, 1, 1.0 if character_index == 0 else 0.8)
+		character_2.modulate = Color(1, 1, 1, 1.0 if character_index == 1 else 0.8)
 		#handling the branching logic
 		if(dialogue[str(index)][LANGUAGE.keys()[language] +"_DIALOGUE_CHOICE_1"] != null):
 			button_1.text = dialogue[str(index)][LANGUAGE.keys()[language] +"_DIALOGUE_CHOICE_1"]
@@ -182,3 +199,52 @@ func execute_command(command_string : String):
 				Inventory.remove_item(%ClueDatabase.itemDict[int(value)])
 			_:
 				print("incorrect command")
+
+func render_speach_bubble() -> void:
+	var character_index : int = dialogue[str(index)]["SPEAKER_ID"]
+	var bot_bubble_type:String = dialogue[str(index)]["BUBBLE_TYPE"]
+
+
+	var prev_character_index : int = dialogue[str(index - 1)]["SPEAKER_ID"] if index > 0 else 0
+	var top_bubble_type:String = dialogue[str(index -1)]["BUBBLE_TYPE"] if index > 0 else "TALK"
+	
+	match top_bubble_type:
+		"TALK":
+			top_dialogue_textbox.texture = talk_bubble
+		"THINK":
+			top_dialogue_textbox.texture = think_bubble
+		"SHOUT":
+			top_dialogue_textbox.texture = shout_bubble
+		"WISPER":
+			top_dialogue_textbox.texture = wisper_bubble
+
+	match bot_bubble_type:
+		"TALK":
+			bottom_dialogue_textbox.texture = talk_bubble
+		"THINK":
+			bottom_dialogue_textbox.texture = think_bubble
+		"SHOUT":
+			bottom_dialogue_textbox.texture = shout_bubble
+		"WISPER":
+			bottom_dialogue_textbox.texture = wisper_bubble
+
+
+	# handle flipping the diablog boxes
+	if character_index == 0:
+		bottom_dialogue_textbox.flip_h = false
+	if character_index == 1:
+		bottom_dialogue_textbox.flip_h = true
+
+	if prev_character_index == 0:
+		top_dialogue_textbox.flip_h = false
+	if prev_character_index == 1:
+		top_dialogue_textbox.flip_h = true
+
+func render_image() -> void:
+	var current_dialogue = dialogue[str(index)]
+	if "IMAGE" in current_dialogue and current_dialogue["IMAGE"] != null:
+	#if "IMAGE" in current_dialogue:
+		polaroidFrame.visible = true
+		polaroidImage.texture = load(dialogue[str(index)]["IMAGE"])
+	else:
+		polaroidFrame.visible = false

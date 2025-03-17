@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cwpg474pv15uj" path="res://src/player/code/player.gd" id="1_j2py3"]
 [ext_resource type="Shape2D" uid="uid://coaafk8ng1xrm" path="res://assets/resources/standing_cshape.tres" id="2_kwucs"]
+[ext_resource type="Texture2D" uid="uid://cbrth142pdc2o" path="res://assets/sprites/player/JaneWalk_spritesheet_1080.png" id="3_od3mr"]
 [ext_resource type="Texture2D" uid="uid://bknspeucr7r2o" path="res://assets/sprites/Inquire.png" id="4_42hxm"]
 [ext_resource type="Texture2D" uid="uid://badcq2r82pcs6" path="res://assets/sprites/alert-temp.png" id="4_88ynk"]
-[ext_resource type="Texture2D" uid="uid://cmaioigqw7wva" path="res://assets/sprites/player/player_topdown_big.png" id="4_etn70"]
 
 [sub_resource type="Animation" id="Animation_1wbr4"]
 length = 0.001
@@ -55,7 +55,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4]
+"values": [1, 2, 3, 4, 5]
 }
 
 [sub_resource type="Animation" id="Animation_ml25n"]
@@ -97,13 +97,14 @@ shape = ExtResource("2_kwucs")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 6.5)
+position = Vector2(-1.75, 0)
 shape = ExtResource("2_kwucs")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("4_etn70")
-hframes = 3
+position = Vector2(-2, 0)
+texture = ExtResource("3_od3mr")
+hframes = 7
 
 [node name="AlertSprite" type="Sprite2D" parent="."]
 visible = false
@@ -119,5 +120,5 @@ texture = ExtResource("4_42hxm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_a1owq")
+&"": SubResource("AnimationLibrary_a1owq")
 }

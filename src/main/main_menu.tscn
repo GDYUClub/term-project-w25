@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b28kcyo0kbids"]
 
-[ext_resource type="Texture2D" uid="uid://m01chsswga2i" path="res://assets/menu/backgrounds/temp_menuscreen_background.png" id="1_7f66i"]
+[ext_resource type="Texture2D" uid="uid://m01chsswga2i" path="res://assets/sprites/temp_menuscreen_background.png" id="1_7f66i"]
 [ext_resource type="Script" uid="uid://cka7pr7qhw0tx" path="res://src/main/main_menu_script.gd" id="1_q12us"]
 
 [node name="MainMenuScreen" type="Control"]
@@ -48,7 +48,7 @@ layout_mode = 2
 [node name="GameTitleText" type="Label" parent="MainMenu/GameTitleBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 71
-text = "Mystery Ink-orperated"
+text = "\"That's why she's... Citizen Jane.\""
 horizontal_alignment = 1
 
 [node name="ButtonBox" type="HBoxContainer" parent="MainMenu"]
