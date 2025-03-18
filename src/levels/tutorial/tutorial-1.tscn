@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bdlrmunokiya3"]
+[gd_scene load_steps=33 format=3 uid="uid://bdlrmunokiya3"]
 
 [ext_resource type="Script" uid="uid://bfvdqic6i2yn1" path="res://src/levels/tutorial/tutorial.gd" id="1_xcymm"]
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="2_ft5mu"]
@@ -21,22 +21,19 @@
 [ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="19_1lttl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fuvah"]
-size = Vector2(1964, 20)
+size = Vector2(1964, 31.5547)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e645k"]
-size = Vector2(1283.5, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wihkw"]
-size = Vector2(756.5, 33)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7bmo"]
-size = Vector2(373.25, 96.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcymm"]
+size = Vector2(496, 31.5547)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6rae1"]
-size = Vector2(421.388, 59.1842)
+size = Vector2(556.347, 21.297)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_36xko"]
-size = Vector2(356.337, 28.0002)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ft5mu"]
+size = Vector2(488.173, 21.297)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7t7n"]
+size = Vector2(1052.09, 21.297)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f2mbc"]
 size = Vector2(373.25, 42)
@@ -104,30 +101,14 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders"]
+visible = false
 position = Vector2(972, 0)
 shape = SubResource("RectangleShape2D_fuvah")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Borders"]
-position = Vector2(968, 329)
-shape = SubResource("RectangleShape2D_fuvah")
-debug_color = Color(0, 0.6, 0.7, 0.42)
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Borders"]
-position = Vector2(639.25, 701)
-shape = SubResource("RectangleShape2D_e645k")
-debug_color = Color(0, 0.6, 0.7, 0.42)
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Borders"]
-position = Vector2(1294, 702)
-rotation = -1.5708
-shape = SubResource("RectangleShape2D_wihkw")
-debug_color = Color(0, 0.6, 0.7, 0.42)
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Borders"]
-position = Vector2(1036, 152)
-rotation = -1.5708
-shape = SubResource("RectangleShape2D_x7bmo")
+position = Vector2(303, 582)
+shape = SubResource("RectangleShape2D_xcymm")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders"]
@@ -148,19 +129,26 @@ shape = SubResource("RectangleShape2D_fuvah")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Borders"]
-position = Vector2(693, 167)
-rotation = -1.01546
+position = Vector2(546.352, 286.827)
+rotation = -1.57079
 shape = SubResource("RectangleShape2D_6rae1")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Borders"]
-position = Vector2(945, 878.168)
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Borders"]
+position = Vector2(918, 240.913)
 rotation = -1.57079
-shape = SubResource("RectangleShape2D_36xko")
+shape = SubResource("RectangleShape2D_ft5mu")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1730, 529.957)
+rotation = -1.57079
+shape = SubResource("RectangleShape2D_r7t7n")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="BlockingShape" type="CollisionShape2D" parent="Borders"]
 unique_name_in_owner = true
+visible = false
 position = Vector2(1196, 887)
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_f2mbc")
@@ -281,10 +269,11 @@ position = Vector2(65, -7)
 
 [node name="PlayerStart" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(1133, 192)
+position = Vector2(438, 327)
 
 [node name="Player" parent="." instance=ExtResource("10_41sty")]
 unique_name_in_owner = true
+visible = false
 position = Vector2(1265, 197)
 starting_scale = 0.25
 current_move_type = 1
