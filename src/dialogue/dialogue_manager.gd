@@ -19,6 +19,8 @@ var talk_bubble = preload("res://assets/sprites/ui/talk_bubble.png")
 var shout_bubble = preload("res://assets/sprites/ui/shout_bubble.png")
 var wisper_bubble = preload("res://assets/sprites/ui/whipser_bubble.png")
 
+signal dialogue_ended
+
 enum LANGUAGE {ENGLISH, FRENCH}
 @export var language : LANGUAGE = LANGUAGE.ENGLISH
 @export var DIALOGUE_JSON : JSON
@@ -155,6 +157,7 @@ func adjust_npc_dialogue(): #switch to next line
 		dialogue_ui.visible = false;
 		dialogue_ongoing = false
 		alert_sprite.visible = false
+		dialogue_ended.emit()
 func branch(new_start_index, new_end_index, dialogue): #branch to another dialogue
 	button_1.visible = false
 	button_2.visible = false

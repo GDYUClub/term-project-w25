@@ -313,6 +313,7 @@ start_index = 1
 end_index = 1
 character1_sprite = ExtResource("19_1lttl")
 character2_sprite = null
+is_clue = true
 
 [node name="GlassShard2" parent="Npc" instance=ExtResource("18_uaorv")]
 position = Vector2(888, 549)
@@ -321,6 +322,7 @@ start_index = 1
 end_index = 1
 character1_sprite = ExtResource("19_1lttl")
 character2_sprite = null
+is_clue = true
 
 [node name="GlassShard3" parent="Npc" instance=ExtResource("18_uaorv")]
 position = Vector2(972, 549)
@@ -329,6 +331,7 @@ start_index = 1
 end_index = 1
 character1_sprite = ExtResource("19_1lttl")
 character2_sprite = null
+is_clue = true
 
 [node name="GlassShard4" parent="Npc" instance=ExtResource("18_uaorv")]
 position = Vector2(972, 549)
@@ -337,6 +340,7 @@ start_index = 1
 end_index = 1
 character1_sprite = ExtResource("19_1lttl")
 character2_sprite = null
+is_clue = true
 
 [node name="Cop1" parent="Npc" instance=ExtResource("18_uaorv")]
 position = Vector2(1516, 183)

@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 # how to set up this system
 # what info would I need to pass into this object:

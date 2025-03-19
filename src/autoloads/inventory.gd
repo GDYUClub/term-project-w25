@@ -1,8 +1,12 @@
 extends Node
 
 var _player_items: Array[Clue] = []
+var new_item_recieved:bool = false
 
 func add_item(c:Clue) -> void:
+	if c in _player_items:
+		return
+	new_item_recieved = true
 	_player_items.append(c)
 	print(_player_items)
 	pass

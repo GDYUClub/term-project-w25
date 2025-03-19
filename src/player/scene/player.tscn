@@ -4,7 +4,7 @@
 [ext_resource type="Shape2D" uid="uid://coaafk8ng1xrm" path="res://assets/resources/standing_cshape.tres" id="2_kwucs"]
 [ext_resource type="Texture2D" uid="uid://cbrth142pdc2o" path="res://assets/sprites/player/JaneWalk_spritesheet_1080.png" id="3_od3mr"]
 [ext_resource type="Texture2D" uid="uid://bknspeucr7r2o" path="res://assets/sprites/Inquire.png" id="4_42hxm"]
-[ext_resource type="Texture2D" uid="uid://badcq2r82pcs6" path="res://assets/sprites/alert-temp.png" id="4_88ynk"]
+[ext_resource type="Texture2D" uid="uid://8x7ovu4cl2py" path="res://assets/sprites/ui/Main_Gameplay_UI/npc_dialogue_static-already_spoken.png" id="4_od3mr"]
 
 [sub_resource type="Animation" id="Animation_1wbr4"]
 length = 0.001
@@ -108,9 +108,9 @@ hframes = 7
 
 [node name="AlertSprite" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(0, -86)
-scale = Vector2(3, 3)
-texture = ExtResource("4_88ynk")
+position = Vector2(-18, -153)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_od3mr")
 
 [node name="InquireSprite" type="Sprite2D" parent="."]
 visible = false

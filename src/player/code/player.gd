@@ -8,7 +8,6 @@ const WALK_SPEED = 300.0
 @onready var inquire_sprite: Sprite2D = $InquireSprite
 @onready var area: Area2D = $Area2D
 
-
 @export_range(0,1) var starting_scale:float
 
 signal start_inquire
@@ -42,6 +41,11 @@ var move_frames = {
 
 @export var current_move_type: MOVETYPES
 
+const is_clue_alert_texture:={
+false:preload("res://assets/sprites/ui/Main_Gameplay_UI/npc_dialogue_static-already_spoken.png"),
+true:preload("res://assets/sprites/ui/Main_Gameplay_UI/interactable_notif.png"),
+}
+
 # Called when the node enters the scene tree for the first time.
 #3
 
@@ -69,7 +73,6 @@ func _change_move_type(new_movetype: MOVETYPES):
 
 
 func _top_down(delta: float):
-	#var direction_vector := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
 	var rot_dir:= Input.get_axis("ui_left", "ui_right")
 	sprite.rotation += rot_dir * 5 * delta
 	var move_dir:= Input.get_axis("ui_up", "ui_down")
@@ -99,6 +102,7 @@ func _process(delta: float) -> void:
 		interact()
 	if Input.is_action_just_pressed("inquire"):
 		inquire()
+	
 	_animate()
 	move_and_slide()
 
@@ -108,9 +112,6 @@ func interact():
 		return
 
 	if interactable.is_in_group("clue"):
-		#clue popup
-
-		#get clue
 		clues.append(interactable.clue)
 		Inventory.add_item(interactable.clue)
 		interactable.monitorable = false
@@ -120,6 +121,8 @@ func interact():
 
 	if interactable.is_in_group("npc"):
 		interactable.talk_to_npc()
+		await interactable.interaction_over
+		get_parent().check_for_new_item()
 
 func inquire():
 	
@@ -135,12 +138,15 @@ func _animate():
 		animPlayer.stop()
 		sprite.frame = 0
 
+		
+
 
 func _on_area_entered(area: Area2D):
 	if area.is_in_group("clue"):
 		alertSprite.visible = true
 		interactable = area
 	if area.is_in_group("npc"):
+		alertSprite.texture = is_clue_alert_texture[area.is_clue]
 		if (area.is_interacted_with == false or area.repeatable_conversation == true) and area.can_talk == true:
 			alertSprite.visible = true
 			interactable = area
