@@ -164,3 +164,9 @@ func switch_panel():
 				selected_panel = null
 			selected_grid = all_grid_cells[scroll_index]
 			selected_grid.on_hover()
+		_update_ui(selected_panel)
+func _update_ui(panelArea):
+	if panelArea == null: return
+	%ClueTitle.text = panelArea.clue.name
+	%ClueDesc.text = panelArea.clue.desc
+	pass
