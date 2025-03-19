@@ -1,0 +1,339 @@
+[gd_scene load_steps=38 format=3 uid="uid://chwpqxi2ikcnr"]
+
+[ext_resource type="Script" uid="uid://bfvdqic6i2yn1" path="res://src/levels/tutorial/tutorial.gd" id="1_hspkm"]
+[ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
+[ext_resource type="Texture2D" uid="uid://clv10wnhi7uaa" path="res://assets/sprites/panel-ref.png" id="3_4ytyg"]
+[ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="4_altkg"]
+[ext_resource type="Texture2D" uid="uid://vo8v47rq0638" path="res://assets/sprites/pages/1-2/Ch1_Level2_Flattened_small.png" id="4_f2mbc"]
+[ext_resource type="Script" uid="uid://d313ibk1sryhe" path="res://src/dialogue/dialogue_manager.gd" id="6_gkphd"]
+[ext_resource type="Texture2D" uid="uid://cy54haikib277" path="res://assets/sprites/clue-temp.png" id="6_w3jir"]
+[ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="7_0e0cn"]
+[ext_resource type="Texture2D" uid="uid://brm5qojojxq71" path="res://assets/sprites/clue-panel-temp-jig.png" id="7_8y812"]
+[ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="7_oggfx"]
+[ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="8_bb1rp"]
+[ext_resource type="Texture2D" uid="uid://3fikk2jplmiv" path="res://assets/sprites/not-sans.png" id="9_f2mbc"]
+[ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="9_jcs8d"]
+[ext_resource type="Texture2D" uid="uid://id1yfwexnkm1" path="res://assets/sprites/lighter-temp.png" id="10_t7oso"]
+[ext_resource type="Texture2D" uid="uid://dxn0j4opm0ak2" path="res://assets/sprites/clue-touhou-jig.png" id="11_36xko"]
+[ext_resource type="PackedScene" uid="uid://dhpbtj7rkkjks" path="res://src/dialogue/inquire_ui.tscn" id="11_ipng3"]
+[ext_resource type="Texture2D" uid="uid://byjyf6cpkwlhq" path="res://assets/sprites/rei-env-temp.png" id="12_18b77"]
+[ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/levels/tutorial/clue_database.gd" id="12_legqn"]
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="13_thv2m"]
+[ext_resource type="Texture2D" uid="uid://bwljxu7ae7mei" path="res://assets/sprites/rei-temp.png" id="13_wloa0"]
+[ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="14_h25l4"]
+[ext_resource type="Texture2D" uid="uid://c5sc253kcelmd" path="res://assets/sprites/rei-temp-jig.png" id="14_ry1f1"]
+[ext_resource type="PackedScene" uid="uid://dvp7253oe1cbe" path="res://src/clues/clue_arrange_screen.tscn" id="23_8y812"]
+[ext_resource type="JSON" path="res://src/dialogue/_Dialogue_new.json" id="24_f2mbc"]
+[ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="27_t7oso"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fuvah"]
+size = Vector2(1964, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e645k"]
+size = Vector2(1283.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wihkw"]
+size = Vector2(756.5, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7bmo"]
+size = Vector2(373.25, 96.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rae1"]
+size = Vector2(421.388, 59.1842)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36xko"]
+size = Vector2(356.337, 28.0002)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2mbc"]
+size = Vector2(373.25, 42)
+
+[sub_resource type="Resource" id="Resource_i4q4f"]
+script = ExtResource("13_thv2m")
+id = 0
+lvl_id = 0
+name = "Cigarettes"
+desc = "Highly addictive and hazardous to your health. Snake's favorite brand. "
+icon = ExtResource("6_w3jir")
+panel = ExtResource("7_8y812")
+environment_sprite = ExtResource("6_w3jir")
+picks_up = true
+correct_panel = 0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7oso"]
+size = Vector2(20, 71)
+
+[sub_resource type="Resource" id="Resource_nk2ke"]
+script = ExtResource("13_thv2m")
+id = 1
+lvl_id = 0
+name = "Lighter"
+desc = "for cooking cigarettes before you eat them."
+icon = ExtResource("10_t7oso")
+panel = ExtResource("11_36xko")
+environment_sprite = ExtResource("9_f2mbc")
+picks_up = true
+correct_panel = 1
+
+[sub_resource type="Resource" id="Resource_uxj6v"]
+script = ExtResource("13_thv2m")
+id = 2
+lvl_id = 0
+name = "Rei"
+desc = "The only thing keeping you sane in this cold, dark world."
+icon = ExtResource("13_wloa0")
+panel = ExtResource("14_ry1f1")
+environment_sprite = ExtResource("12_18b77")
+picks_up = true
+correct_panel = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3jir"]
+size = Vector2(12.5006, 283.502)
+
+[node name="Main" type="Node"]
+script = ExtResource("1_hspkm")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+offset_left = -15.0
+offset_top = -3.0
+offset_right = 1953.0
+offset_bottom = 1076.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 1425.0
+offset_top = 337.0
+offset_right = 1922.0
+offset_bottom = 1058.0
+color = Color(0.154876, 0.154876, 0.154876, 0.909804)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(622, 920)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_jcs8d")
+
+[node name="PanelRef" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.372549)
+z_index = -128
+position = Vector2(964.5, 540.75)
+scale = Vector2(1.65259, 1.30411)
+texture = ExtResource("3_4ytyg")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("4_f2mbc")
+centered = false
+
+[node name="Borders" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders"]
+position = Vector2(972, 0)
+shape = SubResource("RectangleShape2D_fuvah")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Borders"]
+position = Vector2(968, 329)
+shape = SubResource("RectangleShape2D_fuvah")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Borders"]
+position = Vector2(639.25, 701)
+shape = SubResource("RectangleShape2D_e645k")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1294, 702)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_wihkw")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1036, 152)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_x7bmo")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders"]
+position = Vector2(959, 1066)
+shape = SubResource("RectangleShape2D_fuvah")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders"]
+position = Vector2(7, 556)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_fuvah")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1924, 655)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_fuvah")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Borders"]
+position = Vector2(693, 167)
+rotation = -1.01546
+shape = SubResource("RectangleShape2D_6rae1")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Borders"]
+position = Vector2(945, 878.168)
+rotation = -1.57079
+shape = SubResource("RectangleShape2D_36xko")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[node name="BlockingShape" type="CollisionShape2D" parent="Borders"]
+unique_name_in_owner = true
+position = Vector2(1196, 887)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_f2mbc")
+debug_color = Color(0, 0.6, 0.7, 0.42)
+
+[node name="Clues" type="Node" parent="."]
+
+[node name="Cigs" parent="Clues" instance=ExtResource("1_ra0nd")]
+position = Vector2(378, 916)
+clue = SubResource("Resource_i4q4f")
+
+[node name="Cigs2" parent="Clues" instance=ExtResource("1_ra0nd")]
+position = Vector2(821, 674)
+clue = SubResource("Resource_i4q4f")
+
+[node name="CollisionShape2D" parent="Clues/Cigs2" index="1"]
+position = Vector2(0, -25.5)
+shape = SubResource("RectangleShape2D_t7oso")
+
+[node name="ClueArea" parent="Clues" instance=ExtResource("1_ra0nd")]
+position = Vector2(816, 769)
+clue = SubResource("Resource_nk2ke")
+
+[node name="ClueArea2" parent="Clues" instance=ExtResource("1_ra0nd")]
+position = Vector2(580, 811)
+clue = SubResource("Resource_uxj6v")
+
+[node name="Transitions" type="Node2D" parent="."]
+
+[node name="3-4" parent="Transitions" instance=ExtResource("7_oggfx")]
+position = Vector2(1669, 171)
+move_type = 1
+metadata/_edit_group_ = true
+
+[node name="NewFrame" parent="Transitions/3-4" index="1"]
+position = Vector2(-1390, 373)
+
+[node name="4-3" parent="Transitions" instance=ExtResource("7_oggfx")]
+position = Vector2(196, 523)
+move_type = 1
+
+[node name="NewFrame" parent="Transitions/4-3" index="1"]
+position = Vector2(1378, -330)
+
+[node name="4-5" parent="Transitions" instance=ExtResource("7_oggfx")]
+position = Vector2(1275, 550)
+rotation = -1.57079
+
+[node name="CollisionShape2D" parent="Transitions/4-5" index="0"]
+position = Vector2(11, 3.99992)
+rotation = -1.57079
+
+[node name="NewFrame" parent="Transitions/4-5" index="1"]
+position = Vector2(-250.003, -502.998)
+
+[node name="5-6" parent="Transitions" instance=ExtResource("7_oggfx")]
+position = Vector2(188, 893)
+rotation = -1.57079
+move_type = 1
+
+[node name="CollisionShape2D" parent="Transitions/5-6" index="0"]
+rotation = -1.57079
+
+[node name="NewFrame" parent="Transitions/5-6" index="1"]
+position = Vector2(-54.9947, 840)
+
+[node name="5-4" parent="Transitions" instance=ExtResource("7_oggfx")]
+position = Vector2(319, 1318)
+rotation = -1.57079
+move_type = 1
+
+[node name="CollisionShape2D" parent="Transitions/5-4" index="0"]
+position = Vector2(608.003, 465.996)
+rotation = -3.14159
+shape = SubResource("RectangleShape2D_w3jir")
+
+[node name="NewFrame" parent="Transitions/5-4" index="1"]
+position = Vector2(757.006, 913.995)
+
+[node name="6-5" parent="Transitions" instance=ExtResource("7_oggfx")]
+position = Vector2(681, 903)
+rotation = -1.57079
+
+[node name="CollisionShape2D" parent="Transitions/6-5" index="0"]
+position = Vector2(-3.99817, 292)
+rotation = -1.57079
+
+[node name="NewFrame" parent="Transitions/6-5" index="1"]
+position = Vector2(-15.9988, 199)
+
+[node name="6-7" parent="Transitions" instance=ExtResource("7_oggfx")]
+position = Vector2(1278, 908)
+rotation = -1.57079
+move_type = 1
+
+[node name="CollisionShape2D" parent="Transitions/6-7" index="0"]
+rotation = -1.57079
+
+[node name="NewFrame" parent="Transitions/6-7" index="1"]
+position = Vector2(-26.9993, 110)
+
+[node name="PlayerStart" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1133, 192)
+
+[node name="Player" parent="." instance=ExtResource("4_altkg")]
+unique_name_in_owner = true
+position = Vector2(1265, 197)
+current_move_type = 1
+
+[node name="InventoryPanel" parent="." instance=ExtResource("23_8y812")]
+
+[node name="InquireUI" parent="." instance=ExtResource("11_ipng3")]
+metadata/_edit_lock_ = true
+
+[node name="DialogueUI" parent="." instance=ExtResource("7_0e0cn")]
+unique_name_in_owner = true
+visible = false
+offset_left = 0.0
+offset_right = 0.0
+
+[node name="ClueDatabase" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("12_legqn")
+
+[node name="DialogueManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("6_gkphd")
+DIALOGUE_JSON = ExtResource("24_f2mbc")
+INQUIRY_DIALOGUE_JSON = ExtResource("14_h25l4")
+
+[node name="Cat" parent="." instance=ExtResource("8_bb1rp")]
+position = Vector2(698, 847)
+npc_name = "Cat"
+start_index = 1
+end_index = 2
+character1_sprite = ExtResource("9_jcs8d")
+
+[node name="Cop1" parent="." instance=ExtResource("8_bb1rp")]
+position = Vector2(1516, 183)
+npc_name = "Sergeant Biggs"
+end_index = 9
+character1_sprite = ExtResource("27_t7oso")
+
+[editable path="Clues/Cigs2"]
+[editable path="Transitions/3-4"]
+[editable path="Transitions/4-3"]
+[editable path="Transitions/4-5"]
+[editable path="Transitions/5-6"]
+[editable path="Transitions/5-4"]
+[editable path="Transitions/6-5"]
+[editable path="Transitions/6-7"]

@@ -192,13 +192,17 @@ func execute_command(command_string : String):
 		var selected_command = command_string.substr(1,-1)
 		var command = selected_command.split("_")[0]
 		var value = selected_command.split("_")[1]
+		print(selected_command,command,value)
 		match command.to_lower():
 			"add":
-				Inventory.add_item(%ClueDatabase.itemDict[int(value)])
+				var clue = load(Inventory.CLUE_DB[int(value)])
+				Inventory.add_item(clue)
 			"remove":
-				Inventory.remove_item(%ClueDatabase.itemDict[int(value)])
+				var clue = load(Inventory.CLUE_DB[int(value)])
+				Inventory.remove_item(clue)
 			_:
 				print("incorrect command")
+
 
 func render_speach_bubble() -> void:
 	var character_index : int = dialogue[str(index)]["SPEAKER_ID"]

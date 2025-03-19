@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://do3mqftkxr3dn" path="res://assets/sprites/ui/talk_bubble.png" id="1_ha5f6"]
 [ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="2_l6txd"]
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="3_l6txd"]
-[ext_resource type="Texture2D" uid="uid://cfgnmb8sa6iyc" path="res://assets/sprites/ui/polaroid_hint_container.png" id="3_y045p"]
+[ext_resource type="Texture2D" uid="uid://kanmvsgs105r" path="res://assets/sprites/ui/polaroid_hint_container_filled.png" id="3_y045p"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_evl05"]
-font_size = 40
-font_color = Color(0.865079, 0.746064, 0.920767, 1)
+font_size = 30
+font_color = Color(0.20871, 0.20871, 0.20871, 1)
 
 [node name="DialogueUI" type="Control"]
 z_index = 14
@@ -32,25 +32,26 @@ metadata/_edit_use_anchors_ = true
 
 [node name="topTextBox" type="TextureRect" parent="Background"]
 layout_mode = 0
-offset_left = 599.0
-offset_top = -21.0
-offset_right = 1274.0
-offset_bottom = 325.0
+offset_left = 589.0
+offset_top = 1.0
+offset_right = 1264.0
+offset_bottom = 347.0
 texture = ExtResource("1_ha5f6")
 
 [node name="Text" type="Label" parent="Background/topTextBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.858992
-anchor_top = 0.0741114
-anchor_right = -0.0324611
-anchor_bottom = 0.529808
+anchor_left = -0.87677
+anchor_top = 0.0827814
+anchor_right = -0.0502385
+anchor_bottom = 0.538477
 offset_left = 629.82
 offset_top = 65.3575
 offset_right = 629.819
 offset_bottom = 65.3575
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.281187, 0.281187, 0.281187, 1)
 theme_override_font_sizes/font_size = 25
 text = "sss"
 autowrap_mode = 3
@@ -59,10 +60,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Name" type="Label" parent="Background/topTextBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.898432
-anchor_top = -0.09178
-anchor_right = -0.0764313
-anchor_bottom = 0.0782196
+anchor_left = -0.882135
+anchor_top = -0.0628783
+anchor_right = -0.0599126
+anchor_bottom = 0.0923815
 offset_left = 630.441
 offset_top = 65.7559
 offset_right = 630.441
@@ -74,24 +75,25 @@ metadata/_edit_use_anchors_ = true
 [node name="bottomTextBox" type="TextureRect" parent="Background"]
 layout_mode = 0
 offset_left = 591.0
-offset_top = 252.0
+offset_top = 351.0
 offset_right = 1266.0
-offset_bottom = 598.0
+offset_bottom = 697.0
 texture = ExtResource("1_ha5f6")
 
 [node name="Text" type="Label" parent="Background/bottomTextBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.873807
-anchor_top = 0.0654409
-anchor_right = -0.0472759
-anchor_bottom = 0.521137
+anchor_left = -0.87677
+anchor_top = 0.0827814
+anchor_right = -0.0502385
+anchor_bottom = 0.538477
 offset_left = 629.82
 offset_top = 65.3575
 offset_right = 629.819
 offset_bottom = 65.3575
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.281187, 0.281187, 0.281187, 1)
 theme_override_font_sizes/font_size = 25
 text = "sss"
 autowrap_mode = 3
@@ -100,10 +102,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Name" type="Label" parent="Background/bottomTextBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.893987
-anchor_top = -0.10045
-anchor_right = -0.0719869
-anchor_bottom = 0.0695491
+anchor_left = -0.882135
+anchor_top = -0.0628783
+anchor_right = -0.0599126
+anchor_bottom = 0.0923815
 offset_left = 630.441
 offset_top = 65.7559
 offset_right = 630.441
@@ -149,16 +151,15 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 315.0
-offset_top = 900.0
+offset_top = 921.0
 offset_right = -432.0
-offset_bottom = -30.0
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Button1" type="Button" parent="Background/ButtonHolder"]
-visible = false
 custom_minimum_size = Vector2(250, 150)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(9.14685e-05, 9.24022e-05, 0.000323784, 1)
@@ -169,7 +170,6 @@ text = "Whats happening!?"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="Background/ButtonHolder"]
-visible = false
 custom_minimum_size = Vector2(250, 150)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(9.14685e-05, 9.24022e-05, 0.000323784, 1)
@@ -180,7 +180,6 @@ text = "Whats happening!?"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button3" type="Button" parent="Background/ButtonHolder"]
-visible = false
 custom_minimum_size = Vector2(250, 150)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(9.14685e-05, 9.24022e-05, 0.000323784, 1)
@@ -205,20 +204,20 @@ metadata/_edit_use_anchors_ = true
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
-offset_left = 752.0
-offset_top = 550.0
-offset_right = 1371.0
-offset_bottom = 1028.0
+offset_left = 784.0
+offset_top = 634.0
+offset_right = 1037.0
+offset_bottom = 908.0
 texture = ExtResource("3_y045p")
 stretch_mode = 4
 
 [node name="PolaroidImage" type="TextureRect" parent="Background/PolaroidFrame"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 27.0
-offset_top = 29.0
-offset_right = 444.0
-offset_bottom = 442.0
+offset_left = 15.0
+offset_top = 16.0
+offset_right = 256.0
+offset_bottom = 254.0
 scale = Vector2(0.92001, 0.88)
 texture = ExtResource("3_l6txd")
 stretch_mode = 4

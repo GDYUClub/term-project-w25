@@ -170,10 +170,11 @@
 		"LINK_3_ID": null,
 		"COMMANDS": null
 	},
-	"": {
-		"SPEAKER_NAME": null,
-		"SPEAKER_ID": null,
-		"ENGLISH": null,
+	"10": {
+		"SPEAKER_NAME": "Jane",
+		"SPEAKER_ID": 0.0,
+		"ENGLISH": "Shattered glass...",
+		"BUBBLE_TYPE": "THINK",
 		"FRENCH": null,
 		"ENGLISH_DIALOGUE_CHOICE_1": null,
 		"ENGLISH_DIALOGUE_CHOICE_2": null,
@@ -185,5 +186,22 @@
 		"LINK_2_ID": null,
 		"LINK_3_ID": null,
 		"COMMANDS": null
+	},
+	"11": {
+		"SPEAKER_NAME": "Jane",
+		"SPEAKER_ID": 0.0,
+		"ENGLISH": "Must've been from the balcony.",
+		"BUBBLE_TYPE": "THINK",
+		"FRENCH": null,
+		"ENGLISH_DIALOGUE_CHOICE_1": null,
+		"ENGLISH_DIALOGUE_CHOICE_2": null,
+		"ENGLISH_DIALOGUE_CHOICE_3": null,
+		"FRENCH_DIALOGUE_CHOICE_1": null,
+		"FRENCH_DIALOGUE_CHOICE_2": null,
+		"FRENCH_DIALOGUE_CHOICE_3": null,
+		"LINK_1_ID": null,
+		"LINK_2_ID": null,
+		"LINK_3_ID": null,
+		"COMMANDS": "/Add_0"
 	}
 }

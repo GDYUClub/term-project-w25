@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://chwpqxi2ikcnr"]
+[gd_scene load_steps=39 format=3 uid="uid://s8y2oda1crpu"]
 
 [ext_resource type="Script" uid="uid://bfvdqic6i2yn1" path="res://src/levels/tutorial/tutorial.gd" id="1_hspkm"]
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
@@ -50,17 +50,32 @@ size = Vector2(34.2502, 283.502)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvywd"]
 size = Vector2(59, 277)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8y812"]
+size = Vector2(180, 166.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3jir"]
 size = Vector2(318.125, 57.7505)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcod2"]
+size = Vector2(306.5, 158)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wloa0"]
 size = Vector2(340, 38.8755)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbdfn"]
+size = Vector2(180, 351)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ry1f1"]
 size = Vector2(333, 8.99999)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fxmp"]
+size = Vector2(136, 118)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i4q4f"]
 size = Vector2(274.25, 41.9377)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqgbc"]
+size = Vector2(60, 183)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hspkm")
@@ -173,6 +188,7 @@ position = Vector2(378, 916)
 clue = ExtResource("2_5f4ee")
 
 [node name="Cigs2" parent="Clues" instance=ExtResource("1_ra0nd")]
+visible = false
 position = Vector2(821, 674)
 clue = ExtResource("2_5f4ee")
 
@@ -200,6 +216,9 @@ metadata/_edit_group_ = true
 [node name="NewFrame" parent="Transitions/3-4" index="1"]
 position = Vector2(-1390, 373)
 
+[node name="Sprite2D" parent="Transitions/3-4" index="2"]
+position = Vector2(-58, -102)
+
 [node name="4-3" parent="Transitions" instance=ExtResource("7_oggfx")]
 position = Vector2(196, 523)
 move_type = 1
@@ -213,6 +232,12 @@ shape = SubResource("RectangleShape2D_18b77")
 [node name="NewFrame" parent="Transitions/4-3" index="1"]
 position = Vector2(1378, -330)
 
+[node name="Sprite2D" parent="Transitions/4-3" index="2"]
+position = Vector2(108, -113)
+
+[node name="CollisionShape2D" parent="Transitions/4-3/ArrowNotif" index="0"]
+position = Vector2(40.5, 0)
+
 [node name="4-5" parent="Transitions" instance=ExtResource("7_oggfx")]
 position = Vector2(1275, 550)
 jane_scale = 1.0
@@ -225,6 +250,13 @@ shape = SubResource("RectangleShape2D_lvywd")
 [node name="NewFrame" parent="Transitions/4-5" index="1"]
 position = Vector2(-528, 251)
 
+[node name="Sprite2D" parent="Transitions/4-5" index="2"]
+position = Vector2(-71, -106)
+
+[node name="CollisionShape2D" parent="Transitions/4-5/ArrowNotif" index="0"]
+position = Vector2(-58, 0)
+shape = SubResource("RectangleShape2D_8y812")
+
 [node name="5-4" parent="Transitions" instance=ExtResource("7_oggfx")]
 position = Vector2(789, 717)
 move_type = 1
@@ -236,6 +268,13 @@ shape = SubResource("RectangleShape2D_w3jir")
 
 [node name="NewFrame" parent="Transitions/5-4" index="1"]
 position = Vector2(345, -166)
+
+[node name="Sprite2D" parent="Transitions/5-4" index="2"]
+position = Vector2(-65, 60)
+
+[node name="CollisionShape2D" parent="Transitions/5-4/ArrowNotif" index="0"]
+position = Vector2(-9.75, 65)
+shape = SubResource("RectangleShape2D_mcod2")
 
 [node name="5-6" parent="Transitions" instance=ExtResource("7_oggfx")]
 position = Vector2(188, 893)
@@ -251,6 +290,13 @@ shape = SubResource("RectangleShape2D_wloa0")
 [node name="NewFrame" parent="Transitions/5-6" index="1"]
 position = Vector2(853, -12)
 
+[node name="Sprite2D" parent="Transitions/5-6" index="2"]
+position = Vector2(43, -67)
+
+[node name="CollisionShape2D" parent="Transitions/5-6/ArrowNotif" index="0"]
+position = Vector2(66, -5.5)
+shape = SubResource("RectangleShape2D_wbdfn")
+
 [node name="6-5" parent="Transitions" instance=ExtResource("7_oggfx")]
 position = Vector2(969, 911)
 jane_scale = 1.0
@@ -263,6 +309,13 @@ shape = SubResource("RectangleShape2D_ry1f1")
 
 [node name="NewFrame" parent="Transitions/6-5" index="1"]
 position = Vector2(-714, -28)
+
+[node name="Sprite2D" parent="Transitions/6-5" index="2"]
+position = Vector2(37, -107)
+
+[node name="CollisionShape2D" parent="Transitions/6-5/ArrowNotif" index="0"]
+position = Vector2(58, -22)
+shape = SubResource("RectangleShape2D_0fxmp")
 
 [node name="6-7" parent="Transitions" instance=ExtResource("7_oggfx")]
 position = Vector2(1278, 908)
@@ -277,6 +330,13 @@ shape = SubResource("RectangleShape2D_i4q4f")
 
 [node name="NewFrame" parent="Transitions/6-7" index="1"]
 position = Vector2(65, -7)
+
+[node name="Sprite2D" parent="Transitions/6-7" index="2"]
+position = Vector2(-39, -114)
+
+[node name="CollisionShape2D" parent="Transitions/6-7/ArrowNotif" index="0"]
+position = Vector2(-28, 6)
+shape = SubResource("RectangleShape2D_vqgbc")
 
 [node name="PlayerStart" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -317,6 +377,30 @@ character1_sprite = ExtResource("9_jcs8d")
 
 [node name="Cop1" parent="." instance=ExtResource("8_bb1rp")]
 position = Vector2(1516, 183)
+npc_name = "Sergeant Biggs"
+end_index = 9
+character1_sprite = ExtResource("27_t7oso")
+
+[node name="Glass Shard" parent="." instance=ExtResource("8_bb1rp")]
+position = Vector2(757, 586)
+npc_name = "Sergeant Biggs"
+end_index = 9
+character1_sprite = ExtResource("27_t7oso")
+
+[node name="GunWound" parent="." instance=ExtResource("8_bb1rp")]
+position = Vector2(880, 585)
+npc_name = "Sergeant Biggs"
+end_index = 9
+character1_sprite = ExtResource("27_t7oso")
+
+[node name="EmptyHolster" parent="." instance=ExtResource("8_bb1rp")]
+position = Vector2(982, 583)
+npc_name = "Sergeant Biggs"
+end_index = 9
+character1_sprite = ExtResource("27_t7oso")
+
+[node name="Cop5" parent="." instance=ExtResource("8_bb1rp")]
+position = Vector2(982, 583)
 npc_name = "Sergeant Biggs"
 end_index = 9
 character1_sprite = ExtResource("27_t7oso")

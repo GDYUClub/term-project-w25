@@ -4,10 +4,22 @@ extends Area2D
 @export var _panel_name: String
 @export var clue: Clue
 
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite: TextureRect = $Clue
 @onready var numberLabel: Label = $NumberLabel
-
 @onready var panel_desc_scene: PackedScene = preload("res://src/clues/clue_description.tscn")
+@onready var inventory_panel = get_node("/root/Main/InventoryUI")
+
+var selected_box: GridBox 
+var panel_id: int
+
+var base_scale : Vector2
+var extended_scale : Vector2
+
+#controls for keyboard
+const key_selection_time : float = 0.1
+var _selection_with_keyboard: bool = false
+var keyboard_time_elapsed: float = 0.0
+var _selection_with_mouse: bool = false
 
 var _is_mouse_in: bool = false
 var _is_selected: bool = false
@@ -28,7 +40,8 @@ func get_panel_name() -> String:
 
 func _ready() -> void:
 	sprite.texture = clue.panel
-	
+	base_scale = scale
+	extended_scale = scale * 1.2
 	area_entered.connect(_on_area_entered)
 	area_exited.connect(_on_area_exited)
 
@@ -37,6 +50,16 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	set_keyboard_time(delta)
+	description_process(delta)
+	if(_is_selected):
+		if(_selection_with_mouse):
+			move_panel(get_global_mouse_position())
+		if(_selection_with_keyboard):
+			move_panel(inventory_panel.selected_grid.position)
+	attempt_pickup_or_drop()
+
+func description_process(delta) -> void:
 	if _is_mouse_in and !_is_selected:
 		time_elapsed += delta
 		if(!panel_exists and time_elapsed > delay):
@@ -46,21 +69,39 @@ func _process(delta: float) -> void:
 		time_elapsed = 0
 		if(panel_exists):
 			hide_description(desc_panel)
-	#Check if the grab button is being used
-	if Input.is_action_pressed("grab"):
-		#Set the panel to selected if the mouse is in the area 2D
-		if _is_mouse_in and !_is_selected and _can_select:
-			_is_selected = true
-			_can_select = false
-		#Move the panel if the object is selected
-		if _is_selected:
-			move_panel(get_global_mouse_position())
-	#Check if the grab button is released and set set is select to false and can select to true
-	elif Input.is_action_just_released("grab") and _is_selected:
-		_is_selected = false
-		_can_select = true
-		snap_to_grid(position)
 
+func attempt_pickup_or_drop() -> void:
+	if !_selection_with_keyboard:
+		if Input.is_action_pressed("grab"):
+			if _is_mouse_in and !_is_selected and _can_select:
+				select()
+				_selection_with_mouse = true
+		elif Input.is_action_just_released("grab") and _is_selected:
+			deselect()
+			_selection_with_mouse = false
+	if !_selection_with_mouse:
+		if Input.is_action_pressed("pickup_panel") and !_is_selected and keyboard_time_elapsed <= 0:
+			print("BLAH:S", inventory_panel.selected_panel == self)
+			if inventory_panel.selected_panel == self and _can_select:
+				select()
+				_selection_with_keyboard = true
+				keyboard_time_elapsed = key_selection_time
+		elif Input.is_action_pressed("pickup_panel") and _is_selected and keyboard_time_elapsed <= 0:
+			deselect()
+			_selection_with_keyboard = false
+			keyboard_time_elapsed = key_selection_time
+
+func select() -> void:
+	#Set the panel to selected if the mouse is in the area 2D
+	_is_selected = true
+	_can_select = false
+	scale = extended_scale
+
+func deselect() -> void:
+	_is_selected = false
+	_can_select = true
+	snap_to_grid(position)
+	scale = base_scale
 
 func move_panel(pos: Vector2) -> void:
 	position = pos
@@ -68,11 +109,14 @@ func move_panel(pos: Vector2) -> void:
 
 func snap_to_grid(pos: Vector2) -> void:
 	print("snap to grid")
-	var closest_box: GridBox = find_closest_box(_grids_inside, pos)
-	if closest_box != null:
-		position.x = closest_box.position.x
-		position.y = closest_box.position.y
-		closest_box.set_active_panel(self)
+	selected_box = find_closest_box(_grids_inside, pos)
+	if selected_box != null:
+		inventory_panel.panels[panel_id] = null;
+		panel_id = selected_box.scroll_id
+		inventory_panel.panels[panel_id] = self;
+		position.x = selected_box.position.x
+		position.y = selected_box.position.y
+		selected_box.set_active_panel(self)
 	else:
 		print("gridless")
 
@@ -123,3 +167,8 @@ func show_description():
 func hide_description(description: Area2D) -> void:
 	description.free()
 	panel_exists = false
+
+func set_keyboard_time(delta) -> void:
+	if keyboard_time_elapsed > 0:
+		keyboard_time_elapsed -= delta
+	
