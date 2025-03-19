@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dr1yvwlxo3hlh"]
 
-[ext_resource type="Script" path="res://src/main/save_game_example/example_save_level_2.gd" id="1_kjfi2"]
+[ext_resource type="Script" uid="uid://dfglfr6co8lm0" path="res://src/main/save_game_example/example_save_level_2.gd" id="1_kjfi2"]
 [ext_resource type="PackedScene" uid="uid://di1065aj0lcwn" path="res://src/main/save_game_example/example_save_player.tscn" id="2_1ij1j"]
-[ext_resource type="Script" path="res://src/resources/save_node.gd" id="3_ght6u"]
+[ext_resource type="Script" uid="uid://2481f7q2j3nj" path="res://src/resources/save_node.gd" id="3_ght6u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrg5g"]
 size = Vector2(2127, 326)

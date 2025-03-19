@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cy54haikib277" path="res://assets/sprites/clue-temp.png" id="1_rf2fr"]
 [ext_resource type="Texture2D" uid="uid://brm5qojojxq71" path="res://assets/sprites/clue-panel-temp-jig.png" id="2_on0os"]
-[ext_resource type="Script" path="res://src/clues/clue.gd" id="3_vyvjn"]
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="3_vyvjn"]
 
 [resource]
 script = ExtResource("3_vyvjn")
