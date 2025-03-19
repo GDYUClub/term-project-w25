@@ -1,7 +1,9 @@
 extends Node
+class_name GameplayPage
 
-@onready var panelArrangementScene = $InventoryPanel
+#@onready var panelArrangementScene = $InventoryPanel
 @onready var player = $Player
+@onready var inventoryUi: =$InventoryUI
 
 enum GAMEPLAY_STATE{
 	EXPLORE,
@@ -16,6 +18,7 @@ func _puzzle_solved():
 	$ColorRect.visible = false
 	%BlockingShape.visible = false
 	%BlockingShape.disabled = true
+	inventoryUi.puzzle_solved.connect(_puzzle_solved)
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,9 +30,8 @@ func _process(delta: float) -> void:
 			if Input.is_action_just_pressed("analyze"):
 				current_state = GAMEPLAY_STATE.PANEL_ARRANGE
 				#panelArrangeInst = panelArrangementScene.instantiate()	
-				panelArrangementScene.puzzle_solved.connect(_puzzle_solved)
-				panelArrangementScene.visible = true
-				panelArrangementScene.do_ready()
+				inventoryUi.visible = true
+				inventoryUi.do_ready()
 
 		GAMEPLAY_STATE.DIALOG:
 			player.can_move = false
@@ -39,5 +41,5 @@ func _process(delta: float) -> void:
 			player.can_move = false
 			if Input.is_action_just_pressed("analyze"):
 				current_state = GAMEPLAY_STATE.EXPLORE
-				panelArrangementScene.visible = false
+				inventoryUi.visible = false
 			pass

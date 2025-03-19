@@ -59,7 +59,7 @@ size = Vector2(333, 8.99999)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i4q4f"]
 size = Vector2(274.25, 41.9377)
 
-[node name="Main" type="Node"]
+[node name="Main2" type="Node"]
 script = ExtResource("1_xcymm")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
@@ -269,11 +269,10 @@ position = Vector2(65, -7)
 
 [node name="PlayerStart" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(438, 327)
+position = Vector2(227, 246)
 
 [node name="Player" parent="." instance=ExtResource("10_41sty")]
 unique_name_in_owner = true
-visible = false
 position = Vector2(1265, 197)
 starting_scale = 0.25
 current_move_type = 1

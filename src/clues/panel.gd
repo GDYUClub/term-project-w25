@@ -7,7 +7,7 @@ extends Area2D
 @onready var sprite: TextureRect = $Clue
 @onready var numberLabel: Label = $NumberLabel
 @onready var panel_desc_scene: PackedScene = preload("res://src/clues/clue_description.tscn")
-@onready var inventory_panel = get_node("/root/Main/InventoryPanel")
+@onready var inventory_panel = get_node("/root/Main/InventoryUI")
 
 var selected_box: GridBox 
 var panel_id: int
