@@ -59,9 +59,10 @@ size = Vector2(114, 239)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogp7b"]
 size = Vector2(454, 77.5)
 
-[node name="Level2-1" type="Node2D"]
+[node name="Level2-1" type="Node"]
 script = ExtResource("1_llba7")
 metadata/_edit_horizontal_guides_ = [1278.0]
+metadata/_edit_vertical_guides_ = [1609.0]
 
 [node name="levelbg" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.309804)
@@ -73,7 +74,7 @@ centered = false
 [node name="Player" parent="." instance=ExtResource("2_i5oa3")]
 unique_name_in_owner = true
 position = Vector2(124, 549)
-starting_scale = 1.0
+starting_scale = 0.3
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -274,15 +275,15 @@ visible = false
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="DialogueManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("9_6x7mo")
-DIALOGUE_JSON = ExtResource("11_llba7")
-INQUIRY_DIALOGUE_JSON = ExtResource("11_wlckx")
-
-[node name="DialogueUI" parent="DialogueManager" instance=ExtResource("4_x03rg")]
+[node name="DialogueUI" parent="." instance=ExtResource("4_x03rg")]
 unique_name_in_owner = true
 visible = false
 offset_left = 0.0
 offset_right = 0.0
 mouse_filter = 2
+
+[node name="DialogueManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("9_6x7mo")
+DIALOGUE_JSON = ExtResource("11_llba7")
+INQUIRY_DIALOGUE_JSON = ExtResource("11_wlckx")

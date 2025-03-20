@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cwpg474pv15uj" path="res://src/player/code/player.gd" id="1_j2py3"]
 [ext_resource type="Shape2D" uid="uid://coaafk8ng1xrm" path="res://assets/resources/standing_cshape.tres" id="2_kwucs"]
-[ext_resource type="Texture2D" uid="uid://cbrth142pdc2o" path="res://assets/sprites/player/JaneWalk_spritesheet_1080.png" id="3_od3mr"]
+[ext_resource type="Texture2D" uid="uid://glsouw5io0lj" path="res://assets/sprites/player/player_topdown.png" id="3_od3mr"]
 [ext_resource type="Texture2D" uid="uid://bknspeucr7r2o" path="res://assets/sprites/Inquire.png" id="4_42hxm"]
 [ext_resource type="Texture2D" uid="uid://8x7ovu4cl2py" path="res://assets/sprites/ui/Main_Gameplay_UI/npc_dialogue_static-already_spoken.png" id="4_od3mr"]
 
@@ -104,7 +104,7 @@ debug_color = Color(0, 0.6, 0.7, 0.42)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2, 0)
 texture = ExtResource("3_od3mr")
-hframes = 7
+hframes = 3
 
 [node name="AlertSprite" type="Sprite2D" parent="."]
 visible = false
