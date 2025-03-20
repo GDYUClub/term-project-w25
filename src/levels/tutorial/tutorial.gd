@@ -15,7 +15,7 @@ enum GAMEPLAY_STATE{
 	CURSOR,
 }
 
-const PANEL_CENTERS = [
+var PANEL_CENTERS = [
 Vector2i(890,180),
 Vector2i(1560,180),
 Vector2i(867,726),

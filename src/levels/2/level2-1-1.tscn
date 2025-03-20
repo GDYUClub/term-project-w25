@@ -59,7 +59,7 @@ size = Vector2(114, 239)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogp7b"]
 size = Vector2(454, 77.5)
 
-[node name="Level2-1" type="Node"]
+[node name="Level2-1-1" type="Node"]
 script = ExtResource("1_llba7")
 metadata/_edit_horizontal_guides_ = [1278.0]
 metadata/_edit_vertical_guides_ = [1609.0]
