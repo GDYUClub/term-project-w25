@@ -110,7 +110,7 @@ func _process(delta: float) -> void:
 func interact():
 	if not interactable:
 		return
-
+	print(interactable.get_groups())
 	if interactable.is_in_group("clue"):
 		clues.append(interactable.clue)
 		Inventory.add_item(interactable.clue)
@@ -123,6 +123,10 @@ func interact():
 		interactable.talk_to_npc()
 		await interactable.interaction_over
 		get_parent().check_for_new_item()
+	
+	if interactable.is_in_group("point_click"):
+		get_parent().change_to_cursor()
+		
 
 func inquire():
 	
@@ -153,10 +157,13 @@ func _on_area_entered(area: Area2D):
 		if area.can_inquiry == true:
 			inquire_sprite.visible = true
 			interactable = area
-
+	if area.is_in_group("point_click"):
+		alertSprite.texture = is_clue_alert_texture[true]
+		alertSprite.visible = true
+		interactable = area
 
 func _on_area_exited(area: Area2D):
-	if area.is_in_group("clue") or area.is_in_group("npc"):
+	if area.is_in_group("clue") or area.is_in_group("npc") or area.is_in_group("point_click"):
 		if area.is_in_group("npc"):
 				end_inquire.emit()
 		alertSprite.visible = false

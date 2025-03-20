@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://glsouw5io0lj"
-path="res://.godot/imported/player_topdown.png-00a068e3d732508af5c82d51f9d6fa92.ctex"
+uid="uid://besukl3pxqtdt"
+path="res://.godot/imported/wii_cursor.png-fa0b4d387ab380bedd26a9623b2e85e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player/player_topdown.png"
-dest_files=["res://.godot/imported/player_topdown.png-00a068e3d732508af5c82d51f9d6fa92.ctex"]
+source_file="res://assets/sprites/player/wii_cursor.png"
+dest_files=["res://.godot/imported/wii_cursor.png-fa0b4d387ab380bedd26a9623b2e85e3.ctex"]
 
 [params]
 
