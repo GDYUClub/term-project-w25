@@ -1,7 +1,17 @@
-[gd_scene load_steps=19 format=3 uid="uid://cx8pspxpaj5y"]
+[gd_scene load_steps=28 format=3 uid="uid://cx8pspxpaj5y"]
 
+[ext_resource type="Script" uid="uid://pkuix78c4wo3" path="res://src/levels/2/level_2_1.gd" id="1_llba7"]
+[ext_resource type="Texture2D" uid="uid://bvspujqgmdic5" path="res://assets/sprites/pages/2-1.png" id="1_x03rg"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="2_i5oa3"]
+[ext_resource type="PackedScene" uid="uid://5beldmldbrhv" path="res://src/player/cursor.tscn" id="3_0iawh"]
+[ext_resource type="PackedScene" uid="uid://dhpbtj7rkkjks" path="res://src/dialogue/inquire_ui.tscn" id="3_ypvw2"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="4_sut8d"]
+[ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="4_x03rg"]
+[ext_resource type="PackedScene" uid="uid://bvqwk1mxnpwr5" path="res://src/gameplay_ui/game_ui.tscn" id="5_0iawh"]
+[ext_resource type="PackedScene" uid="uid://dvp7253oe1cbe" path="res://src/clues/clue_arrange_screen.tscn" id="6_dy207"]
+[ext_resource type="Script" uid="uid://d313ibk1sryhe" path="res://src/dialogue/dialogue_manager.gd" id="9_6x7mo"]
+[ext_resource type="JSON" path="res://src/dialogue/_Dialogue_new.json" id="10_llba7"]
+[ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="11_wlckx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1ufb"]
 size = Vector2(577, 71)
@@ -48,17 +58,21 @@ size = Vector2(114, 239)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogp7b"]
 size = Vector2(454, 77.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_becjy"]
-size = Vector2(41, 46)
-
 [node name="Level2-1" type="Node2D"]
+script = ExtResource("1_llba7")
 metadata/_edit_horizontal_guides_ = [1278.0]
 
 [node name="levelbg" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.309804)
 position = Vector2(-3, 1)
-scale = Vector2(1.92024, 1.61435)
+scale = Vector2(1.12128, 0.938811)
+texture = ExtResource("1_x03rg")
 centered = false
+
+[node name="Player" parent="." instance=ExtResource("2_i5oa3")]
+unique_name_in_owner = true
+position = Vector2(124, 549)
+starting_scale = 1.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -150,9 +164,6 @@ position = Vector2(-36, 540)
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_lme2o")
 
-[node name="Player" parent="." instance=ExtResource("2_i5oa3")]
-position = Vector2(246, 867)
-
 [node name="PanelCovers" type="Node2D" parent="."]
 
 [node name="0" type="Polygon2D" parent="PanelCovers"]
@@ -240,18 +251,36 @@ position = Vector2(629, 312)
 character1_sprite = null
 character2_sprite = null
 
-[node name="Cursor" type="CharacterBody2D" parent="."]
-metadata/_edit_group_ = true
+[node name="Cursor" parent="." instance=ExtResource("3_0iawh")]
 
-[node name="Sprite2D" type="Sprite2D" parent="Cursor"]
-scale = Vector2(0.1, 0.1)
+[node name="PlayerStart" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(106, 549)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor"]
-position = Vector2(-3.5, -1)
-shape = SubResource("RectangleShape2D_becjy")
+[node name="InquireUI" parent="." instance=ExtResource("3_ypvw2")]
+visible = false
+mouse_filter = 2
+metadata/_edit_lock_ = true
 
-[node name="Area2D" type="Area2D" parent="Cursor"]
+[node name="DialogueUI" parent="." instance=ExtResource("4_x03rg")]
+unique_name_in_owner = true
+visible = false
+offset_left = 0.0
+offset_right = 0.0
+mouse_filter = 2
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cursor/Area2D"]
-position = Vector2(-3.5, -1)
-shape = SubResource("RectangleShape2D_becjy")
+[node name="GameplayUI" parent="." instance=ExtResource("5_0iawh")]
+unique_name_in_owner = true
+offset_right = -1804.0
+offset_bottom = -739.0
+
+[node name="InventoryUI" parent="." instance=ExtResource("6_dy207")]
+visible = false
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DialogueManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("9_6x7mo")
+DIALOGUE_JSON = ExtResource("10_llba7")
+INQUIRY_DIALOGUE_JSON = ExtResource("11_wlckx")

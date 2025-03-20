@@ -9,6 +9,13 @@ Vector2i(1717,510),
 Vector2i(1560,878),
 ]
 
+var overlapping_panel_name:String = ""
+
+func _ready() -> void:
+	for triggerArea:Area2D in $PanelTriggers.get_children():
+		triggerArea.area_entered.connect(func(trigger): overlapping_panel_name = triggerArea.name)
+		triggerArea.area_exited.connect(func(trigger): overlapping_panel_name = "")
+
 func _toggle_panel(panel_number:String) -> void:
 	if panel_number == "":
 		return
