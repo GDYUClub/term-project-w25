@@ -8,10 +8,10 @@ extends Control
 
 # this should be based on the number of clues from the player
 @export var clue_count: int
+@export var success_dialogue_start_id: int
+@export var success_dialogue_end_id: int
 @onready var grid_cell_scene: PackedScene = preload("res://src/clues/grid_cell.tscn")
 @onready var panel_scene: PackedScene = preload("res://src/clues/clue_panel.tscn")
-
-var selected_panel : Area2D = null
 var selected_grid : Area2D = null
 var scroll_index : int = 0
 
@@ -39,18 +39,17 @@ func _ready() -> void:
 
 func do_ready():
 	# we should filter out items that aren't clues
+	GridBox.all_grid_positions.clear()
 	destroy_previous()
 	player_clues = Inventory.get_items()
 	print(player_clues)
 	populate_clue_panels()
 	populate_grid_cells()
 	generate_total_grids()
+	scroll_index = 0 + len(clue_grid_cells)
 	if len(panels) > 0:
-		scroll_index = 0 + len(clue_grid_cells)
-		selected_panel = panels[0]
 		selected_grid = all_grid_cells[0+ len(clue_grid_cells)]
 		selected_grid.on_hover()
-		
 
 func destroy_previous():
 	for cell in clue_grid_cells:
@@ -69,17 +68,22 @@ func destroy_previous():
 	panels.clear()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if panels_correct():
-		solved = true
-		puzzle_solved.emit()
-		$CorrectLabel.text = "correct"
-	else:
-		$CorrectLabel.text = "wrong"
-	switch_panel()
+	if Input.is_action_just_pressed("scroll_left") or Input.is_action_just_pressed("scroll_right"):
+		switch_panel()
+	if Input.is_action_pressed("pickup_panel"):
+		test_panels()
 
+func test_panels() -> void:
+	if Inventory.get_item_count() > 0:
+		if panels_correct():
+			solved = true
+			puzzle_solved.emit()
+			$CorrectLabel.text = "correct"
+		else:
+			$CorrectLabel.text = "wrong"
 
 func populate_clue_panels():
-	for j in range(12):
+	for j in range(100):
 		if(j < len(player_clues)):
 			var panelInst = panel_scene.instantiate()
 			panelInst.clue = player_clues[j]
@@ -89,6 +93,7 @@ func populate_clue_panels():
 			panelInst.numberLabel.text = str(player_clues[j].correct_panel)
 		else:
 			panels.append(null)
+	CluePanel._can_select = true
 	var rows := 2
 	# it's always two for now
 	var cols = 4
@@ -99,6 +104,7 @@ func populate_clue_panels():
 			gridCellInst.id = i
 			gridCellInst.position.x = INITIAL_ITEM_POSITION.x + (OFFSET.x * c)
 			gridCellInst.position.y = INITIAL_ITEM_POSITION.y + (OFFSET.y * r)
+			gridCellInst.set_active_panel(panels[i]) 
 			$GridCells.add_child(gridCellInst)
 			item_grid_cells.append(gridCellInst)
 			i += 1
@@ -113,7 +119,6 @@ func populate_clue_panels():
 
 func populate_grid_cells():
 	var rows := int(ceil(player_clues.size()))
-	# it's always two for now
 	var cols = 2
 	var i = 0
 	for r in rows:
@@ -137,16 +142,20 @@ func generate_total_grids():
 	for i in range(len(all_grid_cells)):
 		all_grid_cells[i].scroll_id = i;
 func panels_correct() -> bool:
-	for grid_cell in clue_grid_cells:
-		if not grid_cell.correct_panel:
-			return false
-	return true
+	#all items secured, then we can check if correct
+	if clue_count <= Inventory.get_item_count():
+		for grid_cell in clue_grid_cells:
+			if not grid_cell.correct_panel:
+				return false
+		return true
+	else:
+		return false
 
 func switch_panel():
 	if not visible or selected_grid == null:
-		return  # Early exit if the UI is not visible or grid is null
+		return  
 
-	var prev_grid = selected_grid  # Store the previous grid for debugging
+	var prev_grid = selected_grid  
 	
 	if Input.is_action_just_pressed("scroll_left") and scroll_index - 1 >= 0:
 		scroll_index -= 1  
@@ -155,20 +164,18 @@ func switch_panel():
 		scroll_index += 1  
 
 	else:
-		return  # No valid input detected, exit function
+		return  
 
-	# Ensure we are selecting valid elements
-	print("before: ",selected_panel, " index: ", scroll_index)
+	
+	print("index: ", scroll_index)
 	selected_grid = all_grid_cells[scroll_index] if scroll_index < len(all_grid_cells) else null
-	selected_panel = panels[scroll_index] if scroll_index < len(panels) and panels[scroll_index] != null else null
-	print("before: ",selected_panel, " index: ", scroll_index)
-	# Update hover state
+	print("index: ", scroll_index)
+	
 	if prev_grid:
 		prev_grid.off_hover()
 	if selected_grid:
 		selected_grid.on_hover()
-
-	_update_ui(selected_panel)
+	_update_ui(selected_grid.current_clue)
 
 func _update_ui(panelArea):
 	if panelArea == null: return

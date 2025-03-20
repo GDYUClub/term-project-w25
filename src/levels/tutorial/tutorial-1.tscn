@@ -291,6 +291,7 @@ offset_right = 0.0
 [node name="InventoryUI" parent="." instance=ExtResource("13_m6ox4")]
 unique_name_in_owner = true
 visible = false
+clue_count = 1
 
 [node name="GameplayUI" parent="." instance=ExtResource("13_r7t7n")]
 

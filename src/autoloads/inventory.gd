@@ -24,6 +24,9 @@ func clear_level_items(lvl_id:int) -> void:
 func get_items() -> Array[Clue]:
 	return _player_items
 
+func get_item_count() -> int:
+	return len(_player_items)
+
 
 const CLUE_DB = {
 0:"res://src/clues/clue-resources/tutorial/clue_cigs.tres",

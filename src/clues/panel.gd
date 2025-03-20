@@ -71,6 +71,7 @@ func description_process(delta) -> void:
 			hide_description(desc_panel)
 
 func attempt_pickup_or_drop() -> void:
+	#print(inventory_panel.selected_grid.current_clue)
 	if !_selection_with_keyboard:
 		if Input.is_action_pressed("grab"):
 			if _is_mouse_in and !_is_selected and _can_select:
@@ -81,13 +82,11 @@ func attempt_pickup_or_drop() -> void:
 			_selection_with_mouse = false
 	if !_selection_with_mouse:
 		if Input.is_action_pressed("pickup_panel") and !_is_selected and keyboard_time_elapsed <= 0:
-			print("Is Selected:", _is_selected, "Selected Panel: ", inventory_panel.selected_panel," Can Select: ", _can_select)
-			if inventory_panel.selected_panel == self and _can_select:
+			if inventory_panel.selected_grid.current_clue == self and _can_select:
 				select()
 				_selection_with_keyboard = true
 				keyboard_time_elapsed = key_selection_time
 		elif Input.is_action_pressed("pickup_panel") and _is_selected and keyboard_time_elapsed <= 0:
-			inventory_panel.selected_panel = self;
 			deselect()
 			_selection_with_keyboard = false
 			keyboard_time_elapsed = key_selection_time
@@ -97,10 +96,9 @@ func select() -> void:
 	_is_selected = true
 	_can_select = false
 	scale = extended_scale
+	selected_box = find_closest_box(_grids_inside, position)
 
 func deselect() -> void:
-	_is_selected = false
-	_can_select = true
 	snap_to_grid(position)
 	scale = base_scale
 
@@ -109,18 +107,62 @@ func move_panel(pos: Vector2) -> void:
 
 
 func snap_to_grid(pos: Vector2) -> void:
-	print("snap to grid")
+	var previous_box : GridBox = selected_box
 	selected_box = find_closest_box(_grids_inside, pos)
-	if selected_box != null:
-		inventory_panel.panels[panel_id] = null;
-		panel_id = selected_box.scroll_id
-		inventory_panel.panels[panel_id] = self;
-		position.x = selected_box.position.x
-		position.y = selected_box.position.y
-		selected_box.set_active_panel(self)
+	if selected_box.current_clue == null:
+		previous_box.clear_active_panel()
+		snap(selected_box)
 	else:
-		print("gridless")
+		swap(previous_box, selected_box)
 
+func snap(selected : GridBox):
+	inventory_panel.panels[panel_id] = null
+	panel_id = selected.scroll_id
+	inventory_panel.panels[panel_id] = self
+	position.x = selected.position.x
+	position.y = selected.position.y
+	selected.set_active_panel(self)
+	print("snapped")
+	_is_selected = false
+	_can_select = true
+
+func swap(box_a: GridBox, box_b: GridBox):
+	if box_a == null:
+		print("previous is null")
+		return
+	elif box_b == null:
+		print("selected is null")
+		return
+	
+	var panel_a = box_a.current_clue
+	var panel_b = box_b.current_clue
+	
+	if panel_a == null or panel_b == null:
+		return 
+	inventory_panel.panels[box_a.scroll_id] = panel_b
+	inventory_panel.panels[box_b.scroll_id] = panel_a
+	
+	box_a.current_clue = panel_b
+	box_b.current_clue = panel_a
+	
+	var temp_id = box_a.scroll_id
+	box_a.scroll_id = box_b.scroll_id
+	box_b.scroll_id = temp_id
+	
+	var temp_id2 = panel_a.panel_id
+	panel_a.panel_id = panel_b.panel_id
+	panel_b.panel_id = temp_id2
+	
+	panel_a.position = box_b.position
+	panel_b.position = box_a.position
+	
+	box_a.set_active_panel(panel_b)
+	box_b.set_active_panel(panel_a)
+	panel_a._is_selected = false
+	panel_b._is_selected = false
+	panel_a._can_select = true
+	panel_b._can_select = true
+	print("swapped")
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is GridBox:
@@ -133,8 +175,6 @@ func _on_area_exited(area: Area2D) -> void:
 		#Check if the area is inside the array
 		if _grids_inside.has(area):
 			_grids_inside.remove_at(_grids_inside.find(area, 0))
-		if area.current_clue == self:
-			area.clear_active_panel()
 
 
 func find_closest_box(boxes: Array[GridBox], pos: Vector2) -> GridBox:
