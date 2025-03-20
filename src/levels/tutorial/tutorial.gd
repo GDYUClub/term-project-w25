@@ -29,7 +29,6 @@ var panelArrangeInst
 var overlapping_panel_name:String = ""
 
 func _ready() -> void:
-	print('ran')
 	if !$PanelTriggers:
 		return
 	for triggerArea:Area2D in $PanelTriggers.get_children():
