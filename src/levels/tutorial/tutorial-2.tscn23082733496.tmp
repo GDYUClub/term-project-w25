@@ -272,9 +272,15 @@ visible = false
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
+[node name="GameplayUI" parent="." instance=ExtResource("20_hbpmp")]
+unique_name_in_owner = true
+offset_right = -1804.0
+offset_bottom = -739.0
+
 [node name="InventoryUI" parent="." instance=ExtResource("11_hbpmp")]
 unique_name_in_owner = true
 visible = false
+clue_count = 3
 s_start_id = 1000
 s_end_id = 1001
 
@@ -284,12 +290,6 @@ visible = false
 offset_left = 0.0
 offset_right = 0.0
 mouse_filter = 2
-
-[node name="GameplayUI" parent="." instance=ExtResource("20_hbpmp")]
-unique_name_in_owner = true
-visible = false
-offset_right = -1804.0
-offset_bottom = -739.0
 
 [node name="ClueDatabase" type="Node" parent="."]
 unique_name_in_owner = true

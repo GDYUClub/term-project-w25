@@ -49,6 +49,7 @@ enum LANGUAGE {ENGLISH, FRENCH}
 
 #player handling
 @onready var alert_sprite: Sprite2D = $"../Player/AlertSprite"
+@onready var player = $"../Player"
 
 signal dialogue_event
 
@@ -157,6 +158,7 @@ func adjust_npc_dialogue(): #switch to next line
 		dialogue_ui.visible = false;
 		dialogue_ongoing = false
 		alert_sprite.visible = false
+		player.can_move = true
 		dialogue_ended.emit()
 func branch(new_start_index, new_end_index, dialogue): #branch to another dialogue
 	button_1.visible = false

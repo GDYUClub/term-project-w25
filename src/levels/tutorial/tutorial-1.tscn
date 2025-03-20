@@ -282,16 +282,16 @@ current_move_type = 1
 [node name="InquireUI" parent="." instance=ExtResource("11_otruw")]
 metadata/_edit_lock_ = true
 
+[node name="InventoryUI" parent="." instance=ExtResource("13_m6ox4")]
+unique_name_in_owner = true
+visible = false
+clue_count = 1
+
 [node name="DialogueUI" parent="." instance=ExtResource("12_j1u5a")]
 unique_name_in_owner = true
 visible = false
 offset_left = 0.0
 offset_right = 0.0
-
-[node name="InventoryUI" parent="." instance=ExtResource("13_m6ox4")]
-unique_name_in_owner = true
-visible = false
-clue_count = 1
 
 [node name="GameplayUI" parent="." instance=ExtResource("13_r7t7n")]
 

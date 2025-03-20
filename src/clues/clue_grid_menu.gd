@@ -8,10 +8,12 @@ extends Control
 
 # this should be based on the number of clues from the player
 @export var clue_count: int
-@export var success_dialogue_start_id: int
-@export var success_dialogue_end_id: int
+@export var s_start_id: int # success start
+@export var s_end_id: int #success end
+@export var jane_sprite: Texture
 @onready var grid_cell_scene: PackedScene = preload("res://src/clues/grid_cell.tscn")
 @onready var panel_scene: PackedScene = preload("res://src/clues/clue_panel.tscn")
+
 var selected_grid : Area2D = null
 var scroll_index : int = 0
 
@@ -70,7 +72,7 @@ func destroy_previous():
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("scroll_left") or Input.is_action_just_pressed("scroll_right"):
 		switch_panel()
-	if Input.is_action_pressed("pickup_panel"):
+	if self.visible == true:
 		test_panels()
 
 func test_panels() -> void:
@@ -78,6 +80,8 @@ func test_panels() -> void:
 		if panels_correct():
 			solved = true
 			puzzle_solved.emit()
+			visible = false
+			%DialogueManager.load_npc_dialogue(s_start_id, s_end_id, jane_sprite , null)
 			$CorrectLabel.text = "correct"
 		else:
 			$CorrectLabel.text = "wrong"
@@ -145,8 +149,10 @@ func panels_correct() -> bool:
 	#all items secured, then we can check if correct
 	if clue_count <= Inventory.get_item_count():
 		for grid_cell in clue_grid_cells:
-			if not grid_cell.correct_panel:
+			if grid_cell.correct_panel == false:
+				print("FALSE")
 				return false
+		print("TRUE")
 		return true
 	else:
 		return false

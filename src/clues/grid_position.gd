@@ -19,6 +19,7 @@ func set_active_panel(p: CluePanel) -> void:
 		# If no current panel, simply set this one
 		current_clue = p
 		correct_panel = (current_clue.clue.correct_panel == id)
+		print(current_clue.clue.correct_panel == id, id)
 
 
 func clear_active_panel() -> void:

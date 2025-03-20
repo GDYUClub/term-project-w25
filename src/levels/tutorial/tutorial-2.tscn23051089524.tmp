@@ -272,9 +272,15 @@ visible = false
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
+[node name="GameplayUI" parent="." instance=ExtResource("20_hbpmp")]
+unique_name_in_owner = true
+offset_right = -1804.0
+offset_bottom = -739.0
+
 [node name="InventoryUI" parent="." instance=ExtResource("11_hbpmp")]
 unique_name_in_owner = true
 visible = false
+clue_count = 3
 s_start_id = 1000
 s_end_id = 1001
 
@@ -285,12 +291,6 @@ offset_left = 0.0
 offset_right = 0.0
 mouse_filter = 2
 
-[node name="GameplayUI" parent="." instance=ExtResource("20_hbpmp")]
-unique_name_in_owner = true
-visible = false
-offset_right = -1804.0
-offset_bottom = -739.0
-
 [node name="ClueDatabase" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("13_ud740")
@@ -299,6 +299,7 @@ items = Array[ExtResource("14_mh0hl")]([ExtResource("6_07ii5"), ExtResource("7_f
 [node name="DialogueManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("15_wcv8r")
+language = null
 DIALOGUE_JSON = ExtResource("16_4p6tu")
 INQUIRY_DIALOGUE_JSON = ExtResource("17_sr4r0")
 

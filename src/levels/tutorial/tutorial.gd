@@ -36,7 +36,7 @@ func _ready() -> void:
 		triggerArea.add_to_group("point_click")
 		triggerArea.area_entered.connect(func(trigger): overlapping_panel_name = triggerArea.name)
 		triggerArea.area_exited.connect(func(trigger): overlapping_panel_name = "")
-
+		
 func _puzzle_solved():
 	$ColorRect.visible = false
 	%BlockingShape.visible = false

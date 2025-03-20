@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvp7253oe1cbe"]
+[gd_scene load_steps=8 format=3 uid="uid://dvp7253oe1cbe"]
 
 [ext_resource type="Script" uid="uid://bc676rlyfmf6n" path="res://src/clues/clue_grid_menu.gd" id="1_nbl5j"]
 [ext_resource type="Texture2D" uid="uid://s4ciyh88wqnu" path="res://assets/sprites/ui/Inventory_Menu_UI/briefcase_bg.png" id="2_5kccu"]
+[ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="2_gwx08"]
 [ext_resource type="Texture2D" uid="uid://b3ih8vxwbqoki" path="res://assets/sprites/ui/Inventory_Menu_UI/folder_clues_and_hints_container.png" id="3_f3tot"]
 [ext_resource type="Texture2D" uid="uid://blc6fojnhxx7v" path="res://assets/sprites/ui/Inventory_Menu_UI/chapter_sum_container.png" id="4_crim7"]
 [ext_resource type="Texture2D" uid="uid://di6qdc0x65adf" path="res://assets/sprites/ui/Inventory_Menu_UI/return_to_game_button.png" id="5_jsgr7"]
@@ -12,6 +13,7 @@ z_index = 128
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_nbl5j")
+jane_sprite = ExtResource("2_gwx08")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
