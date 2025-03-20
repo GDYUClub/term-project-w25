@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://di6qdc0x65adf" path="res://assets/sprites/ui/Inventory_Menu_UI/return_to_game_button.png" id="5_jsgr7"]
 [ext_resource type="Texture2D" uid="uid://dsifpi2jk1slv" path="res://assets/sprites/ui/Inventory_Menu_UI/save_exit_button.png" id="6_hoduj"]
 
-[node name="ClueGridTesting" type="Control"]
+[node name="InventoryUI" type="Control"]
 z_index = 128
 layout_mode = 3
 anchors_preset = 0
@@ -83,10 +83,10 @@ autowrap_mode = 2
 
 [node name="CorrectLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1706.0
-offset_top = 765.0
-offset_right = 1799.0
-offset_bottom = 802.0
+offset_left = 411.0
+offset_top = 900.0
+offset_right = 504.0
+offset_bottom = 937.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.633757, 0.633757, 0.633757, 1)
 theme_override_constants/outline_size = 4

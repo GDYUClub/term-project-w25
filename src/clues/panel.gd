@@ -81,12 +81,13 @@ func attempt_pickup_or_drop() -> void:
 			_selection_with_mouse = false
 	if !_selection_with_mouse:
 		if Input.is_action_pressed("pickup_panel") and !_is_selected and keyboard_time_elapsed <= 0:
-			print("BLAH:S", inventory_panel.selected_panel == self)
+			print("Is Selected:", _is_selected, "Selected Panel: ", inventory_panel.selected_panel," Can Select: ", _can_select)
 			if inventory_panel.selected_panel == self and _can_select:
 				select()
 				_selection_with_keyboard = true
 				keyboard_time_elapsed = key_selection_time
 		elif Input.is_action_pressed("pickup_panel") and _is_selected and keyboard_time_elapsed <= 0:
+			inventory_panel.selected_panel = self;
 			deselect()
 			_selection_with_keyboard = false
 			keyboard_time_elapsed = key_selection_time

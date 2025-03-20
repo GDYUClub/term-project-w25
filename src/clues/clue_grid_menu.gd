@@ -25,8 +25,8 @@ var all_grid_cells: Array[GridBox] = []
 var panels: Array[CluePanel] = []
 
 const PANEL_SIZE: int = 184
-const INITIAL_POSITION: Vector2 = Vector2(1000, 650)
-const INITIAL_ITEM_POSITION: Vector2 = Vector2(150,200)
+const INITIAL_POSITION: Vector2 = Vector2(150,200)
+const INITIAL_ITEM_POSITION: Vector2 = Vector2(1075, 650)
 const OFFSET: Vector2 = Vector2(200, 200)
 
 signal puzzle_solved
@@ -46,9 +46,11 @@ func do_ready():
 	populate_grid_cells()
 	generate_total_grids()
 	if len(panels) > 0:
+		scroll_index = 0 + len(clue_grid_cells)
 		selected_panel = panels[0]
-		selected_grid = all_grid_cells[0]
+		selected_grid = all_grid_cells[0+ len(clue_grid_cells)]
 		selected_grid.on_hover()
+		
 
 func destroy_previous():
 	for cell in clue_grid_cells:
@@ -87,9 +89,9 @@ func populate_clue_panels():
 			panelInst.numberLabel.text = str(player_clues[j].correct_panel)
 		else:
 			panels.append(null)
-	var rows := inventory_size
+	var rows := 2
 	# it's always two for now
-	var cols = 2
+	var cols = 4
 	var i = 0
 	for r in rows:
 		for c in cols:
@@ -131,7 +133,7 @@ func populate_grid_cells():
 
 
 func generate_total_grids():
-	all_grid_cells = item_grid_cells + clue_grid_cells
+	all_grid_cells = clue_grid_cells + item_grid_cells  
 	for i in range(len(all_grid_cells)):
 		all_grid_cells[i].scroll_id = i;
 func panels_correct() -> bool:
@@ -141,30 +143,33 @@ func panels_correct() -> bool:
 	return true
 
 func switch_panel():
-	if visible == true && selected_grid != null:
-		if Input.is_action_just_pressed("scroll_left") and scroll_index - 1 >= 0:  
-			selected_grid.off_hover()
-			scroll_index -= 1  
-			
-			if panels.get(scroll_index) != null: 
-				selected_panel = panels[scroll_index]
-			else:
-				selected_panel = null
-			
-			selected_grid = all_grid_cells[scroll_index]
-			selected_grid.on_hover()
+	if not visible or selected_grid == null:
+		return  # Early exit if the UI is not visible or grid is null
 
-		elif Input.is_action_just_pressed("scroll_right") and scroll_index + 1 < len(all_grid_cells):
-			selected_grid.off_hover()
-			scroll_index += 1  
-			
-			if panels.get(scroll_index) != null:  
-				selected_panel = panels[scroll_index]
-			else:
-				selected_panel = null
-			selected_grid = all_grid_cells[scroll_index]
-			selected_grid.on_hover()
-		_update_ui(selected_panel)
+	var prev_grid = selected_grid  # Store the previous grid for debugging
+	
+	if Input.is_action_just_pressed("scroll_left") and scroll_index - 1 >= 0:
+		scroll_index -= 1  
+
+	elif Input.is_action_just_pressed("scroll_right") and scroll_index + 1 < len(all_grid_cells):
+		scroll_index += 1  
+
+	else:
+		return  # No valid input detected, exit function
+
+	# Ensure we are selecting valid elements
+	print("before: ",selected_panel, " index: ", scroll_index)
+	selected_grid = all_grid_cells[scroll_index] if scroll_index < len(all_grid_cells) else null
+	selected_panel = panels[scroll_index] if scroll_index < len(panels) and panels[scroll_index] != null else null
+	print("before: ",selected_panel, " index: ", scroll_index)
+	# Update hover state
+	if prev_grid:
+		prev_grid.off_hover()
+	if selected_grid:
+		selected_grid.on_hover()
+
+	_update_ui(selected_panel)
+
 func _update_ui(panelArea):
 	if panelArea == null: return
 	%ClueTitle.text = panelArea.clue.name

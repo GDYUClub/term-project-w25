@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://bdm1d3ikdgwvw"]
 
-[ext_resource type="Script" path="res://src/levels/tutorial/tutorial_2.gd" id="1_4j7fv"]
+[ext_resource type="Script" uid="uid://cjdgvn4eosr7q" path="res://src/levels/tutorial/tutorial_2.gd" id="1_4j7fv"]
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="2_hbpmp"]
 [ext_resource type="Texture2D" uid="uid://vo8v47rq0638" path="res://assets/sprites/pages/1-2/Ch1_Level2_Flattened_small.png" id="4_423xr"]
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="5_0to4b"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="9_1ijwe"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="10_xyo7r"]
 [ext_resource type="PackedScene" uid="uid://dhpbtj7rkkjks" path="res://src/dialogue/inquire_ui.tscn" id="11_btqoi"]
-[ext_resource type="PackedScene" uid="uid://dvp7253oe1cbe" path="res://src/clues/clue_arrange_screen.tscn" id="11_hbpmp"]
+[ext_resource type="PackedScene" uid="uid://dvp7253oe1cbe" path="res://src/clues/inventory_ui.tscn" id="11_hbpmp"]
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="12_dibre"]
 [ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/levels/tutorial/clue_database.gd" id="13_ud740"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="14_mh0hl"]
@@ -279,6 +279,15 @@ offset_left = 0.0
 offset_right = 0.0
 mouse_filter = 2
 
+[node name="GameplayUI" parent="." instance=ExtResource("20_hbpmp")]
+unique_name_in_owner = true
+offset_right = -1804.0
+offset_bottom = -739.0
+
+[node name="InventoryUI" parent="." instance=ExtResource("11_hbpmp")]
+unique_name_in_owner = true
+visible = false
+
 [node name="ClueDatabase" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("13_ud740")
@@ -330,16 +339,6 @@ character2_sprite = null
 repeatable_conversation = false
 can_inquiry = false
 is_clue = true
-
-[node name="GameplayUI" parent="." instance=ExtResource("20_hbpmp")]
-unique_name_in_owner = true
-offset_right = -1804.0
-offset_bottom = -739.0
-
-[node name="InventoryUI" parent="." instance=ExtResource("11_hbpmp")]
-visible = false
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [editable path="Clues/Cigs2"]
 [editable path="Transitions/3-4"]
