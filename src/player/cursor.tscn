@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://5beldmldbrhv"]
+[gd_scene load_steps=4 format=3 uid="uid://5beldmldbrhv"]
 
 [ext_resource type="Texture2D" uid="uid://besukl3pxqtdt" path="res://assets/sprites/player/wii_cursor.png" id="1_c38gr"]
+[ext_resource type="Script" uid="uid://dufisi4n31w8v" path="res://src/player/cursor.gd" id="1_mou1x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_becjy"]
 size = Vector2(41, 46)
 
 [node name="Cursor" type="CharacterBody2D"]
+script = ExtResource("1_mou1x")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

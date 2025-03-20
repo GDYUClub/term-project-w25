@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cx8pspxpaj5y"]
+[gd_scene load_steps=29 format=3 uid="uid://cx8pspxpaj5y"]
 
 [ext_resource type="Script" uid="uid://pkuix78c4wo3" path="res://src/levels/2/level_2_1.gd" id="1_llba7"]
 [ext_resource type="Texture2D" uid="uid://bvspujqgmdic5" path="res://assets/sprites/pages/2-1.png" id="1_x03rg"]
@@ -8,9 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="4_sut8d"]
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="4_x03rg"]
 [ext_resource type="PackedScene" uid="uid://bvqwk1mxnpwr5" path="res://src/gameplay_ui/game_ui.tscn" id="5_0iawh"]
+[ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="5_wlckx"]
 [ext_resource type="PackedScene" uid="uid://dvp7253oe1cbe" path="res://src/clues/clue_arrange_screen.tscn" id="6_dy207"]
 [ext_resource type="Script" uid="uid://d313ibk1sryhe" path="res://src/dialogue/dialogue_manager.gd" id="9_6x7mo"]
-[ext_resource type="JSON" path="res://src/dialogue/_Dialogue_new.json" id="10_llba7"]
+[ext_resource type="JSON" path="res://src/dialogue/_Dialogue_chapter_2.json" id="11_llba7"]
 [ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="11_wlckx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1ufb"]
@@ -248,10 +249,11 @@ debug_color = Color(0.421082, 1, 0.896388, 0.419608)
 
 [node name="ShoeDialogue" parent="PanelItems/0" instance=ExtResource("4_sut8d")]
 position = Vector2(629, 312)
-character1_sprite = null
+character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
 
 [node name="Cursor" parent="." instance=ExtResource("3_0iawh")]
+visible = false
 
 [node name="PlayerStart" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -261,13 +263,6 @@ position = Vector2(106, 549)
 visible = false
 mouse_filter = 2
 metadata/_edit_lock_ = true
-
-[node name="DialogueUI" parent="." instance=ExtResource("4_x03rg")]
-unique_name_in_owner = true
-visible = false
-offset_left = 0.0
-offset_right = 0.0
-mouse_filter = 2
 
 [node name="GameplayUI" parent="." instance=ExtResource("5_0iawh")]
 unique_name_in_owner = true
@@ -282,5 +277,12 @@ size_flags_vertical = 3
 [node name="DialogueManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("9_6x7mo")
-DIALOGUE_JSON = ExtResource("10_llba7")
+DIALOGUE_JSON = ExtResource("11_llba7")
 INQUIRY_DIALOGUE_JSON = ExtResource("11_wlckx")
+
+[node name="DialogueUI" parent="DialogueManager" instance=ExtResource("4_x03rg")]
+unique_name_in_owner = true
+visible = false
+offset_left = 0.0
+offset_right = 0.0
+mouse_filter = 2
