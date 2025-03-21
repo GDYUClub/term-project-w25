@@ -13,6 +13,8 @@ const WALK_SPEED = 300.0
 signal start_inquire
 signal end_inquire
 
+var in_dialouge := false
+
 var can_move: bool = true
 
 var interactable: Area2D = null
@@ -108,7 +110,7 @@ func _process(delta: float) -> void:
 
 
 func interact():
-	if not interactable:
+	if not interactable or in_dialouge:
 		return
 	print(interactable.get_groups())
 	if interactable.is_in_group("clue"):
@@ -120,8 +122,10 @@ func interact():
 			interactable.visible = false
 
 	if interactable.is_in_group("npc"):
+		in_dialouge = true
 		interactable.talk_to_npc()
 		await interactable.interaction_over
+		in_dialouge = false
 		get_parent().check_for_new_item()
 	
 	if interactable.is_in_group("point_click"):
