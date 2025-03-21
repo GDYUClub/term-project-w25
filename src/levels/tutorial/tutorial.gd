@@ -15,7 +15,7 @@ enum GAMEPLAY_STATE{
 	CURSOR,
 }
 
-const PANEL_CENTERS = [
+var PANEL_CENTERS = [
 Vector2i(890,180),
 Vector2i(1560,180),
 Vector2i(867,726),
@@ -29,7 +29,6 @@ var panelArrangeInst
 var overlapping_panel_name:String = ""
 
 func _ready() -> void:
-	print('ran')
 	if !$PanelTriggers:
 		return
 	for triggerArea:Area2D in $PanelTriggers.get_children():

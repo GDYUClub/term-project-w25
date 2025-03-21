@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bdm1d3ikdgwvw"]
+[gd_scene load_steps=36 format=3 uid="uid://bdm1d3ikdgwvw"]
 
 [ext_resource type="Script" path="res://src/levels/tutorial/tutorial_2.gd" id="1_4j7fv"]
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="2_hbpmp"]
@@ -19,6 +19,7 @@
 [ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="17_sr4r0"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="18_kltel"]
 [ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="19_f08ng"]
+[ext_resource type="Texture2D" uid="uid://dggagprdo1tme" path="res://assets/sprites/talksprites/hotdog.png" id="19_f81lm"]
 [ext_resource type="PackedScene" uid="uid://bvqwk1mxnpwr5" path="res://src/gameplay_ui/game_ui.tscn" id="20_hbpmp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fuvah"]
@@ -219,7 +220,7 @@ position = Vector2(345, -166)
 [node name="5-6" parent="Transitions" instance=ExtResource("9_1ijwe")]
 position = Vector2(188, 893)
 move_type = 1
-jane_scale = 0.3
+jane_scale = 0.25
 arrow_dir = 2
 
 [node name="CollisionShape2D" parent="Transitions/5-6" index="0"]
@@ -232,7 +233,7 @@ position = Vector2(853, -12)
 
 [node name="6-5" parent="Transitions" instance=ExtResource("9_1ijwe")]
 position = Vector2(969, 911)
-jane_scale = 1.0
+jane_scale = 0.3
 arrow_dir = 2
 
 [node name="CollisionShape2D" parent="Transitions/6-5" index="0"]
@@ -297,6 +298,7 @@ position = Vector2(1516, 183)
 npc_name = "Sergeant Biggs"
 end_index = 9
 character1_sprite = ExtResource("19_f08ng")
+character2_sprite = ExtResource("19_f81lm")
 
 [node name="GlassShard" parent="Npc" instance=ExtResource("18_kltel")]
 position = Vector2(807, 549)
