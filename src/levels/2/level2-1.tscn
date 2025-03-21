@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="4_x03rg"]
 [ext_resource type="PackedScene" uid="uid://bvqwk1mxnpwr5" path="res://src/gameplay_ui/game_ui.tscn" id="5_0iawh"]
 [ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="5_wlckx"]
-[ext_resource type="PackedScene" uid="uid://dvp7253oe1cbe" path="res://src/clues/clue_arrange_screen.tscn" id="6_dy207"]
+[ext_resource type="PackedScene" uid="uid://dvp7253oe1cbe" path="res://src/clues/inventory_ui.tscn" id="6_dy207"]
 [ext_resource type="Script" uid="uid://d313ibk1sryhe" path="res://src/dialogue/dialogue_manager.gd" id="9_6x7mo"]
 [ext_resource type="JSON" path="res://src/dialogue/_Dialogue_chapter_2.json" id="11_llba7"]
 [ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="11_wlckx"]
@@ -271,6 +271,7 @@ offset_right = -1804.0
 offset_bottom = -739.0
 
 [node name="InventoryUI" parent="." instance=ExtResource("6_dy207")]
+unique_name_in_owner = true
 visible = false
 size_flags_horizontal = 3
 size_flags_vertical = 3

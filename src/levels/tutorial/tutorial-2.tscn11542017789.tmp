@@ -272,12 +272,6 @@ visible = false
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
-[node name="InventoryUI" parent="." instance=ExtResource("11_hbpmp")]
-unique_name_in_owner = true
-visible = false
-s_start_id = 1000
-s_end_id = 1001
-
 [node name="DialogueUI" parent="." instance=ExtResource("12_dibre")]
 unique_name_in_owner = true
 visible = false
@@ -287,9 +281,12 @@ mouse_filter = 2
 
 [node name="GameplayUI" parent="." instance=ExtResource("20_hbpmp")]
 unique_name_in_owner = true
-visible = false
 offset_right = -1804.0
 offset_bottom = -739.0
+
+[node name="InventoryUI" parent="." instance=ExtResource("11_hbpmp")]
+unique_name_in_owner = true
+visible = false
 
 [node name="ClueDatabase" type="Node" parent="."]
 unique_name_in_owner = true

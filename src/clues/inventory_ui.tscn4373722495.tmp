@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvp7253oe1cbe"]
+
+[ext_resource type="Script" uid="uid://bc676rlyfmf6n" path="res://src/clues/clue_grid_menu.gd" id="1_nbl5j"]
+[ext_resource type="Texture2D" uid="uid://s4ciyh88wqnu" path="res://assets/sprites/ui/Inventory_Menu_UI/briefcase_bg.png" id="2_5kccu"]
+[ext_resource type="Texture2D" uid="uid://b3ih8vxwbqoki" path="res://assets/sprites/ui/Inventory_Menu_UI/folder_clues_and_hints_container.png" id="3_f3tot"]
+[ext_resource type="Texture2D" uid="uid://blc6fojnhxx7v" path="res://assets/sprites/ui/Inventory_Menu_UI/chapter_sum_container.png" id="4_crim7"]
+[ext_resource type="Texture2D" uid="uid://di6qdc0x65adf" path="res://assets/sprites/ui/Inventory_Menu_UI/return_to_game_button.png" id="5_jsgr7"]
+[ext_resource type="Texture2D" uid="uid://dsifpi2jk1slv" path="res://assets/sprites/ui/Inventory_Menu_UI/save_exit_button.png" id="6_hoduj"]
+
+[node name="InventoryUI" type="Control"]
+z_index = 128
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_nbl5j")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 32.0
+offset_right = 833.0
+offset_bottom = 1022.0
+mouse_filter = 2
+color = Color(0.834614, 0.834614, 0.834614, 1)
+
+[node name="BGPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1921.0
+offset_bottom = 1081.0
+size_flags_horizontal = 4
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 838.0
+offset_top = 4.0
+offset_right = 1918.0
+offset_bottom = 1074.0
+texture = ExtResource("2_5kccu")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 871.0
+offset_top = 489.0
+offset_right = 1873.0
+offset_bottom = 994.0
+size_flags_horizontal = 4
+texture = ExtResource("3_f3tot")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 944.0
+offset_top = 91.0
+offset_right = 1211.0
+offset_bottom = 413.0
+size_flags_horizontal = 4
+texture = ExtResource("4_crim7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ClueTitle" type="Label" parent="TextureRect3"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 7.0
+offset_top = 12.0
+offset_right = 254.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Sussy"
+
+[node name="ClueDesc" type="Label" parent="TextureRect3"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 18.0
+offset_top = 38.0
+offset_right = 252.0
+offset_bottom = 311.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Sussy"
+autowrap_mode = 2
+
+[node name="CorrectLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 900.0
+offset_right = 504.0
+offset_bottom = 937.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.633757, 0.633757, 0.633757, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 27
+text = "Wrong!"
+
+[node name="Return" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1494.0
+offset_top = 78.0
+offset_right = 1770.0
+offset_bottom = 254.0
+icon = ExtResource("5_jsgr7")
+flat = true
+
+[node name="Save & Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1382.0
+offset_top = 278.0
+offset_right = 1658.0
+offset_bottom = 454.0
+icon = ExtResource("6_hoduj")
+flat = true
+
+[node name="Panels" type="Node2D" parent="."]
+
+[node name="GridCells" type="Node2D" parent="."]
