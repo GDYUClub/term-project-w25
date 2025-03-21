@@ -301,6 +301,7 @@ unique_name_in_owner = true
 position = Vector2(106, 549)
 
 [node name="InquireUI" parent="." instance=ExtResource("3_ypvw2")]
+unique_name_in_owner = true
 visible = false
 mouse_filter = 2
 metadata/_edit_lock_ = true
@@ -311,6 +312,7 @@ offset_right = -1804.0
 offset_bottom = -739.0
 
 [node name="InventoryUI" parent="." instance=ExtResource("6_dy207")]
+unique_name_in_owner = true
 visible = false
 size_flags_horizontal = 3
 size_flags_vertical = 3

@@ -3,8 +3,8 @@ class_name GameplayPage
 
 #@onready var panelArrangementScene = $InventoryPanel
 @onready var player = $Player
-@onready var inventoryUi: =$InventoryUI
-@onready var inventoryButton :TextureButton= $GameplayUI/Inventory
+@onready var inventoryUi: =%InventoryUI
+@onready var inventoryButton :TextureButton= %GameplayUI/Inventory
 
 var point_click:bool = false 
 
