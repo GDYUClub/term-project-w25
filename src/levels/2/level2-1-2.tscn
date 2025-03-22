@@ -107,6 +107,16 @@ shape = SubResource("RectangleShape2D_hm44k")
 position = Vector2(559, 710)
 shape = SubResource("RectangleShape2D_m0vrv")
 
+[node name="JanePanels" type="Node2D" parent="."]
+
+[node name="0" type="Sprite2D" parent="JanePanels"]
+position = Vector2(868.468, 186.699)
+scale = Vector2(0.601113, 0.601113)
+
+[node name="1" type="Sprite2D" parent="JanePanels"]
+position = Vector2(1420.4, 190.752)
+scale = Vector2(0.589344, 0.589344)
+
 [node name="PanelCovers" type="Node2D" parent="."]
 
 [node name="0" type="Polygon2D" parent="PanelCovers"]
@@ -118,6 +128,14 @@ polygon = PackedVector2Array(578, 15, 1308, 15, 1308, 334, 574, 335)
 position = Vector2(-388, 714)
 color = Color(0, 0, 0, 0.501961)
 polygon = PackedVector2Array(578, 15, 1308, 15, 1308, 334, 574, 335)
+
+[node name="CursorPositions" type="Node2D" parent="."]
+
+[node name="0" type="Marker2D" parent="CursorPositions"]
+position = Vector2(544, 537)
+
+[node name="1" type="Marker2D" parent="CursorPositions"]
+position = Vector2(535, 866)
 
 [node name="PanelTriggers" type="Node2D" parent="."]
 
