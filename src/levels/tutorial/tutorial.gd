@@ -3,8 +3,8 @@ class_name GameplayPage
 
 #@onready var panelArrangementScene = $InventoryPanel
 @onready var player = $Player
-@onready var inventoryUi: =$InventoryUI
-@onready var inventoryButton :TextureButton= $GameplayUI/Inventory
+@onready var inventoryUi: =%InventoryUI
+@onready var inventoryButton :TextureButton= %GameplayUI/Inventory
 
 var point_click:bool = false 
 
@@ -17,11 +17,11 @@ enum GAMEPLAY_STATE{
 
 var PANEL_CENTERS = [
 Vector2i(890,180),
-Vector2i(1560,180),
+Vector2i(1400,180),
 Vector2i(867,726),
 Vector2i(1305,510),
-Vector2i(1717,510),
-Vector2i(1560,878),
+Vector2i(1300,510),
+Vector2i(1400,878),
 ]
 
 var current_state:GAMEPLAY_STATE = GAMEPLAY_STATE.EXPLORE
@@ -85,8 +85,11 @@ func _toggle_panel(panel_number:String) -> void:
 	if panel_number == "":
 		return
 	var panelCover:Polygon2D = $PanelCovers.get_node(panel_number)
-	$Cursor.position = PANEL_CENTERS[int(panel_number)]
+	var panelImg:Sprite2D = $JanePanels.get_node(panel_number)
+	var cursorPosition:Marker2D = $CursorPositions.get_node(panel_number)
+	$Cursor.position = cursorPosition.position
 	$Cursor.visible = !$Cursor.visible
+	panelImg.visible = !panelImg.visible
 	$Cursor.can_move = !$Cursor.can_move
 	panelCover.visible = !panelCover.visible 
 

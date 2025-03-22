@@ -7,6 +7,7 @@ const WALK_SPEED = 300.0
 @onready var alertSprite: Sprite2D = $AlertSprite
 @onready var inquire_sprite: Sprite2D = $InquireSprite
 @onready var area: Area2D = $Area2D
+@onready var sceneAnimPlayer = get_parent().get_node("AnimationPlayer")
 
 @export_range(0,1) var starting_scale:float
 
@@ -130,6 +131,14 @@ func interact():
 	
 	if interactable.is_in_group("point_click"):
 		get_parent().change_to_cursor()
+	
+	if interactable.is_in_group("elevator"):
+		if position.y > 1600:
+			sceneAnimPlayer.play("elevator_up")
+		else:
+			sceneAnimPlayer.play("elevator_down")
+
+
 		
 
 func inquire():
@@ -165,9 +174,13 @@ func _on_area_entered(area: Area2D):
 		alertSprite.texture = is_clue_alert_texture[true]
 		alertSprite.visible = true
 		interactable = area
+	if area.is_in_group("elevator"):
+		alertSprite.texture = is_clue_alert_texture[true]
+		alertSprite.visible = true
+		interactable = area
 
 func _on_area_exited(area: Area2D):
-	if area.is_in_group("clue") or area.is_in_group("npc") or area.is_in_group("point_click"):
+	if area.is_in_group("clue") or area.is_in_group("npc") or area.is_in_group("point_click") or area.is_in_group("elevator"):
 		if area.is_in_group("npc"):
 				end_inquire.emit()
 		alertSprite.visible = false
