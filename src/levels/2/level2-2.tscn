@@ -1,0 +1,237 @@
+[gd_scene load_steps=26 format=3 uid="uid://dntc8r7xgew3b"]
+
+[ext_resource type="Script" path="res://src/levels/tutorial/tutorial_2.gd" id="1_fv8uy"]
+[ext_resource type="Texture2D" uid="uid://csum1dhtbisq3" path="res://assets/sprites/pages/2-2/Ch2_Level2_Flattened_NoElevatorSmallaaa.png" id="3_22rls"]
+[ext_resource type="Resource" uid="uid://dojkosxruk8xs" path="res://src/clues/clue-resources/tutorial/clue_cigs.tres" id="5_x1j4a"]
+[ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/clue_lighter.tres" id="6_blgto"]
+[ext_resource type="Resource" uid="uid://d3k8rcoc56don" path="res://src/clues/clue-resources/tutorial/clue_third.tres" id="7_jf7fn"]
+[ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="9_6hqq4"]
+[ext_resource type="PackedScene" uid="uid://dhpbtj7rkkjks" path="res://src/dialogue/inquire_ui.tscn" id="10_lfa3s"]
+[ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="11_iric6"]
+[ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/levels/tutorial/clue_database.gd" id="12_wvrnm"]
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="13_srr7x"]
+[ext_resource type="Script" uid="uid://d313ibk1sryhe" path="res://src/dialogue/dialogue_manager.gd" id="14_w3udb"]
+[ext_resource type="JSON" path="res://src/dialogue/_Dialogue_new.json" id="15_ajeqe"]
+[ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="16_126x1"]
+[ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="17_27f5c"]
+[ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="18_k3s3g"]
+[ext_resource type="Texture2D" uid="uid://dggagprdo1tme" path="res://assets/sprites/talksprites/hotdog.png" id="19_5seyb"]
+[ext_resource type="Texture2D" uid="uid://b4gxocuqqjib2" path="res://assets/sprites/pages/2-2/Elevator.png" id="20_22rls"]
+[ext_resource type="PackedScene" uid="uid://bvqwk1mxnpwr5" path="res://src/gameplay_ui/game_ui.tscn" id="20_ga2xt"]
+[ext_resource type="PackedScene" uid="uid://cwo22opxygl8m" path="res://src/clues/clue_arrange_screen.tscn" id="21_fa8m5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yf7h"]
+size = Vector2(126.5, 337)
+
+[sub_resource type="Animation" id="Animation_7yf7h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(140, 1636)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Elevator:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(125, 641)]
+}
+
+[sub_resource type="Animation" id="Animation_22rls"]
+resource_name = "elevator_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(140, 620), Vector2(140, 1636)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Elevator:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(125, 640), Vector2(125, 1656)]
+}
+
+[sub_resource type="Animation" id="Animation_syhb0"]
+resource_name = "elevator_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.933333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(140, 1636), Vector2(140, 620)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Elevator:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.933333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(125, 1656), Vector2(125, 640)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7yf7h"]
+_data = {
+&"RESET": SubResource("Animation_7yf7h"),
+&"elevator_down": SubResource("Animation_22rls"),
+&"elevator_up": SubResource("Animation_syhb0")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22rls"]
+size = Vector2(147.25, 257.5)
+
+[node name="Main" type="Node"]
+script = ExtResource("1_fv8uy")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(-60, 0)
+texture = ExtResource("3_22rls")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Borders" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders"]
+position = Vector2(66, 628)
+shape = SubResource("RectangleShape2D_7yf7h")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders"]
+position = Vector2(65.75, 1643)
+shape = SubResource("RectangleShape2D_7yf7h")
+
+[node name="Clues" type="Node" parent="."]
+
+[node name="Transitions" type="Node2D" parent="."]
+
+[node name="PlayerStart" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(138, 619)
+
+[node name="Player" parent="." instance=ExtResource("9_6hqq4")]
+unique_name_in_owner = true
+z_index = 11
+position = Vector2(140, 1636)
+starting_scale = 0.35
+current_move_type = 1
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 2000
+limit_smoothed = true
+drag_horizontal_enabled = true
+
+[node name="ClueDatabase" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("12_wvrnm")
+items = Array[ExtResource("13_srr7x")]([ExtResource("5_x1j4a"), ExtResource("6_blgto"), ExtResource("7_jf7fn")])
+
+[node name="DialogueManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("14_w3udb")
+DIALOGUE_JSON = ExtResource("15_ajeqe")
+INQUIRY_DIALOGUE_JSON = ExtResource("16_126x1")
+
+[node name="Npc" type="Node" parent="."]
+
+[node name="Cop1" parent="Npc" instance=ExtResource("17_27f5c")]
+position = Vector2(236, 1679)
+npc_name = "Sergeant Biggs"
+end_index = 9
+character1_sprite = ExtResource("18_k3s3g")
+character2_sprite = ExtResource("19_5seyb")
+
+[node name="Elevator" type="Sprite2D" parent="."]
+position = Vector2(125, 641)
+scale = Vector2(0.696691, 0.771676)
+texture = ExtResource("20_22rls")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_7yf7h")
+}
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="GameplayUI" parent="UI" instance=ExtResource("20_ga2xt")]
+unique_name_in_owner = true
+top_level = true
+z_index = 10
+offset_right = -1804.0
+offset_bottom = -739.0
+
+[node name="InventoryUI" parent="UI" instance=ExtResource("21_fa8m5")]
+unique_name_in_owner = true
+visible = false
+top_level = true
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DialogueUI" parent="UI" instance=ExtResource("11_iric6")]
+unique_name_in_owner = true
+visible = false
+top_level = true
+offset_left = 0.0
+offset_right = 0.0
+mouse_filter = 2
+
+[node name="InquireUI" parent="UI" instance=ExtResource("10_lfa3s")]
+unique_name_in_owner = true
+visible = false
+top_level = true
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="ElevatorTrigger" type="Area2D" parent="." groups=["elevator"]]
+position = Vector2(44, 0)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ElevatorTrigger"]
+position = Vector2(30, 635)
+shape = SubResource("RectangleShape2D_22rls")
+debug_color = Color(0.168627, 1, 0.298039, 0.419608)
+
+[node name="ElevatorTrigger2" type="Area2D" parent="." groups=["elevator"]]
+position = Vector2(47, 1025)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorTrigger2"]
+position = Vector2(27.375, 646)
+shape = SubResource("RectangleShape2D_22rls")
+debug_color = Color(0.168627, 1, 0.298039, 0.419608)

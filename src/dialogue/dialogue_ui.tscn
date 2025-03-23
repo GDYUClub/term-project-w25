@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5h0imkaet8vo"]
+[gd_scene load_steps=7 format=3 uid="uid://b5h0imkaet8vo"]
 
 [ext_resource type="Texture2D" uid="uid://do3mqftkxr3dn" path="res://assets/sprites/ui/talk_bubble.png" id="1_ha5f6"]
 [ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="2_l6txd"]
+[ext_resource type="Texture2D" uid="uid://dggagprdo1tme" path="res://assets/sprites/talksprites/hotdog.png" id="3_8rr8s"]
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="3_l6txd"]
 [ext_resource type="Texture2D" uid="uid://kanmvsgs105r" path="res://assets/sprites/ui/polaroid_hint_container_filled.png" id="3_y045p"]
 
@@ -141,7 +142,7 @@ offset_top = 0.439972
 offset_right = 150.881
 offset_bottom = 231.235
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_l6txd")
+texture = ExtResource("3_8rr8s")
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 

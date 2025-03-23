@@ -1,0 +1,224 @@
+[gd_scene load_steps=22 format=3 uid="uid://baehg71ehkgic"]
+
+[ext_resource type="Script" uid="uid://8b23rlb7ovdp" path="res://src/levels/2/level_2_1_2.gd" id="1_1r0i0"]
+[ext_resource type="Texture2D" uid="uid://mgfutu3e5n1g" path="res://assets/sprites/pages/Ch2_L1_Page2_Flattened.png" id="2_llk5i"]
+[ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="3_1r0i0"]
+[ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="4_hm44k"]
+[ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="5_m0vrv"]
+[ext_resource type="PackedScene" uid="uid://5beldmldbrhv" path="res://src/player/cursor.tscn" id="6_0hbc8"]
+[ext_resource type="PackedScene" uid="uid://dhpbtj7rkkjks" path="res://src/dialogue/inquire_ui.tscn" id="7_1d57u"]
+[ext_resource type="PackedScene" uid="uid://bvqwk1mxnpwr5" path="res://src/gameplay_ui/game_ui.tscn" id="8_a4on0"]
+[ext_resource type="PackedScene" uid="uid://cwo22opxygl8m" path="res://src/clues/clue_arrange_screen.tscn" id="9_vd6m4"]
+[ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="10_qehm7"]
+[ext_resource type="Script" uid="uid://d313ibk1sryhe" path="res://src/dialogue/dialogue_manager.gd" id="11_23rmw"]
+[ext_resource type="JSON" path="res://src/dialogue/_Dialogue_chapter_2.json" id="12_8jcpp"]
+[ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="13_e2scp"]
+[ext_resource type="Texture2D" uid="uid://cqq2knh01h8bg" path="res://assets/sprites/pages/Ch2_L1_Page2_BottomRightPlatform.png" id="14_1r0i0"]
+[ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="14_am26y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_am26y"]
+size = Vector2(283, 20.9985)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1r0i0"]
+size = Vector2(658, 20.9985)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm44k"]
+size = Vector2(760, 20.9985)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0vrv"]
+size = Vector2(760, 52.4993)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5auj"]
+size = Vector2(60, 151.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agb2h"]
+size = Vector2(65, 195.5)
+
+[node name="Level2-1-2" type="Node"]
+script = ExtResource("1_1r0i0")
+metadata/_edit_horizontal_guides_ = [1278.0, 882.0]
+metadata/_edit_vertical_guides_ = [540.0]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -16
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="levelbg" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_llk5i")
+stretch_mode = 3
+
+[node name="Player" parent="." instance=ExtResource("3_1r0i0")]
+unique_name_in_owner = true
+position = Vector2(124, 549)
+starting_scale = 0.2
+current_move_type = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+modulate = Color(0.239216, 1, 0.843137, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(165.5, 130.5)
+rotation = 1.57079
+shape = SubResource("RectangleShape2D_am26y")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(518, 129)
+rotation = 1.57079
+shape = SubResource("RectangleShape2D_am26y")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1406, 860)
+rotation = 1.57079
+shape = SubResource("RectangleShape2D_am26y")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1773, 860)
+rotation = 1.57079
+shape = SubResource("RectangleShape2D_am26y")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(183, 708)
+rotation = 1.57079
+shape = SubResource("RectangleShape2D_1r0i0")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(925, 710)
+rotation = 1.57079
+shape = SubResource("RectangleShape2D_1r0i0")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(554, 380)
+shape = SubResource("RectangleShape2D_hm44k")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(551, 1050)
+shape = SubResource("RectangleShape2D_hm44k")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(559, 710)
+shape = SubResource("RectangleShape2D_m0vrv")
+
+[node name="JanePanels" type="Node2D" parent="."]
+
+[node name="0" type="Sprite2D" parent="JanePanels"]
+position = Vector2(868.468, 186.699)
+scale = Vector2(0.601113, 0.601113)
+
+[node name="1" type="Sprite2D" parent="JanePanels"]
+position = Vector2(1420.4, 190.752)
+scale = Vector2(0.589344, 0.589344)
+
+[node name="PanelCovers" type="Node2D" parent="."]
+
+[node name="0" type="Polygon2D" parent="PanelCovers"]
+position = Vector2(-388, 367)
+color = Color(0, 0, 0, 0.501961)
+polygon = PackedVector2Array(578, 15, 1308, 15, 1308, 334, 574, 335)
+
+[node name="1" type="Polygon2D" parent="PanelCovers"]
+position = Vector2(-388, 714)
+color = Color(0, 0, 0, 0.501961)
+polygon = PackedVector2Array(578, 15, 1308, 15, 1308, 334, 574, 335)
+
+[node name="CursorPositions" type="Node2D" parent="."]
+
+[node name="0" type="Marker2D" parent="CursorPositions"]
+position = Vector2(544, 537)
+
+[node name="1" type="Marker2D" parent="CursorPositions"]
+position = Vector2(535, 866)
+
+[node name="PanelTriggers" type="Node2D" parent="."]
+
+[node name="0" type="Area2D" parent="PanelTriggers"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelTriggers/0"]
+position = Vector2(1453, 832.625)
+shape = SubResource("RectangleShape2D_f5auj")
+debug_color = Color(0.421082, 1, 0.896388, 0.419608)
+
+[node name="1" type="Area2D" parent="PanelTriggers"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelTriggers/1"]
+position = Vector2(1725, 827)
+shape = SubResource("RectangleShape2D_agb2h")
+debug_color = Color(0.421082, 1, 0.896388, 0.419608)
+
+[node name="PanelItems" type="Node" parent="."]
+
+[node name="0" type="Node" parent="PanelItems"]
+
+[node name="ShoeDialogue" parent="PanelItems/0" instance=ExtResource("4_hm44k")]
+position = Vector2(629, 312)
+character1_sprite = ExtResource("5_m0vrv")
+character2_sprite = null
+
+[node name="Cursor" parent="." instance=ExtResource("6_0hbc8")]
+visible = false
+
+[node name="PlayerStart" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(220, 122)
+
+[node name="InquireUI" parent="." instance=ExtResource("7_1d57u")]
+visible = false
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="GameplayUI" parent="." instance=ExtResource("8_a4on0")]
+unique_name_in_owner = true
+offset_right = -1804.0
+offset_bottom = -739.0
+
+[node name="InventoryUI" parent="." instance=ExtResource("9_vd6m4")]
+visible = false
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DialogueUI" parent="." instance=ExtResource("10_qehm7")]
+unique_name_in_owner = true
+visible = false
+offset_left = 0.0
+offset_right = 0.0
+mouse_filter = 2
+
+[node name="DialogueManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("11_23rmw")
+DIALOGUE_JSON = ExtResource("12_8jcpp")
+INQUIRY_DIALOGUE_JSON = ExtResource("13_e2scp")
+
+[node name="Foreground" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground"]
+position = Vector2(126, -53)
+scale = Vector2(1.13736, 1.12593)
+texture = ExtResource("14_1r0i0")
+centered = false
+
+[node name="Transitions" type="Node2D" parent="."]
+
+[node name="PanelTransition" parent="Transitions" instance=ExtResource("14_am26y")]
+position = Vector2(497, 118)
+move_type = 1
+jane_scale = 0.2
+arrow_dir = 3
+
+[node name="NewFrame" parent="Transitions/PanelTransition" index="1"]
+position = Vector2(1101, 703)
+
+[node name="Sprite2D" parent="Transitions/PanelTransition" index="2"]
+position = Vector2(-15, -64)
+
+[editable path="Transitions/PanelTransition"]

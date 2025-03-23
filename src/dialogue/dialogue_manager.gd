@@ -19,6 +19,9 @@ var talk_bubble = preload("res://assets/sprites/ui/talk_bubble.png")
 var shout_bubble = preload("res://assets/sprites/ui/shout_bubble.png")
 var wisper_bubble = preload("res://assets/sprites/ui/whipser_bubble.png")
 
+var text_rendering:bool = false
+var new_dialogue_input_buffer = true
+
 signal dialogue_ended
 
 enum LANGUAGE {ENGLISH, FRENCH}
@@ -59,7 +62,16 @@ func _ready() -> void:
 	button_leave.pressed.connect(leave_dialogue)
 
 func _process(delta: float) -> void: #for checking player skip input
+	#same input is being used twice. once in 
 	if(Input.is_action_just_pressed("dialogue") && (dialogue_ongoing == true)):
+		#fixes a bug where the action just pressed is propigated twice, once in the player script and once here.
+		if new_dialogue_input_buffer:
+			new_dialogue_input_buffer = false
+			return
+		#await get_tree().create_timer(.1).timeout
+		if text_rendering:
+			text_rendering = false
+			return
 		if(type == DialogueType.NPC):
 			adjust_npc_dialogue()
 
@@ -69,6 +81,7 @@ func import_dialogue_data() -> void: #import and convert JSON to string dictiona
 	inquiry_dialogue = INQUIRY_DIALOGUE_JSON.get_data()
 
 func load_npc_dialogue(new_start_id : int, new_end_id : int, speaker_1_sprite: Texture, speaker_2_sprite:Texture): #initial method to load visual novel dialogue
+	new_dialogue_input_buffer = true
 	top_dialogue_textbox.visible = false
 	dialogue_ongoing = false
 	prints(new_start_id,new_end_id,speaker_1_sprite,speaker_2_sprite)
@@ -99,20 +112,16 @@ func adjust_npc_dialogue(): #switch to next line
 
 		render_speach_bubble()
 		render_image()
+		render_text(bottom_dialogue_text,bottom_dialogue_name)
 		
 
 		if index == start_id:
-			bottom_dialogue_name.text = dialogue[str(index)]["SPEAKER_NAME"]
-			bottom_dialogue_text.text = dialogue[str(index)][LANGUAGE.keys()[language]]
 			bottom_dialogue_textbox.visible = true
 			top_dialogue_textbox.visible = false
 		else:
-			top_dialogue_name.text = bottom_dialogue_name.text
-			top_dialogue_text.text = bottom_dialogue_text.text
-			bottom_dialogue_name.text = dialogue[str(index)]["SPEAKER_NAME"]
-			bottom_dialogue_text.text = dialogue[str(index)][LANGUAGE.keys()[language]]
+			top_dialogue_name.text = dialogue[str(index-1)]["SPEAKER_NAME"]
+			top_dialogue_text.text = dialogue[str(index-1)][LANGUAGE.keys()[language]]
 			top_dialogue_textbox.visible = true
-			print("top!")
 		character_1.modulate = Color(1, 1, 1, 1.0 if character_index == 0 else 0.8)
 		character_2.modulate = Color(1, 1, 1, 1.0 if character_index == 1 else 0.8)
 		#handling the branching logic
@@ -257,3 +266,24 @@ func render_image() -> void:
 		polaroidImage.texture = load(dialogue[str(index)]["IMAGE"])
 	else:
 		polaroidFrame.visible = false
+
+func render_text(textLabel:Label, nameLabel:Label):
+	#renders text char by char
+	text_rendering = true
+	nameLabel.text = dialogue[str(index)]["SPEAKER_NAME"]
+	var textSrc = dialogue[str(index)][LANGUAGE.keys()[language]]
+	var currText := ""
+	for c in textSrc:
+		if text_rendering == false:
+			bottom_dialogue_text.text = dialogue[str(index-1)][LANGUAGE.keys()[language]]
+			break
+
+		#AudioPlayer.play_sfx(preload("res://assets/sound/sfx/undertale/snd_txt1.mp3"))
+		var delay = 0.015
+		currText += c
+		textLabel.text = currText
+		if [",",".","!","?"].has(c): 
+			delay = 0.1
+		await get_tree().create_timer(delay).timeout
+	text_rendering = false
+

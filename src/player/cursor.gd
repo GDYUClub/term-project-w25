@@ -15,7 +15,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if !can_move:
 		return
-	if Input.is_action_pressed("interact"):
+	if Input.is_action_just_pressed("interact"):
 		_inspect()
 
 	var dir:= Input.get_vector("ui_left","ui_right","ui_up","ui_down")
@@ -26,5 +26,10 @@ func _inspect() -> void:
 	if interactable == null:
 		return
 
-	if interactable.is_in_group("npc"):
+	if interactable.is_in_group("npc") and !%Player.in_dialouge:
+		%Player.in_dialouge = true
 		interactable.talk_to_npc()
+		await interactable.interaction_over
+		%Player.in_dialouge = false
+		get_parent().check_for_new_item()
+		print("player in dialouge", %Player.in_dialouge)

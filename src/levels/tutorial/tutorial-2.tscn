@@ -1,6 +1,6 @@
-[gd_scene load_steps=35 format=3 uid="uid://bdm1d3ikdgwvw"]
+[gd_scene load_steps=36 format=3 uid="uid://bdm1d3ikdgwvw"]
 
-[ext_resource type="Script" uid="uid://cjdgvn4eosr7q" path="res://src/levels/tutorial/tutorial_2.gd" id="1_4j7fv"]
+[ext_resource type="Script" path="res://src/levels/tutorial/tutorial_2.gd" id="1_4j7fv"]
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="2_hbpmp"]
 [ext_resource type="Texture2D" uid="uid://vo8v47rq0638" path="res://assets/sprites/pages/1-2/Ch1_Level2_Flattened_small.png" id="4_423xr"]
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="5_0to4b"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="9_1ijwe"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="10_xyo7r"]
 [ext_resource type="PackedScene" uid="uid://dhpbtj7rkkjks" path="res://src/dialogue/inquire_ui.tscn" id="11_btqoi"]
-[ext_resource type="PackedScene" uid="uid://dvp7253oe1cbe" path="res://src/clues/inventory_ui.tscn" id="11_hbpmp"]
+[ext_resource type="PackedScene" uid="uid://cwo22opxygl8m" path="res://src/clues/clue_arrange_screen.tscn" id="11_hbpmp"]
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="12_dibre"]
 [ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/levels/tutorial/clue_database.gd" id="13_ud740"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="14_mh0hl"]
@@ -19,6 +19,7 @@
 [ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="17_sr4r0"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="18_kltel"]
 [ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="19_f08ng"]
+[ext_resource type="Texture2D" uid="uid://dggagprdo1tme" path="res://assets/sprites/talksprites/hotdog.png" id="19_f81lm"]
 [ext_resource type="PackedScene" uid="uid://bvqwk1mxnpwr5" path="res://src/gameplay_ui/game_ui.tscn" id="20_hbpmp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fuvah"]
@@ -219,7 +220,7 @@ position = Vector2(345, -166)
 [node name="5-6" parent="Transitions" instance=ExtResource("9_1ijwe")]
 position = Vector2(188, 893)
 move_type = 1
-jane_scale = 0.3
+jane_scale = 0.25
 arrow_dir = 2
 
 [node name="CollisionShape2D" parent="Transitions/5-6" index="0"]
@@ -232,7 +233,7 @@ position = Vector2(853, -12)
 
 [node name="6-5" parent="Transitions" instance=ExtResource("9_1ijwe")]
 position = Vector2(969, 911)
-jane_scale = 1.0
+jane_scale = 0.3
 arrow_dir = 2
 
 [node name="CollisionShape2D" parent="Transitions/6-5" index="0"]
@@ -272,24 +273,12 @@ visible = false
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
-[node name="InventoryUI" parent="." instance=ExtResource("11_hbpmp")]
-unique_name_in_owner = true
-visible = false
-s_start_id = 1000
-s_end_id = 1001
-
 [node name="DialogueUI" parent="." instance=ExtResource("12_dibre")]
 unique_name_in_owner = true
 visible = false
 offset_left = 0.0
 offset_right = 0.0
 mouse_filter = 2
-
-[node name="GameplayUI" parent="." instance=ExtResource("20_hbpmp")]
-unique_name_in_owner = true
-visible = false
-offset_right = -1804.0
-offset_bottom = -739.0
 
 [node name="ClueDatabase" type="Node" parent="."]
 unique_name_in_owner = true
@@ -309,6 +298,7 @@ position = Vector2(1516, 183)
 npc_name = "Sergeant Biggs"
 end_index = 9
 character1_sprite = ExtResource("19_f08ng")
+character2_sprite = ExtResource("19_f81lm")
 
 [node name="GlassShard" parent="Npc" instance=ExtResource("18_kltel")]
 position = Vector2(807, 549)
@@ -342,6 +332,16 @@ character2_sprite = null
 repeatable_conversation = false
 can_inquiry = false
 is_clue = true
+
+[node name="GameplayUI" parent="." instance=ExtResource("20_hbpmp")]
+unique_name_in_owner = true
+offset_right = -1804.0
+offset_bottom = -739.0
+
+[node name="InventoryUI" parent="." instance=ExtResource("11_hbpmp")]
+visible = false
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [editable path="Clues/Cigs2"]
 [editable path="Transitions/3-4"]
