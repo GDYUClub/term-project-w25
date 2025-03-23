@@ -14,8 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="12_dibre"]
 [ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/levels/tutorial/clue_database.gd" id="13_ud740"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="14_mh0hl"]
+[ext_resource type="JSON" path="res://src/dialogue/_Dialogue1-1-2.json" id="15_f81lm"]
 [ext_resource type="Script" uid="uid://d313ibk1sryhe" path="res://src/dialogue/dialogue_manager.gd" id="15_wcv8r"]
-[ext_resource type="JSON" path="res://src/dialogue/_Dialogue_new.json" id="16_4p6tu"]
 [ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="17_sr4r0"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="18_kltel"]
 [ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="19_f08ng"]
@@ -195,7 +195,7 @@ position = Vector2(1378, -330)
 
 [node name="4-5" parent="Transitions" instance=ExtResource("9_1ijwe")]
 position = Vector2(1275, 550)
-jane_scale = 1.0
+jane_scale = 0.25
 arrow_dir = 3
 
 [node name="CollisionShape2D" parent="Transitions/4-5" index="0"]
@@ -288,7 +288,7 @@ items = Array[ExtResource("14_mh0hl")]([ExtResource("6_07ii5"), ExtResource("7_f
 [node name="DialogueManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("15_wcv8r")
-DIALOGUE_JSON = ExtResource("16_4p6tu")
+DIALOGUE_JSON = ExtResource("15_f81lm")
 INQUIRY_DIALOGUE_JSON = ExtResource("17_sr4r0")
 
 [node name="Npc" type="Node" parent="."]
@@ -339,6 +339,7 @@ offset_right = -1804.0
 offset_bottom = -739.0
 
 [node name="InventoryUI" parent="." instance=ExtResource("11_hbpmp")]
+unique_name_in_owner = true
 visible = false
 size_flags_horizontal = 3
 size_flags_vertical = 3

@@ -18,6 +18,7 @@ var think_bubble = preload("res://assets/sprites/ui/thought_bubble.png")
 var talk_bubble = preload("res://assets/sprites/ui/talk_bubble.png")
 var shout_bubble = preload("res://assets/sprites/ui/shout_bubble.png")
 var wisper_bubble = preload("res://assets/sprites/ui/whipser_bubble.png")
+var narrator_bubble = preload("res://assets/sprites/ui/narrator_bubble.png")
 
 var text_rendering:bool = false
 var new_dialogue_input_buffer = true
@@ -235,6 +236,8 @@ func render_speach_bubble() -> void:
 			top_dialogue_textbox.texture = shout_bubble
 		"WISPER":
 			top_dialogue_textbox.texture = wisper_bubble
+		"NARRATOR":
+			top_dialogue_textbox.texture = narrator_bubble
 
 	match bot_bubble_type:
 		"TALK":
@@ -245,6 +248,8 @@ func render_speach_bubble() -> void:
 			bottom_dialogue_textbox.texture = shout_bubble
 		"WISPER":
 			bottom_dialogue_textbox.texture = wisper_bubble
+		"NARRATOR":
+			bottom_dialogue_textbox.texture = narrator_bubble
 
 
 	# handle flipping the diablog boxes
@@ -286,4 +291,3 @@ func render_text(textLabel:Label, nameLabel:Label):
 			delay = 0.1
 		await get_tree().create_timer(delay).timeout
 	text_rendering = false
-

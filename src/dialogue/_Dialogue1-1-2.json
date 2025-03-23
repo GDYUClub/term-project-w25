@@ -56,7 +56,6 @@
 		"BUBBLE_TYPE": "TALK",
 		"ENGLISH": "Did you blow him a kiss or something?",
 		"FRENCH": null,
-		"IMAGE": "res://assets/sprites/clue-touhou.png",
 		"ENGLISH_DIALOGUE_CHOICE_1": null,
 		"ENGLISH_DIALOGUE_CHOICE_2": null,
 		"ENGLISH_DIALOGUE_CHOICE_3": null,
@@ -86,10 +85,10 @@
 		"COMMANDS": null
 	},
 	"5": {
-		"SPEAKER_NAME": "Sergeant Biggs",
-		"SPEAKER_ID": 1.0,
-		"BUBBLE_TYPE": "THINK",
-		"ENGLISH": "(Someone certainly pulled some strings to get her on the case).",
+		"SPEAKER_NAME": "Narrator",
+		"SPEAKER_ID": 0.0,
+		"BUBBLE_TYPE": "NARRATOR",
+		"ENGLISH": "The Sergeant is at a loss for words. Someone has clearly pulled some strings to get Jane on this case.",
 		"FRENCH": null,
 		"ENGLISH_DIALOGUE_CHOICE_1": null,
 		"ENGLISH_DIALOGUE_CHOICE_2": null,

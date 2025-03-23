@@ -7,7 +7,7 @@ const WALK_SPEED = 300.0
 @onready var alertSprite: Sprite2D = $AlertSprite
 @onready var inquire_sprite: Sprite2D = $InquireSprite
 @onready var area: Area2D = $Area2D
-@onready var sceneAnimPlayer = get_parent().get_node("AnimationPlayer")
+@onready var sceneAnimPlayer:AnimationPlayer = get_parent().get_node("AnimationPlayer")
 
 @export_range(0,1) var starting_scale:float
 
@@ -138,6 +138,11 @@ func interact():
 		else:
 			sceneAnimPlayer.play("elevator_down")
 
+	if interactable.is_in_group("streetcar"):
+		sceneAnimPlayer.play("street car leaves")
+		await sceneAnimPlayer.animation_finished
+		%StreetCarBlock.disabled = true
+
 
 		
 
@@ -154,8 +159,6 @@ func _animate():
 	else:
 		animPlayer.stop()
 		sprite.frame = 0
-
-		
 
 
 func _on_area_entered(area: Area2D):
@@ -174,13 +177,13 @@ func _on_area_entered(area: Area2D):
 		alertSprite.texture = is_clue_alert_texture[true]
 		alertSprite.visible = true
 		interactable = area
-	if area.is_in_group("elevator"):
+	if area.is_in_group("elevator") or area.is_in_group("streetcar"):
 		alertSprite.texture = is_clue_alert_texture[true]
 		alertSprite.visible = true
 		interactable = area
 
 func _on_area_exited(area: Area2D):
-	if area.is_in_group("clue") or area.is_in_group("npc") or area.is_in_group("point_click") or area.is_in_group("elevator"):
+	if area.is_in_group("clue") or area.is_in_group("npc") or area.is_in_group("point_click") or area.is_in_group("elevator") or area.is_in_group("streetcar"):
 		if area.is_in_group("npc"):
 				end_inquire.emit()
 		alertSprite.visible = false
