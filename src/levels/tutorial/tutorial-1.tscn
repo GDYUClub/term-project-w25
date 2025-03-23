@@ -278,6 +278,7 @@ starting_scale = 0.25
 current_move_type = 1
 
 [node name="InquireUI" parent="." instance=ExtResource("11_otruw")]
+unique_name_in_owner = true
 metadata/_edit_lock_ = true
 
 [node name="DialogueUI" parent="." instance=ExtResource("12_j1u5a")]
