@@ -6,12 +6,12 @@
 [ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/clue_lighter.tres" id="6_blgto"]
 [ext_resource type="Resource" uid="uid://d3k8rcoc56don" path="res://src/clues/clue-resources/tutorial/clue_third.tres" id="7_jf7fn"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="9_6hqq4"]
+[ext_resource type="JSON" path="res://src/dialogue/_Dialogue.json" id="10_4odbk"]
 [ext_resource type="PackedScene" uid="uid://dhpbtj7rkkjks" path="res://src/dialogue/inquire_ui.tscn" id="10_lfa3s"]
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="11_iric6"]
 [ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/levels/tutorial/clue_database.gd" id="12_wvrnm"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="13_srr7x"]
 [ext_resource type="Script" uid="uid://d313ibk1sryhe" path="res://src/dialogue/dialogue_manager.gd" id="14_w3udb"]
-[ext_resource type="JSON" path="res://src/dialogue/_Dialogue_new.json" id="15_ajeqe"]
 [ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="16_126x1"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="17_27f5c"]
 [ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="18_k3s3g"]
@@ -166,7 +166,7 @@ items = Array[ExtResource("13_srr7x")]([ExtResource("5_x1j4a"), ExtResource("6_b
 [node name="DialogueManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("14_w3udb")
-DIALOGUE_JSON = ExtResource("15_ajeqe")
+DIALOGUE_JSON = ExtResource("10_4odbk")
 INQUIRY_DIALOGUE_JSON = ExtResource("16_126x1")
 
 [node name="Npc" type="Node" parent="."]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4sayfrrsh2bv"]
+
+[ext_resource type="Script" uid="uid://bsylmtfox5iiv" path="res://src/transitions/next_page.gd" id="1_4cugt"]
+[ext_resource type="Texture2D" uid="uid://dj5uqta4q8aks" path="res://assets/sprites/ui/arrow.png" id="1_ru5ih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rr1ah"]
+size = Vector2(382, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cugt"]
+size = Vector2(338, 160.125)
+
+[node name="NextPage" type="Area2D"]
+z_index = 2
+script = ExtResource("1_4cugt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-33, 40.5)
+shape = SubResource("RectangleShape2D_rr1ah")
+debug_color = Color(0.909804, 0.0196078, 0, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 16
+position = Vector2(-103, -7)
+texture = ExtResource("1_ru5ih")
+
+[node name="ArrowNotif" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowNotif"]
+position = Vector2(-60, -32.9375)
+shape = SubResource("RectangleShape2D_4cugt")

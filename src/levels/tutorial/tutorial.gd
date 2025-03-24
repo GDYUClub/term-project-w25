@@ -29,6 +29,8 @@ var panelArrangeInst
 var overlapping_panel_name:String = ""
 
 func _ready() -> void:
+	AudioManager.set_volume(1)
+	AudioManager.play_music(preload("res://assets/sound/bgm/Crime Scene theme.ogg"))
 	if !$PanelTriggers:
 		return
 	for triggerArea:Area2D in $PanelTriggers.get_children():

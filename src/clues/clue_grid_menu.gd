@@ -150,7 +150,6 @@ func panels_correct() -> bool:
 	if clue_count <= Inventory.get_item_count():
 		for grid_cell in clue_grid_cells:
 			if grid_cell.correct_panel == false:
-				print("FALSE")
 				return false
 		print("TRUE")
 		return true
