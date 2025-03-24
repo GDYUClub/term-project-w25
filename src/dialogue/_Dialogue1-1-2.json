@@ -170,6 +170,91 @@
 		"COMMANDS": null
 	},
 	"10": {
+		"SPEAKER_NAME": "Sergeant Biggs",
+		"SPEAKER_ID": 1.0,
+		"BUBBLE_TYPE": "TALK",
+		"ENGLISH": "He’s a producer. Known for his lavish parties.",
+		"FRENCH": null,
+		"ENGLISH_DIALOGUE_CHOICE_1": null,
+		"ENGLISH_DIALOGUE_CHOICE_2": null,
+		"ENGLISH_DIALOGUE_CHOICE_3": null,
+		"FRENCH_DIALOGUE_CHOICE_1": null,
+		"FRENCH_DIALOGUE_CHOICE_2": null,
+		"FRENCH_DIALOGUE_CHOICE_3": null,
+		"LINK_1_ID": null,
+		"LINK_2_ID": null,
+		"LINK_3_ID": null,
+		"COMMANDS": null
+	},
+	"11": {
+		"SPEAKER_NAME": "Sergeant Biggs",
+		"SPEAKER_ID": 1.0,
+		"BUBBLE_TYPE": "TALK",
+		"ENGLISH": "The guests reported hearing a gunshot early this morning… about 3:15 AM.",
+		"FRENCH": null,
+		"ENGLISH_DIALOGUE_CHOICE_1": null,
+		"ENGLISH_DIALOGUE_CHOICE_2": null,
+		"ENGLISH_DIALOGUE_CHOICE_3": null,
+		"FRENCH_DIALOGUE_CHOICE_1": null,
+		"FRENCH_DIALOGUE_CHOICE_2": null,
+		"FRENCH_DIALOGUE_CHOICE_3": null,
+		"LINK_1_ID": null,
+		"LINK_2_ID": null,
+		"LINK_3_ID": null,
+		"COMMANDS": null
+	},
+	"12": {
+		"SPEAKER_NAME": "Sergeant Biggs",
+		"SPEAKER_ID": 1.0,
+		"BUBBLE_TYPE": "TALK",
+		"ENGLISH": "They called us in pretty soon after the body was found, so it’s all still pretty fresh.",
+		"FRENCH": null,
+		"ENGLISH_DIALOGUE_CHOICE_1": null,
+		"ENGLISH_DIALOGUE_CHOICE_2": null,
+		"ENGLISH_DIALOGUE_CHOICE_3": null,
+		"FRENCH_DIALOGUE_CHOICE_1": null,
+		"FRENCH_DIALOGUE_CHOICE_2": null,
+		"FRENCH_DIALOGUE_CHOICE_3": null,
+		"LINK_1_ID": null,
+		"LINK_2_ID": null,
+		"LINK_3_ID": null,
+		"COMMANDS": null
+	},
+	"13": {
+		"SPEAKER_NAME": "Sergeant Biggs",
+		"SPEAKER_ID": 1.0,
+		"BUBBLE_TYPE": "TALK",
+		"ENGLISH": "You’re free to snoop around as much as-",
+		"FRENCH": null,
+		"ENGLISH_DIALOGUE_CHOICE_1": null,
+		"ENGLISH_DIALOGUE_CHOICE_2": null,
+		"ENGLISH_DIALOGUE_CHOICE_3": null,
+		"FRENCH_DIALOGUE_CHOICE_1": null,
+		"FRENCH_DIALOGUE_CHOICE_2": null,
+		"FRENCH_DIALOGUE_CHOICE_3": null,
+		"LINK_1_ID": null,
+		"LINK_2_ID": null,
+		"LINK_3_ID": null,
+		"COMMANDS": null
+	},
+	"14": {
+		"SPEAKER_NAME": "Narrator",
+		"SPEAKER_ID": 0.0,
+		"BUBBLE_TYPE": "NARRATOR",
+		"ENGLISH": "Jane grunts and brushes past him, approaching the body.",
+		"FRENCH": null,
+		"ENGLISH_DIALOGUE_CHOICE_1": null,
+		"ENGLISH_DIALOGUE_CHOICE_2": null,
+		"ENGLISH_DIALOGUE_CHOICE_3": null,
+		"FRENCH_DIALOGUE_CHOICE_1": null,
+		"FRENCH_DIALOGUE_CHOICE_2": null,
+		"FRENCH_DIALOGUE_CHOICE_3": null,
+		"LINK_1_ID": null,
+		"LINK_2_ID": null,
+		"LINK_3_ID": null,
+		"COMMANDS": null
+	},
+	"15": {
 		"SPEAKER_NAME": "Jane",
 		"SPEAKER_ID": 0.0,
 		"ENGLISH": "Shattered glass...",
@@ -186,7 +271,7 @@
 		"LINK_3_ID": null,
 		"COMMANDS": null
 	},
-	"11": {
+	"16": {
 		"SPEAKER_NAME": "Jane",
 		"SPEAKER_ID": 0.0,
 		"ENGLISH": "Must've been from the balcony.",
@@ -203,7 +288,7 @@
 		"LINK_3_ID": null,
 		"COMMANDS": "/Add_0"
 	},
-	"12": {
+	"17": {
 		"SPEAKER_NAME": "Jane",
 		"SPEAKER_ID": 0.0,
 		"ENGLISH": "Blunt force trauma on the head...",
@@ -220,7 +305,7 @@
 		"LINK_3_ID": null,
 		"COMMANDS": null
 	},
-	"13": {
+	"18": {
 		"SPEAKER_NAME": "Jane",
 		"SPEAKER_ID": 0.0,
 		"ENGLISH": "The impact of the fall killed him?",
@@ -237,7 +322,7 @@
 		"LINK_3_ID": null,
 		"COMMANDS": "/Add_1"
 	},
-	"14": {
+	"19": {
 		"SPEAKER_NAME": "Jane",
 		"SPEAKER_ID": 0.0,
 		"ENGLISH": "A Gun holster, but no gun.",

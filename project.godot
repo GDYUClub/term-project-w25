@@ -19,6 +19,8 @@ config/icon="res://assets/sprites/icon.svg"
 
 Inventory="*res://src/autoloads/inventory.gd"
 Global="*res://Global.gd"
+AudioManager="*res://src/audio/audio_manager.gd"
+LevelChanger="*res://src/autoloads/level_changer.gd"
 
 [debug]
 

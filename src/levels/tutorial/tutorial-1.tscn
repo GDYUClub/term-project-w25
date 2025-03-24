@@ -81,6 +81,21 @@ size = Vector2(180, 120.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5o2pm"]
 size = Vector2(83.25, 166.5)
 
+[sub_resource type="Animation" id="Animation_ft5mu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StreetCar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(964, 801)]
+}
+
 [sub_resource type="Animation" id="Animation_xcymm"]
 resource_name = "street car leaves"
 length = 2.0
@@ -95,21 +110,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(964, 801), Vector2(-542, 1064)]
-}
-
-[sub_resource type="Animation" id="Animation_ft5mu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("StreetCar:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(964, 801)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r7t7n"]
@@ -211,21 +211,18 @@ debug_color = Color(0, 0.6, 0.7, 0.42)
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Borders"]
 position = Vector2(1096.89, 772.946)
 rotation = -1.81937
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_j5coj")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Borders"]
 position = Vector2(741.896, 888.146)
 rotation = -1.81937
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_2g1vn")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="Borders"]
 position = Vector2(443, 765)
 rotation = 2.98093
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_dvjps")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
@@ -429,16 +426,18 @@ texture = ExtResource("18_xcymm")
 
 [node name="Npc" type="Node" parent="."]
 
-[node name="Cat" parent="Npc" instance=ExtResource("18_uaorv")]
+[node name="Hotdog" parent="Npc" instance=ExtResource("18_uaorv")]
 position = Vector2(1353, 304)
 npc_name = "Cat"
 start_index = 2
 end_index = 5
 character1_sprite = ExtResource("19_1lttl")
 character2_sprite = null
+repeatable_conversation = false
+can_inquiry = false
 
-[node name="CollisionShape2D" parent="Npc/Cat" index="0"]
-position = Vector2(-75.5, 0)
+[node name="CollisionShape2D" parent="Npc/Hotdog" index="0"]
+position = Vector2(-17.75, 0)
 
 [node name="Cat2" parent="Npc" instance=ExtResource("18_uaorv")]
 position = Vector2(757, 302)
@@ -446,6 +445,8 @@ npc_name = "HotDog"
 end_index = 1
 character1_sprite = ExtResource("19_1lttl")
 character2_sprite = ExtResource("21_r7t7n")
+repeatable_conversation = false
+can_inquiry = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -479,5 +480,5 @@ position = Vector2(-73, 21)
 [editable path="Transitions/4-3"]
 [editable path="Transitions/3-4"]
 [editable path="Transitions/3-2"]
-[editable path="Npc/Cat"]
+[editable path="Npc/Hotdog"]
 [editable path="NextPage"]

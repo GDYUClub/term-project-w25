@@ -1,9 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://bdm1d3ikdgwvw"]
+[gd_scene load_steps=35 format=3 uid="uid://bdm1d3ikdgwvw"]
 
 [ext_resource type="Script" path="res://src/levels/tutorial/tutorial_2.gd" id="1_4j7fv"]
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="2_hbpmp"]
 [ext_resource type="Texture2D" uid="uid://vo8v47rq0638" path="res://assets/sprites/pages/1-2/Ch1_Level2_Flattened_small.png" id="4_423xr"]
-[ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="5_0to4b"]
 [ext_resource type="Resource" uid="uid://dojkosxruk8xs" path="res://src/clues/clue-resources/tutorial/clue_cigs.tres" id="6_07ii5"]
 [ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/clue_lighter.tres" id="7_fm58w"]
 [ext_resource type="Resource" uid="uid://d3k8rcoc56don" path="res://src/clues/clue-resources/tutorial/clue_third.tres" id="8_dy8ie"]
@@ -17,9 +16,10 @@
 [ext_resource type="JSON" path="res://src/dialogue/_Dialogue1-1-2.json" id="15_f81lm"]
 [ext_resource type="Script" uid="uid://d313ibk1sryhe" path="res://src/dialogue/dialogue_manager.gd" id="15_wcv8r"]
 [ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="17_sr4r0"]
+[ext_resource type="Texture2D" uid="uid://dypirra10oiui" path="res://assets/sprites/talksprites/cop1.png" id="18_f81lm"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="18_kltel"]
 [ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="19_f08ng"]
-[ext_resource type="Texture2D" uid="uid://dggagprdo1tme" path="res://assets/sprites/talksprites/hotdog.png" id="19_f81lm"]
+[ext_resource type="Texture2D" uid="uid://ct0m3rvfkix4w" path="res://assets/sprites/talksprites/cop2.png" id="19_f81lm"]
 [ext_resource type="PackedScene" uid="uid://bvqwk1mxnpwr5" path="res://src/gameplay_ui/game_ui.tscn" id="20_hbpmp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fuvah"]
@@ -42,9 +42,6 @@ size = Vector2(356.337, 28.0002)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f2mbc"]
 size = Vector2(373.25, 42)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7oso"]
-size = Vector2(20, 71)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_18b77"]
 size = Vector2(34.2502, 283.502)
@@ -147,27 +144,6 @@ debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="Clues" type="Node" parent="."]
 
-[node name="Cigs" parent="Clues" instance=ExtResource("5_0to4b")]
-position = Vector2(378, 916)
-clue = ExtResource("6_07ii5")
-
-[node name="Cigs2" parent="Clues" instance=ExtResource("5_0to4b")]
-visible = false
-position = Vector2(821, 674)
-clue = ExtResource("6_07ii5")
-
-[node name="CollisionShape2D" parent="Clues/Cigs2" index="1"]
-position = Vector2(0, -25.5)
-shape = SubResource("RectangleShape2D_t7oso")
-
-[node name="ClueArea" parent="Clues" instance=ExtResource("5_0to4b")]
-position = Vector2(816, 769)
-clue = ExtResource("7_fm58w")
-
-[node name="ClueArea2" parent="Clues" instance=ExtResource("5_0to4b")]
-position = Vector2(580, 811)
-clue = ExtResource("8_dy8ie")
-
 [node name="Transitions" type="Node2D" parent="."]
 
 [node name="3-4" parent="Transitions" instance=ExtResource("9_1ijwe")]
@@ -220,7 +196,7 @@ position = Vector2(345, -166)
 [node name="5-6" parent="Transitions" instance=ExtResource("9_1ijwe")]
 position = Vector2(188, 893)
 move_type = 1
-jane_scale = 0.25
+jane_scale = 0.28
 arrow_dir = 2
 
 [node name="CollisionShape2D" parent="Transitions/5-6" index="0"]
@@ -229,7 +205,7 @@ rotation = -1.57079
 shape = SubResource("RectangleShape2D_wloa0")
 
 [node name="NewFrame" parent="Transitions/5-6" index="1"]
-position = Vector2(853, -12)
+position = Vector2(850, 8)
 
 [node name="6-5" parent="Transitions" instance=ExtResource("9_1ijwe")]
 position = Vector2(969, 911)
@@ -296,15 +272,28 @@ INQUIRY_DIALOGUE_JSON = ExtResource("17_sr4r0")
 [node name="Cop1" parent="Npc" instance=ExtResource("18_kltel")]
 position = Vector2(1516, 183)
 npc_name = "Sergeant Biggs"
-end_index = 9
+end_index = 14
+character1_sprite = ExtResource("19_f08ng")
+character2_sprite = ExtResource("18_f81lm")
+repeatable_conversation = false
+can_inquiry = false
+
+[node name="CollisionShape2D" parent="Npc/Cop1" index="0"]
+position = Vector2(-41.125, 0)
+
+[node name="Cop2" parent="Npc" instance=ExtResource("18_kltel")]
+position = Vector2(1161, 890)
+npc_name = "Sergeant Biggs"
+end_index = 11
 character1_sprite = ExtResource("19_f08ng")
 character2_sprite = ExtResource("19_f81lm")
+can_inquiry = false
 
 [node name="GlassShard" parent="Npc" instance=ExtResource("18_kltel")]
 position = Vector2(807, 549)
 npc_name = "..."
-start_index = 10
-end_index = 11
+start_index = 15
+end_index = 16
 character1_sprite = ExtResource("19_f08ng")
 character2_sprite = null
 repeatable_conversation = false
@@ -314,8 +303,8 @@ is_clue = true
 [node name="HeadTrauma" parent="Npc" instance=ExtResource("18_kltel")]
 position = Vector2(888, 549)
 npc_name = "..."
-start_index = 12
-end_index = 13
+start_index = 17
+end_index = 18
 character1_sprite = ExtResource("19_f08ng")
 character2_sprite = null
 repeatable_conversation = false
@@ -325,8 +314,8 @@ is_clue = true
 [node name="Holster" parent="Npc" instance=ExtResource("18_kltel")]
 position = Vector2(972, 549)
 npc_name = "Cat"
-start_index = 14
-end_index = 14
+start_index = 19
+end_index = 19
 character1_sprite = ExtResource("19_f08ng")
 character2_sprite = null
 repeatable_conversation = false
@@ -343,8 +332,10 @@ unique_name_in_owner = true
 visible = false
 size_flags_horizontal = 3
 size_flags_vertical = 3
+clue_count = 3
+s_start_id = 1000
+s_end_id = 1001
 
-[editable path="Clues/Cigs2"]
 [editable path="Transitions/3-4"]
 [editable path="Transitions/4-3"]
 [editable path="Transitions/4-5"]
@@ -352,3 +343,4 @@ size_flags_vertical = 3
 [editable path="Transitions/5-6"]
 [editable path="Transitions/6-5"]
 [editable path="Transitions/6-7"]
+[editable path="Npc/Cop1"]
