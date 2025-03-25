@@ -1,25 +1,35 @@
-[gd_scene load_steps=21 format=3 uid="uid://dumjy7u1e7e4t"]
+[gd_scene load_steps=31 format=3 uid="uid://dumjy7u1e7e4t"]
 
-[ext_resource type="Texture2D" uid="uid://cuqy3nskrjbvd" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P13.png" id="2_pjmik"]
-[ext_resource type="Texture2D" uid="uid://dknlfma71i5oc" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P1.png" id="2_rx3kh"]
-[ext_resource type="Texture2D" uid="uid://cfu3ati5l1gi5" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P7.png" id="2_ydheo"]
-[ext_resource type="Texture2D" uid="uid://l7smvotv0yka" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P2.png" id="3_f274c"]
+[ext_resource type="Script" uid="uid://dyyhukl3ge5i4" path="res://src/levels/opening-cutscene/cutscene.gd" id="1_uf7ra"]
+[ext_resource type="Texture2D" uid="uid://cuqy3nskrjbvd" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P13.png" id="2_pjmik"]
+[ext_resource type="Texture2D" uid="uid://dknlfma71i5oc" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P1.png" id="2_rx3kh"]
+[ext_resource type="Texture2D" uid="uid://cfu3ati5l1gi5" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P7.png" id="2_ydheo"]
+[ext_resource type="Texture2D" uid="uid://l7smvotv0yka" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P2.png" id="3_f274c"]
 [ext_resource type="Texture2D" uid="uid://dknbrx13p1qht" path="res://assets/cutscene/Flattened.png" id="3_rx3kh"]
-[ext_resource type="Texture2D" uid="uid://c3xk86118xuvw" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P3.png" id="4_omgaw"]
-[ext_resource type="Texture2D" uid="uid://bm3uta88eop0w" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P4.png" id="5_cimul"]
-[ext_resource type="Texture2D" uid="uid://mf4sik1opi48" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P5.png" id="6_wn7ae"]
-[ext_resource type="Texture2D" uid="uid://jagrncxkj0g4" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P6.png" id="7_eui8j"]
-[ext_resource type="Texture2D" uid="uid://c6aqtcpviswao" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P8.png" id="9_yf3rc"]
-[ext_resource type="Texture2D" uid="uid://dsfc4202exl8d" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P9.png" id="10_u4pdd"]
-[ext_resource type="Texture2D" uid="uid://b4uey77831dww" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P10.png" id="12_nndl3"]
-[ext_resource type="Texture2D" uid="uid://cyju2nkxe6yjf" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P11.png" id="13_17mch"]
-[ext_resource type="Texture2D" uid="uid://cr3kkmq106u7i" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P12.png" id="14_w18hh"]
+[ext_resource type="Texture2D" uid="uid://c3xk86118xuvw" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P3.png" id="4_omgaw"]
+[ext_resource type="Texture2D" uid="uid://bm3uta88eop0w" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P4.png" id="5_cimul"]
+[ext_resource type="Texture2D" uid="uid://mf4sik1opi48" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P5.png" id="6_wn7ae"]
+[ext_resource type="Texture2D" uid="uid://jagrncxkj0g4" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P6.png" id="7_eui8j"]
+[ext_resource type="Texture2D" uid="uid://c6aqtcpviswao" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P8.png" id="9_yf3rc"]
+[ext_resource type="Texture2D" uid="uid://dsfc4202exl8d" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P9.png" id="10_u4pdd"]
+[ext_resource type="Texture2D" uid="uid://b4uey77831dww" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P10.png" id="12_nndl3"]
+[ext_resource type="Texture2D" uid="uid://cyju2nkxe6yjf" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P11.png" id="13_17mch"]
+[ext_resource type="Texture2D" uid="uid://cr3kkmq106u7i" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P12.png" id="14_w18hh"]
 [ext_resource type="Texture2D" uid="uid://dsuqre42eeouw" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B1.png" id="15_nndl3"]
 [ext_resource type="Texture2D" uid="uid://dujr5jnw3f2kb" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B2.png" id="16_17mch"]
 [ext_resource type="Texture2D" uid="uid://c87g43pgc4vjn" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B3.png" id="17_w18hh"]
+[ext_resource type="Texture2D" uid="uid://b4oqj8r02yxev" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B4.png" id="18_lox7s"]
+[ext_resource type="Texture2D" uid="uid://cvh8y0p52qbw6" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B5.png" id="19_47vqr"]
+[ext_resource type="Texture2D" uid="uid://b25ed6g1beqx2" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B6B7.png" id="20_iabae"]
+[ext_resource type="Texture2D" uid="uid://bll5il3simeqs" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B8.png" id="21_if7uv"]
+[ext_resource type="Texture2D" uid="uid://c7yej3r5no1pb" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B9.png" id="22_ggaah"]
+[ext_resource type="Texture2D" uid="uid://dnfs1p1a32ubt" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B10.png" id="23_c7ode"]
+[ext_resource type="Texture2D" uid="uid://byrbj23mogwb6" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B11.png" id="24_4jnpe"]
+[ext_resource type="Texture2D" uid="uid://bfllou7lacx31" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B12.png" id="25_qaxw7"]
+[ext_resource type="Theme" uid="uid://yukgoy42hebt" path="res://src/cutscene_themetres.tres" id="26_qaxw7"]
 
 [sub_resource type="Animation" id="Animation_646xm"]
-length = 0.001
+length = 30.0
 
 [sub_resource type="Animation" id="Animation_4uek8"]
 resource_name = "cutscene"
@@ -33,110 +43,287 @@ _data = {
 }
 
 [node name="Cutscene1" type="Node2D"]
+script = ExtResource("1_uf7ra")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1946.0
 offset_bottom = 2909.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_646xm")
 }
+autoplay = "RESET"
 
 [node name="reference" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.52549)
 texture = ExtResource("3_rx3kh")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="page1" type="Node2D" parent="."]
-visible = false
+[node name="1" type="Node2D" parent="."]
 
-[node name="Panels" type="Node2D" parent="page1"]
-visible = false
+[node name="Panels" type="Node2D" parent="1"]
 
-[node name="P13" type="Sprite2D" parent="page1/Panels"]
+[node name="13" type="Sprite2D" parent="1/Panels"]
 position = Vector2(964, 2421)
 scale = Vector2(0.493976, 0.493976)
 texture = ExtResource("2_pjmik")
 
-[node name="P7" type="Sprite2D" parent="page1/Panels"]
+[node name="7" type="Sprite2D" parent="1/Panels"]
 position = Vector2(950, 1355)
 scale = Vector2(0.465079, 0.465079)
 texture = ExtResource("2_ydheo")
 
-[node name="P1" type="Sprite2D" parent="page1/Panels"]
+[node name="1" type="Sprite2D" parent="1/Panels"]
 position = Vector2(264.767, 315.347)
 scale = Vector2(0.46631, 0.46631)
 texture = ExtResource("2_rx3kh")
 
-[node name="P2" type="Sprite2D" parent="page1/Panels"]
+[node name="2" type="Sprite2D" parent="1/Panels"]
 position = Vector2(717.5, 346.317)
 scale = Vector2(0.460526, 0.460526)
 texture = ExtResource("3_f274c")
 
-[node name="P3" type="Sprite2D" parent="page1/Panels"]
+[node name="3" type="Sprite2D" parent="1/Panels"]
 position = Vector2(1200.27, 368.118)
 scale = Vector2(0.466541, 0.466541)
 texture = ExtResource("4_omgaw")
 
-[node name="P4" type="Sprite2D" parent="page1/Panels"]
+[node name="4" type="Sprite2D" parent="1/Panels"]
 position = Vector2(1665.5, 372.77)
 scale = Vector2(0.466009, 0.466009)
 texture = ExtResource("5_cimul")
 
-[node name="P5" type="Sprite2D" parent="page1/Panels"]
+[node name="5" type="Sprite2D" parent="1/Panels"]
 position = Vector2(178, 1119.06)
 scale = Vector2(0.481728, 0.481728)
 texture = ExtResource("6_wn7ae")
 
-[node name="P6" type="Sprite2D" parent="page1/Panels"]
+[node name="6" type="Sprite2D" parent="1/Panels"]
 position = Vector2(183, 1553.59)
 scale = Vector2(0.481848, 0.481848)
 texture = ExtResource("7_eui8j")
 
-[node name="P8" type="Sprite2D" parent="page1/Panels"]
+[node name="8" type="Sprite2D" parent="1/Panels"]
 position = Vector2(1108.28, 1173)
 scale = Vector2(0.477396, 0.477396)
 texture = ExtResource("9_yf3rc")
 
-[node name="P9" type="Sprite2D" parent="page1/Panels"]
+[node name="9" type="Sprite2D" parent="1/Panels"]
 position = Vector2(1695.57, 1311.89)
 scale = Vector2(0.477477, 0.477477)
 texture = ExtResource("10_u4pdd")
 
-[node name="P10" type="Sprite2D" parent="page1/Panels"]
+[node name="10" type="Sprite2D" parent="1/Panels"]
 position = Vector2(362.757, 2360.64)
 scale = Vector2(0.487008, 0.487008)
 texture = ExtResource("12_nndl3")
 
-[node name="P11" type="Sprite2D" parent="page1/Panels"]
+[node name="11" type="Sprite2D" parent="1/Panels"]
 position = Vector2(1007.42, 2089)
 scale = Vector2(0.48932, 0.48932)
 texture = ExtResource("13_17mch")
 
-[node name="P12" type="Sprite2D" parent="page1/Panels"]
+[node name="12" type="Sprite2D" parent="1/Panels"]
 position = Vector2(1004.32, 2619.26)
 scale = Vector2(0.488329, 0.488329)
 texture = ExtResource("14_w18hh")
 
-[node name="Bubbles" type="Node2D" parent="page1"]
+[node name="Bubbles" type="Node2D" parent="1"]
 
-[node name="B1" type="Sprite2D" parent="page1/Bubbles"]
+[node name="B2" type="Sprite2D" parent="1/Bubbles"]
 position = Vector2(298, 689)
 scale = Vector2(0.467192, 0.467192)
 texture = ExtResource("15_nndl3")
 
-[node name="B2" type="Sprite2D" parent="page1/Bubbles"]
+[node name="B3" type="Sprite2D" parent="1/Bubbles"]
 position = Vector2(910.383, 690.75)
 scale = Vector2(0.458333, 0.458333)
 texture = ExtResource("16_17mch")
 
-[node name="B3" type="Sprite2D" parent="page1/Bubbles"]
+[node name="B4" type="Sprite2D" parent="1/Bubbles"]
 position = Vector2(1546.21, 715.125)
 scale = Vector2(0.470908, 0.470908)
 texture = ExtResource("17_w18hh")
 
+[node name="B7" type="Sprite2D" parent="1/Bubbles"]
+position = Vector2(892, 1003)
+scale = Vector2(0.464849, 0.464849)
+texture = ExtResource("18_lox7s")
+
+[node name="B8" type="Sprite2D" parent="1/Bubbles"]
+position = Vector2(930, 1195)
+scale = Vector2(0.480237, 0.480237)
+texture = ExtResource("19_47vqr")
+
+[node name="B9" type="Sprite2D" parent="1/Bubbles"]
+position = Vector2(1352, 1623)
+scale = Vector2(0.469311, 0.469311)
+texture = ExtResource("20_iabae")
+
+[node name="B10" type="Sprite2D" parent="1/Bubbles"]
+position = Vector2(206, 2088)
+scale = Vector2(0.484419, 0.484419)
+texture = ExtResource("21_if7uv")
+
+[node name="B10" type="Sprite2D" parent="1/Bubbles/B10"]
+position = Vector2(511.953, 1030.1)
+scale = Vector2(0.965183, 0.965183)
+texture = ExtResource("22_ggaah")
+
+[node name="B11" type="Sprite2D" parent="1/Bubbles"]
+position = Vector2(1161, 2050)
+scale = Vector2(0.478652, 0.478652)
+texture = ExtResource("23_c7ode")
+
+[node name="B12" type="Sprite2D" parent="1/Bubbles"]
+position = Vector2(868, 2735)
+scale = Vector2(0.453123, 0.453123)
+texture = ExtResource("24_4jnpe")
+
+[node name="B13" type="Sprite2D" parent="1/Bubbles"]
+position = Vector2(1547, 1995)
+scale = Vector2(0.493612, 0.493612)
+texture = ExtResource("25_qaxw7")
+
+[node name="Text" type="Node2D" parent="1"]
+
+[node name="L2" type="Label" parent="1/Text"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 88.0
+offset_top = 600.0
+offset_right = 517.0
+offset_bottom = 854.0
+theme = ExtResource("26_qaxw7")
+text = "Once that last check comes in, we can fix that damn window"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="L3" type="Label" parent="1/Text"]
+offset_left = 650.0
+offset_top = 642.0
+offset_right = 1171.0
+offset_bottom = 896.0
+theme = ExtResource("26_qaxw7")
+text = "Once that last check comes in, we can fix that damn window"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="L4" type="Label" parent="1/Text"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 1374.0
+offset_top = 621.0
+offset_right = 1728.0
+offset_bottom = 875.0
+theme = ExtResource("26_qaxw7")
+text = "Once that last check comes in, we can fix that damn window"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="L7" type="Label" parent="1/Text"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 726.0
+offset_top = 952.0
+offset_right = 1080.0
+offset_bottom = 1071.0
+theme = ExtResource("26_qaxw7")
+theme_override_font_sizes/font_size = 35
+text = "Once that last check comes in?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="L8" type="Label" parent="1/Text"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 778.0
+offset_top = 1109.0
+offset_right = 1078.0
+offset_bottom = 1228.0
+theme = ExtResource("26_qaxw7")
+theme_override_font_sizes/font_size = 30
+text = "we can fix that damn window"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="L9" type="Label" parent="1/Text"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 965.0
+offset_top = 1528.0
+offset_right = 1441.0
+offset_bottom = 1703.0
+theme = ExtResource("26_qaxw7")
+text = "Once that last check comes in, we can fix that damn window"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="L9" type="Label" parent="1/Text/L9"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 555.0
+offset_top = 60.0
+offset_right = 912.0
+offset_bottom = 269.0
+theme = ExtResource("26_qaxw7")
+text = "Once that last check comes in, we can fix "
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="L10" type="Label" parent="1/Text"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 64.0
+offset_top = 1964.0
+offset_right = 343.0
+offset_bottom = 2173.0
+theme = ExtResource("26_qaxw7")
+text = "Once that last check comes in, we can fix "
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="L10" type="Label" parent="1/Text/L10"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 172.0
+offset_top = 551.0
+offset_right = 623.0
+offset_bottom = 760.0
+theme = ExtResource("26_qaxw7")
+text = "Once that last check comes in, we can fix "
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="L11" type="Label" parent="1/Text"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 1073.0
+offset_top = 1967.0
+offset_right = 1267.0
+offset_bottom = 2282.0
+theme = ExtResource("26_qaxw7")
+text = "Once that last check"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="L12" type="Label" parent="1/Text"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 744.0
+offset_top = 2656.0
+offset_right = 1009.0
+offset_bottom = 2832.0
+theme = ExtResource("26_qaxw7")
+text = "fix that damn window?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="L13" type="Label" parent="1/Text"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 1380.0
+offset_top = 1867.0
+offset_right = 1725.0
+offset_bottom = 2082.0
+theme = ExtResource("26_qaxw7")
+text = "fix that damn window?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(962, 538)
+position = Vector2(962, 541)
