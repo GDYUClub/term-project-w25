@@ -1,111 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://dumjy7u1e7e4t"]
+[gd_scene load_steps=21 format=3 uid="uid://dumjy7u1e7e4t"]
 
-[ext_resource type="Texture2D" uid="uid://he4s4k4svpvn" path="res://assets/sprites/pages/1-2/Panel1.png-1080x.png" id="1_4uek8"]
-[ext_resource type="Texture2D" uid="uid://vbfvmvm6kri7" path="res://assets/sprites/pages/1-2/Panel2.png-1080x.png" id="2_646xm"]
+[ext_resource type="Texture2D" uid="uid://cuqy3nskrjbvd" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P13.png" id="2_pjmik"]
+[ext_resource type="Texture2D" uid="uid://dknlfma71i5oc" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P1.png" id="2_rx3kh"]
+[ext_resource type="Texture2D" uid="uid://cfu3ati5l1gi5" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P7.png" id="2_ydheo"]
+[ext_resource type="Texture2D" uid="uid://l7smvotv0yka" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P2.png" id="3_f274c"]
+[ext_resource type="Texture2D" uid="uid://dknbrx13p1qht" path="res://assets/cutscene/Flattened.png" id="3_rx3kh"]
+[ext_resource type="Texture2D" uid="uid://c3xk86118xuvw" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P3.png" id="4_omgaw"]
+[ext_resource type="Texture2D" uid="uid://bm3uta88eop0w" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P4.png" id="5_cimul"]
+[ext_resource type="Texture2D" uid="uid://mf4sik1opi48" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P5.png" id="6_wn7ae"]
+[ext_resource type="Texture2D" uid="uid://jagrncxkj0g4" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P6.png" id="7_eui8j"]
+[ext_resource type="Texture2D" uid="uid://c6aqtcpviswao" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P8.png" id="9_yf3rc"]
+[ext_resource type="Texture2D" uid="uid://dsfc4202exl8d" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P9.png" id="10_u4pdd"]
+[ext_resource type="Texture2D" uid="uid://b4uey77831dww" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P10.png" id="12_nndl3"]
+[ext_resource type="Texture2D" uid="uid://cyju2nkxe6yjf" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P11.png" id="13_17mch"]
+[ext_resource type="Texture2D" uid="uid://cr3kkmq106u7i" path="res://uncompressed_assets/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P12.png" id="14_w18hh"]
+[ext_resource type="Texture2D" uid="uid://dsuqre42eeouw" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B1.png" id="15_nndl3"]
+[ext_resource type="Texture2D" uid="uid://dujr5jnw3f2kb" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B2.png" id="16_17mch"]
+[ext_resource type="Texture2D" uid="uid://c87g43pgc4vjn" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B3.png" id="17_w18hh"]
 
 [sub_resource type="Animation" id="Animation_646xm"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("page1/Panel1_png-1080x:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("page1/Panel2_png-1080x:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("page1/Panel2_png-1080x:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("page1/Panel1_png-1080x:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_4uek8"]
 resource_name = "cutscene"
 length = 15.0
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("page1/Panel1_png-1080x:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("page1/Panel2_png-1080x:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1.5, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("page1/Panel2_png-1080x:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("page1/Panel1_png-1080x:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_646xm"]
 _data = {
@@ -115,21 +34,109 @@ _data = {
 
 [node name="Cutscene1" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1946.0
+offset_bottom = 2909.0
+color = Color(0, 0, 0, 1)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_646xm")
 }
-autoplay = "cutscene"
+
+[node name="reference" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.52549)
+texture = ExtResource("3_rx3kh")
+centered = false
+metadata/_edit_lock_ = true
 
 [node name="page1" type="Node2D" parent="."]
-
-[node name="Panel1_png-1080x" type="Sprite2D" parent="page1"]
-position = Vector2(562, 521)
-texture = ExtResource("1_4uek8")
-
-[node name="Panel2_png-1080x" type="Sprite2D" parent="page1"]
 visible = false
-modulate = Color(1, 1, 1, 0.990417)
-position = Vector2(1216, 485.5)
-scale = Vector2(0.75679, 0.75679)
-texture = ExtResource("2_646xm")
+
+[node name="Panels" type="Node2D" parent="page1"]
+visible = false
+
+[node name="P13" type="Sprite2D" parent="page1/Panels"]
+position = Vector2(964, 2421)
+scale = Vector2(0.493976, 0.493976)
+texture = ExtResource("2_pjmik")
+
+[node name="P7" type="Sprite2D" parent="page1/Panels"]
+position = Vector2(950, 1355)
+scale = Vector2(0.465079, 0.465079)
+texture = ExtResource("2_ydheo")
+
+[node name="P1" type="Sprite2D" parent="page1/Panels"]
+position = Vector2(264.767, 315.347)
+scale = Vector2(0.46631, 0.46631)
+texture = ExtResource("2_rx3kh")
+
+[node name="P2" type="Sprite2D" parent="page1/Panels"]
+position = Vector2(717.5, 346.317)
+scale = Vector2(0.460526, 0.460526)
+texture = ExtResource("3_f274c")
+
+[node name="P3" type="Sprite2D" parent="page1/Panels"]
+position = Vector2(1200.27, 368.118)
+scale = Vector2(0.466541, 0.466541)
+texture = ExtResource("4_omgaw")
+
+[node name="P4" type="Sprite2D" parent="page1/Panels"]
+position = Vector2(1665.5, 372.77)
+scale = Vector2(0.466009, 0.466009)
+texture = ExtResource("5_cimul")
+
+[node name="P5" type="Sprite2D" parent="page1/Panels"]
+position = Vector2(178, 1119.06)
+scale = Vector2(0.481728, 0.481728)
+texture = ExtResource("6_wn7ae")
+
+[node name="P6" type="Sprite2D" parent="page1/Panels"]
+position = Vector2(183, 1553.59)
+scale = Vector2(0.481848, 0.481848)
+texture = ExtResource("7_eui8j")
+
+[node name="P8" type="Sprite2D" parent="page1/Panels"]
+position = Vector2(1108.28, 1173)
+scale = Vector2(0.477396, 0.477396)
+texture = ExtResource("9_yf3rc")
+
+[node name="P9" type="Sprite2D" parent="page1/Panels"]
+position = Vector2(1695.57, 1311.89)
+scale = Vector2(0.477477, 0.477477)
+texture = ExtResource("10_u4pdd")
+
+[node name="P10" type="Sprite2D" parent="page1/Panels"]
+position = Vector2(362.757, 2360.64)
+scale = Vector2(0.487008, 0.487008)
+texture = ExtResource("12_nndl3")
+
+[node name="P11" type="Sprite2D" parent="page1/Panels"]
+position = Vector2(1007.42, 2089)
+scale = Vector2(0.48932, 0.48932)
+texture = ExtResource("13_17mch")
+
+[node name="P12" type="Sprite2D" parent="page1/Panels"]
+position = Vector2(1004.32, 2619.26)
+scale = Vector2(0.488329, 0.488329)
+texture = ExtResource("14_w18hh")
+
+[node name="Bubbles" type="Node2D" parent="page1"]
+
+[node name="B1" type="Sprite2D" parent="page1/Bubbles"]
+position = Vector2(298, 689)
+scale = Vector2(0.467192, 0.467192)
+texture = ExtResource("15_nndl3")
+
+[node name="B2" type="Sprite2D" parent="page1/Bubbles"]
+position = Vector2(910.383, 690.75)
+scale = Vector2(0.458333, 0.458333)
+texture = ExtResource("16_17mch")
+
+[node name="B3" type="Sprite2D" parent="page1/Bubbles"]
+position = Vector2(1546.21, 715.125)
+scale = Vector2(0.470908, 0.470908)
+texture = ExtResource("17_w18hh")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(962, 538)
