@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://l7smvotv0yka" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P2.png" id="3_f274c"]
 [ext_resource type="Texture2D" uid="uid://c3xk86118xuvw" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P3.png" id="4_omgaw"]
 [ext_resource type="Texture2D" uid="uid://bm3uta88eop0w" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P4.png" id="5_cimul"]
-[ext_resource type="Texture2D" uid="uid://mf4sik1opi48" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P5.png" id="6_wn7ae"]
-[ext_resource type="Texture2D" uid="uid://jagrncxkj0g4" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P6.png" id="7_eui8j"]
+[ext_resource type="Texture2D" uid="uid://b6gnpdqf452xc" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P5.png" id="6_wn7ae"]
+[ext_resource type="Texture2D" uid="uid://dhsy702aik7f6" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P6.png" id="7_eui8j"]
 [ext_resource type="Texture2D" uid="uid://c6aqtcpviswao" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P8.png" id="9_yf3rc"]
 [ext_resource type="Texture2D" uid="uid://dsfc4202exl8d" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P9.png" id="10_u4pdd"]
 [ext_resource type="Texture2D" uid="uid://b4uey77831dww" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P10.png" id="12_nndl3"]
@@ -389,7 +389,7 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
-tracks/27/path = NodePath("0:visible")
+tracks/27/path = NodePath("1:visible")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
@@ -401,19 +401,19 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath("1:visible")
+tracks/28/path = NodePath("1/0/Text/L1:modulate")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
-tracks/29/path = NodePath("1/0/Text/L1:modulate")
+tracks/29/path = NodePath("1/0/Text/L2:modulate")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
@@ -425,7 +425,7 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("1/0/Text/L2:modulate")
+tracks/30/path = NodePath("1/0/Text/L3:modulate")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
@@ -437,7 +437,7 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("1/0/Text/L3:modulate")
+tracks/31/path = NodePath("1/1/Text/L4:modulate")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
@@ -449,43 +449,43 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("1/1/Text/L4:modulate")
+tracks/32/path = NodePath("1/1/Text/L5:modulate")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("1/1/Text/L5:modulate")
+tracks/33/path = NodePath("2/Background:visible")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"update": 1,
+"values": [true]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("2/Background:visible")
+tracks/34/path = NodePath("2/0/Panels:modulate")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("2/0/Panels:modulate")
+tracks/35/path = NodePath("2/0/Bubbles/B1:modulate")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
@@ -497,31 +497,31 @@ tracks/35/keys = {
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("2/0/Bubbles/B1:modulate")
+tracks/36/path = NodePath("2/0/Text/L1:modulate")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 1)]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("2/0/Text/L1:modulate")
+tracks/37/path = NodePath("2/0/Bubbles/B2:modulate")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/38/type = "value"
 tracks/38/imported = false
 tracks/38/enabled = true
-tracks/38/path = NodePath("2/0/Bubbles/B2:modulate")
+tracks/38/path = NodePath("2/0/Text/L2:modulate")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/keys = {
@@ -533,7 +533,7 @@ tracks/38/keys = {
 tracks/39/type = "value"
 tracks/39/imported = false
 tracks/39/enabled = true
-tracks/39/path = NodePath("2/0/Text/L2:modulate")
+tracks/39/path = NodePath("2/0/Bubbles/B3:modulate")
 tracks/39/interp = 1
 tracks/39/loop_wrap = true
 tracks/39/keys = {
@@ -545,31 +545,31 @@ tracks/39/keys = {
 tracks/40/type = "value"
 tracks/40/imported = false
 tracks/40/enabled = true
-tracks/40/path = NodePath("2/0/Bubbles/B3:modulate")
+tracks/40/path = NodePath("2/0/Text/L3:modulate")
 tracks/40/interp = 1
 tracks/40/loop_wrap = true
 tracks/40/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 1)]
 }
 tracks/41/type = "value"
 tracks/41/imported = false
 tracks/41/enabled = true
-tracks/41/path = NodePath("2/0/Text/L3:modulate")
+tracks/41/path = NodePath("2/1/Panels:modulate")
 tracks/41/interp = 1
 tracks/41/loop_wrap = true
 tracks/41/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/42/type = "value"
 tracks/42/imported = false
 tracks/42/enabled = true
-tracks/42/path = NodePath("2/1/Panels:modulate")
+tracks/42/path = NodePath("2/1/Bubbles/B4:modulate")
 tracks/42/interp = 1
 tracks/42/loop_wrap = true
 tracks/42/keys = {
@@ -581,7 +581,7 @@ tracks/42/keys = {
 tracks/43/type = "value"
 tracks/43/imported = false
 tracks/43/enabled = true
-tracks/43/path = NodePath("2/1/Bubbles/B4:modulate")
+tracks/43/path = NodePath("2/1/Text/L4:modulate")
 tracks/43/interp = 1
 tracks/43/loop_wrap = true
 tracks/43/keys = {
@@ -593,7 +593,7 @@ tracks/43/keys = {
 tracks/44/type = "value"
 tracks/44/imported = false
 tracks/44/enabled = true
-tracks/44/path = NodePath("2/1/Text/L4:modulate")
+tracks/44/path = NodePath("2/2:modulate")
 tracks/44/interp = 1
 tracks/44/loop_wrap = true
 tracks/44/keys = {
@@ -605,19 +605,19 @@ tracks/44/keys = {
 tracks/45/type = "value"
 tracks/45/imported = false
 tracks/45/enabled = true
-tracks/45/path = NodePath("2/2:modulate")
+tracks/45/path = NodePath("2/2:visible")
 tracks/45/interp = 1
 tracks/45/loop_wrap = true
 tracks/45/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"update": 1,
+"values": [true]
 }
 tracks/46/type = "value"
 tracks/46/imported = false
 tracks/46/enabled = true
-tracks/46/path = NodePath("2/2:visible")
+tracks/46/path = NodePath("3:visible")
 tracks/46/interp = 1
 tracks/46/loop_wrap = true
 tracks/46/keys = {
@@ -629,19 +629,19 @@ tracks/46/keys = {
 tracks/47/type = "value"
 tracks/47/imported = false
 tracks/47/enabled = true
-tracks/47/path = NodePath("3:visible")
+tracks/47/path = NodePath("3/0/Sprite2D:modulate")
 tracks/47/interp = 1
 tracks/47/loop_wrap = true
 tracks/47/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/48/type = "value"
 tracks/48/imported = false
 tracks/48/enabled = true
-tracks/48/path = NodePath("3/0/Sprite2D:modulate")
+tracks/48/path = NodePath("3/0/Bubbles/B1:modulate")
 tracks/48/interp = 1
 tracks/48/loop_wrap = true
 tracks/48/keys = {
@@ -653,31 +653,31 @@ tracks/48/keys = {
 tracks/49/type = "value"
 tracks/49/imported = false
 tracks/49/enabled = true
-tracks/49/path = NodePath("3/0/Bubbles/B1:modulate")
+tracks/49/path = NodePath("3/0/Text/L1:modulate")
 tracks/49/interp = 1
 tracks/49/loop_wrap = true
 tracks/49/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 1)]
 }
 tracks/50/type = "value"
 tracks/50/imported = false
 tracks/50/enabled = true
-tracks/50/path = NodePath("3/0/Text/L1:modulate")
+tracks/50/path = NodePath("3/0/Bubbles/B2:modulate")
 tracks/50/interp = 1
 tracks/50/loop_wrap = true
 tracks/50/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/51/type = "value"
 tracks/51/imported = false
 tracks/51/enabled = true
-tracks/51/path = NodePath("3/0/Bubbles/B2:modulate")
+tracks/51/path = NodePath("3/0/Text/L2:modulate")
 tracks/51/interp = 1
 tracks/51/loop_wrap = true
 tracks/51/keys = {
@@ -689,7 +689,7 @@ tracks/51/keys = {
 tracks/52/type = "value"
 tracks/52/imported = false
 tracks/52/enabled = true
-tracks/52/path = NodePath("3/0/Text/L2:modulate")
+tracks/52/path = NodePath("3/0/Bubbles/B3:modulate")
 tracks/52/interp = 1
 tracks/52/loop_wrap = true
 tracks/52/keys = {
@@ -701,31 +701,31 @@ tracks/52/keys = {
 tracks/53/type = "value"
 tracks/53/imported = false
 tracks/53/enabled = true
-tracks/53/path = NodePath("3/0/Bubbles/B3:modulate")
+tracks/53/path = NodePath("3/0/Text/L3:modulate")
 tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 1)]
 }
 tracks/54/type = "value"
 tracks/54/imported = false
 tracks/54/enabled = true
-tracks/54/path = NodePath("3/0/Text/L3:modulate")
+tracks/54/path = NodePath("3/1:modulate")
 tracks/54/interp = 1
 tracks/54/loop_wrap = true
 tracks/54/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/55/type = "value"
 tracks/55/imported = false
 tracks/55/enabled = true
-tracks/55/path = NodePath("3/1:modulate")
+tracks/55/path = NodePath("3/2:modulate")
 tracks/55/interp = 1
 tracks/55/loop_wrap = true
 tracks/55/keys = {
@@ -737,31 +737,31 @@ tracks/55/keys = {
 tracks/56/type = "value"
 tracks/56/imported = false
 tracks/56/enabled = true
-tracks/56/path = NodePath("3/2:modulate")
+tracks/56/path = NodePath("4:visible")
 tracks/56/interp = 1
 tracks/56/loop_wrap = true
 tracks/56/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"update": 1,
+"values": [true]
 }
 tracks/57/type = "value"
 tracks/57/imported = false
 tracks/57/enabled = true
-tracks/57/path = NodePath("4:visible")
+tracks/57/path = NodePath("4/0/P1:modulate")
 tracks/57/interp = 1
 tracks/57/loop_wrap = true
 tracks/57/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/58/type = "value"
 tracks/58/imported = false
 tracks/58/enabled = true
-tracks/58/path = NodePath("4/0/P1:modulate")
+tracks/58/path = NodePath("4/0/B1:modulate")
 tracks/58/interp = 1
 tracks/58/loop_wrap = true
 tracks/58/keys = {
@@ -773,31 +773,31 @@ tracks/58/keys = {
 tracks/59/type = "value"
 tracks/59/imported = false
 tracks/59/enabled = true
-tracks/59/path = NodePath("4/0/B1:modulate")
+tracks/59/path = NodePath("4/0/L4:modulate")
 tracks/59/interp = 1
 tracks/59/loop_wrap = true
 tracks/59/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 1)]
 }
 tracks/60/type = "value"
 tracks/60/imported = false
 tracks/60/enabled = true
-tracks/60/path = NodePath("4/0/L4:modulate")
+tracks/60/path = NodePath("4/0/B2:modulate")
 tracks/60/interp = 1
 tracks/60/loop_wrap = true
 tracks/60/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/61/type = "value"
 tracks/61/imported = false
 tracks/61/enabled = true
-tracks/61/path = NodePath("4/0/B2:modulate")
+tracks/61/path = NodePath("4/0/L5:modulate")
 tracks/61/interp = 1
 tracks/61/loop_wrap = true
 tracks/61/keys = {
@@ -809,7 +809,7 @@ tracks/61/keys = {
 tracks/62/type = "value"
 tracks/62/imported = false
 tracks/62/enabled = true
-tracks/62/path = NodePath("4/0/L5:modulate")
+tracks/62/path = NodePath("4/1/P2:modulate")
 tracks/62/interp = 1
 tracks/62/loop_wrap = true
 tracks/62/keys = {
@@ -821,31 +821,31 @@ tracks/62/keys = {
 tracks/63/type = "value"
 tracks/63/imported = false
 tracks/63/enabled = true
-tracks/63/path = NodePath("4/1/P2:modulate")
+tracks/63/path = NodePath("4/1/L5:modulate")
 tracks/63/interp = 1
 tracks/63/loop_wrap = true
 tracks/63/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 1)]
 }
 tracks/64/type = "value"
 tracks/64/imported = false
 tracks/64/enabled = true
-tracks/64/path = NodePath("4/1/L5:modulate")
+tracks/64/path = NodePath("4/1/B3:modulate")
 tracks/64/interp = 1
 tracks/64/loop_wrap = true
 tracks/64/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/65/type = "value"
 tracks/65/imported = false
 tracks/65/enabled = true
-tracks/65/path = NodePath("4/1/B3:modulate")
+tracks/65/path = NodePath("4/1/B4:modulate")
 tracks/65/interp = 1
 tracks/65/loop_wrap = true
 tracks/65/keys = {
@@ -857,7 +857,7 @@ tracks/65/keys = {
 tracks/66/type = "value"
 tracks/66/imported = false
 tracks/66/enabled = true
-tracks/66/path = NodePath("4/1/B4:modulate")
+tracks/66/path = NodePath("4/1/L6:modulate")
 tracks/66/interp = 1
 tracks/66/loop_wrap = true
 tracks/66/keys = {
@@ -869,7 +869,7 @@ tracks/66/keys = {
 tracks/67/type = "value"
 tracks/67/imported = false
 tracks/67/enabled = true
-tracks/67/path = NodePath("4/1/L6:modulate")
+tracks/67/path = NodePath("4/2/P3:modulate")
 tracks/67/interp = 1
 tracks/67/loop_wrap = true
 tracks/67/keys = {
@@ -881,7 +881,7 @@ tracks/67/keys = {
 tracks/68/type = "value"
 tracks/68/imported = false
 tracks/68/enabled = true
-tracks/68/path = NodePath("4/2/P3:modulate")
+tracks/68/path = NodePath("4/2/B5:modulate")
 tracks/68/interp = 1
 tracks/68/loop_wrap = true
 tracks/68/keys = {
@@ -893,46 +893,34 @@ tracks/68/keys = {
 tracks/69/type = "value"
 tracks/69/imported = false
 tracks/69/enabled = true
-tracks/69/path = NodePath("4/2/B5:modulate")
+tracks/69/path = NodePath("4/2/L4:modulate")
 tracks/69/interp = 1
 tracks/69/loop_wrap = true
 tracks/69/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 1)]
 }
 tracks/70/type = "value"
 tracks/70/imported = false
 tracks/70/enabled = true
-tracks/70/path = NodePath("4/2/L4:modulate")
+tracks/70/path = NodePath("4/2/B6:modulate")
 tracks/70/interp = 1
 tracks/70/loop_wrap = true
 tracks/70/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/71/type = "value"
 tracks/71/imported = false
 tracks/71/enabled = true
-tracks/71/path = NodePath("4/2/B6:modulate")
+tracks/71/path = NodePath("4/2/L5:modulate")
 tracks/71/interp = 1
 tracks/71/loop_wrap = true
 tracks/71/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/72/type = "value"
-tracks/72/imported = false
-tracks/72/enabled = true
-tracks/72/path = NodePath("4/2/L5:modulate")
-tracks/72/interp = 1
-tracks/72/loop_wrap = true
-tracks/72/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -1093,7 +1081,7 @@ tracks/12/path = NodePath("0/8/Panel:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(10, 10.5),
+"times": PackedFloat32Array(8.86667, 9.46667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1194,22 +1182,10 @@ tracks/20/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("0:visible")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
-"times": PackedFloat32Array(0, 20.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
 
 [sub_resource type="Animation" id="Animation_543u6"]
 resource_name = "page2"
-length = 10.0
+length = 12.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1241,7 +1217,7 @@ tracks/2/path = NodePath("1/1/Panel:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(4, 5),
+"times": PackedFloat32Array(4.56667, 5.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1253,7 +1229,7 @@ tracks/3/path = NodePath("1/1/Bubbles/B4:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(4, 5),
+"times": PackedFloat32Array(4.53333, 5.86667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1277,7 +1253,7 @@ tracks/5/path = NodePath("1/2/Panel:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(7.5, 8),
+"times": PackedFloat32Array(7.5, 8.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1289,7 +1265,7 @@ tracks/6/path = NodePath("Camera2D:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 2.86667, 3.86667, 6.63333, 7.46667),
+"times": PackedFloat32Array(0, 5.06667, 5.73333, 7.8, 8.93333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(962, 541), Vector2(962, 541), Vector2(962, 1600), Vector2(962, 1600), Vector2(962, 2350)]
@@ -1301,10 +1277,10 @@ tracks/7/path = NodePath("1:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 9.66667),
+"times": PackedFloat32Array(0, 11.5333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, false]
+"values": [false, false]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -1313,7 +1289,7 @@ tracks/8/path = NodePath("1/0/Text/L1:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.966667),
+"times": PackedFloat32Array(0, 1.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -1325,7 +1301,7 @@ tracks/9/path = NodePath("1/0/Text/L2:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0.966667, 1.83333),
+"times": PackedFloat32Array(1.73333, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -1337,7 +1313,7 @@ tracks/10/path = NodePath("1/0/Text/L3:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(2, 2.7),
+"times": PackedFloat32Array(2.93333, 4.13333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -1534,7 +1510,7 @@ tracks/13/path = NodePath("Camera2D:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 5.5, 6),
+"times": PackedFloat32Array(0, 6, 7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(962.5, 673.75), Vector2(962.5, 673.75), Vector2(962.5, 2073.75)]
@@ -1980,7 +1956,8 @@ offset_top = 642.0
 offset_right = 1171.0
 offset_bottom = 896.0
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = "Count your blessings, Jane; plus, light looks awful pretty through broken glass.
+"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -2002,12 +1979,12 @@ texture = ExtResource("17_w18hh")
 
 [node name="L3" type="Label" parent="0/3/Text"]
 modulate = Color(0, 0, 0, 1)
-offset_left = 1374.0
-offset_top = 621.0
-offset_right = 1728.0
-offset_bottom = 875.0
+offset_left = 1378.75
+offset_top = 640.0
+offset_right = 1732.75
+offset_bottom = 894.0
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = " Or the tint of a barrel-aged bourbon."
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -2045,13 +2022,14 @@ texture = ExtResource("18_lox7s")
 
 [node name="L6" type="Label" parent="0/6/Text"]
 modulate = Color(0, 0, 0, 1)
-offset_left = 726.0
-offset_top = 952.0
-offset_right = 1080.0
-offset_bottom = 1071.0
+offset_left = 716.25
+offset_top = 971.25
+offset_right = 1070.25
+offset_bottom = 1090.25
 theme = ExtResource("26_qaxw7")
 theme_override_font_sizes/font_size = 35
-text = "Once that last check comes in?"
+text = "Ms. Reilly?
+"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -2073,14 +2051,16 @@ texture = ExtResource("19_47vqr")
 
 [node name="L7" type="Label" parent="0/7/Text"]
 modulate = Color(0, 0, 0, 1)
-offset_left = 778.0
-offset_top = 1109.0
-offset_right = 1078.0
-offset_bottom = 1228.0
+offset_left = 783.75
+offset_top = 1098.75
+offset_right = 1083.75
+offset_bottom = 1217.75
 theme = ExtResource("26_qaxw7")
 theme_override_font_sizes/font_size = 30
-text = "we can fix that damn window"
+text = "In the flesh.
+"
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="8" type="Node2D" parent="0"]
@@ -2105,12 +2085,13 @@ scale = Vector2(0.469311, 0.469311)
 
 [node name="L8" type="Label" parent="0/8/Text"]
 modulate = Color(0, 0, 0, 0)
-offset_left = 965.0
-offset_top = 1528.0
-offset_right = 1441.0
-offset_bottom = 1703.0
+offset_left = 975.0
+offset_top = 1496.25
+offset_right = 1451.0
+offset_bottom = 1758.25
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = "My name is Peter Bennett and I am here on behalf of the family of Damien Crawford.
+"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -2121,7 +2102,8 @@ offset_top = 1588.0
 offset_right = 1877.0
 offset_bottom = 1797.0
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix "
+text = "I take it you’ve heard of my client. 
+"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -2153,18 +2135,21 @@ offset_top = 1964.0
 offset_right = 343.0
 offset_bottom = 2173.0
 theme = ExtResource("26_qaxw7")
-text = "that damn window once that last check"
+text = "He's the Arch News guy, right?
+"
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="L9-2" type="Label" parent="0/9/Text"]
 modulate = Color(0, 0, 0, 1)
-offset_left = 236.0
-offset_top = 2515.0
-offset_right = 687.0
-offset_bottom = 2724.0
+offset_left = 232.5
+offset_top = 2535.0
+offset_right = 683.5
+offset_bottom = 2850.0
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix "
+theme_override_font_sizes/font_size = 35
+text = "He owns Arch Media and its subsidiaries, yes. Rather, he did; about 4 hours ago he was murdered.
+"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -2186,13 +2171,15 @@ texture = ExtResource("23_c7ode")
 
 [node name="L10" type="Label" parent="0/10/Text"]
 modulate = Color(0, 0, 0, 1)
-offset_left = 1073.0
-offset_top = 1967.0
-offset_right = 1267.0
-offset_bottom = 2282.0
+offset_left = 1077.5
+offset_top = 1915.0
+offset_right = 1271.5
+offset_bottom = 2230.0
 theme = ExtResource("26_qaxw7")
-text = "Once that last check"
+text = "Yeah?
+"
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="11" type="Node2D" parent="0"]
@@ -2213,12 +2200,14 @@ texture = ExtResource("24_4jnpe")
 
 [node name="L12" type="Label" parent="0/11/Text"]
 modulate = Color(0, 0, 0, 1)
-offset_left = 744.0
-offset_top = 2656.0
-offset_right = 1009.0
-offset_bottom = 2832.0
+offset_left = 690.0
+offset_top = 2653.75
+offset_right = 1047.0
+offset_bottom = 3074.75
 theme = ExtResource("26_qaxw7")
-text = "fix that damn window?"
+theme_override_font_sizes/font_size = 32
+text = "I have been authorised to offer you a considerable fee to investigate.
+"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -2241,12 +2230,14 @@ texture = ExtResource("25_qaxw7")
 
 [node name="L12" type="Label" parent="0/12/Text"]
 modulate = Color(0, 0, 0, 1)
-offset_left = 1380.0
-offset_top = 1867.0
-offset_right = 1725.0
-offset_bottom = 2082.0
+offset_left = 1338.75
+offset_top = 1877.5
+offset_right = 1757.75
+offset_bottom = 2192.5
 theme = ExtResource("26_qaxw7")
-text = "fix that damn window?"
+theme_override_font_sizes/font_size = 35
+text = "Well, I’d love to take your money bud, but if it’s a murder then the police are likely already on it.
+"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -2275,29 +2266,30 @@ offset_top = 333.75
 offset_right = 550.25
 offset_bottom = 587.75
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = " We would rather the investigation be conducted a bit more… privately, as it were."
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="L2" type="Label" parent="1/0/Text"]
 modulate = Color(0, 0, 0, 1)
-offset_left = 1383.75
-offset_top = 108.75
-offset_right = 1812.75
-offset_bottom = 362.75
+offset_left = 1360.0
+offset_top = 77.5
+offset_right = 1789.0
+offset_bottom = 331.5
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = "he police have a habit of sensationalizing certain things."
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="L3" type="Label" parent="1/0/Text"]
 modulate = Color(0, 0, 0, 1)
-offset_left = 356.25
-offset_top = 736.25
-offset_right = 785.25
-offset_bottom = 990.25
+offset_left = 311.25
+offset_top = 718.75
+offset_right = 863.25
+offset_bottom = 1033.75
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = "My colleague has already spoken with the chief of police. We are offering 90,000 dollars with a 10,000 dollar advance.
+"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -2329,7 +2321,8 @@ offset_top = 1078.75
 offset_right = 1141.5
 offset_bottom = 1332.75
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = "*whistles* Well it seems you got it all set. You got a deal.
+"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -2392,35 +2385,36 @@ texture = ExtResource("38_o3n1a")
 [node name="L1" type="Label" parent="2/0/Text"]
 modulate = Color(0, 0, 0, 1)
 z_index = 2
-offset_left = 403.75
-offset_top = 168.75
-offset_right = 832.75
-offset_bottom = 422.75
+offset_left = 413.75
+offset_top = 201.25
+offset_right = 772.75
+offset_bottom = 455.25
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = "I’ll get moving right away!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="L2" type="Label" parent="2/0/Text"]
 z_index = 2
-offset_left = 401.25
-offset_top = 752.5
-offset_right = 830.25
-offset_bottom = 1006.5
+offset_left = 286.25
+offset_top = 750.0
+offset_right = 973.25
+offset_bottom = 1065.0
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = "Pleased to hear it. I must stress though that we require your discretion. Anything you find, you bring to us. The contract says as much.
+"
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="L3" type="Label" parent="2/0/Text"]
 modulate = Color(0, 0, 0, 1)
 z_index = 2
-offset_left = 206.25
-offset_top = 1076.25
-offset_right = 635.25
-offset_bottom = 1330.25
+offset_left = 203.75
+offset_top = 1117.5
+offset_right = 632.75
+offset_bottom = 1371.5
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = " Of course."
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -2447,7 +2441,8 @@ offset_top = 947.5
 offset_right = 1594.0
 offset_bottom = 1201.5
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = "Great. I wish you the best of luck.
+"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -2470,12 +2465,13 @@ texture = ExtResource("42_ky288")
 [node name="L5" type="Label" parent="2/2/Text"]
 modulate = Color(0, 0, 0, 1)
 z_index = 2
-offset_left = 1276.25
-offset_top = 1458.75
-offset_right = 1705.25
-offset_bottom = 1712.75
+offset_left = 1278.75
+offset_top = 1493.75
+offset_right = 1707.75
+offset_bottom = 1747.75
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+theme_override_font_sizes/font_size = 50
+text = "Well, I’m off."
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -2489,7 +2485,6 @@ scale = Vector2(0.461374, 0.461374)
 texture = ExtResource("43_4dffn")
 
 [node name="Bubbles" type="Node2D" parent="3/0"]
-scale = Vector2(1, 1)
 
 [node name="B1" type="Sprite2D" parent="3/0/Bubbles"]
 position = Vector2(873.028, 302.749)
@@ -2512,34 +2507,35 @@ texture = ExtResource("46_jttp3")
 modulate = Color(0, 0, 0, 1)
 z_index = 2
 offset_left = 658.75
-offset_top = 186.25
+offset_top = 210.0
 offset_right = 1087.75
-offset_bottom = 440.25
+offset_bottom = 464.0
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = "Uh, are you sure about this?
+"
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="L2" type="Label" parent="3/0/Text"]
 z_index = 2
-offset_left = 807.5
-offset_top = 375.0
-offset_right = 1236.5
-offset_bottom = 629.0
+offset_left = 810.0
+offset_top = 432.5
+offset_right = 1239.0
+offset_bottom = 610.5
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = "About what?"
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="L3" type="Label" parent="3/0/Text"]
 modulate = Color(0, 0, 0, 1)
 z_index = 2
-offset_left = 1128.75
-offset_top = 873.75
-offset_right = 1557.75
-offset_bottom = 1127.75
+offset_left = 1000.0
+offset_top = 823.75
+offset_right = 1666.0
+offset_bottom = 1138.75
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = "Damien Crawford is the billionaire owner of the biggest right-wing media empire in the world. He’s into some shady shit. Doesn’t this contract seem sketchy to you?"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -2551,7 +2547,6 @@ scale = Vector2(0.471461, 0.471461)
 texture = ExtResource("46_76pdr")
 
 [node name="Bubbles" type="Node2D" parent="3/1"]
-scale = Vector2(1, 1)
 
 [node name="B4" type="Sprite2D" parent="3/1/Bubbles"]
 position = Vector2(1197.13, 1477.31)
@@ -2567,7 +2562,7 @@ offset_top = 1387.5
 offset_right = 1425.25
 offset_bottom = 1641.5
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = "Oh please. These types are always like this."
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -2575,11 +2570,9 @@ autowrap_mode = 2
 
 [node name="P3" type="Sprite2D" parent="3/2"]
 position = Vector2(953.75, 1911.25)
-scale = Vector2(1, 1)
 texture = ExtResource("49_3vvn8")
 
 [node name="Bubbles" type="Node2D" parent="3/2"]
-scale = Vector2(1, 1)
 
 [node name="B5" type="Sprite2D" parent="3/2/Bubbles"]
 position = Vector2(555.342, 2339.88)
@@ -2596,7 +2589,7 @@ offset_top = 2253.75
 offset_right = 784.0
 offset_bottom = 2507.75
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = "Like what? What do you think they’re hiding?"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -2622,24 +2615,28 @@ texture = ExtResource("53_5wsx7")
 [node name="L4" type="Label" parent="4/0"]
 modulate = Color(0, 0, 0, 1)
 z_index = 2
-offset_left = 1132.5
-offset_top = 168.75
-offset_right = 1561.5
-offset_bottom = 422.75
+offset_left = 1017.5
+offset_top = 138.75
+offset_right = 1636.5
+offset_bottom = 612.75
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = "What does it matter? Sure they’ve got secrets but I’ll just do my job and if I don’t like what I see I’ll take the advance and bow out.
+"
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="L5" type="Label" parent="4/0"]
 z_index = 2
 offset_left = 1173.75
-offset_top = 531.25
+offset_top = 543.75
 offset_right = 1602.75
-offset_bottom = 785.25
+offset_bottom = 805.75
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = "Well at least let me back you up on this one, we can-
+
+"
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="1" type="Node2D" parent="4"]
@@ -2662,23 +2659,26 @@ texture = ExtResource("56_a8whc")
 [node name="L5" type="Label" parent="4/1"]
 modulate = Color(0, 0, 0, 1)
 z_index = 2
-offset_left = 1016.25
+offset_left = 893.75
 offset_top = 846.25
-offset_right = 1445.25
-offset_bottom = 1100.25
+offset_right = 1546.75
+offset_bottom = 1214.25
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = "Oh no, not this time. They want discretion so they get me and me only.
+
+"
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="L6" type="Label" parent="4/1"]
 z_index = 2
-offset_left = 1403.75
-offset_top = 1088.75
-offset_right = 1832.75
-offset_bottom = 1342.75
+offset_left = 1390.0
+offset_top = 1110.0
+offset_right = 1819.0
+offset_bottom = 1364.0
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = "I don’t think that’s a good idea.
+"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -2702,24 +2702,25 @@ texture = ExtResource("58_e6t67")
 [node name="L4" type="Label" parent="4/2"]
 modulate = Color(0, 0, 0, 1)
 z_index = 2
-offset_left = 348.75
-offset_top = 2256.25
-offset_right = 777.75
-offset_bottom = 2510.25
+offset_left = 212.5
+offset_top = 2293.75
+offset_right = 898.5
+offset_bottom = 2714.75
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = "What do you always say? “All hat, no cattle.” That’s you right now. This is the biggest paycheck I’ve ever seen and you suddenly lost your nerve? "
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="L5" type="Label" parent="4/2"]
 modulate = Color(0, 0, 0, 1)
 z_index = 2
-offset_left = 1427.5
-offset_top = 2047.5
-offset_right = 1856.5
-offset_bottom = 2301.5
+offset_left = 1425.0
+offset_top = 2106.25
+offset_right = 1854.0
+offset_bottom = 2360.25
 theme = ExtResource("26_qaxw7")
-text = "Once that last check comes in, we can fix that damn window"
+text = "I’ll see you later.
+"
 horizontal_alignment = 1
 autowrap_mode = 2
 
