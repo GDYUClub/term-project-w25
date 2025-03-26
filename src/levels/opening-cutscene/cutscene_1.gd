@@ -13,8 +13,8 @@ func _ready() -> void:
 		animPlayer.play(ANIMATIONS[i])
 		await animPlayer.animation_finished
 		panel.visible = false
+	get_tree().change_scene_to_file("res://src/levels/tutorial/tutorial-1.tscn")
 
-	pass
 
 func hide_everything():
 	ref.visible = false
