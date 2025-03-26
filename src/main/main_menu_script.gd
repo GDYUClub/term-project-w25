@@ -10,7 +10,7 @@ extends Control
 @onready var quit_button = $MainMenu/ButtonBox/VerticalButtonBox/QuitButton as Button
 
 	#levels and menus
-@onready var start_level = preload("res://src/levels/tutorial/tutorial-1.tscn") # preload the main scene and stor in memory
+@onready var start_level = preload("res://src/levels/opening-cutscene/cutscene.tscn") # preload the main scene and stor in memory
 @onready var main_menu_margin_container = $MainMenu as MarginContainer
 
 	#credits menu
