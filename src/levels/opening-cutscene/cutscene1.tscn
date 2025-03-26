@@ -1277,10 +1277,10 @@ tracks/7/path = NodePath("1:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 11.5333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 1,
-"values": [false, false]
+"values": []
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -1895,6 +1895,7 @@ texture = ExtResource("2_4alja")
 centered = false
 
 [node name="0" type="Node2D" parent="."]
+visible = false
 
 [node name="0" type="Node2D" parent="0"]
 
