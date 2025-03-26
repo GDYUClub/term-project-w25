@@ -1,64 +1,64 @@
 [gd_scene load_steps=67 format=3 uid="uid://dumjy7u1e7e4t"]
 
-[ext_resource type="Script" uid="uid://dj6w3v3a648n3" path="res://src/levels/opening-cutscene/cutscene_1.gd" id="1_uf7ra"]
-[ext_resource type="Texture2D" uid="uid://gb5lwtfixfyv" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Flattened.png" id="2_4alja"]
-[ext_resource type="Texture2D" uid="uid://cuqy3nskrjbvd" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P13.png" id="2_pjmik"]
-[ext_resource type="Texture2D" uid="uid://dknlfma71i5oc" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P1.png" id="2_rx3kh"]
-[ext_resource type="Texture2D" uid="uid://cfu3ati5l1gi5" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P7.png" id="2_ydheo"]
-[ext_resource type="Texture2D" uid="uid://l7smvotv0yka" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P2.png" id="3_f274c"]
-[ext_resource type="Texture2D" uid="uid://c3xk86118xuvw" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P3.png" id="4_omgaw"]
-[ext_resource type="Texture2D" uid="uid://bm3uta88eop0w" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P4.png" id="5_cimul"]
-[ext_resource type="Texture2D" uid="uid://b6gnpdqf452xc" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P5.png" id="6_wn7ae"]
-[ext_resource type="Texture2D" uid="uid://dhsy702aik7f6" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P6.png" id="7_eui8j"]
-[ext_resource type="Texture2D" uid="uid://c6aqtcpviswao" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P8.png" id="9_yf3rc"]
-[ext_resource type="Texture2D" uid="uid://dsfc4202exl8d" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P9.png" id="10_u4pdd"]
-[ext_resource type="Texture2D" uid="uid://b4uey77831dww" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P10.png" id="12_nndl3"]
-[ext_resource type="Texture2D" uid="uid://cyju2nkxe6yjf" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P11.png" id="13_17mch"]
-[ext_resource type="Texture2D" uid="uid://cr3kkmq106u7i" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P12.png" id="14_w18hh"]
-[ext_resource type="Texture2D" uid="uid://dsuqre42eeouw" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B1.png" id="15_nndl3"]
-[ext_resource type="Texture2D" uid="uid://dujr5jnw3f2kb" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B2.png" id="16_17mch"]
-[ext_resource type="Texture2D" uid="uid://c87g43pgc4vjn" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B3.png" id="17_w18hh"]
-[ext_resource type="Texture2D" uid="uid://b4oqj8r02yxev" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B4.png" id="18_lox7s"]
-[ext_resource type="Texture2D" uid="uid://cvh8y0p52qbw6" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B5.png" id="19_47vqr"]
-[ext_resource type="Texture2D" uid="uid://b25ed6g1beqx2" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B6B7.png" id="20_iabae"]
-[ext_resource type="Texture2D" uid="uid://bll5il3simeqs" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B8.png" id="21_if7uv"]
-[ext_resource type="Texture2D" uid="uid://c7yej3r5no1pb" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B9.png" id="22_ggaah"]
-[ext_resource type="Texture2D" uid="uid://dnfs1p1a32ubt" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B10.png" id="23_c7ode"]
-[ext_resource type="Texture2D" uid="uid://byrbj23mogwb6" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B11.png" id="24_4jnpe"]
-[ext_resource type="Texture2D" uid="uid://bfllou7lacx31" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B12.png" id="25_qaxw7"]
-[ext_resource type="Theme" uid="uid://yukgoy42hebt" path="res://src/cutscene_themetres.tres" id="26_qaxw7"]
-[ext_resource type="Texture2D" uid="uid://uuvp0lmjmsra" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 2/Panels/P1.png" id="28_efrbi"]
-[ext_resource type="Texture2D" uid="uid://dqs3v22wf2iqx" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 2/Text Bubbles/B1B2B3.png" id="29_ee4bw"]
-[ext_resource type="Texture2D" uid="uid://bxp4byb3b7ri0" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 2/Panels/P2.png" id="30_ee4bw"]
-[ext_resource type="Texture2D" uid="uid://bxjyp0mr7u3tb" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 2/Panels/P3.png" id="31_f2d3q"]
-[ext_resource type="Texture2D" uid="uid://pq3imafhl0pe" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 2/Text Bubbles/B4.png" id="32_vepnp"]
-[ext_resource type="Texture2D" uid="uid://bpi67tteaykkr" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 2/Text Bubbles/B5.png" id="33_y6n2g"]
-[ext_resource type="Texture2D" uid="uid://b3286raxenhqm" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 3/Background.png" id="34_tmqkl"]
-[ext_resource type="Texture2D" uid="uid://vqaksyph6gtv" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 3/Text Bubbles/B1.png" id="35_5wq0w"]
-[ext_resource type="Texture2D" uid="uid://rlcfckp75apv" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 3/Panels/P1.png" id="35_mt122"]
-[ext_resource type="Texture2D" uid="uid://mt03mx80776w" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 3/Text Bubbles/B2.png" id="37_u037m"]
-[ext_resource type="Texture2D" uid="uid://b0axm516ukdom" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 3/Text Bubbles/B3.png" id="38_o3n1a"]
-[ext_resource type="Texture2D" uid="uid://6rqirubqsgsf" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 3/Panels/P2.png" id="39_83a4p"]
-[ext_resource type="Texture2D" uid="uid://cqr1dxv50acsx" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 3/Text Bubbles/B4.png" id="40_dw2ja"]
-[ext_resource type="Texture2D" uid="uid://v76qkx51pkpk" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 3/Panels/P3.png" id="41_owrfu"]
-[ext_resource type="Texture2D" uid="uid://be67xr2wgt3u6" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 3/Text Bubbles/B5.png" id="42_ky288"]
-[ext_resource type="Texture2D" uid="uid://b5fptqkb3avwd" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 4/Panel/P1.png" id="43_4dffn"]
-[ext_resource type="Texture2D" uid="uid://bcwta5qkv8g3f" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 4/Text Bubbles/B1.png" id="44_oixpw"]
-[ext_resource type="Texture2D" uid="uid://cchdxqw4b0rbp" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 4/Text Bubbles/B2.png" id="45_la7mg"]
-[ext_resource type="Texture2D" uid="uid://bh5r40tjy1ep3" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 4/Panel/P2.png" id="46_76pdr"]
-[ext_resource type="Texture2D" uid="uid://utbevb32it1s" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 4/Text Bubbles/B3.png" id="46_jttp3"]
-[ext_resource type="Texture2D" uid="uid://cs8mc4mi55pyq" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 4/Text Bubbles/B4.png" id="48_apjie"]
-[ext_resource type="Texture2D" uid="uid://ctxut7xlymkai" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 4/Panel/P3.png" id="49_3vvn8"]
-[ext_resource type="Texture2D" uid="uid://dubrlwmmustd4" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 4/Text Bubbles/B5.png" id="50_4alja"]
-[ext_resource type="Texture2D" uid="uid://bfwinu08d2dxb" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Panels/P1.png" id="51_5cp6h"]
-[ext_resource type="Texture2D" uid="uid://boqjbalqcdnn7" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Text Bubbles/B1.png" id="52_5cp6h"]
-[ext_resource type="Texture2D" uid="uid://dm0cb08sweohp" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Text Bubbles/B2.png" id="53_5wsx7"]
-[ext_resource type="Texture2D" uid="uid://butxdqxnpu0ew" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Panels/P2.png" id="54_aju5p"]
-[ext_resource type="Texture2D" uid="uid://bycdxsn8nxh4o" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Text Bubbles/B3.png" id="55_ip52y"]
-[ext_resource type="Texture2D" uid="uid://doh303faa8kh0" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Text Bubbles/B4.png" id="56_a8whc"]
-[ext_resource type="Texture2D" uid="uid://duqpq03h6kgw8" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Text Bubbles/B5.png" id="57_04tpo"]
-[ext_resource type="Texture2D" uid="uid://lt1muajqklyo" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Text Bubbles/B6.png" id="58_e6t67"]
-[ext_resource type="Texture2D" uid="uid://btldkeeo0f5qo" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Panels/P3.png" id="59_4qlyo"]
+[ext_resource type="Script" uid="uid://dj6w3v3a648n3" path="res://src/levels/opening-cutscene/cutscene.gd" id="1_3ak0v"]
+[ext_resource type="Texture2D" uid="uid://gb5lwtfixfyv" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Flattened.png" id="2_41kvu"]
+[ext_resource type="Texture2D" uid="uid://dknlfma71i5oc" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P1.png" id="3_7j7px"]
+[ext_resource type="Texture2D" uid="uid://l7smvotv0yka" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P2.png" id="4_upr66"]
+[ext_resource type="Texture2D" uid="uid://dsuqre42eeouw" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B1.png" id="5_8wqpo"]
+[ext_resource type="Theme" uid="uid://yukgoy42hebt" path="res://src/cutscene_themetres.tres" id="6_jo5fd"]
+[ext_resource type="Texture2D" uid="uid://c3xk86118xuvw" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P3.png" id="7_xfbvh"]
+[ext_resource type="Texture2D" uid="uid://dujr5jnw3f2kb" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B2.png" id="8_eo5w7"]
+[ext_resource type="Texture2D" uid="uid://bm3uta88eop0w" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P4.png" id="9_6xi5a"]
+[ext_resource type="Texture2D" uid="uid://c87g43pgc4vjn" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B3.png" id="10_tdrof"]
+[ext_resource type="Texture2D" uid="uid://b6gnpdqf452xc" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P5.png" id="11_gok45"]
+[ext_resource type="Texture2D" uid="uid://dhsy702aik7f6" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P6.png" id="12_7d65e"]
+[ext_resource type="Texture2D" uid="uid://cfu3ati5l1gi5" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P7.png" id="13_eo4dh"]
+[ext_resource type="Texture2D" uid="uid://b4oqj8r02yxev" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B4.png" id="14_0q2pq"]
+[ext_resource type="Texture2D" uid="uid://c6aqtcpviswao" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P8.png" id="15_36fgo"]
+[ext_resource type="Texture2D" uid="uid://cvh8y0p52qbw6" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B5.png" id="16_y4ing"]
+[ext_resource type="Texture2D" uid="uid://dsfc4202exl8d" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P9.png" id="17_8o57a"]
+[ext_resource type="Texture2D" uid="uid://b25ed6g1beqx2" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B6B7.png" id="18_1dj3l"]
+[ext_resource type="Texture2D" uid="uid://b4uey77831dww" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P10.png" id="19_geqtu"]
+[ext_resource type="Texture2D" uid="uid://bll5il3simeqs" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B8.png" id="20_5r734"]
+[ext_resource type="Texture2D" uid="uid://c7yej3r5no1pb" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B9.png" id="21_n2ad2"]
+[ext_resource type="Texture2D" uid="uid://cyju2nkxe6yjf" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P11.png" id="22_but57"]
+[ext_resource type="Texture2D" uid="uid://dnfs1p1a32ubt" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B10.png" id="23_bmoav"]
+[ext_resource type="Texture2D" uid="uid://cr3kkmq106u7i" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P12.png" id="24_bc5o0"]
+[ext_resource type="Texture2D" uid="uid://byrbj23mogwb6" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B11.png" id="25_mdwle"]
+[ext_resource type="Texture2D" uid="uid://cuqy3nskrjbvd" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Panels/P13.png" id="26_puyy5"]
+[ext_resource type="Texture2D" uid="uid://bfllou7lacx31" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 1/Text Bubbles/B12.png" id="27_62b3k"]
+[ext_resource type="Texture2D" uid="uid://uuvp0lmjmsra" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 2/Panels/P1.png" id="28_k7bha"]
+[ext_resource type="Texture2D" uid="uid://dqs3v22wf2iqx" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 2/Text Bubbles/B1B2B3.png" id="29_8g6vp"]
+[ext_resource type="Texture2D" uid="uid://bxp4byb3b7ri0" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 2/Panels/P2.png" id="30_frs7r"]
+[ext_resource type="Texture2D" uid="uid://pq3imafhl0pe" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 2/Text Bubbles/B4.png" id="31_2vldw"]
+[ext_resource type="Texture2D" uid="uid://bpi67tteaykkr" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 2/Text Bubbles/B5.png" id="32_0tq4v"]
+[ext_resource type="Texture2D" uid="uid://bxjyp0mr7u3tb" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 2/Panels/P3.png" id="33_q74rg"]
+[ext_resource type="Texture2D" uid="uid://b3286raxenhqm" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 3/Background.png" id="34_0n31i"]
+[ext_resource type="Texture2D" uid="uid://rlcfckp75apv" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 3/Panels/P1.png" id="35_f30v4"]
+[ext_resource type="Texture2D" uid="uid://vqaksyph6gtv" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 3/Text Bubbles/B1.png" id="36_lrcd1"]
+[ext_resource type="Texture2D" uid="uid://mt03mx80776w" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 3/Text Bubbles/B2.png" id="37_opnwv"]
+[ext_resource type="Texture2D" uid="uid://b0axm516ukdom" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 3/Text Bubbles/B3.png" id="38_c0v6t"]
+[ext_resource type="Texture2D" uid="uid://6rqirubqsgsf" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 3/Panels/P2.png" id="39_1oo5n"]
+[ext_resource type="Texture2D" uid="uid://cqr1dxv50acsx" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 3/Text Bubbles/B4.png" id="40_ytpj8"]
+[ext_resource type="Texture2D" uid="uid://v76qkx51pkpk" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 3/Panels/P3.png" id="41_0rtwl"]
+[ext_resource type="Texture2D" uid="uid://be67xr2wgt3u6" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 3/Text Bubbles/B5.png" id="42_qcuqr"]
+[ext_resource type="Texture2D" uid="uid://b5fptqkb3avwd" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 4/Panel/P1.png" id="43_cdb03"]
+[ext_resource type="Texture2D" uid="uid://bcwta5qkv8g3f" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 4/Text Bubbles/B1.png" id="44_muad8"]
+[ext_resource type="Texture2D" uid="uid://cchdxqw4b0rbp" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 4/Text Bubbles/B2.png" id="45_fph6v"]
+[ext_resource type="Texture2D" uid="uid://utbevb32it1s" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 4/Text Bubbles/B3.png" id="46_p6b3c"]
+[ext_resource type="Texture2D" uid="uid://bh5r40tjy1ep3" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 4/Panel/P2.png" id="47_cguah"]
+[ext_resource type="Texture2D" uid="uid://cs8mc4mi55pyq" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 4/Text Bubbles/B4.png" id="48_dq7st"]
+[ext_resource type="Texture2D" uid="uid://ctxut7xlymkai" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 4/Panel/P3.png" id="49_flq3w"]
+[ext_resource type="Texture2D" uid="uid://dubrlwmmustd4" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 4/Text Bubbles/B5.png" id="50_n8kbr"]
+[ext_resource type="Texture2D" uid="uid://bfwinu08d2dxb" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Panels/P1.png" id="51_jq7e8"]
+[ext_resource type="Texture2D" uid="uid://boqjbalqcdnn7" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Text Bubbles/B1.png" id="52_7vlfb"]
+[ext_resource type="Texture2D" uid="uid://dm0cb08sweohp" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Text Bubbles/B2.png" id="53_vvymj"]
+[ext_resource type="Texture2D" uid="uid://butxdqxnpu0ew" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Panels/P2.png" id="54_4xjls"]
+[ext_resource type="Texture2D" uid="uid://bycdxsn8nxh4o" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Text Bubbles/B3.png" id="55_trbj0"]
+[ext_resource type="Texture2D" uid="uid://doh303faa8kh0" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Text Bubbles/B4.png" id="56_hjc3b"]
+[ext_resource type="Texture2D" uid="uid://btldkeeo0f5qo" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Panels/P3.png" id="57_vwjas"]
+[ext_resource type="Texture2D" uid="uid://duqpq03h6kgw8" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Text Bubbles/B5.png" id="58_r1s1a"]
+[ext_resource type="Texture2D" uid="uid://lt1muajqklyo" path="res://assets/cutscene/Intro Cutscene-20250324T195203Z-001/Intro Cutscene/Page 5/Text Bubbles/B6.png" id="59_22svi"]
 
 [sub_resource type="Animation" id="Animation_qaxw7"]
 length = 0.001
@@ -1875,7 +1875,7 @@ _data = {
 [node name="Cutscene1" type="Node2D"]
 position = Vector2(213, 0)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("1_uf7ra")
+script = ExtResource("1_3ak0v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -1891,7 +1891,7 @@ metadata/_edit_lock_ = true
 [node name="reference" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0.52549)
-texture = ExtResource("2_4alja")
+texture = ExtResource("2_41kvu")
 centered = false
 
 [node name="0" type="Node2D" parent="."]
@@ -1902,7 +1902,7 @@ visible = false
 [node name="Panel" type="Sprite2D" parent="0/0"]
 position = Vector2(264.767, 315.347)
 scale = Vector2(0.46631, 0.46631)
-texture = ExtResource("2_rx3kh")
+texture = ExtResource("3_7j7px")
 
 [node name="Bubbles" type="Node2D" parent="0/0"]
 
@@ -1913,14 +1913,14 @@ texture = ExtResource("2_rx3kh")
 [node name="Panel" type="Sprite2D" parent="0/1"]
 position = Vector2(717.5, 346.317)
 scale = Vector2(0.460526, 0.460526)
-texture = ExtResource("3_f274c")
+texture = ExtResource("4_upr66")
 
 [node name="Bubbles" type="Node2D" parent="0/1"]
 
 [node name="B1" type="Sprite2D" parent="0/1/Bubbles"]
 position = Vector2(298, 689)
 scale = Vector2(0.467192, 0.467192)
-texture = ExtResource("15_nndl3")
+texture = ExtResource("5_8wqpo")
 
 [node name="Text" type="Node2D" parent="0/1"]
 
@@ -1930,7 +1930,7 @@ offset_left = 88.0
 offset_top = 600.0
 offset_right = 517.0
 offset_bottom = 854.0
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "Once that last check comes in, we can fix that damn window."
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -1940,14 +1940,14 @@ autowrap_mode = 2
 [node name="Panel" type="Sprite2D" parent="0/2"]
 position = Vector2(1200.27, 368.118)
 scale = Vector2(0.466541, 0.466541)
-texture = ExtResource("4_omgaw")
+texture = ExtResource("7_xfbvh")
 
 [node name="Bubbles" type="Node2D" parent="0/2"]
 
 [node name="B2" type="Sprite2D" parent="0/2/Bubbles"]
 position = Vector2(910.383, 690.75)
 scale = Vector2(0.458333, 0.458333)
-texture = ExtResource("16_17mch")
+texture = ExtResource("8_eo5w7")
 
 [node name="Text" type="Node2D" parent="0/2"]
 
@@ -1956,7 +1956,7 @@ offset_left = 650.0
 offset_top = 642.0
 offset_right = 1171.0
 offset_bottom = 896.0
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "Count your blessings, Jane; plus, light looks awful pretty through broken glass.
 "
 horizontal_alignment = 1
@@ -1967,14 +1967,14 @@ autowrap_mode = 2
 [node name="Panel" type="Sprite2D" parent="0/3"]
 position = Vector2(1665.5, 372.77)
 scale = Vector2(0.466009, 0.466009)
-texture = ExtResource("5_cimul")
+texture = ExtResource("9_6xi5a")
 
 [node name="Bubbles" type="Node2D" parent="0/3"]
 
 [node name="B3" type="Sprite2D" parent="0/3/Bubbles"]
 position = Vector2(1546.21, 715.125)
 scale = Vector2(0.470908, 0.470908)
-texture = ExtResource("17_w18hh")
+texture = ExtResource("10_tdrof")
 
 [node name="Text" type="Node2D" parent="0/3"]
 
@@ -1984,7 +1984,7 @@ offset_left = 1378.75
 offset_top = 640.0
 offset_right = 1732.75
 offset_bottom = 894.0
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = " Or the tint of a barrel-aged bourbon."
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -1994,14 +1994,14 @@ autowrap_mode = 2
 [node name="Panel" type="Sprite2D" parent="0/4"]
 position = Vector2(178, 1119.06)
 scale = Vector2(0.481728, 0.481728)
-texture = ExtResource("6_wn7ae")
+texture = ExtResource("11_gok45")
 
 [node name="5" type="Node2D" parent="0"]
 
 [node name="Panel" type="Sprite2D" parent="0/5"]
 position = Vector2(183, 1553.59)
 scale = Vector2(0.481848, 0.481848)
-texture = ExtResource("7_eui8j")
+texture = ExtResource("12_7d65e")
 
 [node name="6" type="Node2D" parent="0"]
 modulate = Color(1, 1, 1, 0)
@@ -2010,14 +2010,14 @@ modulate = Color(1, 1, 1, 0)
 z_index = -1
 position = Vector2(950, 1355)
 scale = Vector2(0.465079, 0.465079)
-texture = ExtResource("2_ydheo")
+texture = ExtResource("13_eo4dh")
 
 [node name="Bubbles" type="Node2D" parent="0/6"]
 
 [node name="B6" type="Sprite2D" parent="0/6/Bubbles"]
 position = Vector2(892, 1003)
 scale = Vector2(0.464849, 0.464849)
-texture = ExtResource("18_lox7s")
+texture = ExtResource("14_0q2pq")
 
 [node name="Text" type="Node2D" parent="0/6"]
 
@@ -2027,7 +2027,7 @@ offset_left = 716.25
 offset_top = 971.25
 offset_right = 1070.25
 offset_bottom = 1090.25
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 theme_override_font_sizes/font_size = 35
 text = "Ms. Reilly?
 "
@@ -2039,14 +2039,14 @@ autowrap_mode = 2
 [node name="Panel" type="Sprite2D" parent="0/7"]
 position = Vector2(1108.28, 1173)
 scale = Vector2(0.477396, 0.477396)
-texture = ExtResource("9_yf3rc")
+texture = ExtResource("15_36fgo")
 
 [node name="Bubbles" type="Node2D" parent="0/7"]
 
 [node name="B7" type="Sprite2D" parent="0/7/Bubbles"]
 position = Vector2(930, 1195)
 scale = Vector2(0.480237, 0.480237)
-texture = ExtResource("19_47vqr")
+texture = ExtResource("16_y4ing")
 
 [node name="Text" type="Node2D" parent="0/7"]
 
@@ -2056,7 +2056,7 @@ offset_left = 783.75
 offset_top = 1098.75
 offset_right = 1083.75
 offset_bottom = 1217.75
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 theme_override_font_sizes/font_size = 30
 text = "In the flesh.
 "
@@ -2069,14 +2069,14 @@ autowrap_mode = 2
 [node name="Panel" type="Sprite2D" parent="0/8"]
 position = Vector2(1695.57, 1311.89)
 scale = Vector2(0.477477, 0.477477)
-texture = ExtResource("10_u4pdd")
+texture = ExtResource("17_8o57a")
 
 [node name="Bubbles" type="Node2D" parent="0/8"]
 
 [node name="B8" type="Sprite2D" parent="0/8/Bubbles"]
 position = Vector2(1352, 1623)
 scale = Vector2(0.469311, 0.469311)
-texture = ExtResource("20_iabae")
+texture = ExtResource("18_1dj3l")
 
 [node name="B8-2" type="Sprite2D" parent="0/8/Bubbles"]
 position = Vector2(1352, 1623)
@@ -2090,7 +2090,7 @@ offset_left = 975.0
 offset_top = 1496.25
 offset_right = 1451.0
 offset_bottom = 1758.25
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "My name is Peter Bennett and I am here on behalf of the family of Damien Crawford.
 "
 horizontal_alignment = 1
@@ -2102,7 +2102,7 @@ offset_left = 1520.0
 offset_top = 1588.0
 offset_right = 1877.0
 offset_bottom = 1797.0
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "I take it you’ve heard of my client. 
 "
 horizontal_alignment = 1
@@ -2113,19 +2113,19 @@ autowrap_mode = 2
 [node name="Panel" type="Sprite2D" parent="0/9"]
 position = Vector2(362.757, 2360.64)
 scale = Vector2(0.487008, 0.487008)
-texture = ExtResource("12_nndl3")
+texture = ExtResource("19_geqtu")
 
 [node name="Bubbles" type="Node2D" parent="0/9"]
 
 [node name="B9" type="Sprite2D" parent="0/9/Bubbles"]
 position = Vector2(206, 2088)
 scale = Vector2(0.484419, 0.484419)
-texture = ExtResource("21_if7uv")
+texture = ExtResource("20_5r734")
 
 [node name="B9-2" type="Sprite2D" parent="0/9/Bubbles"]
 position = Vector2(454, 2587)
 scale = Vector2(0.467553, 0.467553)
-texture = ExtResource("22_ggaah")
+texture = ExtResource("21_n2ad2")
 
 [node name="Text" type="Node2D" parent="0/9"]
 
@@ -2135,7 +2135,7 @@ offset_left = 64.0
 offset_top = 1964.0
 offset_right = 343.0
 offset_bottom = 2173.0
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "He's the Arch News guy, right?
 "
 horizontal_alignment = 1
@@ -2147,7 +2147,7 @@ offset_left = 232.5
 offset_top = 2535.0
 offset_right = 683.5
 offset_bottom = 2850.0
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 theme_override_font_sizes/font_size = 35
 text = "He owns Arch Media and its subsidiaries, yes. Rather, he did; about 4 hours ago he was murdered.
 "
@@ -2159,14 +2159,14 @@ autowrap_mode = 2
 [node name="Panel" type="Sprite2D" parent="0/10"]
 position = Vector2(1007.42, 2089)
 scale = Vector2(0.48932, 0.48932)
-texture = ExtResource("13_17mch")
+texture = ExtResource("22_but57")
 
 [node name="Bubbles" type="Node2D" parent="0/10"]
 
 [node name="B10" type="Sprite2D" parent="0/10/Bubbles"]
 position = Vector2(1161, 2050)
 scale = Vector2(0.478652, 0.478652)
-texture = ExtResource("23_c7ode")
+texture = ExtResource("23_bmoav")
 
 [node name="Text" type="Node2D" parent="0/10"]
 
@@ -2176,7 +2176,7 @@ offset_left = 1077.5
 offset_top = 1915.0
 offset_right = 1271.5
 offset_bottom = 2230.0
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "Yeah?
 "
 horizontal_alignment = 1
@@ -2188,14 +2188,14 @@ autowrap_mode = 2
 [node name="Panel" type="Sprite2D" parent="0/11"]
 position = Vector2(1004.32, 2619.26)
 scale = Vector2(0.488329, 0.488329)
-texture = ExtResource("14_w18hh")
+texture = ExtResource("24_bc5o0")
 
 [node name="Bubbles" type="Node2D" parent="0/11"]
 
 [node name="B12" type="Sprite2D" parent="0/11/Bubbles"]
 position = Vector2(868, 2735)
 scale = Vector2(0.453123, 0.453123)
-texture = ExtResource("24_4jnpe")
+texture = ExtResource("25_mdwle")
 
 [node name="Text" type="Node2D" parent="0/11"]
 
@@ -2205,7 +2205,7 @@ offset_left = 690.0
 offset_top = 2653.75
 offset_right = 1047.0
 offset_bottom = 3074.75
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 theme_override_font_sizes/font_size = 32
 text = "I have been authorised to offer you a considerable fee to investigate.
 "
@@ -2218,14 +2218,14 @@ autowrap_mode = 2
 z_index = -1
 position = Vector2(964, 2421)
 scale = Vector2(0.493976, 0.493976)
-texture = ExtResource("2_pjmik")
+texture = ExtResource("26_puyy5")
 
 [node name="Bubbles" type="Node2D" parent="0/12"]
 
 [node name="B12" type="Sprite2D" parent="0/12/Bubbles"]
 position = Vector2(1547, 1995)
 scale = Vector2(0.493612, 0.493612)
-texture = ExtResource("25_qaxw7")
+texture = ExtResource("27_62b3k")
 
 [node name="Text" type="Node2D" parent="0/12"]
 
@@ -2235,7 +2235,7 @@ offset_left = 1338.75
 offset_top = 1877.5
 offset_right = 1757.75
 offset_bottom = 2192.5
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 theme_override_font_sizes/font_size = 35
 text = "Well, I’d love to take your money bud, but if it’s a murder then the police are likely already on it.
 "
@@ -2249,14 +2249,14 @@ autowrap_mode = 2
 [node name="Panel" type="Sprite2D" parent="1/0"]
 position = Vector2(1027, 598)
 scale = Vector2(0.46631, 0.46631)
-texture = ExtResource("28_efrbi")
+texture = ExtResource("28_k7bha")
 
 [node name="Bubbles" type="Node2D" parent="1/0"]
 
 [node name="B1b2b3" type="Sprite2D" parent="1/0/Bubbles"]
 position = Vector2(961, 534)
 scale = Vector2(0.46003, 0.454649)
-texture = ExtResource("29_ee4bw")
+texture = ExtResource("29_8g6vp")
 
 [node name="Text" type="Node2D" parent="1/0"]
 
@@ -2266,7 +2266,7 @@ offset_left = 121.25
 offset_top = 333.75
 offset_right = 550.25
 offset_bottom = 587.75
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = " We would rather the investigation be conducted a bit more… privately, as it were."
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -2277,7 +2277,7 @@ offset_left = 1360.0
 offset_top = 77.5
 offset_right = 1789.0
 offset_bottom = 331.5
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "he police have a habit of sensationalizing certain things."
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -2288,7 +2288,7 @@ offset_left = 311.25
 offset_top = 718.75
 offset_right = 863.25
 offset_bottom = 1033.75
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "My colleague has already spoken with the chief of police. We are offering 90,000 dollars with a 10,000 dollar advance.
 "
 horizontal_alignment = 1
@@ -2299,19 +2299,19 @@ autowrap_mode = 2
 [node name="Panel" type="Sprite2D" parent="1/1"]
 position = Vector2(972, 1955)
 scale = Vector2(0.46631, 0.46631)
-texture = ExtResource("30_ee4bw")
+texture = ExtResource("30_frs7r")
 
 [node name="Bubbles" type="Node2D" parent="1/1"]
 
 [node name="B4" type="Sprite2D" parent="1/1/Bubbles"]
 position = Vector2(941, 1183)
 scale = Vector2(0.464051, 0.464051)
-texture = ExtResource("32_vepnp")
+texture = ExtResource("31_2vldw")
 
 [node name="B5" type="Sprite2D" parent="1/1/Bubbles"]
 position = Vector2(877, 1379)
 scale = Vector2(0.468469, 0.468469)
-texture = ExtResource("33_y6n2g")
+texture = ExtResource("32_0tq4v")
 
 [node name="Text" type="Node2D" parent="1/1"]
 
@@ -2321,7 +2321,7 @@ offset_left = 712.5
 offset_top = 1078.75
 offset_right = 1141.5
 offset_bottom = 1332.75
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "*whistles* Well it seems you got it all set. You got a deal.
 "
 horizontal_alignment = 1
@@ -2332,7 +2332,7 @@ offset_left = 773.75
 offset_top = 1328.75
 offset_right = 984.75
 offset_bottom = 1431.75
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "Uh, Jane--
 "
 
@@ -2341,7 +2341,7 @@ text = "Uh, Jane--
 [node name="Panel" type="Sprite2D" parent="1/2"]
 position = Vector2(986, 2509)
 scale = Vector2(0.46631, 0.46631)
-texture = ExtResource("31_f2d3q")
+texture = ExtResource("33_q74rg")
 
 [node name="Bubbles" type="Node2D" parent="1/2"]
 
@@ -2355,31 +2355,31 @@ visible = false
 [node name="Background" type="Sprite2D" parent="2"]
 z_index = -1
 position = Vector2(946.25, 1455)
-texture = ExtResource("34_tmqkl")
+texture = ExtResource("34_0n31i")
 
 [node name="0" type="Node2D" parent="2"]
 
 [node name="Panels" type="Sprite2D" parent="2/0"]
 position = Vector2(673.75, 416.25)
 scale = Vector2(0.461639, 0.461639)
-texture = ExtResource("35_mt122")
+texture = ExtResource("35_f30v4")
 
 [node name="Bubbles" type="Node2D" parent="2/0"]
 
 [node name="B1" type="Sprite2D" parent="2/0/Bubbles"]
 position = Vector2(593.598, 250.25)
 scale = Vector2(0.466895, 0.466895)
-texture = ExtResource("35_5wq0w")
+texture = ExtResource("36_lrcd1")
 
 [node name="B2" type="Sprite2D" parent="2/0/Bubbles"]
 position = Vector2(628.75, 842.5)
 scale = Vector2(0.474497, 0.474497)
-texture = ExtResource("37_u037m")
+texture = ExtResource("37_opnwv")
 
 [node name="B3" type="Sprite2D" parent="2/0/Bubbles"]
 position = Vector2(415.543, 1141.69)
 scale = Vector2(0.46269, 0.46269)
-texture = ExtResource("38_o3n1a")
+texture = ExtResource("38_c0v6t")
 
 [node name="Text" type="Node2D" parent="2/0"]
 
@@ -2390,7 +2390,7 @@ offset_left = 413.75
 offset_top = 201.25
 offset_right = 772.75
 offset_bottom = 455.25
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "I’ll get moving right away!"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -2401,7 +2401,7 @@ offset_left = 286.25
 offset_top = 750.0
 offset_right = 973.25
 offset_bottom = 1065.0
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "Pleased to hear it. I must stress though that we require your discretion. Anything you find, you bring to us. The contract says as much.
 "
 horizontal_alignment = 1
@@ -2414,7 +2414,7 @@ offset_left = 203.75
 offset_top = 1117.5
 offset_right = 632.75
 offset_bottom = 1371.5
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = " Of course."
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -2424,14 +2424,14 @@ autowrap_mode = 2
 [node name="Panels" type="Sprite2D" parent="2/1"]
 position = Vector2(1537.94, 629.579)
 scale = Vector2(0.462424, 0.462424)
-texture = ExtResource("39_83a4p")
+texture = ExtResource("39_1oo5n")
 
 [node name="Bubbles" type="Node2D" parent="2/1"]
 
 [node name="B4" type="Sprite2D" parent="2/1/Bubbles"]
 position = Vector2(1386.25, 1001.25)
 scale = Vector2(0.461202, 0.461202)
-texture = ExtResource("40_dw2ja")
+texture = ExtResource("40_ytpj8")
 
 [node name="Text" type="Node2D" parent="2/1"]
 
@@ -2441,7 +2441,7 @@ offset_left = 1165.0
 offset_top = 947.5
 offset_right = 1594.0
 offset_bottom = 1201.5
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "Great. I wish you the best of luck.
 "
 horizontal_alignment = 1
@@ -2452,14 +2452,14 @@ autowrap_mode = 2
 [node name="Panels" type="Sprite2D" parent="2/2"]
 position = Vector2(957.5, 2111.25)
 scale = Vector2(0.462424, 0.462424)
-texture = ExtResource("41_owrfu")
+texture = ExtResource("41_0rtwl")
 
 [node name="Bubbles" type="Node2D" parent="2/2"]
 
 [node name="B4" type="Sprite2D" parent="2/2/Bubbles"]
 position = Vector2(1494.63, 1553.37)
 scale = Vector2(0.475502, 0.464976)
-texture = ExtResource("42_ky288")
+texture = ExtResource("42_qcuqr")
 
 [node name="Text" type="Node2D" parent="2/2"]
 
@@ -2470,7 +2470,7 @@ offset_left = 1278.75
 offset_top = 1493.75
 offset_right = 1707.75
 offset_bottom = 1747.75
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 theme_override_font_sizes/font_size = 50
 text = "Well, I’m off."
 horizontal_alignment = 1
@@ -2483,24 +2483,24 @@ autowrap_mode = 2
 [node name="Sprite2D" type="Sprite2D" parent="3/0"]
 position = Vector2(915.899, 385.375)
 scale = Vector2(0.461374, 0.461374)
-texture = ExtResource("43_4dffn")
+texture = ExtResource("43_cdb03")
 
 [node name="Bubbles" type="Node2D" parent="3/0"]
 
 [node name="B1" type="Sprite2D" parent="3/0/Bubbles"]
 position = Vector2(873.028, 302.749)
 scale = Vector2(0.475647, 0.475647)
-texture = ExtResource("44_oixpw")
+texture = ExtResource("44_muad8")
 
 [node name="B2" type="Sprite2D" parent="3/0/Bubbles"]
 position = Vector2(1022.5, 476.25)
 scale = Vector2(0.511954, 0.511954)
-texture = ExtResource("45_la7mg")
+texture = ExtResource("45_fph6v")
 
 [node name="B3" type="Sprite2D" parent="3/0/Bubbles"]
 position = Vector2(1336.25, 973.75)
 scale = Vector2(0.471494, 0.453514)
-texture = ExtResource("46_jttp3")
+texture = ExtResource("46_p6b3c")
 
 [node name="Text" type="Node2D" parent="3/0"]
 
@@ -2511,7 +2511,7 @@ offset_left = 658.75
 offset_top = 210.0
 offset_right = 1087.75
 offset_bottom = 464.0
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "Uh, are you sure about this?
 "
 horizontal_alignment = 1
@@ -2523,7 +2523,7 @@ offset_left = 810.0
 offset_top = 432.5
 offset_right = 1239.0
 offset_bottom = 610.5
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "About what?"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -2535,7 +2535,7 @@ offset_left = 1000.0
 offset_top = 823.75
 offset_right = 1666.0
 offset_bottom = 1138.75
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "Damien Crawford is the billionaire owner of the biggest right-wing media empire in the world. He’s into some shady shit. Doesn’t this contract seem sketchy to you?"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -2545,14 +2545,14 @@ autowrap_mode = 2
 [node name="P2" type="Sprite2D" parent="3/1"]
 position = Vector2(515.25, 1436.18)
 scale = Vector2(0.471461, 0.471461)
-texture = ExtResource("46_76pdr")
+texture = ExtResource("47_cguah")
 
 [node name="Bubbles" type="Node2D" parent="3/1"]
 
 [node name="B4" type="Sprite2D" parent="3/1/Bubbles"]
 position = Vector2(1197.13, 1477.31)
 scale = Vector2(0.469484, 0.469484)
-texture = ExtResource("48_apjie")
+texture = ExtResource("48_dq7st")
 
 [node name="Text" type="Node2D" parent="3/1"]
 
@@ -2562,7 +2562,7 @@ offset_left = 996.25
 offset_top = 1387.5
 offset_right = 1425.25
 offset_bottom = 1641.5
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "Oh please. These types are always like this."
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -2571,14 +2571,14 @@ autowrap_mode = 2
 
 [node name="P3" type="Sprite2D" parent="3/2"]
 position = Vector2(953.75, 1911.25)
-texture = ExtResource("49_3vvn8")
+texture = ExtResource("49_flq3w")
 
 [node name="Bubbles" type="Node2D" parent="3/2"]
 
 [node name="B5" type="Sprite2D" parent="3/2/Bubbles"]
 position = Vector2(555.342, 2339.88)
 scale = Vector2(0.47846, 0.47846)
-texture = ExtResource("50_4alja")
+texture = ExtResource("50_n8kbr")
 
 [node name="Text" type="Node2D" parent="3/2"]
 
@@ -2589,7 +2589,7 @@ offset_left = 355.0
 offset_top = 2253.75
 offset_right = 784.0
 offset_bottom = 2507.75
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "Like what? What do you think they’re hiding?"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -2601,17 +2601,17 @@ autowrap_mode = 2
 [node name="P1" type="Sprite2D" parent="4/0"]
 position = Vector2(512.312, 482.312)
 scale = Vector2(0.462966, 0.462966)
-texture = ExtResource("51_5cp6h")
+texture = ExtResource("51_jq7e8")
 
 [node name="B1" type="Sprite2D" parent="4/0"]
 position = Vector2(1325.47, 283.25)
 scale = Vector2(0.460452, 0.460452)
-texture = ExtResource("52_5cp6h")
+texture = ExtResource("52_7vlfb")
 
 [node name="B2" type="Sprite2D" parent="4/0"]
 position = Vector2(1387.5, 623.75)
 scale = Vector2(0.473645, 0.473645)
-texture = ExtResource("53_5wsx7")
+texture = ExtResource("53_vvymj")
 
 [node name="L4" type="Label" parent="4/0"]
 modulate = Color(0, 0, 0, 1)
@@ -2620,7 +2620,7 @@ offset_left = 1017.5
 offset_top = 138.75
 offset_right = 1636.5
 offset_bottom = 612.75
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "What does it matter? Sure they’ve got secrets but I’ll just do my job and if I don’t like what I see I’ll take the advance and bow out.
 "
 horizontal_alignment = 1
@@ -2632,7 +2632,7 @@ offset_left = 1173.75
 offset_top = 543.75
 offset_right = 1602.75
 offset_bottom = 805.75
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "Well at least let me back you up on this one, we can-
 
 "
@@ -2645,17 +2645,17 @@ autowrap_mode = 2
 [node name="P2" type="Sprite2D" parent="4/1"]
 position = Vector2(947.5, 1492.5)
 scale = Vector2(0.864583, 0.864583)
-texture = ExtResource("54_aju5p")
+texture = ExtResource("54_4xjls")
 
 [node name="B3" type="Sprite2D" parent="4/1"]
 position = Vector2(1223.75, 955)
 scale = Vector2(0.460852, 0.460852)
-texture = ExtResource("55_ip52y")
+texture = ExtResource("55_trbj0")
 
 [node name="B4" type="Sprite2D" parent="4/1"]
 position = Vector2(1599.93, 1159.51)
 scale = Vector2(0.462661, 0.462661)
-texture = ExtResource("56_a8whc")
+texture = ExtResource("56_hjc3b")
 
 [node name="L5" type="Label" parent="4/1"]
 modulate = Color(0, 0, 0, 1)
@@ -2664,7 +2664,7 @@ offset_left = 893.75
 offset_top = 846.25
 offset_right = 1546.75
 offset_bottom = 1214.25
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "Oh no, not this time. They want discretion so they get me and me only.
 
 "
@@ -2677,7 +2677,7 @@ offset_left = 1390.0
 offset_top = 1110.0
 offset_right = 1819.0
 offset_bottom = 1364.0
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "I don’t think that’s a good idea.
 "
 horizontal_alignment = 1
@@ -2688,17 +2688,17 @@ autowrap_mode = 2
 [node name="P3" type="Sprite2D" parent="4/2"]
 position = Vector2(1368.17, 2505.25)
 scale = Vector2(0.463698, 0.463698)
-texture = ExtResource("59_4qlyo")
+texture = ExtResource("57_vwjas")
 
 [node name="B5" type="Sprite2D" parent="4/2"]
 position = Vector2(563.75, 2416.25)
 scale = Vector2(0.459331, 0.459331)
-texture = ExtResource("57_04tpo")
+texture = ExtResource("58_r1s1a")
 
 [node name="B6" type="Sprite2D" parent="4/2"]
 position = Vector2(1643.75, 2162.5)
 scale = Vector2(0.485648, 0.485647)
-texture = ExtResource("58_e6t67")
+texture = ExtResource("59_22svi")
 
 [node name="L4" type="Label" parent="4/2"]
 modulate = Color(0, 0, 0, 1)
@@ -2707,7 +2707,7 @@ offset_left = 212.5
 offset_top = 2293.75
 offset_right = 898.5
 offset_bottom = 2714.75
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "What do you always say? “All hat, no cattle.” That’s you right now. This is the biggest paycheck I’ve ever seen and you suddenly lost your nerve? "
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -2719,7 +2719,7 @@ offset_left = 1425.0
 offset_top = 2106.25
 offset_right = 1854.0
 offset_bottom = 2360.25
-theme = ExtResource("26_qaxw7")
+theme = ExtResource("6_jo5fd")
 text = "I’ll see you later.
 "
 horizontal_alignment = 1
