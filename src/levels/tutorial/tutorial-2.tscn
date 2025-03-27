@@ -1,20 +1,22 @@
-[gd_scene load_steps=35 format=3 uid="uid://bdm1d3ikdgwvw"]
+[gd_scene load_steps=37 format=3 uid="uid://bdm1d3ikdgwvw"]
 
 [ext_resource type="Script" path="res://src/levels/tutorial/tutorial_2.gd" id="1_4j7fv"]
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="2_hbpmp"]
 [ext_resource type="Texture2D" uid="uid://vo8v47rq0638" path="res://assets/sprites/pages/1-2/Ch1_Level2_Flattened_small.png" id="4_423xr"]
 [ext_resource type="Resource" uid="uid://dojkosxruk8xs" path="res://src/clues/clue-resources/tutorial/shattered_glass.tres" id="6_07ii5"]
 [ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/lighter.tres" id="7_fm58w"]
-[ext_resource type="Resource" uid="uid://d3k8rcoc56don" path="res://src/clues/clue-resources/tutorial/not_clue_third.tres" id="8_dy8ie"]
 [ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="9_1ijwe"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="10_xyo7r"]
 [ext_resource type="PackedScene" uid="uid://dhpbtj7rkkjks" path="res://src/dialogue/inquire_ui.tscn" id="11_btqoi"]
+[ext_resource type="Resource" uid="uid://ds46amoej7pyb" path="res://src/clues/clue-resources/tutorial/gun_holster.tres" id="12_423xr"]
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="12_dibre"]
+[ext_resource type="Resource" uid="uid://3ci1y5wfqnxv" path="res://src/clues/clue-resources/tutorial/gun_wound.tres" id="13_0to4b"]
 [ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/levels/tutorial/clue_database.gd" id="13_ud740"]
+[ext_resource type="Resource" uid="uid://d3k8rcoc56don" path="res://src/clues/clue-resources/tutorial/head_trauma.tres" id="14_0to4b"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="14_mh0hl"]
 [ext_resource type="JSON" path="res://src/dialogue/_Dialogue1-1-2.json" id="15_f81lm"]
 [ext_resource type="Script" uid="uid://d313ibk1sryhe" path="res://src/dialogue/dialogue_manager.gd" id="15_wcv8r"]
-[ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="17_sr4r0"]
+[ext_resource type="JSON" path="res://src/dialogue/_Inquiry1-1-2.json" id="17_0to4b"]
 [ext_resource type="Texture2D" uid="uid://dypirra10oiui" path="res://assets/sprites/talksprites/cop1.png" id="18_f81lm"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="18_kltel"]
 [ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="19_f08ng"]
@@ -259,13 +261,13 @@ mouse_filter = 2
 [node name="ClueDatabase" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("13_ud740")
-items = Array[ExtResource("14_mh0hl")]([ExtResource("6_07ii5"), ExtResource("7_fm58w"), ExtResource("8_dy8ie")])
+items = Array[ExtResource("14_mh0hl")]([ExtResource("6_07ii5"), ExtResource("14_0to4b"), ExtResource("12_423xr"), ExtResource("13_0to4b"), ExtResource("7_fm58w")])
 
 [node name="DialogueManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("15_wcv8r")
 DIALOGUE_JSON = ExtResource("15_f81lm")
-INQUIRY_DIALOGUE_JSON = ExtResource("17_sr4r0")
+INQUIRY_DIALOGUE_JSON = ExtResource("17_0to4b")
 
 [node name="Npc" type="Node" parent="."]
 
@@ -275,7 +277,6 @@ npc_name = "Sergeant Biggs"
 end_index = 14
 character1_sprite = ExtResource("19_f08ng")
 character2_sprite = ExtResource("18_f81lm")
-repeatable_conversation = false
 can_inquiry = false
 
 [node name="CollisionShape2D" parent="Npc/Cop1" index="0"]
@@ -290,7 +291,7 @@ character2_sprite = ExtResource("19_f81lm")
 can_inquiry = false
 
 [node name="GlassShard" parent="Npc" instance=ExtResource("18_kltel")]
-position = Vector2(807, 549)
+position = Vector2(728, 549)
 npc_name = "..."
 start_index = 15
 end_index = 16
@@ -301,7 +302,7 @@ can_inquiry = false
 is_clue = true
 
 [node name="HeadTrauma" parent="Npc" instance=ExtResource("18_kltel")]
-position = Vector2(888, 549)
+position = Vector2(899, 549)
 npc_name = "..."
 start_index = 17
 end_index = 18
@@ -311,11 +312,31 @@ repeatable_conversation = false
 can_inquiry = false
 is_clue = true
 
+[node name="GunWound" parent="Npc" instance=ExtResource("18_kltel")]
+position = Vector2(820, 549)
+npc_name = "GunWound"
+start_index = 20
+end_index = 22
+character1_sprite = ExtResource("19_f08ng")
+character2_sprite = null
+is_clue = true
+
 [node name="Holster" parent="Npc" instance=ExtResource("18_kltel")]
-position = Vector2(972, 549)
+position = Vector2(993, 549)
 npc_name = "Cat"
 start_index = 19
 end_index = 19
+character1_sprite = ExtResource("19_f08ng")
+character2_sprite = null
+repeatable_conversation = false
+can_inquiry = false
+is_clue = true
+
+[node name="Holster2" parent="Npc" instance=ExtResource("18_kltel")]
+position = Vector2(736, 971)
+npc_name = "..."
+start_index = 25
+end_index = 25
 character1_sprite = ExtResource("19_f08ng")
 character2_sprite = null
 repeatable_conversation = false
@@ -330,7 +351,7 @@ offset_bottom = -739.0
 [node name="InventoryUI" parent="." instance=ExtResource("21_f81lm")]
 unique_name_in_owner = true
 visible = false
-clue_count = 3
+clue_count = 4
 s_start_id = 1000
 s_end_id = 1001
 

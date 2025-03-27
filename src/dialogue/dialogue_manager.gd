@@ -169,6 +169,7 @@ func adjust_npc_dialogue(): #switch to next line
 		dialogue_ongoing = false
 		alert_sprite.visible = false
 		player.can_move = true
+		player.in_dialouge = false
 		dialogue_ended.emit()
 func branch(new_start_index, new_end_index, dialogue): #branch to another dialogue
 	button_1.visible = false
@@ -184,6 +185,7 @@ func leave_dialogue():
 	dialogue_ui.visible = false
 
 func start_inquiry_dialogue(npc : Area2D , item_id : int):
+	print(item_id)
 	var npc_name : String = npc.npc_name
 	var c1Texture : Texture = npc.character1_sprite
 	var c2Texture : Texture = npc.character2_sprite
@@ -208,12 +210,13 @@ func execute_command(command_string : String):
 		var command = selected_command.split("_")[0]
 		var value = selected_command.split("_")[1]
 		print(selected_command,command,value)
+
 		match command.to_lower():
 			"add":
-				var clue = load(Inventory.CLUE_DB[int(value)])
+				var clue = %ClueDatabase.items[int(value)]
 				Inventory.add_item(clue)
 			"remove":
-				var clue = load(Inventory.CLUE_DB[int(value)])
+				var clue = %ClueDatabase.items[int(value)]
 				Inventory.remove_item(clue)
 			_:
 				print("incorrect command")

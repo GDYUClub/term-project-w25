@@ -10,7 +10,7 @@
 script = ExtResource("5_yx5o6")
 type = 1
 mergeResultant = ExtResource("3_j0tsq")
-id = 2
+id = 0
 lvl_id = 0
 name = "Gun Holster"
 desc = "The only thing keeping you sane in this cold, dark world."
@@ -18,4 +18,4 @@ icon = ExtResource("2_jh83y")
 panel = ExtResource("4_hb8ci")
 environment_sprite = ExtResource("1_s6svr")
 picks_up = true
-correct_panel = 2
+correct_panel = 0

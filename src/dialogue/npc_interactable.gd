@@ -17,9 +17,9 @@ func _ready() -> void:
 	add_to_group("npc")
 
 func talk_to_npc() -> void:
-			if is_interacted_with != true and can_talk:
-				if !repeatable_conversation:
-					is_interacted_with = true
-				dialogue_manager.load_npc_dialogue(start_index, end_index,character1_sprite,character2_sprite)
-				await dialogue_manager.dialogue_ended
-				interaction_over.emit()
+	if is_interacted_with != true and can_talk:
+		if !repeatable_conversation:
+			is_interacted_with = true
+		dialogue_manager.load_npc_dialogue(start_index, end_index,character1_sprite,character2_sprite)
+		await dialogue_manager.dialogue_ended
+		interaction_over.emit()

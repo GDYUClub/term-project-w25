@@ -39,5 +39,6 @@ func clear():
 func succeed(id : int):
 	close()
 	dialogue_manager.start_inquiry_dialogue(current_npc, id)
+	await dialogue_manager.dialogue_ended
 	
 	

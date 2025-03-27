@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://n04j8c2qcbac" path="res://assets/sprites/pages/1-1/Chapter1_Flattened_Bottom.PNG" id="5_xcymm"]
 [ext_resource type="Resource" uid="uid://dojkosxruk8xs" path="res://src/clues/clue-resources/tutorial/shattered_glass.tres" id="6_j5coj"]
 [ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/lighter.tres" id="7_2g1vn"]
-[ext_resource type="Resource" uid="uid://d3k8rcoc56don" path="res://src/clues/clue-resources/tutorial/not_clue_third.tres" id="8_dvjps"]
+[ext_resource type="Resource" uid="uid://d3k8rcoc56don" path="res://src/clues/clue-resources/tutorial/head_trauma.tres" id="8_dvjps"]
 [ext_resource type="PackedScene" uid="uid://bvqwk1mxnpwr5" path="res://src/gameplay_ui/game_ui.tscn" id="8_j5coj"]
 [ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="9_v5ho3"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="10_41sty"]

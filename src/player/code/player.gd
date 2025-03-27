@@ -122,23 +122,25 @@ func interact():
 		if interactable.clue.picks_up:
 			interactable.visible = false
 
-	if interactable.is_in_group("npc"):
+	elif interactable.is_in_group("npc"):
 		in_dialouge = true
+		can_move = false
 		interactable.talk_to_npc()
 		await interactable.interaction_over
-		in_dialouge = false
+		interactable = null
+		can_move = true
 		get_parent().check_for_new_item()
 	
-	if interactable.is_in_group("point_click"):
+	elif interactable.is_in_group("point_click"):
 		get_parent().change_to_cursor()
 	
-	if interactable.is_in_group("elevator"):
+	elif interactable.is_in_group("elevator"):
 		if position.y > 1600:
 			sceneAnimPlayer.play("elevator_up")
 		else:
 			sceneAnimPlayer.play("elevator_down")
 
-	if interactable.is_in_group("streetcar"):
+	elif interactable.is_in_group("streetcar"):
 		sceneAnimPlayer.play("street car leaves")
 		await sceneAnimPlayer.animation_finished
 		%StreetCarBlock.disabled = true
@@ -147,7 +149,6 @@ func interact():
 		
 
 func inquire():
-	
 	if not interactable or !interactable.is_in_group("npc") or interactable.can_inquiry == false:
 		return
 	if interactable.is_in_group("npc"):
@@ -181,6 +182,7 @@ func _on_area_entered(area: Area2D):
 		alertSprite.texture = is_clue_alert_texture[true]
 		alertSprite.visible = true
 		interactable = area
+	print(interactable)
 
 func _on_area_exited(area: Area2D):
 	if area.is_in_group("clue") or area.is_in_group("npc") or area.is_in_group("point_click") or area.is_in_group("elevator") or area.is_in_group("streetcar"):

@@ -1,16 +1,7 @@
 # todo
 
-- [ ] block out frame navigation
-- [ ] dialog system
-  - [ ] prompts
-  - [ ] dialog screen
-  - [ ] render text
-- [ ] clues
-  - [ ] clue/item datatype
-  - [ ] inventory menu
-- [ ] comic panel arrangement
-- [ ] menus
-  - [ ] start
-  - [ ] settings
-  - [ ] rebinding
+## bugs
+
+- you can move while in a conversation???
+- normal converstions prevent inquirys from happening
   
