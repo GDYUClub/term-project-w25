@@ -3,11 +3,10 @@ extends Area2D
 
 @export var _panel_name: String
 @export var clue: Clue
-
 @onready var sprite: TextureRect = $Clue
 @onready var numberLabel: Label = $NumberLabel
 @onready var panel_desc_scene: PackedScene = preload("res://src/clues/clue_description.tscn")
-@onready var inventory_panel = get_node("/root/Main/InventoryUI")
+@onready var inventory_panel : inventory_ui = get_node("/root/Main/InventoryUI")
 
 var selected_box: GridBox 
 var panel_id: int
@@ -16,7 +15,7 @@ var base_scale : Vector2
 var extended_scale : Vector2
 
 #controls for keyboard
-const key_selection_time : float = 0.1
+const key_selection_time : float = 0.5
 var _selection_with_keyboard: bool = false
 var keyboard_time_elapsed: float = 0.0
 var _selection_with_mouse: bool = false
@@ -26,7 +25,7 @@ var _is_selected: bool = false
 var _grids_inside: Array[GridBox] = []
 
 var panel_exists: bool = false
-var delay: float = 0.5
+var delay: float = 0.1
 var time_elapsed: float = 0.0
 var desc_panel
 const OFFSET: Vector2 = Vector2(80, 30)
@@ -55,7 +54,7 @@ func _process(delta: float) -> void:
 	if(_is_selected):
 		if(_selection_with_mouse):
 			move_panel(get_global_mouse_position())
-		if(_selection_with_keyboard):
+		if(_selection_with_keyboard && _is_selected):
 			move_panel(inventory_panel.selected_grid.position)
 	attempt_pickup_or_drop()
 
@@ -71,7 +70,6 @@ func description_process(delta) -> void:
 			hide_description(desc_panel)
 
 func attempt_pickup_or_drop() -> void:
-	#print(inventory_panel.selected_grid.current_clue)
 	if !_selection_with_keyboard:
 		if Input.is_action_pressed("grab"):
 			if _is_mouse_in and !_is_selected and _can_select:
@@ -93,6 +91,7 @@ func attempt_pickup_or_drop() -> void:
 
 func select() -> void:
 	#Set the panel to selected if the mouse is in the area 2D
+	print("Selected")
 	_is_selected = true
 	_can_select = false
 	scale = extended_scale
@@ -113,7 +112,10 @@ func snap_to_grid(pos: Vector2) -> void:
 		previous_box.clear_active_panel()
 		snap(selected_box)
 	else:
-		swap(previous_box, selected_box)
+		if (previous_box.current_clue.clue.type == clue.Type.MERGING and selected_box.current_clue.clue.type == clue.Type.MERGING) and previous_box != selected_box :
+			merge(previous_box, selected_box)
+		else:
+			swap(previous_box, selected_box)
 
 func snap(selected : GridBox):
 	inventory_panel.panels[panel_id] = null
@@ -164,6 +166,37 @@ func swap(box_a: GridBox, box_b: GridBox):
 	panel_b._can_select = true
 	print("swapped")
 
+func merge(box_a: GridBox, box_b: GridBox):
+	#NIGHTMARE NIGHTMARE NIGHTMARE Ahh code
+	#I'm so sorry this has to be seen
+	#Throw everything and the kitchen sink ahh code
+	if box_a.current_clue.clue.mergeResultant == box_b.current_clue.clue.mergeResultant:
+		var panel_a = box_a.current_clue
+		var panel_b = box_b.current_clue
+		# Remove merged panels
+		Inventory.remove_item(panel_a.clue)
+		Inventory.remove_item(panel_b.clue)
+		# Add merged result panel
+		var merge_clue = box_b.current_clue.clue.mergeResultant
+		var panel_c = inventory_panel.addPanel(merge_clue, box_b)
+		
+		box_a.clear_active_panel()
+		box_b.clear_active_panel()
+		box_b.set_active_panel(panel_c)
+		panel_a._is_selected = false
+		panel_b._is_selected = false
+		panel_c._is_selected = false
+		# Register the new panel
+		Inventory.add_item(merge_clue)
+		print(Inventory.get_items())
+		# Free old panels
+		await get_tree().create_timer(0.2).timeout
+		_can_select = true
+		print("timeout done: can select-> ", _can_select)
+
+		panel_a.queue_free()
+		panel_b.queue_free()
+		
 func _on_area_entered(area: Area2D) -> void:
 	if area is GridBox:
 		if !_grids_inside.has(area):
