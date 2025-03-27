@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://3ci1y5wfqnxv"]
+
+[ext_resource type="Texture2D" uid="uid://c8jjvts5f6fj2" path="res://assets/sprites/gun_wound.png" id="1_esthy"]
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="1_o3frl"]
+
+[resource]
+script = ExtResource("1_o3frl")
+type = 0
+id = 0
+lvl_id = 0
+name = "gun wound"
+desc = "gun wound desc"
+panel = ExtResource("1_esthy")
+picks_up = false
+correct_panel = 0
+metadata/_custom_type_script = "uid://bhwvtvekextht"

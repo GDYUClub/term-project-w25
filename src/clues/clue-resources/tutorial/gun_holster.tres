@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=6 format=3 uid="uid://ds46amoej7pyb"]
+
+[ext_resource type="Texture2D" uid="uid://byjyf6cpkwlhq" path="res://assets/sprites/rei-env-temp.png" id="1_s6svr"]
+[ext_resource type="Texture2D" uid="uid://bwljxu7ae7mei" path="res://assets/sprites/rei-temp.png" id="2_jh83y"]
+[ext_resource type="Resource" uid="uid://cdtrab0mu3pvj" path="res://src/clues/clue-resources/tutorial/testEvolution.tres" id="3_j0tsq"]
+[ext_resource type="Texture2D" uid="uid://c5sc253kcelmd" path="res://assets/sprites/rei-temp-jig.png" id="4_hb8ci"]
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="5_yx5o6"]
+
+[resource]
+script = ExtResource("5_yx5o6")
+type = 1
+mergeResultant = ExtResource("3_j0tsq")
+id = 2
+lvl_id = 0
+name = "Gun Holster"
+desc = "The only thing keeping you sane in this cold, dark world."
+icon = ExtResource("2_jh83y")
+panel = ExtResource("4_hb8ci")
+environment_sprite = ExtResource("1_s6svr")
+picks_up = true
+correct_panel = 2
