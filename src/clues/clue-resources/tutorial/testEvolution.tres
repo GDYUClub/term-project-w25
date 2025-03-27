@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://cdtrab0mu3pvj"]
+
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="1_m1yvh"]
+[ext_resource type="Texture2D" uid="uid://badcq2r82pcs6" path="res://assets/sprites/alert-temp.png" id="1_v1awe"]
+
+[resource]
+script = ExtResource("1_m1yvh")
+type = 0
+id = 0
+lvl_id = 0
+name = "test"
+desc = "test"
+icon = ExtResource("1_v1awe")
+panel = ExtResource("1_v1awe")
+environment_sprite = ExtResource("1_v1awe")
+picks_up = false
+correct_panel = 0
+metadata/_custom_type_script = "uid://bhwvtvekextht"

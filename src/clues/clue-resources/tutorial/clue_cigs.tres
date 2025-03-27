@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("3_vyvjn")
+type = 0
 id = 0
 lvl_id = 0
 name = "Cigarettes"
@@ -13,4 +14,4 @@ desc = "Highly addictive and hazardous to your health. Snake's favorite brand."
 icon = ExtResource("1_rf2fr")
 panel = ExtResource("2_on0os")
 picks_up = true
-correct_panel = 0
+correct_panel = 2

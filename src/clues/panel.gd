@@ -3,14 +3,14 @@ extends Area2D
 
 @export var _panel_name: String
 @export var clue: Clue
-
 @onready var sprite: TextureRect = $Clue
 @onready var numberLabel: Label = $NumberLabel
 @onready var panel_desc_scene: PackedScene = preload("res://src/clues/clue_description.tscn")
-@onready var inventory_panel = get_node("/root/Main/InventoryUI")
+@onready var inventory_panel : inventory_ui = get_node("/root/Main/InventoryUI")
 
 var selected_box: GridBox 
 var panel_id: int
+var locationInArray : int 
 
 var base_scale : Vector2
 var extended_scale : Vector2
@@ -113,7 +113,10 @@ func snap_to_grid(pos: Vector2) -> void:
 		previous_box.clear_active_panel()
 		snap(selected_box)
 	else:
-		swap(previous_box, selected_box)
+		if previous_box.current_clue.clue.type == clue.Type.MERGING and selected_box.current_clue.clue.type == clue.Type.MERGING :
+			merge(previous_box, selected_box)
+		else:
+			swap(previous_box, selected_box)
 
 func snap(selected : GridBox):
 	inventory_panel.panels[panel_id] = null
@@ -164,6 +167,25 @@ func swap(box_a: GridBox, box_b: GridBox):
 	panel_b._can_select = true
 	print("swapped")
 
+func merge(box_a: GridBox, box_b: GridBox):
+	#get panel
+	if box_a.current_clue.clue.mergeResultant == box_b.current_clue.clue.mergeResultant:
+		var panel_a = box_a.current_clue
+		var panel_b = box_b.current_clue
+		#remove the clues from panel
+		Inventory.remove_item(panel_a.clue)
+		Inventory.remove_item(panel_b.clue)
+		#add Panel for now
+		inventory_panel.addPanel(box_b.current_clue.clue.mergeResultant, box_b.current_clue.locationInArray, box_b)
+		#remove
+		panel_a.queue_free()
+		panel_b.queue_free()
+		#add item
+		Inventory.add_item(box_b.current_clue.clue.mergeResultant)
+		#unlock movement!!!!
+	#need to reset gridpanels on the left
+	#dont remove ones
+	
 func _on_area_entered(area: Area2D) -> void:
 	if area is GridBox:
 		if !_grids_inside.has(area):

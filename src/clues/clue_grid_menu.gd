@@ -1,5 +1,5 @@
 extends Control
-
+class_name inventory_ui
 # how to set up this system
 # what info would I need to pass into this object:
 # the panels
@@ -86,15 +86,37 @@ func test_panels() -> void:
 		else:
 			$CorrectLabel.text = "wrong"
 
+func addClueGrid(index : int, c : int, r : int ):
+	var gridCellInst: GridBox = grid_cell_scene.instantiate()
+	gridCellInst.id = index
+	gridCellInst.position.x = INITIAL_ITEM_POSITION.x + (OFFSET.x * c)
+	gridCellInst.position.y = INITIAL_ITEM_POSITION.y + (OFFSET.y * r)
+	gridCellInst.set_active_panel(panels[index]) 
+	$GridCells.add_child(gridCellInst)
+	item_grid_cells.append(gridCellInst)
+func addSolutionGrid(index : int, c : int, r : int):
+	var gridCellInst: GridBox = grid_cell_scene.instantiate()
+	gridCellInst.id = index
+	gridCellInst.position.x = INITIAL_POSITION.x + (OFFSET.x * c)
+	gridCellInst.position.y = INITIAL_POSITION.y + (OFFSET.y * r)
+	$GridCells.add_child(gridCellInst)
+	clue_grid_cells.append(gridCellInst)
+	gridCellInst.numberLabel.text = str(index)
+func addPanel(clue : Clue, value : int, grid : GridBox = null):
+	var panelInst = panel_scene.instantiate()
+	panelInst.clue = clue
+	panelInst.panel_id = clue.correct_panel
+	panelInst.locationInArray = value
+	$Panels.add_child(panelInst)
+	panels.append(panelInst)
+	panelInst.numberLabel.text = str(clue.id)
+	if grid != null:
+		grid.set_active_panel(panelInst)
+		panelInst.position = grid.position
 func populate_clue_panels():
 	for j in range(100):
 		if(j < len(player_clues)):
-			var panelInst = panel_scene.instantiate()
-			panelInst.clue = player_clues[j]
-			panelInst.panel_id = j
-			$Panels.add_child(panelInst)
-			panels.append(panelInst)
-			panelInst.numberLabel.text = str(player_clues[j].correct_panel)
+			addPanel(player_clues[j], j)
 		else:
 			panels.append(null)
 	CluePanel._can_select = true
@@ -104,13 +126,7 @@ func populate_clue_panels():
 	var i = 0
 	for r in rows:
 		for c in cols:
-			var gridCellInst: GridBox = grid_cell_scene.instantiate()
-			gridCellInst.id = i
-			gridCellInst.position.x = INITIAL_ITEM_POSITION.x + (OFFSET.x * c)
-			gridCellInst.position.y = INITIAL_ITEM_POSITION.y + (OFFSET.y * r)
-			gridCellInst.set_active_panel(panels[i]) 
-			$GridCells.add_child(gridCellInst)
-			item_grid_cells.append(gridCellInst)
+			addClueGrid(i, c, r)
 			i += 1
 	i = 0
 	for cell in item_grid_cells:
@@ -122,22 +138,16 @@ func populate_clue_panels():
 
 
 func populate_grid_cells():
-	var rows := int(ceil(player_clues.size()))
+	var rows := clue_count
 	var cols = 2
 	var i = 0
 	for r in rows:
 		for c in cols:
-			var gridCellInst: GridBox = grid_cell_scene.instantiate()
-			gridCellInst.id = i
-			gridCellInst.position.x = INITIAL_POSITION.x + (OFFSET.x * c)
-			gridCellInst.position.y = INITIAL_POSITION.y + (OFFSET.y * r)
-			$GridCells.add_child(gridCellInst)
-			clue_grid_cells.append(gridCellInst)
-			gridCellInst.numberLabel.text = str(i)
+			addSolutionGrid(i, c, r)
 			i += 1
-			if i == player_clues.size():
+			if i == clue_count:
 				break
-		if i == player_clues.size():
+		if i == clue_count:
 			break
 
 
