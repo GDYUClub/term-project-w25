@@ -121,7 +121,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wcju"]
 size = Vector2(73.5, 76.25)
 
-[node name="Main2" type="Node"]
+[node name="Main" type="Node"]
 script = ExtResource("1_xcymm")
 
 [node name="ColorRect2" type="ColorRect" parent="."]

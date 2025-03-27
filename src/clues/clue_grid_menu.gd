@@ -13,6 +13,10 @@ class_name inventory_ui
 @export var jane_sprite: Texture
 @onready var grid_cell_scene: PackedScene = preload("res://src/clues/grid_cell.tscn")
 @onready var panel_scene: PackedScene = preload("res://src/clues/clue_panel.tscn")
+@onready var document_view: ColorRect = $DocumentView
+@onready var document: TextureRect = $DocumentView/Document
+
+
 
 var selected_grid : Area2D = null
 var scroll_index : int = 0
@@ -74,6 +78,11 @@ func _process(delta: float) -> void:
 		switch_panel()
 	if self.visible == true:
 		test_panels()
+		if(Input.is_action_just_pressed("interact")):
+			if selected_grid != null and selected_grid.current_clue != null and selected_grid.current_clue.clue.type == Clue.Type.DOCUMENT and document_view.visible == false:
+				open_document(selected_grid.current_clue.clue)
+			else:
+				close_document()
 
 func test_panels() -> void:
 	if Inventory.get_item_count() > 0:
@@ -102,21 +111,21 @@ func addSolutionGrid(index : int, c : int, r : int):
 	$GridCells.add_child(gridCellInst)
 	clue_grid_cells.append(gridCellInst)
 	gridCellInst.numberLabel.text = str(index)
-func addPanel(clue : Clue, value : int, grid : GridBox = null):
+func addPanel(clue : Clue, grid : GridBox = null) -> CluePanel:
 	var panelInst = panel_scene.instantiate()
 	panelInst.clue = clue
 	panelInst.panel_id = clue.correct_panel
-	panelInst.locationInArray = value
 	$Panels.add_child(panelInst)
 	panels.append(panelInst)
 	panelInst.numberLabel.text = str(clue.id)
 	if grid != null:
 		grid.set_active_panel(panelInst)
 		panelInst.position = grid.position
+	return panelInst
 func populate_clue_panels():
 	for j in range(100):
 		if(j < len(player_clues)):
-			addPanel(player_clues[j], j)
+			addPanel(player_clues[j])
 		else:
 			panels.append(null)
 	CluePanel._can_select = true
@@ -136,6 +145,12 @@ func populate_clue_panels():
 			cell
 			i += 1
 
+func open_document(clue : Clue):
+	document_view.visible = true
+	document.texture = clue.documentSprite
+
+func close_document():
+	document_view.visible = false
 
 func populate_grid_cells():
 	var rows := clue_count
@@ -171,7 +186,7 @@ func switch_panel():
 		return  
 
 	var prev_grid = selected_grid  
-	
+	close_document()
 	if Input.is_action_just_pressed("scroll_left") and scroll_index - 1 >= 0:
 		scroll_index -= 1  
 
@@ -196,4 +211,5 @@ func _update_ui(panelArea):
 	if panelArea == null: return
 	%ClueTitle.text = panelArea.clue.name
 	%ClueDesc.text = panelArea.clue.desc
+	%ClueTag.text = Clue.Type.keys()[panelArea.clue.type]
 	pass

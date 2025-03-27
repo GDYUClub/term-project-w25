@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://yljam13vx8wv"]
+[gd_scene load_steps=9 format=3 uid="uid://yljam13vx8wv"]
 
 [ext_resource type="Script" uid="uid://bc676rlyfmf6n" path="res://src/clues/clue_grid_menu.gd" id="1_nbl5j"]
 [ext_resource type="Texture2D" uid="uid://s4ciyh88wqnu" path="res://assets/sprites/ui/Inventory_Menu_UI/briefcase_bg.png" id="2_5kccu"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://blc6fojnhxx7v" path="res://assets/sprites/ui/Inventory_Menu_UI/chapter_sum_container.png" id="4_crim7"]
 [ext_resource type="Texture2D" uid="uid://di6qdc0x65adf" path="res://assets/sprites/ui/Inventory_Menu_UI/return_to_game_button.png" id="5_jsgr7"]
 [ext_resource type="Texture2D" uid="uid://dsifpi2jk1slv" path="res://assets/sprites/ui/Inventory_Menu_UI/save_exit_button.png" id="6_hoduj"]
+[ext_resource type="Texture2D" uid="uid://bi1lj1evw81a4" path="res://assets/sprites/ui/Hint_Menu_UI/inventory_button.png" id="8_pclci"]
 
 [node name="InventoryUI" type="Control"]
 z_index = 128
@@ -83,6 +84,27 @@ text = "
 "
 autowrap_mode = 2
 
+[node name="Tag" type="ColorRect" parent="TextureRect3"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 263.0
+offset_right = 251.0
+offset_bottom = 303.0
+color = Color(0.374139, 0.374139, 0.374139, 1)
+
+[node name="ClueTag" type="Label" parent="TextureRect3/Tag"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 225.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="CorrectLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 411.0
@@ -115,3 +137,30 @@ flat = true
 [node name="Panels" type="Node2D" parent="."]
 
 [node name="GridCells" type="Node2D" parent="."]
+
+[node name="DocumentView" type="ColorRect" parent="."]
+visible = false
+z_index = 200
+layout_mode = 1
+anchors_preset = -1
+offset_left = 451.0
+offset_top = 63.0
+offset_right = 1400.0
+offset_bottom = 964.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.103744, 0.103744, 0.103744, 1)
+
+[node name="Document" type="TextureRect" parent="DocumentView"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 62.0
+offset_top = 59.0
+offset_right = -77.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_pclci")
+stretch_mode = 5
