@@ -23,6 +23,8 @@ var narrator_bubble = preload("res://assets/sprites/ui/narrator_bubble.png")
 var text_rendering:bool = false
 var new_dialogue_input_buffer = true
 
+const DEFAULT_DIALOGUE :JSON= preload("res://src/dialogue/_Dialogue-Default.json")
+
 signal dialogue_ended
 
 enum LANGUAGE {ENGLISH, FRENCH}
@@ -158,8 +160,6 @@ func adjust_npc_dialogue(): #switch to next line
 				var commands : Array = dialogue[str(index)]["COMMANDS"].split(":")
 				for command in commands:
 					execute_command(command)
-		else:
-			print("commands dont exist")
 		index += 1
 	elif can_branch:
 		print("waiting on player choice")
@@ -185,7 +185,6 @@ func leave_dialogue():
 	dialogue_ui.visible = false
 
 func start_inquiry_dialogue(npc : Area2D , item_id : int):
-	print(item_id)
 	var npc_name : String = npc.npc_name
 	var c1Texture : Texture = npc.character1_sprite
 	var c2Texture : Texture = npc.character2_sprite
@@ -195,9 +194,15 @@ func start_inquiry_dialogue(npc : Area2D , item_id : int):
 		var end: int = int(inquiry.split(":")[1])
 		load_npc_dialogue(start, end, c1Texture, c2Texture)
 	else:
+		#come up with a better solution 
+		dialogue = DEFAULT_DIALOGUE.get_data()
 		var start : int = 0
 		var end: int = 0
 		load_npc_dialogue(start, end, c1Texture, c2Texture)
+		dialogue = DIALOGUE_JSON.get_data()
+
+	await dialogue_ended
+	npc.inquiry_over.emit()
 
 func execute_command(command_string : String):
 	print("command called")
@@ -213,10 +218,10 @@ func execute_command(command_string : String):
 
 		match command.to_lower():
 			"add":
-				var clue = %ClueDatabase.items[int(value)]
+				var clue = %ClueDatabase.itemDict[int(value)]
 				Inventory.add_item(clue)
 			"remove":
-				var clue = %ClueDatabase.items[int(value)]
+				var clue = %ClueDatabase.itemDict[int(value)]
 				Inventory.remove_item(clue)
 			_:
 				print("incorrect command")

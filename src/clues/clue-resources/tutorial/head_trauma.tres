@@ -10,7 +10,7 @@
 script = ExtResource("5_pcbxu")
 type = 1
 mergeResultant = ExtResource("3_gupmh")
-id = 3
+id = 2
 lvl_id = 0
 name = "Head Trauma"
 desc = "The only thing keeping you sane in this cold, dark world."

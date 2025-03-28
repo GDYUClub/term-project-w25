@@ -10,7 +10,7 @@
 script = ExtResource("5_340ua")
 type = 1
 mergeResultant = ExtResource("3_utlv7")
-id = 1
+id = 3
 lvl_id = 0
 name = "Lighter"
 desc = "for cooking cigarettes before you eat them."

@@ -1,4 +1,5 @@
 extends Node
+class_name Npc
 
 @export var npc_name : String = ""
 @export var start_index : int = 0
@@ -12,6 +13,7 @@ extends Node
 @onready var dialogue_manager: DialogueManager = %DialogueManager
 var is_interacted_with : bool = false
 signal interaction_over
+signal inquiry_over
 
 func _ready() -> void:
 	add_to_group("npc")

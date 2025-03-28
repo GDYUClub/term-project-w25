@@ -197,9 +197,7 @@ func switch_panel():
 		return  
 
 	
-	print("index: ", scroll_index)
 	selected_grid = all_grid_cells[scroll_index] if scroll_index < len(all_grid_cells) else null
-	print("index: ", scroll_index)
 	
 	if prev_grid:
 		prev_grid.off_hover()

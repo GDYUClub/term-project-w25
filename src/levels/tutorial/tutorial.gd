@@ -13,6 +13,7 @@ enum GAMEPLAY_STATE{
 	DIALOG,
 	PANEL_ARRANGE,
 	CURSOR,
+	INQUIRY_MENU
 }
 
 var PANEL_CENTERS = [
@@ -30,7 +31,7 @@ var overlapping_panel_name:String = ""
 
 func _ready() -> void:
 	AudioManager.set_volume(1)
-	AudioManager.play_music(preload("res://assets/sound/bgm/Crime Scene theme.ogg"))
+	#AudioManager.play_music(preload("res://assets/sound/bgm/Crime Scene theme.ogg"))
 	if !$PanelTriggers:
 		return
 	for triggerArea:Area2D in $PanelTriggers.get_children():
@@ -47,6 +48,7 @@ func _puzzle_solved():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+#	print(current_state)
 	match current_state:
 
 		GAMEPLAY_STATE.EXPLORE:
@@ -58,6 +60,10 @@ func _process(delta: float) -> void:
 				inventoryUi.do_ready()
 
 		GAMEPLAY_STATE.DIALOG:
+			player.can_move = false
+			pass
+
+		GAMEPLAY_STATE.INQUIRY_MENU:
 			player.can_move = false
 			pass
 
@@ -97,8 +103,11 @@ func _toggle_panel(panel_number:String) -> void:
 
 func change_to_cursor():
 	if point_click:
-		current_state = GAMEPLAY_STATE.CURSOR
+		change_state(GAMEPLAY_STATE.CURSOR)
 		_toggle_panel(overlapping_panel_name)	
 
 func reset_inventory_icon():
 	inventoryButton.texture_normal = preload("res://assets/sprites/ui/Main_Gameplay_UI/invent_menu_button.png")
+
+func change_state(new_state:GAMEPLAY_STATE):
+	current_state = new_state

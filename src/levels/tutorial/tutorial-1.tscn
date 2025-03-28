@@ -388,22 +388,22 @@ position = Vector2(1265, 197)
 starting_scale = 0.4
 current_move_type = 1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="GameplayUI" parent="CanvasLayer" instance=ExtResource("8_j5coj")]
+[node name="GameplayUI" parent="UI" instance=ExtResource("8_j5coj")]
 unique_name_in_owner = true
 
-[node name="InquireUI" parent="CanvasLayer" instance=ExtResource("11_otruw")]
+[node name="InquireUI" parent="UI" instance=ExtResource("11_otruw")]
 unique_name_in_owner = true
 metadata/_edit_lock_ = true
 
-[node name="DialogueUI" parent="CanvasLayer" instance=ExtResource("12_j1u5a")]
+[node name="DialogueUI" parent="UI" instance=ExtResource("12_j1u5a")]
 unique_name_in_owner = true
 visible = false
 offset_left = 0.0
 offset_right = 0.0
 
-[node name="InventoryUI" parent="CanvasLayer" instance=ExtResource("11_2g1vn")]
+[node name="InventoryUI" parent="UI" instance=ExtResource("11_2g1vn")]
 unique_name_in_owner = true
 visible = false
 

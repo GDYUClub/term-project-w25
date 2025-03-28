@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("3_s0kvl")
 type = 0
-id = 3
+id = 4
 lvl_id = 0
 name = "Shattered Glass"
 desc = "Highly addictive and hazardous to your health. Snake's favorite brand."

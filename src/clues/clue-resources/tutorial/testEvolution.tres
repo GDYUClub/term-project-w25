@@ -8,7 +8,7 @@
 script = ExtResource("1_m1yvh")
 type = 2
 documentSprite = ExtResource("1_8ovh5")
-id = 3
+id = 5
 lvl_id = 0
 name = "test"
 desc = "test"
