@@ -90,7 +90,6 @@ s_end_id = 1001
 [node name="InquireUI" parent="UI" instance=ExtResource("11_btqoi")]
 unique_name_in_owner = true
 visible = false
-mouse_filter = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

@@ -1,6 +1,6 @@
 extends Control
 
-@onready var grid_container: GridContainer = $GridContainer
+@onready var hbox_container: HBoxContainer = $HBoxContainer
 @onready var dialogue_manager: DialogueManager = %DialogueManager
 @onready var player: CharacterBody2D = %Player
 
@@ -26,8 +26,7 @@ func create_button(clue: Clue):
 	var button : Button = clue_button_scene.instantiate()
 	button.icon = clue.icon
 	button.pressed.connect(button_selected.bind(clue.id))
-	grid_container.add_child(button)
-	
+	hbox_container.add_child(button)
 func button_selected(id : int):
 		succeed(id)
 
@@ -36,8 +35,8 @@ func close():
 	visible = false
 	
 func clear():
-	for node in grid_container.get_children():
-		grid_container.remove_child(node)
+	for node in hbox_container.get_children():
+		hbox_container.remove_child(node)
 		node.queue_free()
 func succeed(id : int):
 	close()
