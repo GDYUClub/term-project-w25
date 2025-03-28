@@ -29,7 +29,7 @@ func get_item_count() -> int:
 
 
 const CLUE_DB = {
-0:"res://src/clues/clue-resources/tutorial/clue_cigs.tres",
-1:"res://src/clues/clue-resources/tutorial/clue_lighter.tres",
+0:"res://src/clues/clue-resources/tutorial/shattered_glass.tres",
+1:"res://src/clues/clue-resources/tutorial/lighter.tres",
 2:"res://src/clues/clue-resources/tutorial/clue_third.tres",
 }

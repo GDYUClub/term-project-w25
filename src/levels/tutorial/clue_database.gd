@@ -5,4 +5,6 @@ extends Node
 
 func _ready() -> void:
 	for item in items:
+		if item.id in itemDict:
+			push_error("duplicate clue id")
 		itemDict[item.id] = item

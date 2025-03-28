@@ -1931,7 +1931,7 @@ offset_top = 600.0
 offset_right = 517.0
 offset_bottom = 854.0
 theme = ExtResource("6_jo5fd")
-text = "Once that last check comes in, we can fix that damn window."
+text = "Once that last cheque comes in, we can fix that damn window."
 horizontal_alignment = 1
 autowrap_mode = 2
 

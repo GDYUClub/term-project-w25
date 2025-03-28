@@ -72,7 +72,6 @@ func _change_move_type(new_movetype: MOVETYPES):
 	sprite.texture = load(move_sprites[current_move_type])
 	sprite.hframes = move_frames[current_move_type]
 	sprite.rotation = 0
-	print(sprite.hframes)
 
 
 func _top_down(delta: float):
@@ -101,15 +100,26 @@ func _process(delta: float) -> void:
 		_top_down(delta)
 	if current_move_type == MOVETYPES.SIDE_SCROLLER:
 		_side_scroller(delta)
-	if Input.is_action_just_pressed("interact"):
-		interact()
-	if Input.is_action_just_pressed("inquire"):
-		inquire()
+	for overlap in area.get_overlapping_areas():
+		_on_area_entered(overlap)
+		
+	# if Input.is_action_just_pressed("interact"):
+	# 	interact()
+	# if Input.is_action_just_pressed("inquire") and get_parent().current_state == GameplayPage.GAMEPLAY_STATE.EXPLORE:
+	# 	print_debug("run inquire from process")
+	# 	inquire()
 	
 	_animate()
 	move_and_slide()
 
-
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact") and get_parent().current_state == GameplayPage.GAMEPLAY_STATE.EXPLORE:
+		interact()
+	if event.is_action_pressed("inquire") and get_parent().current_state == GameplayPage.GAMEPLAY_STATE.EXPLORE:
+		print_debug("run inquire from process")
+		if %InquireUI.can_reopen:
+			inquire()
+	
 func interact():
 	if not interactable or in_dialouge:
 		return
@@ -122,36 +132,44 @@ func interact():
 		if interactable.clue.picks_up:
 			interactable.visible = false
 
-	if interactable.is_in_group("npc"):
+	elif interactable.is_in_group("npc"):
 		in_dialouge = true
+		#can_move = false
+		get_parent().change_state(GameplayPage.GAMEPLAY_STATE.DIALOG)
 		interactable.talk_to_npc()
 		await interactable.interaction_over
-		in_dialouge = false
+		interactable = null
+		#can_move = true
+		get_parent().change_state(GameplayPage.GAMEPLAY_STATE.EXPLORE)
 		get_parent().check_for_new_item()
 	
-	if interactable.is_in_group("point_click"):
+	elif interactable.is_in_group("point_click"):
 		get_parent().change_to_cursor()
 	
-	if interactable.is_in_group("elevator"):
+	elif interactable.is_in_group("elevator"):
 		if position.y > 1600:
 			sceneAnimPlayer.play("elevator_up")
 		else:
 			sceneAnimPlayer.play("elevator_down")
 
-	if interactable.is_in_group("streetcar"):
+	elif interactable.is_in_group("streetcar"):
 		sceneAnimPlayer.play("street car leaves")
 		await sceneAnimPlayer.animation_finished
 		%StreetCarBlock.disabled = true
 
 
-		
-
 func inquire():
-	
 	if not interactable or !interactable.is_in_group("npc") or interactable.can_inquiry == false:
 		return
+	if (get_parent().current_state == GameplayPage.GAMEPLAY_STATE.INQUIRY_MENU):
+		print('inquiein')
 	if interactable.is_in_group("npc"):
+		get_parent().change_state(GameplayPage.GAMEPLAY_STATE.INQUIRY_MENU)
 		start_inquire.emit(interactable)
+		await interactable.inquiry_over
+		get_parent().change_state(GameplayPage.GAMEPLAY_STATE.EXPLORE)
+		get_parent().check_for_new_item()
+
 
 func _animate():
 	if velocity != Vector2.ZERO:

@@ -34,7 +34,7 @@ size = Vector2(60, 151.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agb2h"]
 size = Vector2(65, 195.5)
 
-[node name="Level2-1-2" type="Node"]
+[node name="Main" type="Node"]
 script = ExtResource("1_1r0i0")
 metadata/_edit_horizontal_guides_ = [1278.0, 882.0]
 metadata/_edit_vertical_guides_ = [540.0]

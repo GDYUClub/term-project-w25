@@ -6,12 +6,15 @@ extends Control
 
 @export var clue_button_scene : PackedScene = preload("res://src/dialogue/clue_button.tscn")
 var current_npc : Area2D
+var can_reopen = true
 
 func _ready() -> void:
 	player.start_inquire.connect(start_inquire)
 	player.end_inquire.connect(close)
 
 func start_inquire(npc): #This method recieves a signal from the player when they inquire to an npc
+	if !can_reopen: # to prevent double just_pressed input issues
+		return
 	clear()
 	visible = true
 	current_npc = npc
@@ -38,6 +41,21 @@ func clear():
 		node.queue_free()
 func succeed(id : int):
 	close()
+	get_parent().get_parent().change_state(GameplayPage.GAMEPLAY_STATE.DIALOG)	
 	dialogue_manager.start_inquiry_dialogue(current_npc, id)
+	await dialogue_manager.dialogue_ended
 	
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("inquire") and get_parent().get_parent().current_state == GameplayPage.GAMEPLAY_STATE.INQUIRY_MENU:
+		print_debug("exit inquire from _input")
+		get_parent().get_parent().change_state(GameplayPage.GAMEPLAY_STATE.EXPLORE)	
+		close()
+		double_input_prevention()
+		
+func double_input_prevention() -> void:
+	print('double input prevention')
+	can_reopen = false
+	await get_tree().create_timer(.1).timeout
+	can_reopen = true
 	

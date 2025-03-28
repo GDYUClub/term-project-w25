@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://clv10wnhi7uaa" path="res://assets/sprites/panel-ref.png" id="3_r7t7n"]
 [ext_resource type="Texture2D" uid="uid://cdj7wr7ey5yin" path="res://assets/sprites/pages/1-1/Chapter1_Flattened_Top.PNG" id="4_f7jg0"]
 [ext_resource type="Texture2D" uid="uid://n04j8c2qcbac" path="res://assets/sprites/pages/1-1/Chapter1_Flattened_Bottom.PNG" id="5_xcymm"]
-[ext_resource type="Resource" uid="uid://dojkosxruk8xs" path="res://src/clues/clue-resources/tutorial/clue_cigs.tres" id="6_j5coj"]
-[ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/clue_lighter.tres" id="7_2g1vn"]
-[ext_resource type="Resource" uid="uid://d3k8rcoc56don" path="res://src/clues/clue-resources/tutorial/clue_third.tres" id="8_dvjps"]
+[ext_resource type="Resource" uid="uid://dojkosxruk8xs" path="res://src/clues/clue-resources/tutorial/shattered_glass.tres" id="6_j5coj"]
+[ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/lighter.tres" id="7_2g1vn"]
+[ext_resource type="Resource" uid="uid://d3k8rcoc56don" path="res://src/clues/clue-resources/tutorial/head_trauma.tres" id="8_dvjps"]
 [ext_resource type="PackedScene" uid="uid://bvqwk1mxnpwr5" path="res://src/gameplay_ui/game_ui.tscn" id="8_j5coj"]
 [ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="9_v5ho3"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="10_41sty"]
@@ -388,22 +388,22 @@ position = Vector2(1265, 197)
 starting_scale = 0.4
 current_move_type = 1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="GameplayUI" parent="CanvasLayer" instance=ExtResource("8_j5coj")]
+[node name="GameplayUI" parent="UI" instance=ExtResource("8_j5coj")]
 unique_name_in_owner = true
 
-[node name="InquireUI" parent="CanvasLayer" instance=ExtResource("11_otruw")]
+[node name="InquireUI" parent="UI" instance=ExtResource("11_otruw")]
 unique_name_in_owner = true
 metadata/_edit_lock_ = true
 
-[node name="DialogueUI" parent="CanvasLayer" instance=ExtResource("12_j1u5a")]
+[node name="DialogueUI" parent="UI" instance=ExtResource("12_j1u5a")]
 unique_name_in_owner = true
 visible = false
 offset_left = 0.0
 offset_right = 0.0
 
-[node name="InventoryUI" parent="CanvasLayer" instance=ExtResource("11_2g1vn")]
+[node name="InventoryUI" parent="UI" instance=ExtResource("11_2g1vn")]
 unique_name_in_owner = true
 visible = false
 
