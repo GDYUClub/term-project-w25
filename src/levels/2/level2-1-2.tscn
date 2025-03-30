@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cwo22opxygl8m" path="res://src/clues/clue_arrange_screen.tscn" id="9_vd6m4"]
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="10_qehm7"]
 [ext_resource type="Script" uid="uid://d313ibk1sryhe" path="res://src/dialogue/dialogue_manager.gd" id="11_23rmw"]
-[ext_resource type="JSON" path="res://src/dialogue/_Dialogue_chapter_2.json" id="12_8jcpp"]
+[ext_resource type="JSON" path="res://src/dialogue/_Dialogue2-1-1.json" id="12_8jcpp"]
 [ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="13_e2scp"]
 [ext_resource type="Texture2D" uid="uid://cqq2knh01h8bg" path="res://assets/sprites/pages/Ch2_L1_Page2_BottomRightPlatform.png" id="14_1r0i0"]
 [ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="14_am26y"]

@@ -92,6 +92,7 @@ func _process(delta: float) -> void:
 			player.can_move = false
 			if Input.is_action_just_pressed("interact") and !$Cursor.interactable and $Cursor.close_cooled:
 				_toggle_panel(overlapping_panel_name)
+				player.interactable = null
 				change_state(GAMEPLAY_STATE.EXPLORE)
 
 # ran after a dialog sequence to check if a new item was added and toggles the prompt on the gameplay ui
@@ -129,19 +130,18 @@ func change_state(new_state:GAMEPLAY_STATE):
 	if new_state == GAMEPLAY_STATE.CURSOR:
 		$Cursor.double_input_prevention()
 
-func _solved_clues() -> void:	
-	match page:
-		PAGES.page1_2:
-			%CopUnsolved.monitorable = false
-			%CopSolved.monitorable = true
-
-	pass
 
 func next_page() -> void:
 	match page:
 		PAGES.page1_2:
 			get_tree().change_scene_to_file("res://src/levels/2/level2-1-1.tscn")
 
+func _solved_clues() -> void:	
+	match page:
+		PAGES.page1_2:
+			%CopUnsolved.monitorable = false
+			%CopSolved.monitorable = true
+	pass
 
 func _handle_dialouge_event(event_str):
 	if event_str == "solved_page_puzzle":
@@ -150,4 +150,6 @@ func _handle_dialouge_event(event_str):
 	if event_str == "next_page":
 		change_state(GAMEPLAY_STATE.EXPLORE)
 		next_page()
-	pass
+	if event_str == "next_cop_dialouge":
+			%Cop1.monitorable = false
+			%Cop2.monitorable = true

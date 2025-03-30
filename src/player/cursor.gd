@@ -4,6 +4,7 @@ const SPEED: = 400.0
 var can_move:= false
 var close_cooled = true
 @onready var hitbox = $Area2D
+@onready var player = %Player
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 var interactable: Area2D = null
@@ -11,39 +12,32 @@ var interactable: Area2D = null
 func _ready() -> void:
 	hitbox.area_entered.connect(
 	func(area): 
-		interactable = area
+		player.interactable = area
 		%AlertSprite.visible = true
 	)	
 	hitbox.area_exited.connect(
 	func(_area): 
-		interactable = null
+		player.interactable = null
 		%AlertSprite.visible = false
 	)	
-	pass
 
 func _process(delta: float) -> void:
 	if !can_move:
 		return
 	if Input.is_action_just_pressed("interact"):
-		_inspect()
+		if close_cooled:
+			player.interact()
 
 	var dir:= Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	velocity = dir * SPEED 
 	move_and_slide()
 
-func _inspect() -> void:
-	if interactable == null:
-		return
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact") and get_parent().current_state == GameplayPage.GAMEPLAY_STATE.CURSOR:
+		player.interact()
+		get_viewport().set_input_as_handled()
 
-	if interactable.is_in_group("npc") and !%Player.in_dialouge:
-		%Player.in_dialouge = true
-		interactable.talk_to_npc()
-		await interactable.interaction_over
-		%Player.in_dialouge = false
-		get_parent().check_for_new_item()
-		print("player in dialouge", %Player.in_dialouge)
 
-	
 func double_input_prevention():
 	close_cooled = false
 	await get_tree().create_timer(0.1).timeout

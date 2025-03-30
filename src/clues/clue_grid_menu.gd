@@ -56,6 +56,7 @@ func do_ready():
 	if len(panels) > 0:
 		selected_grid = all_grid_cells[0+ len(clue_grid_cells)]
 		selected_grid.on_hover()
+	print('done this')
 
 func destroy_previous():
 	for cell in clue_grid_cells:

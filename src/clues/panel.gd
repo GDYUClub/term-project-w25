@@ -6,7 +6,7 @@ extends Area2D
 @onready var sprite: TextureRect = $Clue
 @onready var numberLabel: Label = $NumberLabel
 @onready var panel_desc_scene: PackedScene = preload("res://src/clues/clue_description.tscn")
-@onready var inventory_panel : inventory_ui = get_node("/root/Main/UI/InventoryUI")
+@onready var inventory_panel : inventory_ui = get_parent().get_parent()
 
 var selected_box: GridBox 
 var panel_id: int
@@ -49,6 +49,10 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	# makes sure we're in the panel arragement state, otherwise don't do anything
+	if get_parent().get_parent().get_parent().get_parent().current_state != GameplayPage.GAMEPLAY_STATE.PANEL_ARRANGE:
+
+		return
 	set_keyboard_time(delta)
 	description_process(delta)
 	if(_is_selected):

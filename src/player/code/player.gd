@@ -103,27 +103,23 @@ func _process(delta: float) -> void:
 	for overlap in area.get_overlapping_areas():
 		_on_area_entered(overlap)
 		
-	# if Input.is_action_just_pressed("interact"):
-	# 	interact()
-	# if Input.is_action_just_pressed("inquire") and get_parent().current_state == GameplayPage.GAMEPLAY_STATE.EXPLORE:
-	# 	print_debug("run inquire from process")
-	# 	inquire()
-	
 	_animate()
 	move_and_slide()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and get_parent().current_state == GameplayPage.GAMEPLAY_STATE.EXPLORE:
 		interact()
+		get_viewport().set_input_as_handled()
 	if event.is_action_pressed("inquire") and get_parent().current_state == GameplayPage.GAMEPLAY_STATE.EXPLORE:
 		print_debug("run inquire from process")
 		if %InquireUI.can_reopen:
 			inquire()
+			get_viewport().set_input_as_handled()
 	
 func interact():
 	if not interactable or in_dialouge:
 		return
-	print(interactable.get_groups())
+	#print(interactable.get_groups())
 	if interactable.is_in_group("clue"):
 		clues.append(interactable.clue)
 		Inventory.add_item(interactable.clue)
@@ -135,12 +131,15 @@ func interact():
 	elif interactable.is_in_group("npc"):
 		in_dialouge = true
 		#can_move = false
+		var is_cursor = true if get_parent().current_state == GameplayPage.GAMEPLAY_STATE.CURSOR else false
 		get_parent().change_state(GameplayPage.GAMEPLAY_STATE.DIALOG)
 		interactable.talk_to_npc()
 		await interactable.interaction_over
 		interactable = null
-		#can_move = true
-		get_parent().change_state(GameplayPage.GAMEPLAY_STATE.EXPLORE)
+		if is_cursor:
+			get_parent().change_state(GameplayPage.GAMEPLAY_STATE.CURSOR)
+		else:
+			get_parent().change_state(GameplayPage.GAMEPLAY_STATE.EXPLORE)
 		get_parent().check_for_new_item()
 	
 	elif interactable.is_in_group("point_click"):
@@ -161,8 +160,6 @@ func interact():
 func inquire():
 	if not interactable or !interactable.is_in_group("npc") or interactable.can_inquiry == false:
 		return
-	if (get_parent().current_state == GameplayPage.GAMEPLAY_STATE.INQUIRY_MENU):
-		print('inquiein')
 	if interactable.is_in_group("npc"):
 		get_parent().change_state(GameplayPage.GAMEPLAY_STATE.INQUIRY_MENU)
 		start_inquire.emit(interactable)
