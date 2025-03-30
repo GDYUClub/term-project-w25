@@ -170,28 +170,6 @@ visible = false
 unique_name_in_owner = true
 position = Vector2(220, 122)
 
-[node name="InquireUI" parent="." instance=ExtResource("7_1d57u")]
-visible = false
-mouse_filter = 2
-metadata/_edit_lock_ = true
-
-[node name="GameplayUI" parent="." instance=ExtResource("8_a4on0")]
-unique_name_in_owner = true
-offset_right = -1804.0
-offset_bottom = -739.0
-
-[node name="InventoryUI" parent="." instance=ExtResource("9_vd6m4")]
-visible = false
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="DialogueUI" parent="." instance=ExtResource("10_qehm7")]
-unique_name_in_owner = true
-visible = false
-offset_left = 0.0
-offset_right = 0.0
-mouse_filter = 2
-
 [node name="DialogueManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("11_23rmw")
@@ -220,5 +198,30 @@ position = Vector2(1101, 703)
 
 [node name="Sprite2D" parent="Transitions/PanelTransition" index="2"]
 position = Vector2(-15, -64)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InquireUI" parent="CanvasLayer" instance=ExtResource("7_1d57u")]
+unique_name_in_owner = true
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="GameplayUI" parent="CanvasLayer" instance=ExtResource("8_a4on0")]
+unique_name_in_owner = true
+offset_right = -1804.0
+offset_bottom = -739.0
+
+[node name="InventoryUI" parent="CanvasLayer" instance=ExtResource("9_vd6m4")]
+unique_name_in_owner = true
+visible = false
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DialogueUI" parent="CanvasLayer" instance=ExtResource("10_qehm7")]
+unique_name_in_owner = true
+visible = false
+offset_left = 0.0
+offset_right = 0.0
+mouse_filter = 2
 
 [editable path="Transitions/PanelTransition"]

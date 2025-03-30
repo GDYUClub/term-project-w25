@@ -27,6 +27,8 @@ const DEFAULT_DIALOGUE :JSON= preload("res://src/dialogue/_Dialogue-Default.json
 
 signal dialogue_ended
 
+signal solved_page_puzzle
+
 enum LANGUAGE {ENGLISH, FRENCH}
 @export var language : LANGUAGE = LANGUAGE.ENGLISH
 @export var DIALOGUE_JSON : JSON
@@ -205,10 +207,10 @@ func start_inquiry_dialogue(npc : Area2D , item_id : int):
 	npc.inquiry_over.emit()
 
 func execute_command(command_string : String):
-	print("command called")
+	print("command called: " + command_string)
 	if(command_string[0] != "/"):
+		print("signal emitted: " + command_string)
 		dialogue_event.emit(command_string)
-		print("event!")
 	else:
 		print("command!")
 		var selected_command = command_string.substr(1,-1)

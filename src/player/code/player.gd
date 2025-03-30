@@ -195,6 +195,7 @@ func _on_area_entered(area: Area2D):
 		alertSprite.texture = is_clue_alert_texture[true]
 		alertSprite.visible = true
 		interactable = area
+		get_parent().overlapping_panel_name = interactable.name
 	if area.is_in_group("elevator") or area.is_in_group("streetcar"):
 		alertSprite.texture = is_clue_alert_texture[true]
 		alertSprite.visible = true

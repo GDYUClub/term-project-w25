@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cx8pspxpaj5y"]
+[gd_scene load_steps=45 format=3 uid="uid://cx8pspxpaj5y"]
 
 [ext_resource type="Script" uid="uid://pkuix78c4wo3" path="res://src/levels/2/level_2_1.gd" id="1_llba7"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="2_i5oa3"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://d313ibk1sryhe" path="res://src/dialogue/dialogue_manager.gd" id="9_6x7mo"]
 [ext_resource type="JSON" path="res://src/dialogue/_Dialogue_chapter_2.json" id="11_llba7"]
 [ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="11_wlckx"]
+[ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/levels/tutorial/clue_database.gd" id="15_g03s0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1ufb"]
 size = Vector2(577, 71)
@@ -96,10 +97,12 @@ size = Vector2(141, 77.5)
 
 [node name="Level2-1-1" type="Node"]
 script = ExtResource("1_llba7")
+page = 2
 metadata/_edit_horizontal_guides_ = [1278.0]
 metadata/_edit_vertical_guides_ = [1609.0, 1544.0]
 
 [node name="levelbg" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(-3, 1)
 texture = ExtResource("2_vgn82")
 centered = false
@@ -354,6 +357,13 @@ position = Vector2(1540, 496)
 [node name="5" type="Marker2D" parent="CursorPositions"]
 position = Vector2(1432, 822)
 
+[node name="Cursor" parent="." instance=ExtResource("3_0iawh")]
+visible = false
+
+[node name="PlayerStart" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(296, 547)
+
 [node name="PanelItems" type="Node" parent="."]
 
 [node name="0" type="Node" parent="PanelItems"]
@@ -363,39 +373,42 @@ position = Vector2(629, 312)
 character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
 
-[node name="Cursor" parent="." instance=ExtResource("3_0iawh")]
-visible = false
-
-[node name="PlayerStart" type="Marker2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(296, 547)
-
-[node name="InquireUI" parent="." instance=ExtResource("3_ypvw2")]
-unique_name_in_owner = true
-visible = false
-mouse_filter = 2
-metadata/_edit_lock_ = true
-
-[node name="GameplayUI" parent="." instance=ExtResource("5_0iawh")]
-unique_name_in_owner = true
-offset_right = -1804.0
-offset_bottom = -739.0
-
-[node name="InventoryUI" parent="." instance=ExtResource("6_dy207")]
-unique_name_in_owner = true
-visible = false
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="DialogueUI" parent="." instance=ExtResource("4_x03rg")]
-unique_name_in_owner = true
-visible = false
-offset_left = 0.0
-offset_right = 0.0
-mouse_filter = 2
+[node name="CollisionShape2D" parent="PanelItems/0/ShoeDialogue" index="0"]
+position = Vector2(13, -1)
 
 [node name="DialogueManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("9_6x7mo")
 DIALOGUE_JSON = ExtResource("11_llba7")
 INQUIRY_DIALOGUE_JSON = ExtResource("11_wlckx")
+
+[node name="ClueDatabase" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("15_g03s0")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InquireUI" parent="UI" instance=ExtResource("3_ypvw2")]
+unique_name_in_owner = true
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="GameplayUI" parent="UI" instance=ExtResource("5_0iawh")]
+unique_name_in_owner = true
+offset_right = -1804.0
+offset_bottom = -739.0
+
+[node name="InventoryUI" parent="UI" instance=ExtResource("6_dy207")]
+unique_name_in_owner = true
+visible = false
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DialogueUI" parent="UI" instance=ExtResource("4_x03rg")]
+unique_name_in_owner = true
+visible = false
+offset_left = 0.0
+offset_right = 0.0
+mouse_filter = 2
+
+[editable path="PanelItems/0/ShoeDialogue"]
