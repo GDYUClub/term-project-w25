@@ -2,14 +2,23 @@ extends CharacterBody2D
 
 const SPEED: = 400.0
 var can_move:= false
+var close_cooled = true
 @onready var hitbox = $Area2D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 var interactable: Area2D = null
 
 func _ready() -> void:
-	hitbox.area_entered.connect(func(area): interactable = area)	
-	hitbox.area_exited.connect(func(_area): interactable = null)	
+	hitbox.area_entered.connect(
+	func(area): 
+		interactable = area
+		%AlertSprite.visible = true
+	)	
+	hitbox.area_exited.connect(
+	func(_area): 
+		interactable = null
+		%AlertSprite.visible = false
+	)	
 	pass
 
 func _process(delta: float) -> void:
@@ -33,3 +42,9 @@ func _inspect() -> void:
 		%Player.in_dialouge = false
 		get_parent().check_for_new_item()
 		print("player in dialouge", %Player.in_dialouge)
+
+	
+func double_input_prevention():
+	close_cooled = false
+	await get_tree().create_timer(0.1).timeout
+	close_cooled = true

@@ -65,6 +65,7 @@ size = Vector2(274.25, 41.9377)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_4j7fv")
+page = 1
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -84,8 +85,8 @@ offset_bottom = -739.0
 unique_name_in_owner = true
 visible = false
 clue_count = 4
-s_start_id = 1000
-s_end_id = 1001
+s_start_id = 28
+s_end_id = 28
 
 [node name="InquireUI" parent="UI" instance=ExtResource("11_btqoi")]
 unique_name_in_owner = true
@@ -295,10 +296,24 @@ can_inquiry = false
 [node name="CollisionShape2D" parent="Npc/Cop1" index="0"]
 position = Vector2(-41.125, 0)
 
-[node name="Cop2" parent="Npc" instance=ExtResource("18_kltel")]
+[node name="CopUnsolved" parent="Npc" instance=ExtResource("18_kltel")]
+unique_name_in_owner = true
 position = Vector2(1161, 890)
 npc_name = "Sergeant Biggs"
-end_index = 11
+start_index = 26
+end_index = 27
+character1_sprite = ExtResource("19_f08ng")
+character2_sprite = ExtResource("19_f81lm")
+can_inquiry = false
+
+[node name="CopSolved" parent="Npc" instance=ExtResource("18_kltel")]
+unique_name_in_owner = true
+position = Vector2(1161, 890)
+monitoring = false
+monitorable = false
+npc_name = "Sergeant Biggs"
+start_index = 29
+end_index = 33
 character1_sprite = ExtResource("19_f08ng")
 character2_sprite = ExtResource("19_f81lm")
 can_inquiry = false
@@ -355,6 +370,8 @@ character2_sprite = null
 repeatable_conversation = false
 can_inquiry = false
 is_clue = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [editable path="Transitions/3-4"]
 [editable path="Transitions/4-3"]

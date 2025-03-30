@@ -142,7 +142,6 @@ func populate_clue_panels():
 		if !panels.is_empty() && i < panels.size() and panels.get(i) != null:
 			panels[i].position.x = cell.position.x
 			panels[i].position.y = cell.position.y
-			cell
 			i += 1
 
 func open_document(clue : Clue):
