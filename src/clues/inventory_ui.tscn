@@ -139,6 +139,7 @@ flat = true
 [node name="GridCells" type="Node2D" parent="."]
 
 [node name="DocumentView" type="ColorRect" parent="."]
+unique_name_in_owner = true
 visible = false
 z_index = 200
 layout_mode = 1
@@ -152,6 +153,7 @@ grow_vertical = 2
 color = Color(0.103744, 0.103744, 0.103744, 1)
 
 [node name="Document" type="TextureRect" parent="DocumentView"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

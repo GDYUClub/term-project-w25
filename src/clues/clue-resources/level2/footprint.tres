@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://dsggi1ea6e8ol"]
+
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="1_6mnf0"]
+[ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_7ic80"]
+
+[resource]
+script = ExtResource("1_6mnf0")
+type = 0
+id = 0
+lvl_id = 0
+name = "footprints"
+desc = ""
+icon = ExtResource("1_7ic80")
+panel = ExtResource("1_7ic80")
+environment_sprite = ExtResource("1_7ic80")
+picks_up = false
+correct_panel = 0
+metadata/_custom_type_script = "uid://bhwvtvekextht"

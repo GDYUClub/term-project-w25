@@ -1,6 +1,6 @@
 [gd_scene load_steps=39 format=3 uid="uid://s8y2oda1crpu"]
 
-[ext_resource type="Script" uid="uid://bfvdqic6i2yn1" path="res://src/levels/tutorial/tutorial.gd" id="1_hspkm"]
+[ext_resource type="Script" uid="uid://bfvdqic6i2yn1" path="res://src/levels/tutorial/gameplay_page.gd" id="1_hspkm"]
 [ext_resource type="PackedScene" uid="uid://wd4uvocsv0hr" path="res://src/clues/clue_area.tscn" id="1_ra0nd"]
 [ext_resource type="Resource" uid="uid://dojkosxruk8xs" path="res://src/clues/clue-resources/tutorial/shattered_glass.tres" id="2_5f4ee"]
 [ext_resource type="Texture2D" uid="uid://clv10wnhi7uaa" path="res://assets/sprites/panel-ref.png" id="3_4ytyg"]

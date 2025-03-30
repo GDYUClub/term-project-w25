@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cx8pspxpaj5y"]
+[gd_scene load_steps=48 format=3 uid="uid://cx8pspxpaj5y"]
 
 [ext_resource type="Script" uid="uid://pkuix78c4wo3" path="res://src/levels/2/level_2_1.gd" id="1_llba7"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="2_i5oa3"]
@@ -11,14 +11,16 @@
 [ext_resource type="PackedScene" uid="uid://bvqwk1mxnpwr5" path="res://src/gameplay_ui/game_ui.tscn" id="5_0iawh"]
 [ext_resource type="Texture2D" uid="uid://bqn3bq00qnuwj" path="res://assets/sprites/pages/2-2/Ch2_Level1_Page1_P3_Jane.png" id="5_igfbh"]
 [ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="5_wlckx"]
-[ext_resource type="PackedScene" uid="uid://cwo22opxygl8m" path="res://src/clues/clue_arrange_screen.tscn" id="6_dy207"]
 [ext_resource type="Texture2D" uid="uid://cm5hyjqwsd345" path="res://assets/sprites/pages/2-2/Ch2_Level1_Page1_P4_Jane.png" id="6_igfbh"]
 [ext_resource type="Texture2D" uid="uid://dv81h7efc8yhi" path="res://assets/sprites/pages/2-2/Ch2_Level1_Page1_P5_jane.png" id="7_kdd3q"]
 [ext_resource type="Texture2D" uid="uid://bdftr0bethnbq" path="res://assets/sprites/pages/2-2/Ch2_Level1_Page1_P7_Janw.png" id="8_f8tlo"]
 [ext_resource type="Script" uid="uid://d313ibk1sryhe" path="res://src/dialogue/dialogue_manager.gd" id="9_6x7mo"]
-[ext_resource type="JSON" path="res://src/dialogue/_Dialogue_chapter_2.json" id="11_llba7"]
+[ext_resource type="JSON" path="res://src/dialogue/_Dialogue2-1-1.json" id="11_llba7"]
 [ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="11_wlckx"]
 [ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/levels/tutorial/clue_database.gd" id="15_g03s0"]
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="16_58q08"]
+[ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/lighter.tres" id="17_no2tp"]
+[ext_resource type="PackedScene" uid="uid://yljam13vx8wv" path="res://src/clues/inventory_ui.tscn" id="21_58q08"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1ufb"]
 size = Vector2(577, 71)
@@ -94,6 +96,9 @@ size = Vector2(94, 189.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogp7b"]
 size = Vector2(141, 77.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvptf"]
+size = Vector2(41, 20)
 
 [node name="Level2-1-1" type="Node"]
 script = ExtResource("1_llba7")
@@ -376,6 +381,17 @@ character2_sprite = null
 [node name="CollisionShape2D" parent="PanelItems/0/ShoeDialogue" index="0"]
 position = Vector2(13, -1)
 
+[node name="Ashtray" parent="PanelItems/0" instance=ExtResource("4_sut8d")]
+position = Vector2(859, 226)
+start_index = 1
+end_index = 1
+character1_sprite = ExtResource("5_wlckx")
+character2_sprite = null
+
+[node name="CollisionShape2D" parent="PanelItems/0/Ashtray" index="0"]
+position = Vector2(14, 2)
+shape = SubResource("RectangleShape2D_kvptf")
+
 [node name="DialogueManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("9_6x7mo")
@@ -385,6 +401,7 @@ INQUIRY_DIALOGUE_JSON = ExtResource("11_wlckx")
 [node name="ClueDatabase" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("15_g03s0")
+items = Array[ExtResource("16_58q08")]([ExtResource("17_no2tp")])
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -398,12 +415,6 @@ unique_name_in_owner = true
 offset_right = -1804.0
 offset_bottom = -739.0
 
-[node name="InventoryUI" parent="UI" instance=ExtResource("6_dy207")]
-unique_name_in_owner = true
-visible = false
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
 [node name="DialogueUI" parent="UI" instance=ExtResource("4_x03rg")]
 unique_name_in_owner = true
 visible = false
@@ -411,4 +422,10 @@ offset_left = 0.0
 offset_right = 0.0
 mouse_filter = 2
 
+[node name="InventoryUI" parent="UI" instance=ExtResource("21_58q08")]
+unique_name_in_owner = true
+visible = false
+clue_count = 10
+
 [editable path="PanelItems/0/ShoeDialogue"]
+[editable path="PanelItems/0/Ashtray"]
