@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://diihjnltl81ow"]
+
+[ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_1r3px"]
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_upx3p"]
+
+[resource]
+script = ExtResource("2_upx3p")
+type = 0
+id = 11
+lvl_id = 2
+name = "carpet"
+desc = ""
+icon = ExtResource("1_1r3px")
+panel = ExtResource("1_1r3px")
+environment_sprite = ExtResource("1_1r3px")
+picks_up = false
+correct_panel = 0
+metadata/_custom_type_script = "uid://bhwvtvekextht"

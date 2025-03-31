@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://cv2tuh6jdflfs"]
+
+[ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_xrbax"]
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_nv5p1"]
+
+[resource]
+script = ExtResource("2_nv5p1")
+type = 0
+id = 5
+lvl_id = 2
+name = "womenUnderwear"
+desc = ""
+icon = ExtResource("1_xrbax")
+panel = ExtResource("1_xrbax")
+environment_sprite = ExtResource("1_xrbax")
+picks_up = false
+correct_panel = 0
+metadata/_custom_type_script = "uid://bhwvtvekextht"

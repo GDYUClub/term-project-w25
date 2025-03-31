@@ -17,7 +17,6 @@
 [ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/levels/tutorial/clue_database.gd" id="12_legqn"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="13_thv2m"]
 [ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="14_h25l4"]
-[ext_resource type="JSON" path="res://src/dialogue/_Dialogue_new.json" id="24_f2mbc"]
 [ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="27_t7oso"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fuvah"]
@@ -76,6 +75,9 @@ size = Vector2(274.25, 41.9377)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vqgbc"]
 size = Vector2(60, 183)
+
+[sub_resource type="Resource" id="Resource_d2hcf"]
+metadata/__load_path__ = "res://src/dialogue/_Dialogue_new.json"
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hspkm")
@@ -365,7 +367,7 @@ items = Array[ExtResource("13_thv2m")]([ExtResource("2_5f4ee"), ExtResource("4_n
 [node name="DialogueManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("6_gkphd")
-DIALOGUE_JSON = ExtResource("24_f2mbc")
+DIALOGUE_JSON = SubResource("Resource_d2hcf")
 INQUIRY_DIALOGUE_JSON = ExtResource("14_h25l4")
 
 [node name="Cat" parent="." instance=ExtResource("8_bb1rp")]

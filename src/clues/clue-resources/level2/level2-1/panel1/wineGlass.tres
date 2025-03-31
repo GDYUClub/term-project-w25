@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://drsm6qoo8v5ne"]
+
+[ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_50dnx"]
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_f18yn"]
+
+[resource]
+script = ExtResource("2_f18yn")
+type = 0
+id = 4
+lvl_id = 2
+name = "wineGlass"
+desc = ""
+icon = ExtResource("1_50dnx")
+panel = ExtResource("1_50dnx")
+environment_sprite = ExtResource("1_50dnx")
+picks_up = false
+correct_panel = 0
+metadata/_custom_type_script = "uid://bhwvtvekextht"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://dskmjn75sk7d"]
+
+[ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_l1js4"]
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_g4y6h"]
+
+[resource]
+script = ExtResource("2_g4y6h")
+type = 0
+id = 14
+lvl_id = 2
+name = "scuffMarks"
+desc = ""
+icon = ExtResource("1_l1js4")
+panel = ExtResource("1_l1js4")
+environment_sprite = ExtResource("1_l1js4")
+picks_up = false
+correct_panel = 0
+metadata/_custom_type_script = "uid://bhwvtvekextht"
