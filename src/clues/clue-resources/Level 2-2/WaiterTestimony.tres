@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://c1ag36y17uxs8"]
+
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="1_28klk"]
+[ext_resource type="Texture2D" uid="uid://bmarwcp3gweti" path="res://assets/sprites/talksprites/WaitressUpscaled.png" id="1_s6aif"]
+
+[resource]
+script = ExtResource("1_28klk")
+type = 0
+id = 2
+lvl_id = 0
+name = "WaiterTestimony"
+desc = ""
+icon = ExtResource("1_s6aif")
+panel = ExtResource("1_s6aif")
+picks_up = false
+correct_panel = 0
+metadata/_custom_type_script = "uid://bhwvtvekextht"

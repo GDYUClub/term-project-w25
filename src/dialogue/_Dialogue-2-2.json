@@ -2054,7 +2054,7 @@
 	"LINK_1_ID": null,
 	"LINK_2_ID": null,
 	"LINK_3_ID": null,
-	"COMMANDS": null
+	"COMMANDS": "/Add_1"
   },
  "121": {
 	"SPEAKER_NAME": "Jane",
@@ -3399,7 +3399,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"201": {
+"200": {
 	"SPEAKER_NAME": "Sylvia Teerie",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3416,7 +3416,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"202": {
+"201": {
 	"SPEAKER_NAME": "Sylvia Teerie",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3433,7 +3433,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"203": {
+"202": {
 	"SPEAKER_NAME": "Jane",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "THINK",
@@ -3450,7 +3450,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"204": {
+"203": {
 	"SPEAKER_NAME": "Jane",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3467,7 +3467,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"205": {
+"204": {
 	"SPEAKER_NAME": "Sylvia Teerie",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3484,7 +3484,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"206": {
+"205": {
 	"SPEAKER_NAME": "Jane",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3501,7 +3501,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"207": {
+"206": {
 	"SPEAKER_NAME": "Sylvia Teerie",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3518,7 +3518,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"208": {
+"207": {
 	"SPEAKER_NAME": "Jane",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3535,7 +3535,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"209": {
+"208": {
 	"SPEAKER_NAME": "Sylvia Teerie",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3552,7 +3552,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"210": {
+"209": {
 	"SPEAKER_NAME": "Jane",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3569,7 +3569,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"211": {
+"210": {
 	"SPEAKER_NAME": "Sylvia Teerie",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3586,7 +3586,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"212": {
+"211": {
 	"SPEAKER_NAME": "Sylvia Teerie",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3603,7 +3603,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"213": {
+"212": {
 	"SPEAKER_NAME": "Sylvia Teerie",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3620,7 +3620,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"214": {
+"213": {
 	"SPEAKER_NAME": "Jane",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3637,7 +3637,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"215": {
+"214": {
 	"SPEAKER_NAME": "Sylvia Teerie",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3654,7 +3654,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"216": {
+"215": {
 	"SPEAKER_NAME": "Jane",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3671,7 +3671,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"217": {
+"216": {
 	"SPEAKER_NAME": "Sylvia Teerie",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3688,7 +3688,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"218": {
+"217": {
 	"SPEAKER_NAME": "Sylvia Teerie",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3705,7 +3705,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"219": {
+"218": {
 	"SPEAKER_NAME": "Jane",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "THINK",
@@ -3722,7 +3722,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"220": {
+"219": {
 	"SPEAKER_NAME": "Jane",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3739,7 +3739,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"221": {
+"220": {
 	"SPEAKER_NAME": "Narrator",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "NARRATOR",
@@ -3756,7 +3756,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"222": {
+"221": {
 	"SPEAKER_NAME": "Jane",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3773,7 +3773,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"223": {
+"222": {
 	"SPEAKER_NAME": "Kim",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3790,7 +3790,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"224": {
+"223": {
 	"SPEAKER_NAME": "Narrator",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "NARRATOR",
@@ -3807,7 +3807,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"225": {
+"224": {
 	"SPEAKER_NAME": "Kim",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3824,7 +3824,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"226": {
+"225": {
 	"SPEAKER_NAME": "Kim",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3841,7 +3841,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"227": {
+"226": {
 	"SPEAKER_NAME": "Jane",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3858,7 +3858,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"228": {
+"227": {
 	"SPEAKER_NAME": "Kim",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3875,7 +3875,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"229": {
+"228": {
 	"SPEAKER_NAME": "Kim",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3892,7 +3892,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"230": {
+"229": {
 	"SPEAKER_NAME": "Jane",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3909,7 +3909,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"231": {
+"230": {
 	"SPEAKER_NAME": "Kim",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3926,7 +3926,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"232": {
+"231": {
 	"SPEAKER_NAME": "Jane",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3943,7 +3943,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"233": {
+"232": {
 	"SPEAKER_NAME": "Kim",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3960,7 +3960,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"234": {
+"233": {
 	"SPEAKER_NAME": "Kim",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3977,7 +3977,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"235": {
+"234": {
 	"SPEAKER_NAME": "Jane",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "TALK",
@@ -3994,7 +3994,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"236": {
+"235": {
 	"SPEAKER_NAME": "Jane",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "THINK",
@@ -4011,7 +4011,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"237": {
+"236": {
 	"SPEAKER_NAME": "Jane",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "TALK",
@@ -4028,11 +4028,11 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"238": {
+"237": {
 	"SPEAKER_NAME": "Narrator",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "NARRATOR",
-	"ENGLISH": "Kim panicks",
+	"ENGLISH": "*Panicking*",
 	"FRENCH": null,
 	"ENGLISH_DIALOGUE_CHOICE_1": null,
 	"ENGLISH_DIALOGUE_CHOICE_2": null,
@@ -4045,7 +4045,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"239": {
+"238": {
 	"SPEAKER_NAME": "Kim",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -4062,7 +4062,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"240": {
+"239": {
 	"SPEAKER_NAME": "Jane",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "TALK",
@@ -4079,7 +4079,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"241": {
+"240": {
 	"SPEAKER_NAME": "Kim",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -4094,9 +4094,9 @@
 	"LINK_1_ID": null,
 	"LINK_2_ID": null,
 	"LINK_3_ID": null,
-	"COMMANDS": null
+	"COMMANDS": "/Add_2"
   },
-"242": {
+"241": {
 	"SPEAKER_NAME": "Narrator",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "NARRATOR",
@@ -4113,7 +4113,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"243": {
+"242": {
 	"SPEAKER_NAME": "Jane",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "TALK",
@@ -4130,7 +4130,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"244": {
+"243": {
 	"SPEAKER_NAME": "Kim",
 	"SPEAKER_ID": 1.0,
 	"BUBBLE_TYPE": "TALK",
@@ -4147,7 +4147,7 @@
 	"LINK_3_ID": null,
 	"COMMANDS": null
   },
-"245": {
+"244": {
 	"SPEAKER_NAME": "Jane",
 	"SPEAKER_ID": 0.0,
 	"BUBBLE_TYPE": "THINK",
@@ -4163,5 +4163,22 @@
 	"LINK_2_ID": null,
 	"LINK_3_ID": null,
 	"COMMANDS": null
+  },
+"245": {
+	"SPEAKER_NAME": "Jane",
+	"SPEAKER_ID": 0.0,
+	"BUBBLE_TYPE": "THINK",
+	"ENGLISH": "Ah... There's the record.",
+	"FRENCH": null,
+	"ENGLISH_DIALOGUE_CHOICE_1": null,
+	"ENGLISH_DIALOGUE_CHOICE_2": null,
+	"ENGLISH_DIALOGUE_CHOICE_3": null,
+	"FRENCH_DIALOGUE_CHOICE_1": null,
+	"FRENCH_DIALOGUE_CHOICE_2": null,
+	"FRENCH_DIALOGUE_CHOICE_3": null,
+	"LINK_1_ID": null,
+	"LINK_2_ID": null,
+	"LINK_3_ID": null,
+	"COMMANDS": "/Add_3"
   },
  }
