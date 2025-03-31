@@ -483,7 +483,6 @@ character2_sprite = null
 [node name="CollisionShape2D" parent="PanelItems/0/WomenUnderwear" index="0"]
 position = Vector2(172, 16)
 rotation = 0.972304
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_iumx8")
 
 [node name="Pen" parent="PanelItems/0" instance=ExtResource("4_sut8d")]
@@ -496,7 +495,6 @@ character2_sprite = null
 [node name="CollisionShape2D" parent="PanelItems/0/Pen" index="0"]
 position = Vector2(149.348, -64.3205)
 rotation = -0.175815
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_xmv53")
 
 [node name="1" type="Node" parent="PanelItems"]
@@ -511,7 +509,6 @@ character2_sprite = null
 [node name="CollisionShape2D" parent="PanelItems/1/ShatteredWhiskeyGlass" index="0"]
 position = Vector2(457, 92.5)
 rotation = 0.0318773
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_up2jv")
 
 [node name="WhiskeyBottleWithBlood" parent="PanelItems/1" instance=ExtResource("4_sut8d")]
@@ -524,7 +521,6 @@ character2_sprite = null
 [node name="CollisionShape2D" parent="PanelItems/1/WhiskeyBottleWithBlood" index="0"]
 position = Vector2(773.938, 74.8161)
 rotation = -0.326736
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6ulyt")
 
 [node name="WhiskeyGlass" parent="PanelItems/1" instance=ExtResource("4_sut8d")]
@@ -537,7 +533,6 @@ character2_sprite = null
 [node name="CollisionShape2D" parent="PanelItems/1/WhiskeyGlass" index="0"]
 position = Vector2(307, 60.5)
 rotation = 0.0318773
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_640qw")
 
 [node name="2" type="Node" parent="PanelItems"]
@@ -552,7 +547,6 @@ character2_sprite = null
 [node name="CollisionShape2D" parent="PanelItems/2/BookShelf" index="0"]
 position = Vector2(-188, 394)
 rotation = -0.144879
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_cdnpo")
 
 [node name="Cane" parent="PanelItems/2" instance=ExtResource("4_sut8d")]
@@ -565,7 +559,6 @@ character2_sprite = null
 [node name="CollisionShape2D" parent="PanelItems/2/Cane" index="0"]
 position = Vector2(-5.4259, 393.15)
 rotation = 0.303677
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_cjm61")
 
 [node name="Carpet" parent="PanelItems/2" instance=ExtResource("4_sut8d")]
@@ -578,7 +571,6 @@ character2_sprite = null
 [node name="CollisionShape2D" parent="PanelItems/2/Carpet" index="0"]
 position = Vector2(67, 731)
 rotation = 0.449607
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_643ly")
 
 [node name="Carpet2" parent="PanelItems/2" instance=ExtResource("4_sut8d")]
@@ -591,7 +583,6 @@ character2_sprite = null
 [node name="CollisionShape2D" parent="PanelItems/2/Carpet2" index="0"]
 position = Vector2(-28.2639, 811.791)
 rotation = 0.449607
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_vds8e")
 
 [node name="Carpet3" parent="PanelItems/2" instance=ExtResource("4_sut8d")]
@@ -604,7 +595,6 @@ character2_sprite = null
 [node name="CollisionShape2D" parent="PanelItems/2/Carpet3" index="0"]
 position = Vector2(-138, 701)
 rotation = -0.269548
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_7x3dw")
 
 [node name="3" type="Node" parent="PanelItems"]
@@ -619,7 +609,6 @@ character2_sprite = null
 [node name="CollisionShape2D" parent="PanelItems/3/BrokenGlass" index="0"]
 position = Vector2(264.675, 299.77)
 rotation = -0.144879
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_3hj10")
 
 [node name="4" type="Node" parent="PanelItems"]
@@ -634,7 +623,6 @@ character2_sprite = null
 [node name="CollisionShape2D" parent="PanelItems/4/Earring" index="0"]
 position = Vector2(717, 356)
 rotation = -0.144879
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_sqmmh")
 
 [node name="5" type="Node" parent="PanelItems"]
@@ -649,7 +637,6 @@ character2_sprite = null
 [node name="CollisionShape2D" parent="PanelItems/5/ScuffMarks" index="0"]
 position = Vector2(511.373, 656.987)
 rotation = 0.00772299
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_h08er")
 
 [node name="DialogueManager" type="Node" parent="."]
