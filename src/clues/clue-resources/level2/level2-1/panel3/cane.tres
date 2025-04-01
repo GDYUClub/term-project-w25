@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://dlhr8psamwdeu"]
+
+[ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_5sk5y"]
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_mvgm3"]
+
+[resource]
+script = ExtResource("2_mvgm3")
+type = 0
+id = 10
+lvl_id = 2
+name = "cane"
+desc = ""
+icon = ExtResource("1_5sk5y")
+panel = ExtResource("1_5sk5y")
+environment_sprite = ExtResource("1_5sk5y")
+picks_up = false
+correct_panel = 0
+metadata/_custom_type_script = "uid://bhwvtvekextht"

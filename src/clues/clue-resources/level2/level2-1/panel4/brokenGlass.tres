@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://c86nltk8d8ktf"]
+
+[ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_ss4p2"]
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_sbr3j"]
+
+[resource]
+script = ExtResource("2_sbr3j")
+type = 0
+id = 12
+lvl_id = 2
+name = "brokenGlass"
+desc = ""
+icon = ExtResource("1_ss4p2")
+panel = ExtResource("1_ss4p2")
+environment_sprite = ExtResource("1_ss4p2")
+picks_up = false
+correct_panel = 0
+metadata/_custom_type_script = "uid://bhwvtvekextht"
