@@ -114,3 +114,13 @@ flat = true
 [node name="Panels" type="Node2D" parent="."]
 
 [node name="GridCells" type="Node2D" parent="."]
+
+[node name="DocumentView" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Document" type="TextureRect" parent="DocumentView"]
+layout_mode = 0
+offset_right = 1914.0
+offset_bottom = 1013.0
