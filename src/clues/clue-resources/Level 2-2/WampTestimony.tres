@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=5 format=3 uid="uid://dda4uv5m67ktw"]
+
+[ext_resource type="Texture2D" uid="uid://3fikk2jplmiv" path="res://assets/sprites/not-sans.png" id="1_ser6m"]
+[ext_resource type="Texture2D" uid="uid://c546hxlp5nhmm" path="res://assets/sprites/talksprites/DJWompUpscaled.png" id="2_ersmc"]
+[ext_resource type="Resource" uid="uid://cdtrab0mu3pvj" path="res://src/clues/clue-resources/tutorial/testEvolution.tres" id="3_3r7kf"]
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="4_ngabo"]
+
+[resource]
+script = ExtResource("4_ngabo")
+type = 0
+mergeResultant = ExtResource("3_3r7kf")
+id = 0
+lvl_id = 0
+name = "DJ Wamp's Testimony"
+desc = "There was an argument between Teddy and Damien"
+icon = ExtResource("2_ersmc")
+panel = ExtResource("2_ersmc")
+environment_sprite = ExtResource("1_ser6m")
+picks_up = true
+correct_panel = 0
+metadata/_custom_type_script = "uid://bhwvtvekextht"

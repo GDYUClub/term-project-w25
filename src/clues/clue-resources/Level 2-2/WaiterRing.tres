@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://cfddnrcrvt1ch"]
+
+[ext_resource type="Texture2D" uid="uid://cs6q5o1x0amss" path="res://assets/sprites/talksprites/BartenderUpscaled.png" id="1_c7np6"]
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_bwy61"]
+
+[resource]
+script = ExtResource("2_bwy61")
+type = 0
+id = 1
+lvl_id = 0
+name = "Waiter's Ring"
+desc = "AAAAA"
+icon = ExtResource("1_c7np6")
+panel = ExtResource("1_c7np6")
+picks_up = true
+correct_panel = 1
+metadata/_custom_type_script = "uid://bhwvtvekextht"
