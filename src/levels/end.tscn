@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://domvfsi4ugsn3"]
+[gd_scene load_steps=2 format=3 uid="uid://domvfsi4ugsn3"]
+
+[ext_resource type="Theme" uid="uid://yukgoy42hebt" path="res://src/cutscene_themetres.tres" id="1_rlaok"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -16,8 +18,11 @@ color = Color(0.241156, 0.241156, 0.241156, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 451.0
-offset_top = 243.0
-offset_right = 491.0
-offset_bottom = 266.0
-text = "To Be Continued"
+offset_left = 189.0
+offset_top = 433.0
+offset_right = 1674.0
+offset_bottom = 589.0
+theme = ExtResource("1_rlaok")
+text = "Will see to wrapping up the to be continued panel splash soon
+Otherwise just fade to black and slap on Verdana text
+You should get that in now in case I fold and don’t make something fancy"

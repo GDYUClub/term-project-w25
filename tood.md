@@ -6,18 +6,11 @@
 
 ## 1-1
 
-- give jane dollar clue to start off
-- inquiry with hot dog guy to give hot dog
-
 ## 1-2
-
-- make jane solution statement
-- let the cop have a new conversation when jane solves the case
-- level transition
 
 ## 2-1-1
 
-- clues and monologs
+- keep relevant previous page clues
 - clue fusions
 - prevent the player from leaving until they've picked up every clue
 - level transition
