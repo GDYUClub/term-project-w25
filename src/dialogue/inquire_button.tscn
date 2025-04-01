@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://vlwrofr3cpyc"]
+
+[ext_resource type="Texture2D" uid="uid://bknspeucr7r2o" path="res://assets/sprites/Inquire.png" id="1_5qqlq"]
+[ext_resource type="Texture2D" uid="uid://eu0kdjsoh565" path="res://assets/sprites/gridcell border.png" id="2_lnymm"]
+
+[node name="ClueButton" type="Button"]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = -1
+anchor_left = 0.394
+anchor_top = 0.311
+anchor_right = 0.606
+anchor_bottom = 0.689
+offset_left = -0.480042
+offset_top = 0.119965
+offset_right = -307.52
+offset_bottom = -308.12
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+icon = ExtResource("1_5qqlq")
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.72
+anchor_bottom = 1.73
+offset_left = -6.0
+offset_top = -6.0
+offset_right = -66.0
+offset_bottom = -68.0
+texture = ExtResource("2_lnymm")
+expand_mode = 1

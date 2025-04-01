@@ -1,19 +1,26 @@
-[gd_scene load_steps=26 format=3 uid="uid://dntc8r7xgew3b"]
+[gd_scene load_steps=33 format=3 uid="uid://dntc8r7xgew3b"]
 
 [ext_resource type="Script" uid="uid://cjdgvn4eosr7q" path="res://src/levels/tutorial/tutorial_2.gd" id="1_fv8uy"]
 [ext_resource type="Texture2D" uid="uid://csum1dhtbisq3" path="res://assets/sprites/pages/2-2/Ch2_Level2_Flattened_NoElevatorSmallaaa.png" id="3_22rls"]
-[ext_resource type="Resource" uid="uid://dojkosxruk8xs" path="res://src/clues/clue-resources/tutorial/shattered_glass.tres" id="5_x1j4a"]
-[ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/lighter.tres" id="6_blgto"]
-[ext_resource type="Resource" uid="uid://d3k8rcoc56don" path="res://src/clues/clue-resources/tutorial/head_trauma.tres" id="7_jf7fn"]
+[ext_resource type="Resource" uid="uid://dda4uv5m67ktw" path="res://src/clues/clue-resources/Level 2-2/WampTestimony.tres" id="6_4odbk"]
+[ext_resource type="Resource" uid="uid://cfddnrcrvt1ch" path="res://src/clues/clue-resources/Level 2-2/WaiterRing.tres" id="7_6yr8k"]
+[ext_resource type="Resource" uid="uid://c1ag36y17uxs8" path="res://src/clues/clue-resources/Level 2-2/WaiterTestimony.tres" id="8_7vvxw"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="9_6hqq4"]
-[ext_resource type="JSON" path="res://src/dialogue/_Dialogue.json" id="10_4odbk"]
+[ext_resource type="Resource" uid="uid://blvtlh4b6n5mj" path="res://src/clues/clue-resources/Level 2-2/WampsMix.tres" id="9_tnfvl"]
+[ext_resource type="JSON" path="res://src/dialogue/_Dialogue-2-2.json" id="10_4odbk"]
 [ext_resource type="PackedScene" uid="uid://dhpbtj7rkkjks" path="res://src/dialogue/inquire_ui.tscn" id="10_lfa3s"]
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="11_iric6"]
 [ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/levels/tutorial/clue_database.gd" id="12_wvrnm"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="13_srr7x"]
+[ext_resource type="JSON" path="res://src/dialogue/_Inquiry1-2-2.json" id="13_syhb0"]
+[ext_resource type="Texture2D" uid="uid://74ktl4oh0vab" path="res://assets/sprites/talksprites/HostUpscaled.png" id="14_22rls"]
 [ext_resource type="Script" uid="uid://d313ibk1sryhe" path="res://src/dialogue/dialogue_manager.gd" id="14_w3udb"]
-[ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="16_126x1"]
+[ext_resource type="Texture2D" uid="uid://cs6q5o1x0amss" path="res://assets/sprites/talksprites/BartenderUpscaled.png" id="15_22rls"]
+[ext_resource type="Texture2D" uid="uid://c546hxlp5nhmm" path="res://assets/sprites/talksprites/DJWompUpscaled.png" id="16_7yf7h"]
+[ext_resource type="Texture2D" uid="uid://bxixf4pjsxa1k" path="res://assets/sprites/talksprites/PoliticianUpscaled.png" id="16_syhb0"]
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="17_27f5c"]
+[ext_resource type="Texture2D" uid="uid://1wx8kswp5bwu" path="res://assets/sprites/talksprites/BusinessPartnerUpscaled.png" id="17_syhb0"]
+[ext_resource type="Texture2D" uid="uid://bmarwcp3gweti" path="res://assets/sprites/talksprites/WaitressUpscaled.png" id="18_0at2v"]
 [ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="18_k3s3g"]
 [ext_resource type="Texture2D" uid="uid://dggagprdo1tme" path="res://assets/sprites/talksprites/hotdog.png" id="19_5seyb"]
 [ext_resource type="Texture2D" uid="uid://b4gxocuqqjib2" path="res://assets/sprites/pages/2-2/Elevator.png" id="20_22rls"]
@@ -169,22 +176,82 @@ drag_horizontal_enabled = true
 [node name="ClueDatabase" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("12_wvrnm")
-items = Array[ExtResource("13_srr7x")]([ExtResource("5_x1j4a"), ExtResource("6_blgto"), ExtResource("7_jf7fn")])
+items = Array[ExtResource("13_srr7x")]([ExtResource("6_4odbk"), ExtResource("7_6yr8k"), ExtResource("8_7vvxw"), ExtResource("9_tnfvl")])
 
 [node name="DialogueManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("14_w3udb")
 DIALOGUE_JSON = ExtResource("10_4odbk")
-INQUIRY_DIALOGUE_JSON = ExtResource("16_126x1")
+INQUIRY_DIALOGUE_JSON = ExtResource("13_syhb0")
 
 [node name="Npc" type="Node" parent="."]
 
+[node name="Host" parent="Npc" instance=ExtResource("17_27f5c")]
+position = Vector2(1006, 605)
+npc_name = "Host"
+end_index = 16
+character1_sprite = ExtResource("18_k3s3g")
+character2_sprite = ExtResource("14_22rls")
+
 [node name="Cop1" parent="Npc" instance=ExtResource("17_27f5c")]
-position = Vector2(236, 1679)
+position = Vector2(390, 455)
 npc_name = "Sergeant Biggs"
 end_index = 9
 character1_sprite = ExtResource("18_k3s3g")
 character2_sprite = ExtResource("19_5seyb")
+
+[node name="DJWamp" parent="Npc" instance=ExtResource("17_27f5c")]
+position = Vector2(1624, 600)
+npc_name = "DJ Wamp"
+start_index = 32
+end_index = 46
+character1_sprite = ExtResource("18_k3s3g")
+character2_sprite = ExtResource("16_7yf7h")
+
+[node name="Bartender" parent="Npc" instance=ExtResource("17_27f5c")]
+position = Vector2(1335, 603)
+npc_name = "Bartender"
+start_index = 102
+end_index = 125
+character1_sprite = ExtResource("18_k3s3g")
+character2_sprite = ExtResource("15_22rls")
+can_inquiry = false
+
+[node name="Politician" parent="Npc" instance=ExtResource("17_27f5c")]
+position = Vector2(1141, 1602)
+npc_name = "Cyrus Reza"
+start_index = 126
+end_index = 148
+character1_sprite = ExtResource("18_k3s3g")
+character2_sprite = ExtResource("16_syhb0")
+can_inquiry = false
+
+[node name="BusinessPartner" parent="Npc" instance=ExtResource("17_27f5c")]
+position = Vector2(1645, 1609)
+npc_name = "Sylvia Teerie"
+start_index = 149
+end_index = 204
+character1_sprite = ExtResource("18_k3s3g")
+character2_sprite = ExtResource("17_syhb0")
+
+[node name="Waitress" parent="Npc" instance=ExtResource("17_27f5c")]
+position = Vector2(957, 1607)
+npc_name = "Waitress"
+start_index = 220
+end_index = 235
+character1_sprite = ExtResource("18_k3s3g")
+character2_sprite = ExtResource("18_0at2v")
+
+[node name="Record" parent="Npc" instance=ExtResource("17_27f5c")]
+position = Vector2(1859, 600)
+npc_name = "Wamp's Record"
+start_index = 245
+end_index = 245
+character1_sprite = ExtResource("18_k3s3g")
+character2_sprite = null
+repeatable_conversation = false
+can_inquiry = false
+is_clue = true
 
 [node name="Elevator" type="Sprite2D" parent="."]
 position = Vector2(125, 641)
@@ -212,6 +279,10 @@ visible = false
 top_level = true
 size_flags_horizontal = 3
 size_flags_vertical = 3
+clue_count = 6
+s_start_id = 28
+s_end_id = 28
+jane_sprite = ExtResource("18_k3s3g")
 
 [node name="DialogueUI" parent="UI" instance=ExtResource("11_iric6")]
 unique_name_in_owner = true
