@@ -135,6 +135,8 @@ func next_page() -> void:
 	match page:
 		PAGES.page1_2:
 			get_tree().change_scene_to_file("res://src/levels/2/level2-1-1.tscn")
+		PAGES.page2_2:
+			get_tree().change_scene_to_file("res://src/levels/end.tscn")
 
 func _solved_clues() -> void:	
 	match page:
@@ -144,6 +146,7 @@ func _solved_clues() -> void:
 	pass
 
 func _handle_dialouge_event(event_str):
+	print(event_str)
 	if event_str == "solved_page_puzzle":
 		change_state(GAMEPLAY_STATE.EXPLORE)
 		_solved_clues()	

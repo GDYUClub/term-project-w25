@@ -154,7 +154,7 @@ size = Vector2(235.161, 86.1827)
 size = Vector2(33.0225, 62.7666)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqmmh"]
-size = Vector2(12.5736, 9.41347)
+size = Vector2(26.4081, 17.9404)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h08er"]
 size = Vector2(161.065, 64.0135)
@@ -621,7 +621,7 @@ character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
 
 [node name="CollisionShape2D" parent="PanelItems/4/Earring" index="0"]
-position = Vector2(717, 356)
+position = Vector2(717, 355)
 rotation = -0.144879
 shape = SubResource("RectangleShape2D_sqmmh")
 

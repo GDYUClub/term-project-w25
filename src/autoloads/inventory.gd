@@ -24,10 +24,11 @@ func clear_level_items(lvl_id:int) -> void:
 func get_items() -> Array[Clue]:
 	return _player_items
 
+func is_empty() -> bool:
+	return _player_items.is_empty()
+
 func get_item_count() -> int:
-	return len(_player_items)
-
-
+	return _player_items.size()
 const CLUE_DB = {
 0:"res://src/clues/clue-resources/tutorial/shattered_glass.tres",
 1:"res://src/clues/clue-resources/tutorial/lighter.tres",
