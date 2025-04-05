@@ -1,0 +1,107 @@
+[gd_scene load_steps=7 format=3 uid="uid://0bnkvc5ud8de"]
+
+[ext_resource type="Script" uid="uid://dixwuadwj2tut" path="res://src/main/new_main_menu.gd" id="1_3c5l0"]
+[ext_resource type="Texture2D" uid="uid://dte3xm5yvqqj8" path="res://assets/sprites/title-screen/Title-20250405T032620Z-001/Title/BackgroundArt.png" id="1_bhe0m"]
+[ext_resource type="Texture2D" uid="uid://cna5cfdfrwidp" path="res://assets/sprites/title-screen/Title-20250405T032620Z-001/Title/Title_Jane_Start.png" id="2_72bal"]
+[ext_resource type="Texture2D" uid="uid://ce570fx3tx46o" path="res://assets/sprites/title-screen/Title-20250405T032620Z-001/Title/TitleScreenButton.png" id="4_jv22t"]
+[ext_resource type="Texture2D" uid="uid://qw5k7nxpn1m" path="res://assets/sprites/title-screen/Title-20250405T032620Z-001/Title/TitleScreenButtonSelected.png" id="5_jv22t"]
+[ext_resource type="Theme" uid="uid://yukgoy42hebt" path="res://src/cutscene_themetres.tres" id="6_qqmxj"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3c5l0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_bhe0m")
+
+[node name="JaneTexture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_72bal")
+
+[node name="Menu" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1495.0
+offset_top = 460.0
+offset_right = 1908.0
+offset_bottom = 1068.0
+theme_override_constants/separation = 32
+
+[node name="StartBtn" type="TextureButton" parent="Menu"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("4_jv22t")
+texture_pressed = ExtResource("5_jv22t")
+texture_focused = ExtResource("5_jv22t")
+
+[node name="Label" type="Label" parent="Menu/StartBtn"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 23.0
+offset_right = 286.0
+offset_bottom = 102.0
+theme = ExtResource("6_qqmxj")
+theme_override_font_sizes/font_size = 64
+text = "START"
+
+[node name="OptionsBtn" type="TextureButton" parent="Menu"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("4_jv22t")
+texture_pressed = ExtResource("5_jv22t")
+texture_focused = ExtResource("5_jv22t")
+
+[node name="Label" type="Label" parent="Menu/OptionsBtn"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 23.0
+offset_right = 286.0
+offset_bottom = 102.0
+theme = ExtResource("6_qqmxj")
+theme_override_font_sizes/font_size = 64
+text = "OPTIONS"
+
+[node name="CreditBtn" type="TextureButton" parent="Menu"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("4_jv22t")
+texture_pressed = ExtResource("5_jv22t")
+texture_focused = ExtResource("5_jv22t")
+
+[node name="Label" type="Label" parent="Menu/CreditBtn"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 23.0
+offset_right = 286.0
+offset_bottom = 102.0
+theme = ExtResource("6_qqmxj")
+theme_override_font_sizes/font_size = 64
+text = "CREDITS"
+
+[node name="QuitBtn" type="TextureButton" parent="Menu"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("4_jv22t")
+texture_pressed = ExtResource("5_jv22t")
+texture_focused = ExtResource("5_jv22t")
+
+[node name="Label" type="Label" parent="Menu/QuitBtn"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 23.0
+offset_right = 286.0
+offset_bottom = 102.0
+theme = ExtResource("6_qqmxj")
+theme_override_font_sizes/font_size = 64
+text = "QUIT"

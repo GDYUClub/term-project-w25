@@ -1,0 +1,185 @@
+[gd_scene load_steps=7 format=3 uid="uid://b086it6bwscik"]
+
+[ext_resource type="Script" uid="uid://b8jalmriey1rg" path="res://src/main/credits.gd" id="1_1m6vl"]
+[ext_resource type="Theme" uid="uid://yukgoy42hebt" path="res://src/cutscene_themetres.tres" id="1_74ynl"]
+[ext_resource type="Texture2D" uid="uid://jhr8rc3g144i" path="res://assets/sprites/title-screen/CitizneJane_Logo_Transparent_NoSlogan.png" id="2_jbff2"]
+
+[sub_resource type="Animation" id="Animation_jbff2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/ScrollContent:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_74ynl"]
+resource_name = "credits"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/ScrollContent:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1m6vl"]
+_data = {
+&"RESET": SubResource("Animation_jbff2"),
+&"credits": SubResource("Animation_74ynl")
+}
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_1m6vl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1928.0
+offset_bottom = 1090.0
+color = Color(0, 0, 0, 1)
+
+[node name="ScrollContent" type="Node2D" parent="ColorRect"]
+unique_name_in_owner = true
+
+[node name="CitizneJaneLogoTransparentNoSlogan" type="Sprite2D" parent="ColorRect/ScrollContent"]
+position = Vector2(1012, 436)
+scale = Vector2(0.471667, 0.471667)
+texture = ExtResource("2_jbff2")
+
+[node name="Label" type="Label" parent="ColorRect/ScrollContent"]
+offset_top = 1200.0
+offset_right = 1920.0
+offset_bottom = 7292.0
+theme = ExtResource("1_74ynl")
+text = "PROGRAMMING
+
+TEAM LEADS:
+Jayden Brooks
+Owen Tarka
+Christopher Draws
+
+TEAM MEMBERS:
+Ethan Hammah
+Calvin Lu
+Riddh Ramburuth
+Mame Mor Mbacke
+Anmol Misra
+Ronan Devlin
+Eric Chen
+---
+
+ART
+
+TEAM LEADS:
+Jasmine Ly
+Rithik Kumanan
+
+TEAM MEMBERS:
+Maureen Navera
+Ada Samiee
+Jaden Tseng
+Ashley Thong
+Philip Kim
+Vanessa Yu
+Sam Genovese
+Jennia Deenaraine
+Kate Dworatek
+Kien Ho
+Evie Tjin-a-joe
+Filza Ahmed
+---
+
+WRITING
+
+TEAM LEADS:
+Gavin Johnstone
+Ahnaf Sharif
+
+TEAM MEMBERS:
+Kadia Gregory
+Chigozie Anthony Duru
+Rocarlie John Baligod
+Haig Souvalian
+Muhammad Zohair
+Jarod Anjelo Lustre
+Avari Freeman
+Zainab Wazir
+---
+
+QA & ACCESSIBILITY
+
+TEAM LEADS:
+Ellia Godbout
+Thalia Godbout
+
+TEAM MEMBERS:
+Alex Jude
+Mahnsi Ruparelia
+Allen Arciaga
+---
+
+GAME DESIGN
+
+TEAM LEADS:
+Mankirt Hothi
+Loyeon Lee
+
+TEAM MEMBERS:
+Kay Pham
+Kaisaan Siddiqui
+Cas Hutchinson
+Katsa Bejemil
+Gurman Sanga
+Anmoldeep Gadri
+Dongjun Kim
+---
+
+UI
+
+TEAM LEADS:
+Christina Mazza
+
+TEAM MEMBERS:
+Anto Borman
+ND Jia Paonessa
+Klodiana Kamberi
+Trinity Mae Robel
+
+---
+
+SOUND
+
+TEAM LEADS:
+Sahel Hossain
+John Wiens-Soshycki
+
+TEAM MEMBERS:
+Mateo Lobato
+Liam Moeskops
+Muhammad Sahl Baig
+Denzel Martins
+---
+
+GAME DIRECTION:
+Zarraf Huq
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1m6vl")
+}
