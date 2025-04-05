@@ -30,7 +30,6 @@
 
 # fixes
 
-- let inquries disable a conversation
 - add sound effects
 
 # polish
