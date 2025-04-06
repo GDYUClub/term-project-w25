@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://cv2tuh6jdflfs"]
+[gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://cv2tuh6jdflfs"]
 
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_xrbax"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_nv5p1"]
+[ext_resource type="Texture2D" uid="uid://ca1ds8234bnaf" path="res://assets/sprites/CluePanels/2-1/underwear.png" id="2_p6tx8"]
 
 [resource]
 script = ExtResource("2_nv5p1")
@@ -10,8 +11,8 @@ id = 5
 lvl_id = 2
 name = "womenUnderwear"
 desc = ""
-icon = ExtResource("1_xrbax")
-panel = ExtResource("1_xrbax")
+icon = ExtResource("2_p6tx8")
+panel = ExtResource("2_p6tx8")
 environment_sprite = ExtResource("1_xrbax")
 picks_up = false
 correct_panel = 0

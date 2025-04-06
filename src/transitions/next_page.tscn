@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4sayfrrsh2bv"]
 
 [ext_resource type="Script" uid="uid://bsylmtfox5iiv" path="res://src/transitions/next_page.gd" id="1_4cugt"]
-[ext_resource type="Texture2D" uid="uid://dj5uqta4q8aks" path="res://assets/sprites/ui/arrow.png" id="1_ru5ih"]
+[ext_resource type="Texture2D" uid="uid://bxmdwpaure4ux" path="res://assets/sprites/ui/directiom_indict.png" id="2_4cugt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rr1ah"]
 size = Vector2(382, 31)
@@ -21,7 +21,7 @@ debug_color = Color(0.909804, 0.0196078, 0, 0.419608)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 16
 position = Vector2(-103, -7)
-texture = ExtResource("1_ru5ih")
+texture = ExtResource("2_4cugt")
 
 [node name="ArrowNotif" type="Area2D" parent="."]
 

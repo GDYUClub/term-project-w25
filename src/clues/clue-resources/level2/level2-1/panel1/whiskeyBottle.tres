@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://m42noggxg222"]
+[gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://m42noggxg222"]
 
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_ix5em"]
+[ext_resource type="Texture2D" uid="uid://cb33vw5qfnt1t" path="res://assets/sprites/CluePanels/2-1/wiskey-bottle.png" id="2_gsukc"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_qycd8"]
 
 [resource]
@@ -10,8 +11,8 @@ id = 2
 lvl_id = 2
 name = "whiskeyBottle"
 desc = ""
-icon = ExtResource("1_ix5em")
-panel = ExtResource("1_ix5em")
+icon = ExtResource("2_gsukc")
+panel = ExtResource("2_gsukc")
 environment_sprite = ExtResource("1_ix5em")
 picks_up = false
 correct_panel = 0

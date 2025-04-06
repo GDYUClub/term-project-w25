@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dhpbtj7rkkjks" path="res://src/dialogue/inquire_ui.tscn" id="11_btqoi"]
 [ext_resource type="Resource" uid="uid://ds46amoej7pyb" path="res://src/clues/clue-resources/tutorial/gun_holster.tres" id="12_423xr"]
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="12_dibre"]
-[ext_resource type="Resource" uid="uid://3ci1y5wfqnxv" path="res://src/clues/clue-resources/tutorial/gun_wound.tres" id="13_0to4b"]
+[ext_resource type="Resource" uid="uid://3ci1y5wfqnxv" path="res://assets/sprites/gun_wound.tres" id="13_0to4b"]
 [ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/levels/tutorial/clue_database.gd" id="13_ud740"]
 [ext_resource type="Resource" uid="uid://d3k8rcoc56don" path="res://src/clues/clue-resources/tutorial/head_trauma.tres" id="14_0to4b"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="14_mh0hl"]

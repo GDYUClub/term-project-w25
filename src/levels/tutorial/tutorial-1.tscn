@@ -272,7 +272,7 @@ z_index = 2
 position = Vector2(518, 348)
 move_type = 1
 jane_scale = 0.4
-arrow_dir = 2
+arrow_dir = 3
 
 [node name="CollisionShape2D" parent="Transitions/1-2" index="0"]
 position = Vector2(17, 7)
@@ -312,7 +312,7 @@ shape = SubResource("RectangleShape2D_otruw")
 position = Vector2(885, 296)
 move_type = 1
 jane_scale = 0.4
-arrow_dir = 2
+arrow_dir = 3
 
 [node name="CollisionShape2D" parent="Transitions/2-3" index="0"]
 position = Vector2(14, 2)
@@ -362,7 +362,7 @@ position = Vector2(-64, 16)
 position = Vector2(944, 265)
 move_type = 1
 jane_scale = 0.4
-arrow_dir = 3
+arrow_dir = 2
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="Transitions/3-2" index="0"]
@@ -395,6 +395,7 @@ unique_name_in_owner = true
 
 [node name="InquireUI" parent="UI" instance=ExtResource("11_otruw")]
 unique_name_in_owner = true
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="DialogueUI" parent="UI" instance=ExtResource("12_j1u5a")]
