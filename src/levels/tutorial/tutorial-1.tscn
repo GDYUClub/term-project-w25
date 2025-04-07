@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bdlrmunokiya3"]
+[gd_scene load_steps=51 format=3 uid="uid://bdlrmunokiya3"]
 
 [ext_resource type="Script" uid="uid://bfvdqic6i2yn1" path="res://src/levels/tutorial/gameplay_page.gd" id="1_xcymm"]
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="2_ft5mu"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="10_41sty"]
 [ext_resource type="PackedScene" uid="uid://yljam13vx8wv" path="res://src/clues/inventory_ui.tscn" id="11_2g1vn"]
 [ext_resource type="PackedScene" uid="uid://dhpbtj7rkkjks" path="res://src/dialogue/inquire_ui.tscn" id="11_otruw"]
+[ext_resource type="Texture2D" uid="uid://badcq2r82pcs6" path="res://assets/sprites/alert-temp.png" id="12_41sty"]
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="12_j1u5a"]
 [ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/levels/tutorial/clue_database.gd" id="13_0wcju"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="14_ygljo"]
@@ -26,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://cedwrlu53op2v" path="res://assets/sprites/pages/1-1/ch1_level1_button.png" id="22_m6ox4"]
 [ext_resource type="PackedScene" uid="uid://c4sayfrrsh2bv" path="res://src/transitions/next_page.tscn" id="23_bdbp1"]
 [ext_resource type="PackedScene" uid="uid://bdm1d3ikdgwvw" path="res://src/levels/tutorial/tutorial-2.tscn" id="26_dvjps"]
+[ext_resource type="PackedScene" uid="uid://5beldmldbrhv" path="res://src/player/cursor.tscn" id="27_v5ho3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fuvah"]
 size = Vector2(1964, 31.5547)
@@ -408,6 +410,25 @@ offset_right = 0.0
 unique_name_in_owner = true
 visible = false
 
+[node name="Interactables" type="Control" parent="UI"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(757, 298)
+texture = ExtResource("12_41sty")
+
+[node name="Sprite2D2" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(1340, 303)
+texture = ExtResource("12_41sty")
+
+[node name="Sprite2D3" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(973, 590)
+texture = ExtResource("12_41sty")
+
 [node name="ClueDatabase" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("13_0wcju")
@@ -474,6 +495,9 @@ next_page = ExtResource("26_dvjps")
 
 [node name="Sprite2D" parent="NextPage" index="1"]
 position = Vector2(-73, 21)
+
+[node name="Cursor" parent="." instance=ExtResource("27_v5ho3")]
+visible = false
 
 [editable path="Transitions/1-2"]
 [editable path="Transitions/2-1"]

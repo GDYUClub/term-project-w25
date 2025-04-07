@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dntc8r7xgew3b"]
+[gd_scene load_steps=38 format=3 uid="uid://dntc8r7xgew3b"]
 
 [ext_resource type="Script" uid="uid://cjdgvn4eosr7q" path="res://src/levels/tutorial/tutorial_2.gd" id="1_fv8uy"]
 [ext_resource type="Texture2D" uid="uid://csum1dhtbisq3" path="res://assets/sprites/pages/2-2/Ch2_Level2_Flattened_NoElevatorSmallaaa.png" id="3_22rls"]
@@ -26,6 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://b4gxocuqqjib2" path="res://assets/sprites/pages/2-2/Elevator.png" id="20_22rls"]
 [ext_resource type="PackedScene" uid="uid://bvqwk1mxnpwr5" path="res://src/gameplay_ui/game_ui.tscn" id="20_ga2xt"]
 [ext_resource type="PackedScene" uid="uid://yljam13vx8wv" path="res://src/clues/inventory_ui.tscn" id="26_tnfvl"]
+[ext_resource type="PackedScene" uid="uid://5beldmldbrhv" path="res://src/player/cursor.tscn" id="27_a6e6f"]
+[ext_resource type="Texture2D" uid="uid://badcq2r82pcs6" path="res://assets/sprites/alert-temp.png" id="27_cadqf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yf7h"]
 size = Vector2(126.5, 337)
@@ -340,6 +342,38 @@ unique_name_in_owner = true
 visible = false
 clue_count = 12
 
+[node name="Interactables" type="Control" parent="UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(1629, 595)
+texture = ExtResource("27_cadqf")
+
+[node name="Sprite2D4" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(957, 1612)
+texture = ExtResource("27_cadqf")
+
+[node name="Sprite2D5" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(1136, 1600)
+texture = ExtResource("27_cadqf")
+
+[node name="Sprite2D6" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(1649, 1608)
+texture = ExtResource("27_cadqf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(1007, 603)
+texture = ExtResource("27_cadqf")
+
+[node name="Sprite2D3" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(1336, 602)
+texture = ExtResource("27_cadqf")
+
 [node name="ElevatorTrigger" type="Area2D" parent="." groups=["elevator"]]
 position = Vector2(44, 0)
 
@@ -361,3 +395,6 @@ unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_pted0")
 }
+
+[node name="Cursor" parent="." instance=ExtResource("27_a6e6f")]
+visible = false

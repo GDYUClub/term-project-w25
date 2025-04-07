@@ -45,6 +45,8 @@ var overlapping_panel_name:String = ""
 var found_all_2_1_items = false
 
 func _ready() -> void:
+	AudioManager.stop_all()
+	%Interactables.visible = false
 	play_level_theme()
 	set_inventory()
 	#%DialogueManager.solved_page_puzzle.connect(_solved_clues)
@@ -254,6 +256,9 @@ func _handle_dialouge_event(event_str):
 
 func _unhandled_input(event: InputEvent) -> void:	
 	#"fixes" issue with cursor and being stuck in diouge state?
+	if event.is_action_pressed("view_interact"):
+		%Interactables.visible = !%Interactables.visible
+
 	if event.is_action_pressed("stuck_in_dialouge"):
 		if !$Cursor.visible:
 			return

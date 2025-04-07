@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://cx8pspxpaj5y"]
+[gd_scene load_steps=81 format=3 uid="uid://cx8pspxpaj5y"]
 
 [ext_resource type="Script" uid="uid://pkuix78c4wo3" path="res://src/levels/2/level_2_1.gd" id="1_llba7"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="2_i5oa3"]
@@ -34,6 +34,7 @@
 [ext_resource type="Resource" uid="uid://hbyslt1xhjr1" path="res://src/clues/clue-resources/level2/level2-1/panel5/randomEarring.tres" id="30_3qi7x"]
 [ext_resource type="Resource" uid="uid://dskmjn75sk7d" path="res://src/clues/clue-resources/level2/level2-1/panel6/scuffMarks.tres" id="31_cbs3o"]
 [ext_resource type="Resource" uid="uid://64um32srqbm7" path="res://src/clues/clue-resources/level2/level2-1/panel2/table.tres" id="32_vds8e"]
+[ext_resource type="Texture2D" uid="uid://badcq2r82pcs6" path="res://assets/sprites/alert-temp.png" id="35_643ly"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1ufb"]
 size = Vector2(577, 71)
@@ -758,6 +759,93 @@ offset_left = -96.0
 offset_right = 1949.0
 offset_bottom = 2083.0
 color = Color(0, 0, 0, 0)
+
+[node name="Interactables" type="Control" parent="UI"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(1407, 219)
+texture = ExtResource("35_643ly")
+
+[node name="Sprite2D2" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(1162, 292)
+texture = ExtResource("35_643ly")
+
+[node name="Sprite2D3" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(1305, 315)
+texture = ExtResource("35_643ly")
+
+[node name="Sprite2D4" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(1640, 296)
+texture = ExtResource("35_643ly")
+
+[node name="Sprite2D5" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(769, 204)
+texture = ExtResource("35_643ly")
+
+[node name="Sprite2D6" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(876, 222)
+texture = ExtResource("35_643ly")
+
+[node name="Sprite2D7" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(948, 204)
+texture = ExtResource("35_643ly")
+
+[node name="Sprite2D8" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(1042, 235)
+texture = ExtResource("35_643ly")
+
+[node name="Sprite2D9" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(647, 308)
+texture = ExtResource("35_643ly")
+
+[node name="Sprite2D10" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(1123, 523)
+texture = ExtResource("35_643ly")
+
+[node name="Sprite2D11" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(1577, 576)
+texture = ExtResource("35_643ly")
+
+[node name="Sprite2D12" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(1369, 878)
+texture = ExtResource("35_643ly")
+
+[node name="Sprite2D13" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(854, 622)
+texture = ExtResource("35_643ly")
+
+[node name="Sprite2D14" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(670, 621)
+texture = ExtResource("35_643ly")
+
+[node name="Sprite2D15" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(333, 263)
+texture = ExtResource("35_643ly")
+
+[node name="Sprite2D16" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(467, 513)
+texture = ExtResource("35_643ly")
+
+[node name="Sprite2D17" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(185, 493)
+texture = ExtResource("35_643ly")
+
+[node name="Sprite2D18" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(410, 808)
+texture = ExtResource("35_643ly")
+
+[node name="Sprite2D19" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(201, 796)
+texture = ExtResource("35_643ly")
+
+[node name="Sprite2D20" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(266, 952)
+texture = ExtResource("35_643ly")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true

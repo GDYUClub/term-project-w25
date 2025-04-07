@@ -38,3 +38,9 @@ func play_sfx(sfx:AudioStream) -> void:
 
 func set_volume(value:float) -> void:
 	AudioServer.set_bus_volume_db(_bus,linear_to_db(value))
+
+func stop_all() -> void:
+	for sfx_player:AudioStreamPlayer in sfx_players:
+		sfx_player.stop()
+	
+	

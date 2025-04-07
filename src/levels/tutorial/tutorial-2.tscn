@@ -1,9 +1,10 @@
-[gd_scene load_steps=41 format=3 uid="uid://bdm1d3ikdgwvw"]
+[gd_scene load_steps=43 format=3 uid="uid://bdm1d3ikdgwvw"]
 
 [ext_resource type="Script" uid="uid://cjdgvn4eosr7q" path="res://src/levels/tutorial/tutorial_2.gd" id="1_4j7fv"]
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="2_hbpmp"]
 [ext_resource type="Texture2D" uid="uid://vo8v47rq0638" path="res://assets/sprites/pages/1-2/Ch1_Level2_Flattened_small.png" id="4_423xr"]
 [ext_resource type="Resource" uid="uid://dojkosxruk8xs" path="res://src/clues/clue-resources/tutorial/shattered_glass.tres" id="6_07ii5"]
+[ext_resource type="Texture2D" uid="uid://badcq2r82pcs6" path="res://assets/sprites/alert-temp.png" id="6_fm58w"]
 [ext_resource type="Resource" uid="uid://suskgru87rvo" path="res://src/clues/clue-resources/tutorial/lighter.tres" id="7_fm58w"]
 [ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="9_1ijwe"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="10_xyo7r"]
@@ -23,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://ct0m3rvfkix4w" path="res://assets/sprites/talksprites/cop2.png" id="19_f81lm"]
 [ext_resource type="PackedScene" uid="uid://bvqwk1mxnpwr5" path="res://src/gameplay_ui/game_ui.tscn" id="20_hbpmp"]
 [ext_resource type="PackedScene" uid="uid://yljam13vx8wv" path="res://src/clues/inventory_ui.tscn" id="21_f81lm"]
+[ext_resource type="PackedScene" uid="uid://5beldmldbrhv" path="res://src/player/cursor.tscn" id="24_07ii5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fuvah"]
 size = Vector2(1964, 20)
@@ -137,6 +139,41 @@ offset_left = -96.0
 offset_right = 1949.0
 offset_bottom = 2083.0
 color = Color(0, 0, 0, 0)
+
+[node name="Interactables" type="Control" parent="UI"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(1474, 184)
+texture = ExtResource("6_fm58w")
+
+[node name="Sprite2D2" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(728, 549)
+texture = ExtResource("6_fm58w")
+
+[node name="Sprite2D3" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(819, 549)
+texture = ExtResource("6_fm58w")
+
+[node name="Sprite2D4" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(900, 548)
+texture = ExtResource("6_fm58w")
+
+[node name="Sprite2D5" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(996, 547)
+texture = ExtResource("6_fm58w")
+
+[node name="Sprite2D6" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(731, 972)
+texture = ExtResource("6_fm58w")
+
+[node name="Sprite2D7" type="Sprite2D" parent="UI/Interactables"]
+position = Vector2(1158, 889)
+texture = ExtResource("6_fm58w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -426,6 +463,9 @@ unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_7yf7h")
 }
+
+[node name="Cursor" parent="." instance=ExtResource("24_07ii5")]
+visible = false
 
 [editable path="Transitions/3-4"]
 [editable path="Transitions/4-3"]
