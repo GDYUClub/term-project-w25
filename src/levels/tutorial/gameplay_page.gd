@@ -89,7 +89,7 @@ func _puzzle_solved():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-#	print(current_state)
+	#print(player.interactable)
 	match current_state:
 
 		GAMEPLAY_STATE.EXPLORE:
@@ -152,7 +152,7 @@ func reset_inventory_icon():
 	inventoryButton.texture_normal = preload("res://assets/sprites/ui/Main_Gameplay_UI/invent_menu_button.png")
 
 func change_state(new_state:GAMEPLAY_STATE):
-	print('new state: ', new_state)
+	print_debug('new state: ', new_state)
 	current_state = new_state
 	if new_state == GAMEPLAY_STATE.CURSOR:
 		$Cursor.double_input_prevention()

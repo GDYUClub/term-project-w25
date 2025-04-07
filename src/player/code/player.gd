@@ -116,7 +116,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 	
 func interact():
-	if not interactable or in_dialouge:
+	print('interacting')
+	if not interactable or in_dialouge or get_parent().current_state == GameplayPage.GAMEPLAY_STATE.PANEL_ARRANGE:
 		return
 	#print(interactable.get_groups())
 	if interactable.is_in_group("clue"):

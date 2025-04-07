@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://mqrcvq224gvj"]
+
+[ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_5ywdf"]
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_5n14i"]
+
+[resource]
+script = ExtResource("2_5n14i")
+type = 0
+id = 22
+lvl_id = 2
+name = "Broken Table"
+desc = ""
+icon = ExtResource("1_5ywdf")
+panel = ExtResource("1_5ywdf")
+environment_sprite = ExtResource("1_5ywdf")
+picks_up = false
+correct_panel = 0
+metadata/_custom_type_script = "uid://bhwvtvekextht"
