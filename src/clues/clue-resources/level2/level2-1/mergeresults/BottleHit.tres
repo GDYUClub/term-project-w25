@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://cw1xgaiuje8ps"]
 
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_352la"]
-[ext_resource type="Texture2D" uid="uid://oqvkkdsftsti" path="res://assets/sprites/CluePanels/2-1/ashtray.png" id="2_u7uuq"]
+[ext_resource type="Texture2D" uid="uid://s65igj0otg4y" path="res://assets/sprites/CluePanels/CHAPTER2_LEVEL1_BottleHit.PNG-1080x.png" id="2_352la"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="3_xceum"]
 
 [resource]
@@ -9,10 +9,10 @@ script = ExtResource("3_xceum")
 type = 0
 id = 1
 lvl_id = 2
-name = "Broken Panel"
+name = "Hit By Bottle"
 desc = ""
-icon = ExtResource("2_u7uuq")
-panel = ExtResource("2_u7uuq")
+icon = ExtResource("2_352la")
+panel = ExtResource("2_352la")
 environment_sprite = ExtResource("1_352la")
 picks_up = false
 correct_panel = 0

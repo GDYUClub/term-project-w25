@@ -1,5 +1,11 @@
 # todo
 
+## all
+
+- add sound effects
+- starting dialouge
+- set inventories
+
 ## 1-0
 
 - implement voice acting
@@ -30,8 +36,7 @@
 
 # fixes
 
-- add sound effects
-
 # polish
 
 - different height for the inquriy bubble for top down jane
+- inquries disable previous prompts

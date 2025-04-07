@@ -36,6 +36,7 @@ size = Vector2(65, 195.5)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_1r0i0")
+page = 3
 metadata/_edit_horizontal_guides_ = [1278.0, 882.0]
 metadata/_edit_vertical_guides_ = [540.0]
 

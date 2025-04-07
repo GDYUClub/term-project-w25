@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://dojkosxruk8xs"]
+[gd_resource type="Resource" script_class="Clue" load_steps=5 format=3 uid="uid://dojkosxruk8xs"]
 
 [ext_resource type="Texture2D" uid="uid://cy54haikib277" path="res://assets/sprites/clue-temp.png" id="1_36tt5"]
 [ext_resource type="Texture2D" uid="uid://brm5qojojxq71" path="res://assets/sprites/clue-panel-temp-jig.png" id="2_5tl36"]
+[ext_resource type="Resource" uid="uid://chfyct3sqe7kj" path="res://src/clues/clue-resources/level2/level2-1/mergeresults/BrokenPanel.tres" id="2_s0kvl"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="3_s0kvl"]
 
 [resource]
 script = ExtResource("3_s0kvl")
-type = 0
+type = 1
+mergeResultant = ExtResource("2_s0kvl")
 id = 4
 lvl_id = 0
 name = "Shattered Glass"

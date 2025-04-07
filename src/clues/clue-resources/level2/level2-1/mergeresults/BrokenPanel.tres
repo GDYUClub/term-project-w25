@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://chfyct3sqe7kj"]
 
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_u7c7b"]
-[ext_resource type="Texture2D" uid="uid://oqvkkdsftsti" path="res://assets/sprites/CluePanels/2-1/ashtray.png" id="2_qa62b"]
+[ext_resource type="Texture2D" uid="uid://bqk2b2reik40o" path="res://assets/sprites/CluePanels/CHAPTER2_LEVEL1_Balconybreakingbehindvictim.png-1080x.png" id="2_u7c7b"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="3_wqlx6"]
 
 [resource]
@@ -11,8 +11,8 @@ id = 1
 lvl_id = 2
 name = "Broken Panel"
 desc = ""
-icon = ExtResource("2_qa62b")
-panel = ExtResource("2_qa62b")
+icon = ExtResource("2_u7c7b")
+panel = ExtResource("2_u7c7b")
 environment_sprite = ExtResource("1_u7c7b")
 picks_up = false
 correct_panel = 0

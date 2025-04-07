@@ -1,6 +1,8 @@
 extends Control
 
 func _ready() -> void:
+
+	AudioManager.play_music(preload("res://assets/sound/bgm/Ink_title.ogg"))
 	%StartBtn.grab_focus()
 	
 	%StartBtn.focus_entered.connect(

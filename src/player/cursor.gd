@@ -12,13 +12,15 @@ var interactable: Area2D = null
 func _ready() -> void:
 	hitbox.area_entered.connect(
 	func(area): 
-		player.interactable = area
-		%AlertSprite.visible = true
+		if area.is_in_group("npc"):
+			player.interactable = area
+			%AlertSprite.visible = true
 	)	
 	hitbox.area_exited.connect(
-	func(_area): 
-		player.interactable = null
-		%AlertSprite.visible = false
+	func(area): 
+		if area.is_in_group("npc"):
+			player.interactable = null
+			%AlertSprite.visible = false
 	)	
 
 func _process(delta: float) -> void:

@@ -2,13 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://byjyf6cpkwlhq" path="res://assets/sprites/rei-env-temp.png" id="1_wun8m"]
 [ext_resource type="Texture2D" uid="uid://hcp4cya4jowj" path="res://assets/sprites/CluePanels/CHAPTER1_LEVEL1_FallingBalcony.png-1080x.png" id="2_k764m"]
-[ext_resource type="Resource" uid="uid://cdtrab0mu3pvj" path="res://src/clues/clue-resources/tutorial/testEvolution.tres" id="3_gupmh"]
+[ext_resource type="Resource" uid="uid://cw1xgaiuje8ps" path="res://src/clues/clue-resources/level2/level2-1/mergeresults/BottleHit.tres" id="3_k764m"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="5_pcbxu"]
 
 [resource]
 script = ExtResource("5_pcbxu")
 type = 1
-mergeResultant = ExtResource("3_gupmh")
+mergeResultant = ExtResource("3_k764m")
 id = 2
 lvl_id = 0
 name = "Head Trauma"

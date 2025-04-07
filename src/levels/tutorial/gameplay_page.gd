@@ -42,8 +42,8 @@ var panelArrangeInst
 var overlapping_panel_name:String = ""
 
 func _ready() -> void:
-	AudioManager.set_volume(1)
-	#AudioManager.play_music(preload("res://assets/sound/bgm/Crime Scene theme.ogg"))
+	play_level_theme()
+	set_inventory()
 	#%DialogueManager.solved_page_puzzle.connect(_solved_clues)
 	%DialogueManager.dialogue_event.connect(_handle_dialouge_event)
 	if !$PanelTriggers:
@@ -52,7 +52,34 @@ func _ready() -> void:
 		triggerArea.add_to_group("point_click")
 		triggerArea.area_entered.connect(func(trigger): overlapping_panel_name = triggerArea.name)
 		triggerArea.area_exited.connect(func(trigger): overlapping_panel_name = "")
-		
+
+func set_inventory():
+	match page:
+		PAGES.page2_1_1:
+			Inventory._player_items = []
+			Inventory.add_item(preload("res://src/clues/clue-resources/tutorial/head_trauma.tres"))
+			Inventory.add_item(preload("res://src/clues/clue-resources/tutorial/shattered_glass.tres"))
+			Inventory.add_item(preload("res://src/clues/clue-resources/tutorial/gun_holster.tres"))
+
+	
+
+func play_level_theme():
+	var song:AudioStream
+	match page:
+		PAGES.page1_1:
+			song = preload("res://assets/sound/bgm/Crime Scene theme.ogg")
+		PAGES.page1_2:
+			song = preload("res://assets/sound/bgm/Crime Scene theme.ogg")
+		PAGES.page2_1_1:
+			song = preload("res://assets/sound/bgm/house-theme.ogg")
+		PAGES.page2_1_2:
+			song = preload("res://assets/sound/bgm/house-theme.ogg")
+		PAGES.page2_2:
+			song = preload("res://assets/sound/bgm/party_theme.ogg")
+
+	AudioManager.play_music(song)
+
+
 func _puzzle_solved():
 	$ColorRect.visible = false
 	%BlockingShape.visible = false

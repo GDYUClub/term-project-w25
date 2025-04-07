@@ -17,7 +17,7 @@ func _ready() -> void:
 		sfx_players.append(sfx_player)
 
 	bgm_player.process_mode = AudioStreamPlayer.PROCESS_MODE_ALWAYS
-	set_volume(5)
+	set_volume(1)
 
 
 func play_music(music:AudioStream) -> void:

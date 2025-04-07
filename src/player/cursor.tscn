@@ -1,28 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://5beldmldbrhv"]
+[gd_scene load_steps=6 format=3 uid="uid://5beldmldbrhv"]
 
-[ext_resource type="Texture2D" uid="uid://besukl3pxqtdt" path="res://assets/sprites/player/wii_cursor.png" id="1_c38gr"]
 [ext_resource type="Script" uid="uid://dufisi4n31w8v" path="res://src/player/cursor.gd" id="1_mou1x"]
+[ext_resource type="Texture2D" uid="uid://cjw3nwmgao6ti" path="res://assets/sprites/ui/cusor.png" id="2_3dv3s"]
 [ext_resource type="Texture2D" uid="uid://bmt3ce830hvw2" path="res://assets/sprites/ui/Main_Gameplay_UI/interactable_notif.png" id="3_3dv3s"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dv3s"]
+size = Vector2(29, 31)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_becjy"]
-size = Vector2(41, 46)
+size = Vector2(59, 74)
 
 [node name="Cursor" type="CharacterBody2D"]
 script = ExtResource("1_mou1x")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_c38gr")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_3dv3s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.5, -1)
-shape = SubResource("RectangleShape2D_becjy")
+position = Vector2(-0.5, 5.5)
+shape = SubResource("RectangleShape2D_3dv3s")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-3.5, -1)
+position = Vector2(-1.5, -5)
 shape = SubResource("RectangleShape2D_becjy")
 
 [node name="AlertSprite" type="Sprite2D" parent="."]
