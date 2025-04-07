@@ -32,7 +32,7 @@ var panels: Array[CluePanel] = []
 
 const PANEL_SIZE: int = 184
 const INITIAL_POSITION: Vector2 = Vector2(400,200)
-const INITIAL_ITEM_POSITION: Vector2 = Vector2(1000, 690)
+const INITIAL_ITEM_POSITION: Vector2 = Vector2(870, 600)
 const OFFSET: Vector2 = Vector2(150, 150)
 
 signal puzzle_solved
@@ -76,6 +76,8 @@ func destroy_previous():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("scroll_left") or Input.is_action_just_pressed("scroll_right"):
+		if visible:
+			AudioManager.play_sfx(preload("res://assets/sound/sfx/nav.ogg"))
 		switch_panel()
 	if self.visible == true:
 		test_panels()
@@ -88,6 +90,7 @@ func _process(delta: float) -> void:
 func test_panels() -> void:
 	if Inventory.get_item_count() > 0:
 		if panels_correct():
+			AudioManager.play_sfx(preload("res://assets/sound/sfx/correct.ogg"))
 			solved = true
 			puzzle_solved.emit()
 			visible = false
@@ -104,6 +107,7 @@ func addClueGrid(index : int, c : int, r : int ):
 	gridCellInst.set_active_panel(panels[index]) 
 	$GridCells.add_child(gridCellInst)
 	item_grid_cells.append(gridCellInst)
+
 func addSolutionGrid(index : int, c : int, r : int):
 	var gridCellInst: GridBox = grid_cell_scene.instantiate()
 	gridCellInst.id = index
@@ -112,6 +116,7 @@ func addSolutionGrid(index : int, c : int, r : int):
 	$GridCells.add_child(gridCellInst)
 	clue_grid_cells.append(gridCellInst)
 	gridCellInst.numberLabel.text = str(index)
+
 func addPanel(clue : Clue, grid : GridBox = null) -> CluePanel:
 	var panelInst = panel_scene.instantiate()
 	panelInst.clue = clue
@@ -130,9 +135,9 @@ func populate_clue_panels():
 		else:
 			panels.append(null)
 	CluePanel._can_select = true
-	var rows := 2
+	var rows := 3
 	# it's always two for now
-	var cols = 6
+	var cols = 7
 	var i = 0
 	for r in rows:
 		for c in cols:
@@ -172,6 +177,7 @@ func generate_total_grids():
 		all_grid_cells[i].scroll_id = i;
 func panels_correct() -> bool:
 	#all items secured, then we can check if correct
+	#print_debug(clue_count >= Inventory.get_item_count())
 	if clue_count <= Inventory.get_item_count():
 		for grid_cell in clue_grid_cells:
 			if grid_cell.correct_panel == false:

@@ -449,7 +449,7 @@ character2_sprite = ExtResource("21_r7t7n")
 repeatable_conversation = false
 can_inquiry = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimPlayer2-2" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_r7t7n")
 }

@@ -19,13 +19,12 @@ func _ready() -> void:
 	bgm_player.process_mode = AudioStreamPlayer.PROCESS_MODE_ALWAYS
 	set_volume(1)
 
-
 func play_music(music:AudioStream) -> void:
 	if bgm_player.stream == music:
 		return
 
 	bgm_player.stream = music
-	#bgm_player.play()
+	bgm_player.play()
 
 func pause_music() -> void:
 	bgm_player.stop()

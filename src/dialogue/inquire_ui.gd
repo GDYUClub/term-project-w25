@@ -56,6 +56,7 @@ func clear():
 		hbox_container.remove_child(node)
 		node.queue_free()
 func succeed(id : int):
+	AudioManager.play_sfx(preload("res://assets/sound/sfx/correct.ogg"))
 	close()
 	get_parent().get_parent().change_state(GameplayPage.GAMEPLAY_STATE.DIALOG)	
 	dialogue_manager.start_inquiry_dialogue(current_npc, id)

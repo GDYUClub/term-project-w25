@@ -25,6 +25,10 @@ func clear_level_items(lvl_id:int) -> void:
 func clear_all() -> void:
 	_player_items = []
 
+func has_item(c:Clue) -> bool:
+	return c in _player_items
+
+	
 
 func get_items() -> Array[Clue]:
 	return _player_items

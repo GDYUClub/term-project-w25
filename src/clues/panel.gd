@@ -96,6 +96,7 @@ func attempt_pickup_or_drop() -> void:
 func select() -> void:
 	#Set the panel to selected if the mouse is in the area 2D
 	print("Selected")
+	AudioManager.play_sfx(preload("res://assets/sound/sfx/select.ogg"))
 	_is_selected = true
 	_can_select = false
 	scale = extended_scale

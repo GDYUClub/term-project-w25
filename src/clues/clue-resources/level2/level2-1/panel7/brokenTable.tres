@@ -1,16 +1,18 @@
-[gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://mqrcvq224gvj"]
+[gd_resource type="Resource" script_class="Clue" load_steps=5 format=3 uid="uid://mqrcvq224gvj"]
 
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_5ywdf"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_5n14i"]
 [ext_resource type="Texture2D" uid="uid://bc27kx4e1m76p" path="res://assets/sprites/CluePanels/2-1/glass-table.png" id="2_xg7nw"]
+[ext_resource type="Resource" uid="uid://beueqif5ruqo8" path="res://src/clues/clue-resources/level2/level2-1/mergeresults/BalconyJump.tres" id="3_88b6g"]
 
 [resource]
 script = ExtResource("2_5n14i")
-type = 0
+type = 1
+mergeResultant = ExtResource("3_88b6g")
 id = 22
 lvl_id = 2
 name = "Broken Table"
-desc = "tabul"
+desc = "Broken Table."
 icon = ExtResource("2_xg7nw")
 panel = ExtResource("2_xg7nw")
 environment_sprite = ExtResource("1_5ywdf")
