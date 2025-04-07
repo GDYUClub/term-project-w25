@@ -186,3 +186,10 @@ func _handle_dialouge_event(event_str):
 	if event_str == "next_cop_dialouge":
 			%Cop1.monitorable = false
 			%Cop2.monitorable = true
+
+func _unhandled_input(event: InputEvent) -> void:	
+	if event.is_action_pressed("stuck_in_dialouge"):
+		if !$Cursor.visible:
+			return
+		if current_state == GAMEPLAY_STATE.DIALOG:
+			change_state(GAMEPLAY_STATE.CURSOR)

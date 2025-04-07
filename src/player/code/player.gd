@@ -118,7 +118,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func interact():
 	print('interacting')
 	prints(interactable,in_dialouge,get_parent().current_state)
-	if not interactable or (get_parent().current_state != GameplayPage.GAMEPLAY_STATE.EXPLORE and get_parent().current_state != GameplayPage.GAMEPLAY_STATE.CURSOR):
+	if not interactable or in_dialouge or (get_parent().current_state != GameplayPage.GAMEPLAY_STATE.EXPLORE and get_parent().current_state != GameplayPage.GAMEPLAY_STATE.CURSOR):
 		return
 	#print(interactable.get_groups())
 	if interactable.is_in_group("clue"):
