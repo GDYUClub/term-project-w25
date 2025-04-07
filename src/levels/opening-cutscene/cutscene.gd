@@ -6,6 +6,7 @@ const ANIMATIONS = ["page1","page2","page3","page4","page5"]
 @onready var ref :Sprite2D= $reference
 
 func _ready() -> void:
+	AudioManager.play_music(preload("res://assets/sound/bgm/office-theme.ogg"))
 	hide_everything()
 	for i in range(5):
 		var panel :Node2D = get_node("%d" % i)

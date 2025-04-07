@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://hbyslt1xhjr1"]
+[gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://hbyslt1xhjr1"]
 
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_a4cha"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_qgn4u"]
+[ext_resource type="Texture2D" uid="uid://dhngtat3p0ybk" path="res://assets/sprites/CluePanels/2-1/earing.png" id="2_wxbly"]
 
 [resource]
 script = ExtResource("2_qgn4u")
@@ -10,8 +11,8 @@ id = 13
 lvl_id = 2
 name = "randomEarring"
 desc = ""
-icon = ExtResource("1_a4cha")
-panel = ExtResource("1_a4cha")
+icon = ExtResource("2_wxbly")
+panel = ExtResource("2_wxbly")
 environment_sprite = ExtResource("1_a4cha")
 picks_up = false
 correct_panel = 0

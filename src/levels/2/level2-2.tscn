@@ -123,6 +123,7 @@ size = Vector2(147.25, 257.5)
 
 [node name="Main3" type="Node"]
 script = ExtResource("1_fv8uy")
+page = 4
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -2
@@ -243,7 +244,10 @@ character1_sprite = ExtResource("18_k3s3g")
 character2_sprite = ExtResource("18_0at2v")
 
 [node name="Record" parent="Npc" instance=ExtResource("17_27f5c")]
+visible = false
 position = Vector2(1859, 600)
+monitoring = false
+monitorable = false
 npc_name = "Wamp's Record"
 start_index = 245
 end_index = 245

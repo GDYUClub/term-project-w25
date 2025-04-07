@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://drsm6qoo8v5ne"]
+[gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://drsm6qoo8v5ne"]
 
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_50dnx"]
+[ext_resource type="Texture2D" uid="uid://c7qs03akdefmd" path="res://assets/sprites/CluePanels/2-1/wine.png" id="2_e8igw"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_f18yn"]
 
 [resource]
@@ -10,8 +11,8 @@ id = 4
 lvl_id = 2
 name = "wineGlass"
 desc = ""
-icon = ExtResource("1_50dnx")
-panel = ExtResource("1_50dnx")
+icon = ExtResource("2_e8igw")
+panel = ExtResource("2_e8igw")
 environment_sprite = ExtResource("1_50dnx")
 picks_up = false
 correct_panel = 0

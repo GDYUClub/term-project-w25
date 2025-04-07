@@ -154,7 +154,7 @@ size = Vector2(235.161, 86.1827)
 size = Vector2(33.0225, 62.7666)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqmmh"]
-size = Vector2(12.5736, 9.41347)
+size = Vector2(62.7941, 50.7965)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h08er"]
 size = Vector2(161.065, 64.0135)
@@ -436,6 +436,7 @@ position = Vector2(296, 547)
 position = Vector2(629, 312)
 character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
+repeatable_conversation = false
 
 [node name="CollisionShape2D" parent="PanelItems/0/ShoeDialogue" index="0"]
 position = Vector2(13, -1)
@@ -446,6 +447,7 @@ start_index = 1
 end_index = 1
 character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
+repeatable_conversation = false
 
 [node name="CollisionShape2D" parent="PanelItems/0/Ashtray" index="0"]
 position = Vector2(14, 2)
@@ -457,6 +459,7 @@ start_index = 2
 end_index = 2
 character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
+repeatable_conversation = false
 
 [node name="CollisionShape2D" parent="PanelItems/0/WhiskeyBottle" index="0"]
 position = Vector2(-80.5, -20)
@@ -468,6 +471,7 @@ start_index = 4
 end_index = 4
 character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
+repeatable_conversation = false
 
 [node name="CollisionShape2D" parent="PanelItems/0/WineGlass" index="0"]
 position = Vector2(84, -21.5)
@@ -479,6 +483,7 @@ start_index = 5
 end_index = 5
 character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
+repeatable_conversation = false
 
 [node name="CollisionShape2D" parent="PanelItems/0/WomenUnderwear" index="0"]
 position = Vector2(172, 16)
@@ -486,11 +491,15 @@ rotation = 0.972304
 shape = SubResource("RectangleShape2D_iumx8")
 
 [node name="Pen" parent="PanelItems/0" instance=ExtResource("4_sut8d")]
+visible = false
 position = Vector2(859, 226)
+monitoring = false
+monitorable = false
 start_index = 3
 end_index = 3
 character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
+repeatable_conversation = false
 
 [node name="CollisionShape2D" parent="PanelItems/0/Pen" index="0"]
 position = Vector2(149.348, -64.3205)
@@ -505,6 +514,7 @@ start_index = 6
 end_index = 6
 character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
+repeatable_conversation = false
 
 [node name="CollisionShape2D" parent="PanelItems/1/ShatteredWhiskeyGlass" index="0"]
 position = Vector2(457, 92.5)
@@ -517,6 +527,7 @@ start_index = 7
 end_index = 7
 character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
+repeatable_conversation = false
 
 [node name="CollisionShape2D" parent="PanelItems/1/WhiskeyBottleWithBlood" index="0"]
 position = Vector2(773.938, 74.8161)
@@ -529,6 +540,7 @@ start_index = 8
 end_index = 8
 character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
+repeatable_conversation = false
 
 [node name="CollisionShape2D" parent="PanelItems/1/WhiskeyGlass" index="0"]
 position = Vector2(307, 60.5)
@@ -543,6 +555,7 @@ start_index = 9
 end_index = 9
 character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
+repeatable_conversation = false
 
 [node name="CollisionShape2D" parent="PanelItems/2/BookShelf" index="0"]
 position = Vector2(-188, 394)
@@ -555,6 +568,7 @@ start_index = 10
 end_index = 10
 character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
+repeatable_conversation = false
 
 [node name="CollisionShape2D" parent="PanelItems/2/Cane" index="0"]
 position = Vector2(-5.4259, 393.15)
@@ -567,6 +581,7 @@ start_index = 11
 end_index = 11
 character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
+repeatable_conversation = false
 
 [node name="CollisionShape2D" parent="PanelItems/2/Carpet" index="0"]
 position = Vector2(67, 731)
@@ -579,6 +594,7 @@ start_index = 11
 end_index = 11
 character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
+repeatable_conversation = false
 
 [node name="CollisionShape2D" parent="PanelItems/2/Carpet2" index="0"]
 position = Vector2(-28.2639, 811.791)
@@ -591,6 +607,7 @@ start_index = 11
 end_index = 11
 character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
+repeatable_conversation = false
 
 [node name="CollisionShape2D" parent="PanelItems/2/Carpet3" index="0"]
 position = Vector2(-138, 701)
@@ -605,6 +622,7 @@ start_index = 12
 end_index = 12
 character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
+repeatable_conversation = false
 
 [node name="CollisionShape2D" parent="PanelItems/3/BrokenGlass" index="0"]
 position = Vector2(264.675, 299.77)
@@ -619,9 +637,10 @@ start_index = 13
 end_index = 13
 character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
+repeatable_conversation = false
 
 [node name="CollisionShape2D" parent="PanelItems/4/Earring" index="0"]
-position = Vector2(717, 356)
+position = Vector2(717.256, 355.754)
 rotation = -0.144879
 shape = SubResource("RectangleShape2D_sqmmh")
 
@@ -633,6 +652,7 @@ start_index = 14
 end_index = 14
 character1_sprite = ExtResource("5_wlckx")
 character2_sprite = null
+repeatable_conversation = false
 
 [node name="CollisionShape2D" parent="PanelItems/5/ScuffMarks" index="0"]
 position = Vector2(511.373, 656.987)

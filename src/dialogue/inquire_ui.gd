@@ -11,6 +11,7 @@ var scrollIndex : int
 var current_npc : Area2D
 var can_reopen = true
 func _process(delta: float) -> void:
+	#get_parent().get_parent().current_state == GameplayPage.GAMEPLAY_STATE.EXPLORE
 	if self.visible:
 		if Input.is_action_just_pressed("scroll_left"):
 			scroll(-1)
@@ -18,6 +19,7 @@ func _process(delta: float) -> void:
 			scroll(1)
 		if Input.is_action_just_pressed("interact"):
 			selected_button.emit_signal("pressed");
+
 func _ready() -> void:
 	player.start_inquire.connect(start_inquire)
 	player.end_inquire.connect(close)

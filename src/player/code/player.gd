@@ -112,7 +112,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 	if event.is_action_pressed("inquire") and get_parent().current_state == GameplayPage.GAMEPLAY_STATE.EXPLORE:
 		print_debug("run inquire from process")
-		if %InquireUI.can_reopen:
+		if %InquireUI.can_reopen and !Inventory.is_empty():
 			inquire()
 			get_viewport().set_input_as_handled()
 	
@@ -143,7 +143,9 @@ func interact():
 		get_parent().check_for_new_item()
 	
 	elif interactable.is_in_group("point_click"):
-		get_parent().change_to_cursor()
+
+		if get_parent().current_state != GameplayPage.GAMEPLAY_STATE.CURSOR:
+			get_parent().change_to_cursor()
 	
 	elif interactable.is_in_group("elevator"):
 		if position.y > 1600:

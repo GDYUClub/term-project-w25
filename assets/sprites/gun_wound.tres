@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://3ci1y5wfqnxv"]
+
+[ext_resource type="Texture2D" uid="uid://bwxyi5p3k4hqy" path="res://assets/sprites/CluePanels/CHAPTER1_LEVEL1_BulletWound.png-1080x.png" id="1_w8yva"]
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_x0e7g"]
+
+[resource]
+script = ExtResource("2_x0e7g")
+type = 0
+id = 1
+lvl_id = 0
+name = "gun wound"
+desc = "gun wound desc"
+icon = ExtResource("1_w8yva")
+panel = ExtResource("1_w8yva")
+picks_up = false
+correct_panel = 1
+metadata/_custom_type_script = "uid://bhwvtvekextht"

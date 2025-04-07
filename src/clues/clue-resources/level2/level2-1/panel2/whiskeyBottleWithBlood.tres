@@ -1,17 +1,20 @@
-[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://boym3cte2xm1x"]
+[gd_resource type="Resource" script_class="Clue" load_steps=5 format=3 uid="uid://boym3cte2xm1x"]
 
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_fxwie"]
+[ext_resource type="Texture2D" uid="uid://cb33vw5qfnt1t" path="res://assets/sprites/CluePanels/2-1/wiskey-bottle.png" id="2_1nsxe"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_200y4"]
+[ext_resource type="Resource" uid="uid://cw1xgaiuje8ps" path="res://src/clues/clue-resources/level2/level2-1/mergeresults/BottleHit.tres" id="3_1nsxe"]
 
 [resource]
 script = ExtResource("2_200y4")
 type = 0
+mergeResultant = ExtResource("3_1nsxe")
 id = 7
 lvl_id = 2
 name = "whisleyBottleWithBlood"
 desc = ""
-icon = ExtResource("1_fxwie")
-panel = ExtResource("1_fxwie")
+icon = ExtResource("2_1nsxe")
+panel = ExtResource("2_1nsxe")
 environment_sprite = ExtResource("1_fxwie")
 picks_up = false
 correct_panel = 0

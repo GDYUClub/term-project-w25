@@ -1,17 +1,20 @@
-[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://c86nltk8d8ktf"]
+[gd_resource type="Resource" script_class="Clue" load_steps=5 format=3 uid="uid://c86nltk8d8ktf"]
 
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_ss4p2"]
+[ext_resource type="Texture2D" uid="uid://bqn3jjhpkuohe" path="res://assets/sprites/CluePanels/2-1/broken-blood-glass.png" id="2_cdrtg"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_sbr3j"]
+[ext_resource type="Resource" uid="uid://chfyct3sqe7kj" path="res://src/clues/clue-resources/level2/level2-1/mergeresults/BrokenPanel.tres" id="3_cdrtg"]
 
 [resource]
 script = ExtResource("2_sbr3j")
-type = 0
+type = 1
+mergeResultant = ExtResource("3_cdrtg")
 id = 12
 lvl_id = 2
-name = "brokenGlass"
+name = "Broken Balcony"
 desc = ""
-icon = ExtResource("1_ss4p2")
-panel = ExtResource("1_ss4p2")
+icon = ExtResource("2_cdrtg")
+panel = ExtResource("2_cdrtg")
 environment_sprite = ExtResource("1_ss4p2")
 picks_up = false
 correct_panel = 0
