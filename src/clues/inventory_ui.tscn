@@ -18,10 +18,10 @@ jane_sprite = ExtResource("2_gwx08")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 49.0
-offset_top = 32.0
-offset_right = 833.0
-offset_bottom = 1022.0
+offset_left = 162.0
+offset_top = 25.0
+offset_right = 781.0
+offset_bottom = 1015.0
 mouse_filter = 2
 color = Color(0.834614, 0.834614, 0.834614, 1)
 
@@ -106,15 +106,17 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="CorrectLabel" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 411.0
-offset_top = 900.0
-offset_right = 504.0
-offset_bottom = 937.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.633757, 0.633757, 0.633757, 1)
+offset_left = 180.0
+offset_top = 950.0
+offset_right = 762.0
+offset_bottom = 1000.0
+theme_override_colors/font_color = Color(0.372549, 0.372549, 0.372549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 37
+text = "Wrong..."
 
 [node name="Return" type="Button" parent="."]
 layout_mode = 0

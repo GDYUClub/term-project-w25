@@ -17,4 +17,4 @@ icon = ExtResource("2_mygmf")
 panel = ExtResource("2_mygmf")
 environment_sprite = ExtResource("1_ssudf")
 picks_up = true
-correct_panel = 1
+correct_panel = 2
