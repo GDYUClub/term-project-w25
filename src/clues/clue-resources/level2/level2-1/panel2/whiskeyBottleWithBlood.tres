@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("2_200y4")
-type = 0
+type = 1
 mergeResultant = ExtResource("3_1nsxe")
 id = 7
 lvl_id = 2

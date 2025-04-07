@@ -81,7 +81,6 @@ func _top_down(delta: float):
 	var dir = Vector2(0,move_dir).rotated(sprite.rotation)
 	velocity = WALK_SPEED * dir
 
-
 # Side scroller movement function
 func _side_scroller(delta: float):
 	var direction := Input.get_axis("ui_left", "ui_right")
@@ -117,7 +116,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 	
 func interact():
-	if not interactable or in_dialouge:
+	print('interacting')
+	prints(interactable,in_dialouge,get_parent().current_state)
+	if not interactable or (get_parent().current_state != GameplayPage.GAMEPLAY_STATE.EXPLORE and get_parent().current_state != GameplayPage.GAMEPLAY_STATE.CURSOR):
 		return
 	#print(interactable.get_groups())
 	if interactable.is_in_group("clue"):

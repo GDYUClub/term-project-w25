@@ -12,4 +12,3 @@ func _input(event: InputEvent) -> void:
 		get_tree().change_scene_to_file("res://src/levels/2/level2-1-2.tscn")
 	elif event.as_text() == "5":
 		get_tree().change_scene_to_file("res://src/levels/2/level2-2.tscn")
-		

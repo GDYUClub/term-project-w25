@@ -89,7 +89,6 @@ func _puzzle_solved():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-#	print(current_state)
 	match current_state:
 
 		GAMEPLAY_STATE.EXPLORE:
@@ -152,7 +151,7 @@ func reset_inventory_icon():
 	inventoryButton.texture_normal = preload("res://assets/sprites/ui/Main_Gameplay_UI/invent_menu_button.png")
 
 func change_state(new_state:GAMEPLAY_STATE):
-	print('new state: ', new_state)
+	print_debug('new state: ', new_state)
 	current_state = new_state
 	if new_state == GAMEPLAY_STATE.CURSOR:
 		$Cursor.double_input_prevention()
@@ -163,6 +162,10 @@ func next_page() -> void:
 		PAGES.page1_2:
 			get_tree().change_scene_to_file("res://src/levels/2/level2-1-1.tscn")
 		PAGES.page2_2:
+			%DialogueUI.hide()
+			#get_tree().paused() = true
+			%AnimationPlayer.play("fade")
+			await %AnimationPlayer.animation_finished
 			get_tree().change_scene_to_file("res://src/levels/end.tscn")
 
 func _solved_clues() -> void:	

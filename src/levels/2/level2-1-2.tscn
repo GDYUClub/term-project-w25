@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://baehg71ehkgic"]
+[gd_scene load_steps=46 format=3 uid="uid://baehg71ehkgic"]
 
 [ext_resource type="Script" uid="uid://8b23rlb7ovdp" path="res://src/levels/2/level_2_1_2.gd" id="1_1r0i0"]
 [ext_resource type="Texture2D" uid="uid://mgfutu3e5n1g" path="res://assets/sprites/pages/Ch2_L1_Page2_Flattened.png" id="2_llk5i"]
@@ -6,15 +6,36 @@
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="4_hm44k"]
 [ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="5_m0vrv"]
 [ext_resource type="PackedScene" uid="uid://5beldmldbrhv" path="res://src/player/cursor.tscn" id="6_0hbc8"]
+[ext_resource type="PackedScene" uid="uid://yljam13vx8wv" path="res://src/clues/inventory_ui.tscn" id="6_li1c5"]
 [ext_resource type="PackedScene" uid="uid://dhpbtj7rkkjks" path="res://src/dialogue/inquire_ui.tscn" id="7_1d57u"]
 [ext_resource type="PackedScene" uid="uid://bvqwk1mxnpwr5" path="res://src/gameplay_ui/game_ui.tscn" id="8_a4on0"]
-[ext_resource type="PackedScene" uid="uid://cwo22opxygl8m" path="res://src/clues/clue_arrange_screen.tscn" id="9_vd6m4"]
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="10_qehm7"]
 [ext_resource type="Script" uid="uid://d313ibk1sryhe" path="res://src/dialogue/dialogue_manager.gd" id="11_23rmw"]
 [ext_resource type="JSON" path="res://src/dialogue/_Dialogue2-1-1.json" id="12_8jcpp"]
 [ext_resource type="JSON" path="res://src/dialogue/_Inquiry.json" id="13_e2scp"]
 [ext_resource type="Texture2D" uid="uid://cqq2knh01h8bg" path="res://assets/sprites/pages/Ch2_L1_Page2_BottomRightPlatform.png" id="14_1r0i0"]
 [ext_resource type="PackedScene" uid="uid://c5psffmv1afdo" path="res://src/PanelTransition.tscn" id="14_am26y"]
+[ext_resource type="Script" uid="uid://bwpfrmd53cvot" path="res://src/levels/tutorial/clue_database.gd" id="16_li1c5"]
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="17_28alu"]
+[ext_resource type="Resource" uid="uid://cbq2tm1picpp5" path="res://src/clues/clue-resources/level2/level2-1/panel1/womenFootprint.tres" id="18_jm0fv"]
+[ext_resource type="Resource" uid="uid://bgctofoxb7l74" path="res://src/clues/clue-resources/level2/level2-1/panel1/astrayAndCigar.tres" id="19_4srhh"]
+[ext_resource type="Resource" uid="uid://m42noggxg222" path="res://src/clues/clue-resources/level2/level2-1/panel1/whiskeyBottle.tres" id="20_lfrsq"]
+[ext_resource type="Resource" uid="uid://bmv8alsgh6rgn" path="res://src/clues/clue-resources/level2/level2-1/panel1/pen.tres" id="21_7y3wt"]
+[ext_resource type="Resource" uid="uid://drsm6qoo8v5ne" path="res://src/clues/clue-resources/level2/level2-1/panel1/wineGlass.tres" id="22_vj3nq"]
+[ext_resource type="Resource" uid="uid://cv2tuh6jdflfs" path="res://src/clues/clue-resources/level2/level2-1/panel1/womenUnderwear.tres" id="23_xjm2v"]
+[ext_resource type="Resource" uid="uid://bi64ms1to3dwp" path="res://src/clues/clue-resources/level2/level2-1/panel2/shatteredWhiskeyGlass.tres" id="24_fofee"]
+[ext_resource type="Resource" uid="uid://boym3cte2xm1x" path="res://src/clues/clue-resources/level2/level2-1/panel2/whiskeyBottleWithBlood.tres" id="25_p8qry"]
+[ext_resource type="Resource" uid="uid://bpopc4eisltg8" path="res://src/clues/clue-resources/level2/level2-1/panel2/whiskeyGlass.tres" id="26_i7fi7"]
+[ext_resource type="Resource" uid="uid://bog1tv8j88j8e" path="res://src/clues/clue-resources/level2/level2-1/panel3/bookshelf.tres" id="27_i04kx"]
+[ext_resource type="Resource" uid="uid://dlhr8psamwdeu" path="res://src/clues/clue-resources/level2/level2-1/panel3/cane.tres" id="28_4xpp5"]
+[ext_resource type="Resource" uid="uid://diihjnltl81ow" path="res://src/clues/clue-resources/level2/level2-1/panel3/carpet.tres" id="29_47ejd"]
+[ext_resource type="Resource" uid="uid://c86nltk8d8ktf" path="res://src/clues/clue-resources/level2/level2-1/panel4/brokenGlass.tres" id="30_i3tr5"]
+[ext_resource type="Resource" uid="uid://hbyslt1xhjr1" path="res://src/clues/clue-resources/level2/level2-1/panel5/randomEarring.tres" id="31_6q6k5"]
+[ext_resource type="Resource" uid="uid://dskmjn75sk7d" path="res://src/clues/clue-resources/level2/level2-1/panel6/scuffMarks.tres" id="32_trnfs"]
+[ext_resource type="Resource" uid="uid://64um32srqbm7" path="res://src/clues/clue-resources/level2/level2-1/panel2/table.tres" id="33_2lgfr"]
+[ext_resource type="Resource" uid="uid://ckue5j5f2ga4s" path="res://src/clues/clue-resources/level2/level2-1/panel7/brokenPot.tres" id="34_by2de"]
+[ext_resource type="Resource" uid="uid://p6dsdnn3mowh" path="res://src/clues/clue-resources/level2/level2-1/panel7/brokenRail.tres" id="35_xv8oo"]
+[ext_resource type="Resource" uid="uid://mqrcvq224gvj" path="res://src/clues/clue-resources/level2/level2-1/panel7/brokenTable.tres" id="36_s7mcr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_am26y"]
 size = Vector2(283, 20.9985)
@@ -33,6 +54,15 @@ size = Vector2(60, 151.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agb2h"]
 size = Vector2(65, 195.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_li1c5"]
+size = Vector2(151, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28alu"]
+size = Vector2(41, 145.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jm0fv"]
+size = Vector2(65.5, 62.75)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_1r0i0")
@@ -57,6 +87,30 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_llk5i")
 stretch_mode = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InquireUI" parent="CanvasLayer" instance=ExtResource("7_1d57u")]
+unique_name_in_owner = true
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="GameplayUI" parent="CanvasLayer" instance=ExtResource("8_a4on0")]
+unique_name_in_owner = true
+offset_right = -1804.0
+offset_bottom = -739.0
+
+[node name="DialogueUI" parent="CanvasLayer" instance=ExtResource("10_qehm7")]
+unique_name_in_owner = true
+visible = false
+offset_left = 0.0
+offset_right = 0.0
+mouse_filter = 2
+
+[node name="InventoryUI" parent="CanvasLayer" instance=ExtResource("6_li1c5")]
+unique_name_in_owner = true
+visible = false
+clue_count = 10
 
 [node name="Player" parent="." instance=ExtResource("3_1r0i0")]
 unique_name_in_owner = true
@@ -155,14 +209,59 @@ position = Vector2(1725, 827)
 shape = SubResource("RectangleShape2D_agb2h")
 debug_color = Color(0.421082, 1, 0.896388, 0.419608)
 
+[node name="ClueDatabase" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("16_li1c5")
+items = Array[ExtResource("17_28alu")]([ExtResource("18_jm0fv"), ExtResource("19_4srhh"), ExtResource("20_lfrsq"), ExtResource("21_7y3wt"), ExtResource("22_vj3nq"), ExtResource("23_xjm2v"), ExtResource("24_fofee"), ExtResource("25_p8qry"), ExtResource("26_i7fi7"), ExtResource("27_i04kx"), ExtResource("28_4xpp5"), ExtResource("29_47ejd"), ExtResource("30_i3tr5"), ExtResource("31_6q6k5"), ExtResource("32_trnfs"), ExtResource("33_2lgfr"), ExtResource("34_by2de"), ExtResource("35_xv8oo"), ExtResource("36_s7mcr")])
+
 [node name="PanelItems" type="Node" parent="."]
 
 [node name="0" type="Node" parent="PanelItems"]
 
-[node name="ShoeDialogue" parent="PanelItems/0" instance=ExtResource("4_hm44k")]
-position = Vector2(629, 312)
+[node name="Table" parent="PanelItems/0" instance=ExtResource("4_hm44k")]
+position = Vector2(415, 526)
+npc_name = "table"
+start_index = 16
+end_index = 16
 character1_sprite = ExtResource("5_m0vrv")
 character2_sprite = null
+repeatable_conversation = false
+
+[node name="CollisionShape2D" parent="PanelItems/0/Table" index="0"]
+position = Vector2(73, 5)
+shape = SubResource("RectangleShape2D_li1c5")
+
+[node name="Pot" parent="PanelItems/0" instance=ExtResource("4_hm44k")]
+position = Vector2(415, 526)
+npc_name = "table"
+start_index = 17
+end_index = 17
+character1_sprite = ExtResource("5_m0vrv")
+character2_sprite = null
+repeatable_conversation = false
+
+[node name="CollisionShape2D" parent="PanelItems/0/Pot" index="0"]
+position = Vector2(-90, 27)
+shape = SubResource("RectangleShape2D_28alu")
+
+[node name="Rail" parent="PanelItems/0" instance=ExtResource("4_hm44k")]
+position = Vector2(415, 526)
+npc_name = "table"
+start_index = 18
+end_index = 18
+character1_sprite = ExtResource("5_m0vrv")
+character2_sprite = null
+repeatable_conversation = false
+
+[node name="CollisionShape2D" parent="PanelItems/0/Rail" index="0"]
+position = Vector2(-187, -12)
+shape = SubResource("RectangleShape2D_jm0fv")
+
+[node name="DialogueManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("11_23rmw")
+DIALOGUE_JSON = ExtResource("12_8jcpp")
+INQUIRY_DIALOGUE_JSON = ExtResource("13_e2scp")
 
 [node name="Cursor" parent="." instance=ExtResource("6_0hbc8")]
 visible = false
@@ -170,12 +269,6 @@ visible = false
 [node name="PlayerStart" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(220, 122)
-
-[node name="DialogueManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("11_23rmw")
-DIALOGUE_JSON = ExtResource("12_8jcpp")
-INQUIRY_DIALOGUE_JSON = ExtResource("13_e2scp")
 
 [node name="Foreground" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -200,29 +293,7 @@ position = Vector2(1101, 703)
 [node name="Sprite2D" parent="Transitions/PanelTransition" index="2"]
 position = Vector2(-15, -64)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="InquireUI" parent="CanvasLayer" instance=ExtResource("7_1d57u")]
-unique_name_in_owner = true
-visible = false
-metadata/_edit_lock_ = true
-
-[node name="GameplayUI" parent="CanvasLayer" instance=ExtResource("8_a4on0")]
-unique_name_in_owner = true
-offset_right = -1804.0
-offset_bottom = -739.0
-
-[node name="InventoryUI" parent="CanvasLayer" instance=ExtResource("9_vd6m4")]
-unique_name_in_owner = true
-visible = false
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="DialogueUI" parent="CanvasLayer" instance=ExtResource("10_qehm7")]
-unique_name_in_owner = true
-visible = false
-offset_left = 0.0
-offset_right = 0.0
-mouse_filter = 2
-
+[editable path="PanelItems/0/Table"]
+[editable path="PanelItems/0/Pot"]
+[editable path="PanelItems/0/Rail"]
 [editable path="Transitions/PanelTransition"]

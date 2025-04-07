@@ -1,18 +1,18 @@
 [gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://bkvsu52nnpbf1"]
 
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_r5jsg"]
-[ext_resource type="Texture2D" uid="uid://oqvkkdsftsti" path="res://assets/sprites/CluePanels/2-1/ashtray.png" id="2_pjj7u"]
+[ext_resource type="Texture2D" uid="uid://ctjn807itwywq" path="res://assets/sprites/CluePanels/CHAPTER2_LEVEL1_Punching.png-1080x.png" id="2_r5jsg"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="3_2cily"]
 
 [resource]
 script = ExtResource("3_2cily")
 type = 0
-id = 1
+id = 16
 lvl_id = 2
-name = "Broken Panel"
+name = "Struggle"
 desc = ""
-icon = ExtResource("2_pjj7u")
-panel = ExtResource("2_pjj7u")
+icon = ExtResource("2_r5jsg")
+panel = ExtResource("2_r5jsg")
 environment_sprite = ExtResource("1_r5jsg")
 picks_up = false
 correct_panel = 0
