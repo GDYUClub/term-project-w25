@@ -9,7 +9,7 @@ size = Vector2(199.25, 201.75)
 
 [node name="Panel" type="Area2D"]
 z_index = 1
-scale = Vector2(0.91, 0.91)
+scale = Vector2(0.65, 0.65)
 script = ExtResource("1_12oeh")
 
 [node name="Background" type="TextureRect" parent="."]

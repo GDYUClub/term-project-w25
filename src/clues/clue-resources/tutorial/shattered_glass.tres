@@ -16,4 +16,4 @@ desc = "Highly addictive and hazardous to your health. Snake's favorite brand."
 icon = ExtResource("1_36tt5")
 panel = ExtResource("2_5tl36")
 picks_up = true
-correct_panel = 2
+correct_panel = 1

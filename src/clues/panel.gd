@@ -120,6 +120,8 @@ func snap_to_grid(pos: Vector2) -> void:
 			merge(previous_box, selected_box)
 		else:
 			swap(previous_box, selected_box)
+	if(inventory_panel.clue_grid_cells.has(selected_box) || inventory_panel.clue_grid_cells.has(previous_box)):
+		inventory_panel.modulating_ui()
 
 func snap(selected : GridBox):
 	inventory_panel.panels[panel_id] = null
@@ -200,7 +202,8 @@ func merge(box_a: GridBox, box_b: GridBox):
 
 		panel_a.queue_free()
 		panel_b.queue_free()
-		
+	else:
+		swap(box_a, box_b)
 func _on_area_entered(area: Area2D) -> void:
 	if area is GridBox:
 		if !_grids_inside.has(area):

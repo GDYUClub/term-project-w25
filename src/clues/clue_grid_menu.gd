@@ -31,14 +31,14 @@ var all_grid_cells: Array[GridBox] = []
 var panels: Array[CluePanel] = []
 
 const PANEL_SIZE: int = 184
-const INITIAL_POSITION: Vector2 = Vector2(150,200)
-const INITIAL_ITEM_POSITION: Vector2 = Vector2(1075, 650)
-const OFFSET: Vector2 = Vector2(200, 200)
+const INITIAL_POSITION: Vector2 = Vector2(400,200)
+const INITIAL_ITEM_POSITION: Vector2 = Vector2(1000, 690)
+const OFFSET: Vector2 = Vector2(150, 150)
 
 signal puzzle_solved
 var solved: bool = false
 
-
+var tween : Tween
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	do_ready()
@@ -92,9 +92,9 @@ func test_panels() -> void:
 			puzzle_solved.emit()
 			visible = false
 			%DialogueManager.load_npc_dialogue(s_start_id, s_end_id, jane_sprite , null)
-			$CorrectLabel.text = "correct"
+			$CorrectLabel.text = "Correct!"
 		else:
-			$CorrectLabel.text = "wrong"
+			$CorrectLabel.text = "Wrong..."
 
 func addClueGrid(index : int, c : int, r : int ):
 	var gridCellInst: GridBox = grid_cell_scene.instantiate()
@@ -132,7 +132,7 @@ func populate_clue_panels():
 	CluePanel._can_select = true
 	var rows := 2
 	# it's always two for now
-	var cols = 4
+	var cols = 6
 	var i = 0
 	for r in rows:
 		for c in cols:
@@ -211,3 +211,10 @@ func _update_ui(panelArea):
 	%ClueDesc.text = panelArea.clue.desc
 	%ClueTag.text = Clue.Type.keys()[panelArea.clue.type]
 	pass
+
+func modulating_ui():
+	if tween != null:
+		tween.kill()
+	tween = get_tree().create_tween();
+	tween.tween_property($CorrectLabel, "modulate:a", 1, 1)
+	tween.tween_property($CorrectLabel, "modulate:a", 0, 3)
