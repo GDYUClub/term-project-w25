@@ -58,15 +58,24 @@ func _ready() -> void:
 
 func collected_everything_check():
 	# checks if you got all the items in 2-1-1
-	if page != PAGES.page2_1_1:
-		return
-	for clue:Clue in %ClueDatabase.items:
-		if clue.type != Clue.Type.NORMAL:
-			continue
-		if Inventory.has_item(clue) == false:
-			print_debug("missing: " + clue.name)
-			return false
-	return true
+	var merged_clues = [preload("res://src/clues/clue-resources/level2/level2-1/mergeresults/Attack.tres"),preload("res://src/clues/clue-resources/level2/level2-1/mergeresults/BottleHit.tres"),preload("res://src/clues/clue-resources/level2/level2-1/mergeresults/BrokenPanel.tres"),preload("res://src/clues/clue-resources/level2/level2-1/mergeresults/Talk.tres")]
+	if page == PAGES.page2_1_2:
+		for clue:Clue in merged_clues:
+			if Inventory.has_item(clue) == false:
+				print_debug("missing: " + clue.name)
+				return false
+		return true
+	
+	if page == PAGES.page2_1_1:
+		for clue:Clue in %ClueDatabase.items:
+			if clue.type != Clue.Type.NORMAL:
+				continue
+			if Inventory.has_item(clue) == false:
+				print_debug("missing: " + clue.name)
+				return false
+		return true
+
+	return false
 
 func set_inventory():
 	match page:
@@ -94,9 +103,6 @@ func set_inventory():
 		PAGES.page2_2:
 			Inventory._player_items = []
 
-
-
-	
 
 func play_level_theme():
 	var song:AudioStream
@@ -184,8 +190,6 @@ func change_to_cursor():
 
 func reset_inventory_icon():
 	if collected_everything_check():
-		%DialogueManager.load_npc_dialogue(19, 20,jane_sprite , null)
-		await %DialogueManager.dialogue_ended
 		next_page()
 	inventoryButton.texture_normal = preload("res://assets/sprites/ui/Main_Gameplay_UI/invent_menu_button.png")
 
@@ -205,11 +209,21 @@ func next_page() -> void:
 			await %AnimationPlayer.animation_finished
 			get_tree().change_scene_to_file("res://src/levels/2/level2-1-1.tscn")
 		PAGES.page2_1_1:
+			%DialogueManager.load_npc_dialogue(19, 20,jane_sprite , null)
+			await %DialogueManager.dialogue_ended
 			%DialogueUI.hide()
 			#get_tree().paused() = true
 			%AnimationPlayer.play("fade")
 			await %AnimationPlayer.animation_finished
 			get_tree().change_scene_to_file("res://src/levels/2/level2-1-2.tscn")
+		PAGES.page2_1_2:
+			%DialogueManager.load_npc_dialogue(21, 26,jane_sprite , null)
+			await %DialogueManager.dialogue_ended
+			%DialogueUI.hide()
+			#get_tree().paused() = true
+			%AnimationPlayer.play("fade")
+			await %AnimationPlayer.animation_finished
+			get_tree().change_scene_to_file("res://src/levels/2/level2-2.tscn")
 		PAGES.page2_2:
 			%DialogueUI.hide()
 			#get_tree().paused() = true

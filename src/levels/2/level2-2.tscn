@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dntc8r7xgew3b"]
+[gd_scene load_steps=36 format=3 uid="uid://dntc8r7xgew3b"]
 
 [ext_resource type="Script" uid="uid://cjdgvn4eosr7q" path="res://src/levels/tutorial/tutorial_2.gd" id="1_fv8uy"]
 [ext_resource type="Texture2D" uid="uid://csum1dhtbisq3" path="res://assets/sprites/pages/2-2/Ch2_Level2_Flattened_NoElevatorSmallaaa.png" id="3_22rls"]
@@ -68,6 +68,95 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22rls"]
 size = Vector2(147.25, 257.5)
+
+[sub_resource type="Animation" id="Animation_a6e6f"]
+resource_name = "elevator_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Elevator:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(125, 641), Vector2(125, 1656)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(140, 620), Vector2(140, 1636)]
+}
+
+[sub_resource type="Animation" id="Animation_cadqf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Elevator:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(125, 641)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(140, 1636)]
+}
+
+[sub_resource type="Animation" id="Animation_pted0"]
+resource_name = "elevator_up"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Elevator:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(125, 1656), Vector2(125, 641)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(140, 1636), Vector2(140, 620)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pted0"]
+_data = {
+&"RESET": SubResource("Animation_cadqf"),
+&"elevator_down": SubResource("Animation_a6e6f"),
+&"elevator_up": SubResource("Animation_pted0")
+}
 
 [node name="Main3" type="Node"]
 script = ExtResource("1_fv8uy")
@@ -266,3 +355,9 @@ position = Vector2(47, 1025)
 position = Vector2(27.375, 646)
 shape = SubResource("RectangleShape2D_22rls")
 debug_color = Color(0.168627, 1, 0.298039, 0.419608)
+
+[node name="AnimPlayer2-2" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_pted0")
+}

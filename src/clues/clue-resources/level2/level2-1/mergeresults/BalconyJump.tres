@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://beueqif5ruqo8"]
+
+[ext_resource type="Texture2D" uid="uid://dyl7n5u3uerbu" path="res://assets/sprites/CluePanels/CHAPTER2_LEVEL1_Balconyjump.png-1080x.png" id="1_0lf2k"]
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="1_dxrfg"]
+
+[resource]
+script = ExtResource("1_dxrfg")
+type = 0
+id = 23
+lvl_id = 2
+name = "Balcony Jump"
+desc = "The killer escaped by jumping down."
+icon = ExtResource("1_0lf2k")
+panel = ExtResource("1_0lf2k")
+picks_up = false
+correct_panel = 0
+metadata/_custom_type_script = "uid://bhwvtvekextht"

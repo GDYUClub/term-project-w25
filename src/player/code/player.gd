@@ -7,7 +7,7 @@ const WALK_SPEED = 300.0
 @onready var alertSprite: Sprite2D = $AlertSprite
 @onready var inquire_sprite: Sprite2D = $InquireSprite
 @onready var area: Area2D = $Area2D
-@onready var sceneAnimPlayer:AnimationPlayer = get_parent().get_node("AnimationPlayer")
+@onready var sceneAnimPlayer:AnimationPlayer = get_parent().get_node("AnimPlayer2-2")
 
 @export_range(0,1) var starting_scale:float
 
