@@ -214,6 +214,11 @@ unique_name_in_owner = true
 script = ExtResource("16_li1c5")
 items = Array[ExtResource("17_28alu")]([ExtResource("18_jm0fv"), ExtResource("19_4srhh"), ExtResource("20_lfrsq"), ExtResource("21_7y3wt"), ExtResource("22_vj3nq"), ExtResource("23_xjm2v"), ExtResource("24_fofee"), ExtResource("25_p8qry"), ExtResource("26_i7fi7"), ExtResource("27_i04kx"), ExtResource("28_4xpp5"), ExtResource("29_47ejd"), ExtResource("30_i3tr5"), ExtResource("31_6q6k5"), ExtResource("32_trnfs"), ExtResource("33_2lgfr"), ExtResource("34_by2de"), ExtResource("35_xv8oo"), ExtResource("36_s7mcr")])
 
+[node name="PrevClueDatabase" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("16_li1c5")
+items = Array[ExtResource("17_28alu")]([ExtResource("18_jm0fv"), ExtResource("19_4srhh"), ExtResource("20_lfrsq"), ExtResource("22_vj3nq"), ExtResource("23_xjm2v"), ExtResource("24_fofee"), ExtResource("25_p8qry"), ExtResource("26_i7fi7"), ExtResource("27_i04kx"), ExtResource("28_4xpp5"), ExtResource("30_i3tr5"), ExtResource("31_6q6k5"), ExtResource("32_trnfs"), ExtResource("33_2lgfr")])
+
 [node name="PanelItems" type="Node" parent="."]
 
 [node name="0" type="Node" parent="PanelItems"]

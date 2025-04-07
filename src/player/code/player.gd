@@ -22,6 +22,7 @@ var interactable: Area2D = null
 
 var clues: Array = []
 
+
 enum MOVETYPES {
 	TOP_DOWN,
 	SIDE_SCROLLER,

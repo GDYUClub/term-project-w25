@@ -286,7 +286,7 @@
 	"LINK_1_ID": null,
 	"LINK_2_ID": null,
 	"LINK_3_ID": null,
-	"COMMANDS": "/Add_4"
+	"COMMANDS": "/Add_2"
   },
   "17": {
 	"SPEAKER_NAME": "Jane",
@@ -320,7 +320,7 @@
 	"LINK_1_ID": null,
 	"LINK_2_ID": null,
 	"LINK_3_ID": null,
-	"COMMANDS": "/Add_2"
+	"COMMANDS": "/Add_3"
   },
   "19": {
 	"SPEAKER_NAME": "Jane",
@@ -439,7 +439,7 @@
 	"LINK_1_ID": null,
 	"LINK_2_ID": null,
 	"LINK_3_ID": null,
-	"COMMANDS": "/Add_3"
+	"COMMANDS": "/Add_4"
   },
   "26": {
 	"SPEAKER_NAME": "Sergeant Wedge",

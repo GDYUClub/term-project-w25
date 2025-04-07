@@ -36,16 +36,16 @@ metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 838.0
-offset_top = 4.0
+offset_left = 761.0
+offset_top = -72.0
 offset_right = 1918.0
 offset_bottom = 1074.0
 texture = ExtResource("2_5kccu")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 871.0
-offset_top = 489.0
+offset_left = 786.0
+offset_top = 446.0
 offset_right = 1873.0
 offset_bottom = 994.0
 size_flags_horizontal = 4
@@ -54,8 +54,8 @@ expand_mode = 1
 
 [node name="TextureRect3" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 944.0
-offset_top = 91.0
+offset_left = 887.0
+offset_top = 22.0
 offset_right = 1211.0
 offset_bottom = 413.0
 size_flags_horizontal = 4
@@ -86,10 +86,10 @@ autowrap_mode = 2
 
 [node name="Tag" type="ColorRect" parent="TextureRect3"]
 layout_mode = 0
-offset_left = 17.0
-offset_top = 263.0
-offset_right = 251.0
-offset_bottom = 303.0
+offset_left = 16.0
+offset_top = 329.0
+offset_right = 309.0
+offset_bottom = 379.0
 color = Color(0.374139, 0.374139, 0.374139, 1)
 
 [node name="ClueTag" type="Label" parent="TextureRect3/Tag"]

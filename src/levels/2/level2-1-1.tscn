@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://cx8pspxpaj5y"]
+[gd_scene load_steps=80 format=3 uid="uid://cx8pspxpaj5y"]
 
 [ext_resource type="Script" uid="uid://pkuix78c4wo3" path="res://src/levels/2/level_2_1.gd" id="1_llba7"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="2_i5oa3"]
@@ -22,7 +22,6 @@
 [ext_resource type="Resource" uid="uid://cbq2tm1picpp5" path="res://src/clues/clue-resources/level2/level2-1/panel1/womenFootprint.tres" id="17_kvptf"]
 [ext_resource type="Resource" uid="uid://bgctofoxb7l74" path="res://src/clues/clue-resources/level2/level2-1/panel1/astrayAndCigar.tres" id="18_fcmwn"]
 [ext_resource type="Resource" uid="uid://m42noggxg222" path="res://src/clues/clue-resources/level2/level2-1/panel1/whiskeyBottle.tres" id="19_641g6"]
-[ext_resource type="Resource" uid="uid://bmv8alsgh6rgn" path="res://src/clues/clue-resources/level2/level2-1/panel1/pen.tres" id="20_643ly"]
 [ext_resource type="Resource" uid="uid://drsm6qoo8v5ne" path="res://src/clues/clue-resources/level2/level2-1/panel1/wineGlass.tres" id="20_iumx8"]
 [ext_resource type="PackedScene" uid="uid://yljam13vx8wv" path="res://src/clues/inventory_ui.tscn" id="21_58q08"]
 [ext_resource type="Resource" uid="uid://cv2tuh6jdflfs" path="res://src/clues/clue-resources/level2/level2-1/panel1/womenUnderwear.tres" id="21_xmv53"]
@@ -31,7 +30,6 @@
 [ext_resource type="Resource" uid="uid://bpopc4eisltg8" path="res://src/clues/clue-resources/level2/level2-1/panel2/whiskeyGlass.tres" id="25_3hj10"]
 [ext_resource type="Resource" uid="uid://bog1tv8j88j8e" path="res://src/clues/clue-resources/level2/level2-1/panel3/bookshelf.tres" id="26_sqmmh"]
 [ext_resource type="Resource" uid="uid://dlhr8psamwdeu" path="res://src/clues/clue-resources/level2/level2-1/panel3/cane.tres" id="27_h08er"]
-[ext_resource type="Resource" uid="uid://diihjnltl81ow" path="res://src/clues/clue-resources/level2/level2-1/panel3/carpet.tres" id="28_0p8rh"]
 [ext_resource type="Resource" uid="uid://c86nltk8d8ktf" path="res://src/clues/clue-resources/level2/level2-1/panel4/brokenGlass.tres" id="29_uy246"]
 [ext_resource type="Resource" uid="uid://hbyslt1xhjr1" path="res://src/clues/clue-resources/level2/level2-1/panel5/randomEarring.tres" id="30_3qi7x"]
 [ext_resource type="Resource" uid="uid://dskmjn75sk7d" path="res://src/clues/clue-resources/level2/level2-1/panel6/scuffMarks.tres" id="31_cbs3o"]
@@ -163,6 +161,42 @@ size = Vector2(62.7941, 50.7965)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h08er"]
 size = Vector2(161.065, 64.0135)
 
+[sub_resource type="Animation" id="Animation_7yf7h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tnfvl"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7yf7h"]
+_data = {
+&"RESET": SubResource("Animation_7yf7h"),
+&"fade": SubResource("Animation_tnfvl")
+}
+
 [node name="Level2-1-1" type="Node"]
 script = ExtResource("1_llba7")
 page = 2
@@ -178,7 +212,7 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_i5oa3")]
 unique_name_in_owner = true
-position = Vector2(124, 549)
+position = Vector2(300, 557)
 starting_scale = 0.2
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -685,7 +719,12 @@ INQUIRY_DIALOGUE_JSON = ExtResource("11_wlckx")
 [node name="ClueDatabase" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("15_g03s0")
-items = Array[ExtResource("16_58q08")]([ExtResource("17_kvptf"), ExtResource("18_fcmwn"), ExtResource("19_641g6"), ExtResource("20_643ly"), ExtResource("20_iumx8"), ExtResource("21_xmv53"), ExtResource("23_vds8e"), ExtResource("24_7x3dw"), ExtResource("25_3hj10"), ExtResource("26_sqmmh"), ExtResource("27_h08er"), ExtResource("28_0p8rh"), ExtResource("29_uy246"), ExtResource("30_3qi7x"), ExtResource("31_cbs3o"), ExtResource("32_vds8e")])
+items = Array[ExtResource("16_58q08")]([ExtResource("17_kvptf"), ExtResource("18_fcmwn"), ExtResource("19_641g6"), ExtResource("20_iumx8"), ExtResource("21_xmv53"), ExtResource("23_vds8e"), ExtResource("24_7x3dw"), ExtResource("25_3hj10"), ExtResource("26_sqmmh"), ExtResource("27_h08er"), ExtResource("29_uy246"), ExtResource("30_3qi7x"), ExtResource("31_cbs3o"), ExtResource("32_vds8e")])
+
+[node name="ClueDatabaseFake" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("15_g03s0")
+items = Array[ExtResource("16_58q08")]([ExtResource("17_kvptf")])
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -710,6 +749,21 @@ mouse_filter = 2
 unique_name_in_owner = true
 visible = false
 clue_count = 10
+s_start_id = 19
+s_end_id = 20
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+z_index = 256
+offset_left = -96.0
+offset_right = 1949.0
+offset_bottom = 2083.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_7yf7h")
+}
 
 [editable path="PanelItems/0/ShoeDialogue"]
 [editable path="PanelItems/0/Ashtray"]
