@@ -929,7 +929,7 @@ tracks/71/keys = {
 
 [sub_resource type="Animation" id="Animation_uf7ra"]
 resource_name = "page1"
-length = 21.0
+length = 37.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -937,7 +937,7 @@ tracks/0/path = NodePath("0/0/Panel:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.533333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -949,7 +949,7 @@ tracks/1/path = NodePath("0/1:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1, 2),
+"times": PackedFloat32Array(0.0333334, 2.03333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -961,7 +961,7 @@ tracks/2/path = NodePath("0/2:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(2.03, 3),
+"times": PackedFloat32Array(3.03333, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -973,7 +973,7 @@ tracks/3/path = NodePath("0/3:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(3, 4),
+"times": PackedFloat32Array(8.03333, 9.03333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -985,7 +985,7 @@ tracks/4/path = NodePath("Camera2D:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(3.53333, 4.56667, 10.5667, 11.5),
+"times": PackedFloat32Array(8.96667, 9.86667, 18.3, 19.8333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(962, 541), Vector2(962, 1261), Vector2(962, 1261), Vector2(962, 2365)]
@@ -997,7 +997,7 @@ tracks/5/path = NodePath("0/4:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(5, 5.29),
+"times": PackedFloat32Array(9.54333, 9.83333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1009,7 +1009,7 @@ tracks/6/path = NodePath("0/5:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(5.44, 5.75),
+"times": PackedFloat32Array(9.98333, 10.2933),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1021,7 +1021,7 @@ tracks/7/path = NodePath("0/6:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(5.99, 7),
+"times": PackedFloat32Array(9.8, 10.81),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1033,7 +1033,7 @@ tracks/8/path = NodePath("0/7:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(7.5, 8),
+"times": PackedFloat32Array(9.8, 11),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1045,7 +1045,7 @@ tracks/9/path = NodePath("0/8/Bubbles/B8:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(8.5, 9),
+"times": PackedFloat32Array(12.6, 13.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1057,7 +1057,7 @@ tracks/10/path = NodePath("0/8/Text/L8:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(8.48, 9),
+"times": PackedFloat32Array(12.58, 13.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -1069,7 +1069,7 @@ tracks/11/path = NodePath("0/8/Text/L8-2:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(9.5, 10.5),
+"times": PackedFloat32Array(17.5, 18.2333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -1081,7 +1081,7 @@ tracks/12/path = NodePath("0/8/Panel:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(8.86667, 9.46667),
+"times": PackedFloat32Array(15.2333, 15.8333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1093,7 +1093,7 @@ tracks/13/path = NodePath("0/9/Panel:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(12, 13),
+"times": PackedFloat32Array(20.0333, 21.0333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1105,7 +1105,7 @@ tracks/14/path = NodePath("0/9/Bubbles/B9:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(12, 13),
+"times": PackedFloat32Array(20.0333, 21.0333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1117,7 +1117,7 @@ tracks/15/path = NodePath("0/9/Text/L9:modulate")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(12, 13),
+"times": PackedFloat32Array(20.1333, 21.1333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -1129,7 +1129,7 @@ tracks/16/path = NodePath("0/9/Bubbles/B9-2:modulate")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(13.5, 14),
+"times": PackedFloat32Array(21.7333, 22.2333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1141,7 +1141,7 @@ tracks/17/path = NodePath("0/9/Text/L9-2:modulate")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(13.5667, 14),
+"times": PackedFloat32Array(21.8, 22.2333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -1153,7 +1153,7 @@ tracks/18/path = NodePath("0/10:modulate")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(15, 16),
+"times": PackedFloat32Array(28.5333, 29.5333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1165,7 +1165,7 @@ tracks/19/path = NodePath("0/11:modulate")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"times": PackedFloat32Array(16, 17),
+"times": PackedFloat32Array(28.6, 29.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1177,7 +1177,7 @@ tracks/20/path = NodePath("0/12:modulate")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
-"times": PackedFloat32Array(18, 19),
+"times": PackedFloat32Array(30, 31),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1185,7 +1185,7 @@ tracks/20/keys = {
 
 [sub_resource type="Animation" id="Animation_543u6"]
 resource_name = "page2"
-length = 12.0
+length = 26.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1217,7 +1217,7 @@ tracks/2/path = NodePath("1/1/Panel:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(4.56667, 5.9),
+"times": PackedFloat32Array(16.8667, 18.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1229,7 +1229,7 @@ tracks/3/path = NodePath("1/1/Bubbles/B4:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(4.53333, 5.86667),
+"times": PackedFloat32Array(16.8333, 18.1667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1241,7 +1241,7 @@ tracks/4/path = NodePath("1/1/Bubbles/B5:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(6, 7),
+"times": PackedFloat32Array(20.1333, 21.1333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1253,7 +1253,7 @@ tracks/5/path = NodePath("1/2/Panel:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(7.5, 8.8),
+"times": PackedFloat32Array(22.8333, 23.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1265,7 +1265,7 @@ tracks/6/path = NodePath("Camera2D:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 5.06667, 5.73333, 7.8, 8.93333),
+"times": PackedFloat32Array(2.43333, 12.2667, 15.4333, 22.7333, 24.1333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(962, 541), Vector2(962, 541), Vector2(962, 1600), Vector2(962, 1600), Vector2(962, 2350)]
@@ -1289,7 +1289,7 @@ tracks/8/path = NodePath("1/0/Text/L1:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 1.8),
+"times": PackedFloat32Array(0, 1.36667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -1301,7 +1301,7 @@ tracks/9/path = NodePath("1/0/Text/L2:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(1.73333, 3),
+"times": PackedFloat32Array(5.16667, 6.43334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -1313,7 +1313,7 @@ tracks/10/path = NodePath("1/0/Text/L3:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(2.93333, 4.13333),
+"times": PackedFloat32Array(9.03333, 10.1333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -1325,7 +1325,7 @@ tracks/11/path = NodePath("1/1/Text/L4:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(4, 4.5),
+"times": PackedFloat32Array(16.5, 17),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -1337,7 +1337,7 @@ tracks/12/path = NodePath("1/1/Text/L5:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(6, 7),
+"times": PackedFloat32Array(20.9667, 21.9667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1345,8 +1345,8 @@ tracks/12/keys = {
 
 [sub_resource type="Animation" id="Animation_y6n2g"]
 resource_name = "page3"
-length = 10.0
-step = 0.5
+length = 16.0
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1378,7 +1378,7 @@ tracks/2/path = NodePath("2/0/Bubbles/B1:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1402,7 +1402,7 @@ tracks/4/path = NodePath("2/0/Bubbles/B2:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1.5, 2.5),
+"times": PackedFloat32Array(1.6, 2.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1414,7 +1414,7 @@ tracks/5/path = NodePath("2/0/Text/L2:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(1.5, 2.5),
+"times": PackedFloat32Array(1.6, 2.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1426,7 +1426,7 @@ tracks/6/path = NodePath("2/0/Bubbles/B3:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(3, 3.5),
+"times": PackedFloat32Array(10.6, 11.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1438,7 +1438,7 @@ tracks/7/path = NodePath("2/0/Text/L3:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(3, 3.5),
+"times": PackedFloat32Array(10.6, 11.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -1450,7 +1450,7 @@ tracks/8/path = NodePath("2/1/Panels:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(4.5, 5.5),
+"times": PackedFloat32Array(11.5, 12.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1462,7 +1462,7 @@ tracks/9/path = NodePath("2/1/Bubbles/B4:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(4.5, 5.5),
+"times": PackedFloat32Array(11.5, 12.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1474,7 +1474,7 @@ tracks/10/path = NodePath("2/1/Text/L4:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(4.5, 5.5),
+"times": PackedFloat32Array(11.5, 12.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1486,7 +1486,7 @@ tracks/11/path = NodePath("2/2:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(6, 7),
+"times": PackedFloat32Array(14, 15.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1498,7 +1498,7 @@ tracks/12/path = NodePath("2/2:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(-1),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -1510,7 +1510,7 @@ tracks/13/path = NodePath("Camera2D:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 6, 7),
+"times": PackedFloat32Array(2.8, 13.5, 15),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(962.5, 673.75), Vector2(962.5, 673.75), Vector2(962.5, 2073.75)]
@@ -1518,8 +1518,8 @@ tracks/13/keys = {
 
 [sub_resource type="Animation" id="Animation_3vvn8"]
 resource_name = "page4"
-length = 10.0
-step = 0.5
+length = 20.0
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1539,7 +1539,7 @@ tracks/1/path = NodePath("3/0/Sprite2D:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0.5, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1551,7 +1551,7 @@ tracks/2/path = NodePath("3/0/Bubbles/B1:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0.5, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1563,7 +1563,7 @@ tracks/3/path = NodePath("3/0/Text/L1:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0.5, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -1623,7 +1623,7 @@ tracks/8/path = NodePath("3/1:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(4.5, 5.5),
+"times": PackedFloat32Array(12.5, 13.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1635,7 +1635,7 @@ tracks/9/path = NodePath("3/2:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(7, 8),
+"times": PackedFloat32Array(16, 17),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1647,7 +1647,7 @@ tracks/10/path = NodePath("Camera2D:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 3, 4.5, 5.5, 7),
+"times": PackedFloat32Array(0, 7.5, 12, 14, 15.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(962, 541), Vector2(962, 541), Vector2(962, 1500), Vector2(962, 1500), Vector2(962, 2250)]
@@ -1655,8 +1655,8 @@ tracks/10/keys = {
 
 [sub_resource type="Animation" id="Animation_4qlyo"]
 resource_name = "page5"
-length = 10.0
-step = 0.5
+length = 33.0
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1676,7 +1676,7 @@ tracks/1/path = NodePath("Camera2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.5, 2.5, 5.5, 6),
+"times": PackedFloat32Array(0, 11, 16.1, 19.2, 21),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(962, 541), Vector2(962, 541), Vector2(962, 1441), Vector2(962, 1441), Vector2(962, 2541.03)]
@@ -1724,7 +1724,7 @@ tracks/5/path = NodePath("4/0/B2:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(1, 1.5),
+"times": PackedFloat32Array(8.5, 9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1736,7 +1736,7 @@ tracks/6/path = NodePath("4/0/L5:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(1, 1.5),
+"times": PackedFloat32Array(8.5, 9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1748,7 +1748,7 @@ tracks/7/path = NodePath("4/1/P2:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(2.5, 3.5),
+"times": PackedFloat32Array(11.5, 12),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1760,7 +1760,7 @@ tracks/8/path = NodePath("4/1/L5:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(2.5, 3.5),
+"times": PackedFloat32Array(11.5, 12),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -1772,7 +1772,7 @@ tracks/9/path = NodePath("4/1/B3:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(2.5, 3.5),
+"times": PackedFloat32Array(11.5, 12.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1784,7 +1784,7 @@ tracks/10/path = NodePath("4/1/B4:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(4, 4.5),
+"times": PackedFloat32Array(17.4, 17.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1796,7 +1796,7 @@ tracks/11/path = NodePath("4/1/L6:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(4, 4.5),
+"times": PackedFloat32Array(17.4, 17.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1808,7 +1808,7 @@ tracks/12/path = NodePath("4/2/P3:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(6, 7),
+"times": PackedFloat32Array(19.5, 20.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1820,7 +1820,7 @@ tracks/13/path = NodePath("4/2/B5:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(6, 7),
+"times": PackedFloat32Array(19.5, 20.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1832,7 +1832,7 @@ tracks/14/path = NodePath("4/2/L4:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(6.02, 7),
+"times": PackedFloat32Array(19.52, 20.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -1844,7 +1844,7 @@ tracks/15/path = NodePath("4/2/B6:modulate")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(7.5, 8),
+"times": PackedFloat32Array(30.2, 30.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -1856,7 +1856,7 @@ tracks/16/path = NodePath("4/2/L5:modulate")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(7.5, 8),
+"times": PackedFloat32Array(30.2, 30.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]

@@ -9,7 +9,7 @@ const VOICE_LINES = [preload("res://assets/sound/voice/page1.ogg"),preload("res:
 func _ready() -> void:
 	AudioManager.play_music(preload("res://assets/sound/bgm/office-theme.ogg"))
 	hide_everything()
-	for i in range(5):
+	for i in range(4,5):
 		var panel :Node2D = get_node("%d" % i)
 		panel.visible = true
 		animPlayer.play(ANIMATIONS[i])
