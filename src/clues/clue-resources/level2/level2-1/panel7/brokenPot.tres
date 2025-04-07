@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://ckue5j5f2ga4s"]
+[gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://ckue5j5f2ga4s"]
 
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_8blau"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_kgo8d"]
+[ext_resource type="Texture2D" uid="uid://c7kf7pawo5lcq" path="res://assets/sprites/CluePanels/2-1/pot.png" id="2_qnxii"]
 
 [resource]
 script = ExtResource("2_kgo8d")
@@ -9,9 +10,9 @@ type = 0
 id = 20
 lvl_id = 2
 name = "Broken Pot"
-desc = ""
-icon = ExtResource("1_8blau")
-panel = ExtResource("1_8blau")
+desc = "broken pot"
+icon = ExtResource("2_qnxii")
+panel = ExtResource("2_qnxii")
 environment_sprite = ExtResource("1_8blau")
 picks_up = false
 correct_panel = 0

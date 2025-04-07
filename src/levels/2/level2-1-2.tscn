@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://baehg71ehkgic"]
+[gd_scene load_steps=46 format=3 uid="uid://baehg71ehkgic"]
 
 [ext_resource type="Script" uid="uid://8b23rlb7ovdp" path="res://src/levels/2/level_2_1_2.gd" id="1_1r0i0"]
 [ext_resource type="Texture2D" uid="uid://mgfutu3e5n1g" path="res://assets/sprites/pages/Ch2_L1_Page2_Flattened.png" id="2_llk5i"]
@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dplwfecao13b5" path="res://src/dialogue/npc.tscn" id="4_hm44k"]
 [ext_resource type="Texture2D" uid="uid://bgdk8legkc452" path="res://assets/sprites/player/Vanessa_jane_threequarterview_small.png" id="5_m0vrv"]
 [ext_resource type="PackedScene" uid="uid://5beldmldbrhv" path="res://src/player/cursor.tscn" id="6_0hbc8"]
+[ext_resource type="PackedScene" uid="uid://yljam13vx8wv" path="res://src/clues/inventory_ui.tscn" id="6_li1c5"]
 [ext_resource type="PackedScene" uid="uid://dhpbtj7rkkjks" path="res://src/dialogue/inquire_ui.tscn" id="7_1d57u"]
 [ext_resource type="PackedScene" uid="uid://bvqwk1mxnpwr5" path="res://src/gameplay_ui/game_ui.tscn" id="8_a4on0"]
-[ext_resource type="PackedScene" uid="uid://cwo22opxygl8m" path="res://src/clues/clue_arrange_screen.tscn" id="9_vd6m4"]
 [ext_resource type="PackedScene" uid="uid://b5h0imkaet8vo" path="res://src/dialogue/dialogue_ui.tscn" id="10_qehm7"]
 [ext_resource type="Script" uid="uid://d313ibk1sryhe" path="res://src/dialogue/dialogue_manager.gd" id="11_23rmw"]
 [ext_resource type="JSON" path="res://src/dialogue/_Dialogue2-1-1.json" id="12_8jcpp"]
@@ -56,7 +56,13 @@ size = Vector2(60, 151.25)
 size = Vector2(65, 195.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_li1c5"]
-size = Vector2(172, 73)
+size = Vector2(151, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28alu"]
+size = Vector2(41, 145.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jm0fv"]
+size = Vector2(65.5, 62.75)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_1r0i0")
@@ -94,18 +100,17 @@ unique_name_in_owner = true
 offset_right = -1804.0
 offset_bottom = -739.0
 
-[node name="InventoryUI" parent="CanvasLayer" instance=ExtResource("9_vd6m4")]
-unique_name_in_owner = true
-visible = false
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
 [node name="DialogueUI" parent="CanvasLayer" instance=ExtResource("10_qehm7")]
 unique_name_in_owner = true
 visible = false
 offset_left = 0.0
 offset_right = 0.0
 mouse_filter = 2
+
+[node name="InventoryUI" parent="CanvasLayer" instance=ExtResource("6_li1c5")]
+unique_name_in_owner = true
+visible = false
+clue_count = 10
 
 [node name="Player" parent="." instance=ExtResource("3_1r0i0")]
 unique_name_in_owner = true
@@ -223,8 +228,34 @@ character2_sprite = null
 repeatable_conversation = false
 
 [node name="CollisionShape2D" parent="PanelItems/0/Table" index="0"]
-position = Vector2(78, 7)
+position = Vector2(73, 5)
 shape = SubResource("RectangleShape2D_li1c5")
+
+[node name="Pot" parent="PanelItems/0" instance=ExtResource("4_hm44k")]
+position = Vector2(415, 526)
+npc_name = "table"
+start_index = 17
+end_index = 17
+character1_sprite = ExtResource("5_m0vrv")
+character2_sprite = null
+repeatable_conversation = false
+
+[node name="CollisionShape2D" parent="PanelItems/0/Pot" index="0"]
+position = Vector2(-90, 27)
+shape = SubResource("RectangleShape2D_28alu")
+
+[node name="Rail" parent="PanelItems/0" instance=ExtResource("4_hm44k")]
+position = Vector2(415, 526)
+npc_name = "table"
+start_index = 18
+end_index = 18
+character1_sprite = ExtResource("5_m0vrv")
+character2_sprite = null
+repeatable_conversation = false
+
+[node name="CollisionShape2D" parent="PanelItems/0/Rail" index="0"]
+position = Vector2(-187, -12)
+shape = SubResource("RectangleShape2D_jm0fv")
 
 [node name="DialogueManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -263,4 +294,6 @@ position = Vector2(1101, 703)
 position = Vector2(-15, -64)
 
 [editable path="PanelItems/0/Table"]
+[editable path="PanelItems/0/Pot"]
+[editable path="PanelItems/0/Rail"]
 [editable path="Transitions/PanelTransition"]

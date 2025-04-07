@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://p6dsdnn3mowh"]
+[gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://p6dsdnn3mowh"]
 
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_ew4h3"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_fpkxv"]
+[ext_resource type="Texture2D" uid="uid://ceip37wxlegcm" path="res://assets/sprites/CluePanels/2-1/rail.png" id="2_fsb1r"]
 
 [resource]
 script = ExtResource("2_fpkxv")
@@ -9,9 +10,9 @@ type = 0
 id = 21
 lvl_id = 2
 name = "Broken Rail"
-desc = ""
-icon = ExtResource("1_ew4h3")
-panel = ExtResource("1_ew4h3")
+desc = "brokan rail"
+icon = ExtResource("2_fsb1r")
+panel = ExtResource("2_fsb1r")
 environment_sprite = ExtResource("1_ew4h3")
 picks_up = false
 correct_panel = 0
