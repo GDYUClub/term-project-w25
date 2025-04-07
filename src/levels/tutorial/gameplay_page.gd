@@ -165,6 +165,7 @@ func _process(delta: float) -> void:
 # ran after a dialog sequence to check if a new item was added and toggles the prompt on the gameplay ui
 func check_for_new_item():
 	if Inventory.new_item_recieved:
+		AudioManager.play_sfx(preload("res://assets/sound/sfx/itempickup_sfx.ogg"))
 		print('new item')
 		Inventory.new_item_recieved = false
 		inventoryButton.texture_normal = preload("res://assets/sprites/ui/Main_Gameplay_UI/invent_menu_button_new_item.png")
@@ -201,6 +202,7 @@ func change_state(new_state:GAMEPLAY_STATE):
 
 
 func next_page() -> void:
+	AudioManager.play_sfx(preload("res://assets/sound/sfx/transition.ogg"))
 	match page:
 		PAGES.page1_2:
 			%DialogueUI.hide()

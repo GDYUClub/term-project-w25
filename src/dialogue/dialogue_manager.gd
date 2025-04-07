@@ -197,6 +197,7 @@ func start_inquiry_dialogue(npc : Area2D , item_id : int):
 		load_npc_dialogue(start, end, c1Texture, c2Texture)
 	else:
 		#come up with a better solution 
+		AudioManager.play_sfx(preload("res://assets/sound/sfx/incorrect.ogg"))
 		dialogue = DEFAULT_DIALOGUE.get_data()
 		var start : int = 0
 		var end: int = 0

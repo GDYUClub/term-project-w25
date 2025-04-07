@@ -76,6 +76,8 @@ func destroy_previous():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("scroll_left") or Input.is_action_just_pressed("scroll_right"):
+		if visible:
+			AudioManager.play_sfx(preload("res://assets/sound/sfx/nav.ogg"))
 		switch_panel()
 	if self.visible == true:
 		test_panels()
@@ -88,6 +90,7 @@ func _process(delta: float) -> void:
 func test_panels() -> void:
 	if Inventory.get_item_count() > 0:
 		if panels_correct():
+			AudioManager.play_sfx(preload("res://assets/sound/sfx/correct.ogg"))
 			solved = true
 			puzzle_solved.emit()
 			visible = false
