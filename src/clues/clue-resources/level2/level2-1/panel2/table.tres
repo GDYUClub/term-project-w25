@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=5 format=3 uid="uid://64um32srqbm7"]
+
+[ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_55lts"]
+[ext_resource type="Texture2D" uid="uid://d2r37kiej7m5m" path="res://assets/sprites/CluePanels/2-1/table.png" id="2_ct611"]
+[ext_resource type="Resource" uid="uid://bkvsu52nnpbf1" path="res://src/clues/clue-resources/level2/level2-1/mergeresults/Attack.tres" id="3_55lts"]
+[ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="4_qukr7"]
+
+[resource]
+script = ExtResource("4_qukr7")
+type = 1
+mergeResultant = ExtResource("3_55lts")
+id = 15
+lvl_id = 2
+name = "Table"
+desc = "The table was knocked over."
+icon = ExtResource("2_ct611")
+panel = ExtResource("2_ct611")
+environment_sprite = ExtResource("1_55lts")
+picks_up = false
+correct_panel = 0
+metadata/_custom_type_script = "uid://bhwvtvekextht"

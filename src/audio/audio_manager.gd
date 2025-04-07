@@ -30,7 +30,6 @@ func play_music(music:AudioStream) -> void:
 func pause_music() -> void:
 	bgm_player.stop()
 
-
 func play_sfx(sfx:AudioStream) -> void:
 	for sfx_player:AudioStreamPlayer in sfx_players:
 		if !sfx_player.playing:

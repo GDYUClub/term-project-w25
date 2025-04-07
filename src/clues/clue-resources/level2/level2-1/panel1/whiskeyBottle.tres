@@ -1,14 +1,12 @@
-[gd_resource type="Resource" script_class="Clue" load_steps=5 format=3 uid="uid://m42noggxg222"]
+[gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://m42noggxg222"]
 
 [ext_resource type="Texture2D" uid="uid://dsv6sdutv7bdm" path="res://assets/sprites/clue-touhou.png" id="1_ix5em"]
 [ext_resource type="Texture2D" uid="uid://cj0dsoblqdei5" path="res://assets/sprites/CluePanels/2-1/wiskey.png" id="2_gsukc"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_qycd8"]
-[ext_resource type="Resource" uid="uid://cw1xgaiuje8ps" path="res://src/clues/clue-resources/level2/level2-1/mergeresults/BottleHit.tres" id="3_gsukc"]
 
 [resource]
 script = ExtResource("2_qycd8")
-type = 1
-mergeResultant = ExtResource("3_gsukc")
+type = 0
 id = 2
 lvl_id = 2
 name = "whiskeyBottle"

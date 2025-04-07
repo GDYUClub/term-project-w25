@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://cx8pspxpaj5y"]
+[gd_scene load_steps=79 format=3 uid="uid://cx8pspxpaj5y"]
 
 [ext_resource type="Script" uid="uid://pkuix78c4wo3" path="res://src/levels/2/level_2_1.gd" id="1_llba7"]
 [ext_resource type="PackedScene" uid="uid://bt7hps1ykd8nk" path="res://src/player/scene/player.tscn" id="2_i5oa3"]
@@ -35,6 +35,7 @@
 [ext_resource type="Resource" uid="uid://c86nltk8d8ktf" path="res://src/clues/clue-resources/level2/level2-1/panel4/brokenGlass.tres" id="29_uy246"]
 [ext_resource type="Resource" uid="uid://hbyslt1xhjr1" path="res://src/clues/clue-resources/level2/level2-1/panel5/randomEarring.tres" id="30_3qi7x"]
 [ext_resource type="Resource" uid="uid://dskmjn75sk7d" path="res://src/clues/clue-resources/level2/level2-1/panel6/scuffMarks.tres" id="31_cbs3o"]
+[ext_resource type="Resource" uid="uid://64um32srqbm7" path="res://src/clues/clue-resources/level2/level2-1/panel2/table.tres" id="32_vds8e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i1ufb"]
 size = Vector2(577, 71)
@@ -127,10 +128,13 @@ size = Vector2(41.9228, 20.8195)
 size = Vector2(23.9434, 10.0815)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_up2jv"]
-size = Vector2(69.1859, 33.6197)
+size = Vector2(69.1859, 25.569)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0p8rh"]
+size = Vector2(146.533, 176.175)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ulyt"]
-size = Vector2(82.8285, 28.8327)
+size = Vector2(89.8299, 54.6964)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_640qw"]
 size = Vector2(36.9696, 29.8368)
@@ -521,6 +525,19 @@ position = Vector2(457, 92.5)
 rotation = 0.0318773
 shape = SubResource("RectangleShape2D_up2jv")
 
+[node name="Table" parent="PanelItems/1" instance=ExtResource("4_sut8d")]
+position = Vector2(859, 226)
+start_index = 15
+end_index = 15
+character1_sprite = ExtResource("5_wlckx")
+character2_sprite = null
+repeatable_conversation = false
+
+[node name="CollisionShape2D" parent="PanelItems/1/Table" index="0"]
+position = Vector2(562, 1)
+rotation = -0.589519
+shape = SubResource("RectangleShape2D_0p8rh")
+
 [node name="WhiskeyBottleWithBlood" parent="PanelItems/1" instance=ExtResource("4_sut8d")]
 position = Vector2(859, 226)
 start_index = 7
@@ -530,8 +547,8 @@ character2_sprite = null
 repeatable_conversation = false
 
 [node name="CollisionShape2D" parent="PanelItems/1/WhiskeyBottleWithBlood" index="0"]
-position = Vector2(773.938, 74.8161)
-rotation = -0.326736
+position = Vector2(776, 77)
+rotation = -0.400284
 shape = SubResource("RectangleShape2D_6ulyt")
 
 [node name="WhiskeyGlass" parent="PanelItems/1" instance=ExtResource("4_sut8d")]
@@ -668,7 +685,7 @@ INQUIRY_DIALOGUE_JSON = ExtResource("11_wlckx")
 [node name="ClueDatabase" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("15_g03s0")
-items = Array[ExtResource("16_58q08")]([ExtResource("17_kvptf"), ExtResource("18_fcmwn"), ExtResource("19_641g6"), ExtResource("20_643ly"), ExtResource("20_iumx8"), ExtResource("21_xmv53"), ExtResource("23_vds8e"), ExtResource("24_7x3dw"), ExtResource("25_3hj10"), ExtResource("26_sqmmh"), ExtResource("27_h08er"), ExtResource("28_0p8rh"), ExtResource("29_uy246"), ExtResource("30_3qi7x"), ExtResource("31_cbs3o")])
+items = Array[ExtResource("16_58q08")]([ExtResource("17_kvptf"), ExtResource("18_fcmwn"), ExtResource("19_641g6"), ExtResource("20_643ly"), ExtResource("20_iumx8"), ExtResource("21_xmv53"), ExtResource("23_vds8e"), ExtResource("24_7x3dw"), ExtResource("25_3hj10"), ExtResource("26_sqmmh"), ExtResource("27_h08er"), ExtResource("28_0p8rh"), ExtResource("29_uy246"), ExtResource("30_3qi7x"), ExtResource("31_cbs3o"), ExtResource("32_vds8e")])
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -701,6 +718,7 @@ clue_count = 10
 [editable path="PanelItems/0/WomenUnderwear"]
 [editable path="PanelItems/0/Pen"]
 [editable path="PanelItems/1/ShatteredWhiskeyGlass"]
+[editable path="PanelItems/1/Table"]
 [editable path="PanelItems/1/WhiskeyBottleWithBlood"]
 [editable path="PanelItems/1/WhiskeyGlass"]
 [editable path="PanelItems/2/BookShelf"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://domvfsi4ugsn3"]
+[gd_scene load_steps=3 format=3 uid="uid://domvfsi4ugsn3"]
 
+[ext_resource type="Texture2D" uid="uid://jhr8rc3g144i" path="res://assets/sprites/title-screen/CitizneJane_Logo_Transparent_NoSlogan.png" id="1_1j6h2"]
 [ext_resource type="Theme" uid="uid://yukgoy42hebt" path="res://src/cutscene_themetres.tres" id="1_rlaok"]
 
 [node name="Control" type="Control"]
@@ -14,15 +15,19 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 1933.0
 offset_bottom = 1091.0
-color = Color(0.241156, 0.241156, 0.241156, 1)
+color = Color(0, 0, 0, 1)
+
+[node name="CitizneJaneLogoTransparentNoSlogan" type="Sprite2D" parent="."]
+position = Vector2(945, 430)
+scale = Vector2(0.471667, 0.471667)
+texture = ExtResource("1_1j6h2")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 189.0
-offset_top = 433.0
-offset_right = 1674.0
-offset_bottom = 589.0
+offset_left = 195.0
+offset_top = 791.0
+offset_right = 1680.0
+offset_bottom = 947.0
 theme = ExtResource("1_rlaok")
-text = "Will see to wrapping up the to be continued panel splash soon
-Otherwise just fade to black and slap on Verdana text
-You should get that in now in case I fold and don’t make something fancy"
+text = "To be Continued..."
+horizontal_alignment = 1

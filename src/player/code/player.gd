@@ -81,7 +81,6 @@ func _top_down(delta: float):
 	var dir = Vector2(0,move_dir).rotated(sprite.rotation)
 	velocity = WALK_SPEED * dir
 
-
 # Side scroller movement function
 func _side_scroller(delta: float):
 	var direction := Input.get_axis("ui_left", "ui_right")

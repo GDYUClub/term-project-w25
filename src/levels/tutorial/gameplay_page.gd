@@ -163,6 +163,10 @@ func next_page() -> void:
 		PAGES.page1_2:
 			get_tree().change_scene_to_file("res://src/levels/2/level2-1-1.tscn")
 		PAGES.page2_2:
+			%DialogueUI.hide()
+			#get_tree().paused() = true
+			%AnimationPlayer.play("fade")
+			await %AnimationPlayer.animation_finished
 			get_tree().change_scene_to_file("res://src/levels/end.tscn")
 
 func _solved_clues() -> void:	
