@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Clue" load_steps=3 format=3 uid="uid://blvtlh4b6n5mj"]
 
-[ext_resource type="Texture2D" uid="uid://cc5s0jf55uhx1" path="res://assets/sprites/icon.svg" id="1_aspy8"]
+[ext_resource type="Texture2D" uid="uid://ctuqxee000tmv" path="res://assets/sprites/CluePanels/CHAPTER2_LEVEL2_Casette.png-1080x.png" id="1_aspy8"]
 [ext_resource type="Script" uid="uid://bhwvtvekextht" path="res://src/clues/clue.gd" id="2_0f2bh"]
 
 [resource]
@@ -9,7 +9,7 @@ type = 0
 id = 3
 lvl_id = 0
 name = "DJ Wamp's House Mix"
-desc = "DJ wamp house mix"
+desc = "This seems to be Wamp’s passion project. He never seems to get to play it in gigs… Would make any DJ an alcoholic."
 icon = ExtResource("1_aspy8")
 panel = ExtResource("1_aspy8")
 picks_up = true

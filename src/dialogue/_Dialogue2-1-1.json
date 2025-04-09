@@ -430,7 +430,7 @@
 	"25": {
 		"SPEAKER_NAME": "Jane",
 		"SPEAKER_ID": 0.0,
-		"ENGLISH": "...but the victim was hit by a wiskey bottle first?",
+		"ENGLISH": "...but the victim was hit with a wiskey bottle first?",
 		"IMAGE": "res://assets/sprites/CluePanels/CHAPTER2_LEVEL1_BottleHit.png-1080x.png",
 		"BUBBLE_TYPE": "THINK",
 		"FRENCH": null,
