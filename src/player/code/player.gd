@@ -134,14 +134,20 @@ func interact():
 		in_dialouge = true
 		#can_move = false
 		var is_cursor = true if get_parent().current_state == GameplayPage.GAMEPLAY_STATE.CURSOR else false
-		get_parent().change_state(GameplayPage.GAMEPLAY_STATE.DIALOG)
-		interactable.talk_to_npc()
+		if !is_cursor:
+			get_parent().change_state(GameplayPage.GAMEPLAY_STATE.DIALOG)
+			interactable.talk_to_npc()
+		elif !interactable.is_interacted_with:
+			get_parent().change_state(GameplayPage.GAMEPLAY_STATE.DIALOG)
+			interactable.talk_to_npc()
+		else:
+			in_dialouge = false
 		await interactable.interaction_over
-		interactable = null
 		if is_cursor:
 			get_parent().change_state(GameplayPage.GAMEPLAY_STATE.CURSOR)
 		else:
 			get_parent().change_state(GameplayPage.GAMEPLAY_STATE.EXPLORE)
+			interactable = null
 		get_parent().check_for_new_item()
 	
 	elif interactable.is_in_group("point_click"):

@@ -24,6 +24,10 @@ func play_music(music:AudioStream) -> void:
 		return
 
 	bgm_player.stream = music
+	if music.resource_path == "res://assets/sound/bgm/house-theme.ogg":
+		bgm_player.volume_db = linear_to_db(3)
+	else:
+		bgm_player.volume_db = linear_to_db(1)
 	bgm_player.play()
 
 func pause_music() -> void:

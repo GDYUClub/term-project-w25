@@ -31,9 +31,11 @@ func _process(delta: float) -> void:
 			player.interact()
 
 	for area in hitbox.get_overlapping_areas():
-		if area.is_in_group("npc"):
+		if area.is_in_group("npc") and !area.is_interacted_with:
 			player.interactable = area
 			%AlertSprite.visible = true
+		elif area.is_in_group("npc") and area.is_interacted_with:
+			%AlertSprite.visible = false
 
 	var dir:= Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	velocity = dir * SPEED 
